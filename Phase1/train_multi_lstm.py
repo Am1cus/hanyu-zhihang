@@ -1,6 +1,8 @@
 import os
 import random
 
+from sympy import true
+
 current_file_dir = os.path.dirname(os.path.abspath(__file__))
 matplotlib_cache_dir = os.path.join(current_file_dir, "matplotlib_cache")
 os.makedirs(matplotlib_cache_dir, exist_ok=True)
@@ -292,7 +294,7 @@ def main():
     test_x, _ = samples_to_tensors(test_samples)
 
     train_dataset = TensorDataset(train_x, train_y)
-    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
 
     model = MultiFeatureLSTM(input_size=len(FEATURE_COLUMNS)).to(device)
     parameter_count = count_model_parameters(model)
