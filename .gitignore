@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.idea/
+.DS_Store
+*.pyc
+*.pyo
+*.png
+Phase1/matplotlib_cache/
