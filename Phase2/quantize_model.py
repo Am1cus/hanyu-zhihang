@@ -118,7 +118,8 @@ def print_summary(original_size_kb, quantized_size_kb, original_time_ms, quantiz
 
 def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_path = os.path.join(current_dir, "training_dataset_v1.csv")
+    project_dir = os.path.dirname(current_dir)
+    dataset_path = os.path.join(project_dir, "Phase1", "training_dataset_v1.csv")
     original_model_path = os.path.join(current_dir, "multi_lstm_model.pth")
     quantized_model_path = os.path.join(current_dir, "multi_lstm_model_quantized.pth")
 

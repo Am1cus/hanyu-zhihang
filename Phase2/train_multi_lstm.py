@@ -1,8 +1,6 @@
 import os
 import random
 
-from sympy import true
-
 current_file_dir = os.path.dirname(os.path.abspath(__file__))
 matplotlib_cache_dir = os.path.join(current_file_dir, "matplotlib_cache")
 os.makedirs(matplotlib_cache_dir, exist_ok=True)
@@ -278,7 +276,8 @@ def main():
     set_chinese_font()
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_path = os.path.join(current_dir, "training_dataset_v1.csv")
+    project_dir = os.path.dirname(current_dir)
+    dataset_path = os.path.join(project_dir, "Phase1", "training_dataset_v1.csv")
     figures_dir = os.path.join(current_dir, "figures")
     model_path = os.path.join(current_dir, "multi_lstm_model.pth")
 

@@ -11,7 +11,8 @@
 ```text
 learn/
 ├── NasaBatteryTest/     NASA 电池原始数据与早期实验
-├── Phase1/              数据处理、特征工程、LSTM 训练与模型量化
+├── Phase1/              数据处理、特征工程与训练数据集 V1.0
+├── Phase2/              LSTM 训练、模型量化与初步验证
 ├── Phase3/              FastAPI 量化模型推理接口
 ├── requirements.txt     Python 项目依赖
 └── README.md            项目说明

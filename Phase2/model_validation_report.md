@@ -6,7 +6,7 @@
 
 ## 2. 数据与特征
 
-训练数据集为 `training_dataset_v1.csv`，共 636 条样本，包含 B5、B6、B7、B18 四组 NASA PCoE 锂电池循环容量数据。数据由 MATLAB `.mat` 文件导出，并添加模拟的极寒飞行环境特征。
+训练数据集为 `../Phase1/training_dataset_v1.csv`，共 636 条样本，包含 B5、B6、B7、B18 四组 NASA PCoE 锂电池循环容量数据。数据由 MATLAB `.mat` 文件导出，并添加模拟的极寒飞行环境特征。
 
 模型输入特征如下：
 
@@ -54,8 +54,8 @@ LSTM 模型结构如下：
 
 | 交付物 | 文件 |
 | --- | --- |
-| 训练数据集 V1.0 | `training_dataset_v1.csv` |
-| 特征标准化器 | `scaler.pkl` |
+| 训练数据集 V1.0 | `../Phase1/training_dataset_v1.csv` |
+| 特征标准化器 | `../Phase1/scaler.pkl` |
 | 原始 LSTM 模型 | `multi_lstm_model.pth` |
 | 量化 LSTM 模型 | `multi_lstm_model_quantized.pth` |
 | LSTM 训练脚本 | `train_multi_lstm.py` |

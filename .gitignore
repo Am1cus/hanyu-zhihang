@@ -5,4 +5,4 @@ __pycache__/
 *.pyc
 *.pyo
 *.png
-Phase1/matplotlib_cache/
+**/matplotlib_cache/

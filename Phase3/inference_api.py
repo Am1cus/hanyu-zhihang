@@ -31,7 +31,8 @@ MODEL_VERSION = "multi_lstm_quantized_v1"
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(CURRENT_DIR)
 PHASE1_DIR = os.path.join(PROJECT_DIR, "Phase1")
-MODEL_PATH = os.path.join(PHASE1_DIR, "multi_lstm_model_quantized.pth")
+PHASE2_DIR = os.path.join(PROJECT_DIR, "Phase2")
+MODEL_PATH = os.path.join(PHASE2_DIR, "multi_lstm_model_quantized.pth")
 SCALER_PATH = os.path.join(PHASE1_DIR, "scaler.pkl")
 
 MODEL = None
