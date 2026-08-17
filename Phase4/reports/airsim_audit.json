@@ -1,0 +1,1075 @@
+{
+  "source": "collected_phase2_data.zip",
+  "flight_count": 35,
+  "total_rows": 20222,
+  "median_sample_hz": 9.804,
+  "canonical_columns": {
+    "timestamp": "timestamp",
+    "voltage": "voltage_V",
+    "current": "current_A",
+    "temperature": "temperature_C",
+    "wind_speed": "wind_speed_ms",
+    "velocity_x": "velocity_x",
+    "velocity_y": "velocity_y",
+    "velocity_z": "velocity_z",
+    "altitude": "altitude",
+    "battery_level": "soc_pct",
+    "end_reason": null
+  },
+  "training_ready": false,
+  "blockers": [
+    "缺少真实耗尽、返航或任务结束原因，文件末尾不能直接视为可飞时间终点"
+  ],
+  "flights": [
+    {
+      "flight_id": "flight_002",
+      "rows": 591,
+      "duration_s": 59.962,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_003",
+      "rows": 591,
+      "duration_s": 59.954,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_004",
+      "rows": 591,
+      "duration_s": 59.953,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_005",
+      "rows": 591,
+      "duration_s": 59.953,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_006",
+      "rows": 591,
+      "duration_s": 59.936,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_007",
+      "rows": 591,
+      "duration_s": 59.95,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_008",
+      "rows": 591,
+      "duration_s": 59.959,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_009",
+      "rows": 591,
+      "duration_s": 59.957,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_010",
+      "rows": 591,
+      "duration_s": 59.953,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_011",
+      "rows": 591,
+      "duration_s": 59.959,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_012",
+      "rows": 591,
+      "duration_s": 59.95,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_013",
+      "rows": 591,
+      "duration_s": 59.956,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_014",
+      "rows": 591,
+      "duration_s": 59.956,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_015",
+      "rows": 591,
+      "duration_s": 59.963,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_016",
+      "rows": 591,
+      "duration_s": 59.956,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_017",
+      "rows": 591,
+      "duration_s": 59.95,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_018",
+      "rows": 591,
+      "duration_s": 59.954,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_019",
+      "rows": 590,
+      "duration_s": 59.9,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_020",
+      "rows": 589,
+      "duration_s": 59.985,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_021",
+      "rows": 592,
+      "duration_s": 59.97,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_022",
+      "rows": 592,
+      "duration_s": 59.946,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_023",
+      "rows": 592,
+      "duration_s": 59.964,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_024",
+      "rows": 592,
+      "duration_s": 59.967,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_025",
+      "rows": 592,
+      "duration_s": 59.97,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_026",
+      "rows": 591,
+      "duration_s": 59.934,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_027",
+      "rows": 355,
+      "duration_s": 35.966,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_028",
+      "rows": 592,
+      "duration_s": 59.998,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_029",
+      "rows": 592,
+      "duration_s": 59.994,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_030",
+      "rows": 592,
+      "duration_s": 59.99,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_031",
+      "rows": 592,
+      "duration_s": 59.972,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_032",
+      "rows": 592,
+      "duration_s": 59.975,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_033",
+      "rows": 592,
+      "duration_s": 59.994,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_034",
+      "rows": 591,
+      "duration_s": 59.902,
+      "median_hz": 9.804,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_035",
+      "rows": 355,
+      "duration_s": 35.919,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    },
+    {
+      "flight_id": "flight_036",
+      "rows": 592,
+      "duration_s": 59.992,
+      "median_hz": 9.901,
+      "missing_cells": 0,
+      "duplicate_timestamps": 0,
+      "constant_columns": [
+        "flight_id",
+        "temperature_C",
+        "wind_speed_ms"
+      ],
+      "columns": [
+        "flight_id",
+        "timestamp",
+        "temperature_C",
+        "wind_speed_ms",
+        "voltage_V",
+        "current_A",
+        "soc_pct",
+        "throttle",
+        "altitude",
+        "velocity_x",
+        "velocity_y",
+        "velocity_z",
+        "rotor_rpm",
+        "remaining_capacity_ah",
+        "remaining_energy_wh"
+      ]
+    }
+  ]
+}
