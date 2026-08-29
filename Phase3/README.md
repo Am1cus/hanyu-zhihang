@@ -39,6 +39,8 @@
 
 该接口是本地推理原型，加载 `Phase2/multi_lstm_model_quantized.pth`。当前模型使用 NASA 电池容量数据与模拟环境特征训练，接口结果仅用于技术流程验证，不能作为真实无人机的安全决策依据。
 
+AirSim实时回放使用 `POST /api/predict/airsim-capacity`。该接口接收最近30条1Hz遥测，加载 `Phase4/models/airsim_capacity_lstm_v2_quantized.pth`，输出未来10秒耗电量和剩余容量。该模型仅经AirSim数据验证，未经真实无人机验证。
+
 ## 接口基准测试
 
 保持服务运行，并在另一个终端执行：

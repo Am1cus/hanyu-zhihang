@@ -1,0 +1,93 @@
+{
+  "model_version": "airsim_capacity_lstm_v2",
+  "target": "capacity_consumption_ah_next_10s",
+  "output_transform": "future_capacity = current_measured_capacity - raw_lstm_consumption",
+  "linear_calibration": false,
+  "curve_smoothing": false,
+  "lookback_seconds": 30,
+  "forecast_horizon_seconds": 10,
+  "features": [
+    "env_temperature_C",
+    "wind_speed_ms",
+    "voltage_V",
+    "current_A",
+    "battery_level_pct",
+    "speed_ms",
+    "altitude_m"
+  ],
+  "train_flights": [
+    "flight_030",
+    "flight_007",
+    "flight_013",
+    "flight_018",
+    "flight_029",
+    "flight_014",
+    "flight_022",
+    "flight_017",
+    "flight_012",
+    "flight_016",
+    "flight_021",
+    "flight_024",
+    "flight_011",
+    "flight_032",
+    "flight_026",
+    "flight_008",
+    "flight_028",
+    "flight_002",
+    "flight_034",
+    "flight_015",
+    "flight_020",
+    "flight_004",
+    "flight_019"
+  ],
+  "validation_flights": [
+    "flight_023",
+    "flight_005",
+    "flight_033",
+    "flight_006",
+    "flight_031"
+  ],
+  "test_flights": [
+    "flight_036",
+    "flight_010",
+    "flight_025",
+    "flight_003",
+    "flight_009"
+  ],
+  "excluded_short_flights": [
+    "flight_027",
+    "flight_035"
+  ],
+  "sample_counts": {
+    "train": 483,
+    "validation": 105,
+    "test": 105
+  },
+  "float_test_metrics": {
+    "mae_ah": 0.0005877999938093126,
+    "rmse_ah": 0.0007119791116565466,
+    "mape_pct": 0.06705066561698914,
+    "r2": 0.9999805835664327
+  },
+  "quantized_test_metrics": {
+    "mae_ah": 0.0006737805670127273,
+    "rmse_ah": 0.0007942412630654871,
+    "mape_pct": 0.07660295069217682,
+    "r2": 0.9999758376142431
+  },
+  "float_consumption_metrics": {
+    "mae_ah": 0.0005877951043657959,
+    "rmse_ah": 0.0007119746878743172,
+    "mape_pct": 1.161083459854126,
+    "r2": 0.9654920907860166
+  },
+  "quantized_consumption_metrics": {
+    "mae_ah": 0.0006737795774824917,
+    "rmse_ah": 0.0007942428928799927,
+    "mape_pct": 1.3350573778152466,
+    "r2": 0.9570566209323296
+  },
+  "data_source": "AirSim simulation",
+  "quantization_engine": "qnnpack",
+  "validated_on_real_data": false
+}

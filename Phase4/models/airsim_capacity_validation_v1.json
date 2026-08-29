@@ -1,0 +1,78 @@
+{
+  "model_version": "airsim_capacity_lstm_v1",
+  "target": "remaining_capacity_ah_10s_ahead",
+  "lookback_seconds": 30,
+  "forecast_horizon_seconds": 10,
+  "features": [
+    "env_temperature_C",
+    "wind_speed_ms",
+    "voltage_V",
+    "current_A",
+    "battery_level_pct",
+    "speed_ms",
+    "altitude_m"
+  ],
+  "train_flights": [
+    "flight_030",
+    "flight_007",
+    "flight_013",
+    "flight_018",
+    "flight_029",
+    "flight_014",
+    "flight_022",
+    "flight_017",
+    "flight_012",
+    "flight_016",
+    "flight_021",
+    "flight_024",
+    "flight_011",
+    "flight_032",
+    "flight_026",
+    "flight_008",
+    "flight_028",
+    "flight_002",
+    "flight_034",
+    "flight_015",
+    "flight_020",
+    "flight_004",
+    "flight_019"
+  ],
+  "validation_flights": [
+    "flight_023",
+    "flight_005",
+    "flight_033",
+    "flight_006",
+    "flight_031"
+  ],
+  "test_flights": [
+    "flight_036",
+    "flight_010",
+    "flight_025",
+    "flight_003",
+    "flight_009"
+  ],
+  "excluded_short_flights": [
+    "flight_027",
+    "flight_035"
+  ],
+  "sample_counts": {
+    "train": 483,
+    "validation": 105,
+    "test": 105
+  },
+  "float_test_metrics": {
+    "mae_ah": 0.0030657416209578514,
+    "rmse_ah": 0.003959489520639181,
+    "mape_pct": 0.39757001399993896,
+    "r2": 0.9993994995595837
+  },
+  "quantized_test_metrics": {
+    "mae_ah": 0.003116218838840723,
+    "rmse_ah": 0.004125118721276522,
+    "mape_pct": 0.40287575125694275,
+    "r2": 0.9993482098028063
+  },
+  "data_source": "AirSim simulation",
+  "quantization_engine": "qnnpack",
+  "validated_on_real_data": false
+}
