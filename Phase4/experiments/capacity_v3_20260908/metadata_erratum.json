@@ -1,0 +1,7 @@
+{
+  "field": "candidate_manifest.prediction_transform",
+  "initial_text": "history_10s * exp(learned_log_residual), no post-hoc correction",
+  "corrected_text": "training_geometric_mean_consumption * exp(LSTM_output), no history anchor or post-hoc correction",
+  "reason": "initial exporter described all architectures as residual; actual selected checkpoint is direct",
+  "training_selection_and_predictions_changed": false
+}

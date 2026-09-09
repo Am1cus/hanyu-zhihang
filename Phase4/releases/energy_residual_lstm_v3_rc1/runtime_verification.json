@@ -1,0 +1,14 @@
+{
+  "windows_reproduced": 1864,
+  "maximum_absolute_difference_ah": 7.473279980962921e-10,
+  "latency_scope": "exported standalone runtime incl. validation, feature derivation, scaling, three LSTMs; no network",
+  "median_ms": 0.8494999999995034,
+  "p99_ms": 1.0303625599998423,
+  "training_range_warning_window_counts": {
+    "wind_speed": 35,
+    "velocity_z": 361
+  },
+  "frozen_weights_bytes": 87289,
+  "all_valid": true,
+  "verification_is_reproduction_not_independent_accuracy_validation": true
+}

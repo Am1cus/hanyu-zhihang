@@ -1,0 +1,3778 @@
+{
+  "residual_core32": {
+    "config": {
+      "name": "residual_core32",
+      "features": "core",
+      "hidden": 32,
+      "residual": true
+    },
+    "selection_score": 2.7929934741673446,
+    "final_epochs": 33,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 37,
+        "best_validation_macro_mape_pct": 2.618385308711957,
+        "elapsed_s": 6.968493958000001,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.974093496045723
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.6871878849313644
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.6860451403561947
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.4518869815363127
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.7747803944827467
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.299180287264585
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.367761232435831
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.6130869033608946
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 2.9551390487477787
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.1358063570824184
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.075933104382312
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 2.9145315062781574
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.2672872300383276
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 2.9835157745858956
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 2.9342926359011647
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.060333139822268
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.097348437621746
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.006425785934934
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.0431195423757993
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 2.883939455980856
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 2.795493443952298
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 2.8662630829508147
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 2.7566251018666454
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 2.8797509475263796
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 2.9325004663064624
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 2.7503375166200215
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 2.8694983243792587
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 2.8633599966426133
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.8550021125421834
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.7043597828564585
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 2.734600475341378
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 2.7885541372302183
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 2.751887969923595
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 2.800295209320749
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 2.7880149716411853
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 2.9612542662577495
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 2.618385308711957
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 2.755670023257128
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 2.6938330970587825
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 2.701669647999762
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 2.8156690719975668
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 2.7582113966344806
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 2.817797559044681
+          },
+          {
+            "epoch": 44,
+            "validation_macro_mape_pct": 2.7651694237691102
+          },
+          {
+            "epoch": 45,
+            "validation_macro_mape_pct": 2.648047408201337
+          },
+          {
+            "epoch": 46,
+            "validation_macro_mape_pct": 2.6483942534677505
+          },
+          {
+            "epoch": 47,
+            "validation_macro_mape_pct": 2.8191962149741205
+          },
+          {
+            "epoch": 48,
+            "validation_macro_mape_pct": 2.744393190630832
+          },
+          {
+            "epoch": 49,
+            "validation_macro_mape_pct": 2.734075573677231
+          },
+          {
+            "epoch": 50,
+            "validation_macro_mape_pct": 2.7584761919983385
+          },
+          {
+            "epoch": 51,
+            "validation_macro_mape_pct": 2.7767248421917543
+          },
+          {
+            "epoch": 52,
+            "validation_macro_mape_pct": 2.769159864314549
+          },
+          {
+            "epoch": 53,
+            "validation_macro_mape_pct": 2.783237726265704
+          },
+          {
+            "epoch": 54,
+            "validation_macro_mape_pct": 2.966389814515375
+          },
+          {
+            "epoch": 55,
+            "validation_macro_mape_pct": 2.711500752131007
+          },
+          {
+            "epoch": 56,
+            "validation_macro_mape_pct": 2.852501627330367
+          },
+          {
+            "epoch": 57,
+            "validation_macro_mape_pct": 2.7598512262458703
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 23,
+        "best_validation_macro_mape_pct": 2.911035975433847,
+        "elapsed_s": 4.668313250000001,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.063555186041372
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.8351412005533154
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.78140628417795
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.306575141389399
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.8000602350463097
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 5.3778450550724655
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.715187671262215
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.046763441377297
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.936776848095019
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.9023131939250297
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.3441021371239827
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.8064729590422113
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.3575103017193277
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.3202454101589263
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.133236655398047
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.2115396381284
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.316505255923879
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.0900719421274463
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.5668736166436146
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.2118675441035136
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.0144336326677243
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.2776458206601085
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 2.911035975433847
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.2932748558248717
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.053749867287997
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.2771287704315895
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 2.9530522977389326
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.1950587042786536
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.9945513844487857
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.971774897144411
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.432993615469395
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.210317373493205
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.1469958745894444
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.029402047184162
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.185079411255923
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.223250276802422
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 2.990489748922593
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.045692870310456
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.20066817540321
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 3.2160484806970175
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 3.2835693250018183
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 3.447500006850172
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 3.1108424693109686
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 33,
+        "best_validation_macro_mape_pct": 2.8495591383562298,
+        "elapsed_s": 4.9920311250000005,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.04693735236125
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.7506844099741756
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.009602393234921
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.480370070151101
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.0420118692945755
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.9472414068994857
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.10435208228932
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.343703327612917
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 2.96425336219173
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.123119073720825
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.0535529422237815
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 2.924578673133496
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 2.873449954040099
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 2.9638976334637968
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 2.9936252654251025
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 2.8800913655602924
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 2.9558800807617853
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 2.9159038608143333
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 2.9253741208864112
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.0926469223915305
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 2.982513008999756
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 2.893748074488343
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.0030594212969004
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.022446826970352
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.176292250198326
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 2.8639747345477042
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.047109135848097
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.0400628783484893
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.9625836439564965
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.9534497918295664
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.038641455104266
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 2.9029613347451337
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 2.8495591383562298
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.2183848070798495
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 2.923912651125951
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.096020142185855
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.023574302470126
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 2.9749744058352237
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.0393681733386146
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 3.0746739448161375
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 3.088162013749191
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 3.00103301855552
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 3.0963642381632512
+          },
+          {
+            "epoch": 44,
+            "validation_macro_mape_pct": 3.2239267917689736
+          },
+          {
+            "epoch": 45,
+            "validation_macro_mape_pct": 2.9207172780327926
+          },
+          {
+            "epoch": 46,
+            "validation_macro_mape_pct": 2.9217153660989146
+          },
+          {
+            "epoch": 47,
+            "validation_macro_mape_pct": 3.0848962055301894
+          },
+          {
+            "epoch": 48,
+            "validation_macro_mape_pct": 3.2219984152725822
+          },
+          {
+            "epoch": 49,
+            "validation_macro_mape_pct": 3.156892102560169
+          },
+          {
+            "epoch": 50,
+            "validation_macro_mape_pct": 3.1233179926496946
+          },
+          {
+            "epoch": 51,
+            "validation_macro_mape_pct": 3.0198061360803092
+          },
+          {
+            "epoch": 52,
+            "validation_macro_mape_pct": 3.109999005448569
+          },
+          {
+            "epoch": 53,
+            "validation_macro_mape_pct": 3.248934983816798
+          }
+        ]
+      }
+    ]
+  },
+  "residual_full16": {
+    "config": {
+      "name": "residual_full16",
+      "features": "full",
+      "hidden": 16,
+      "residual": true
+    },
+    "selection_score": 3.160410995181987,
+    "final_epochs": 21,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 11,
+        "best_validation_macro_mape_pct": 3.571588764274081,
+        "elapsed_s": 2.242333375000001,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.049586266630662
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.771438385206726
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.698193854544485
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.933773465338093
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.958096274619826
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.766955941108178
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.813805183003917
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.8151523849288402
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.030641428275194
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.826414416308272
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.571588764274081
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.823706040951341
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.94369990071691
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 4.018213072248663
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 4.209804937460267
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.344618019873482
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.8796047514794765
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.1719642966510895
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.312579387293345
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 4.256079137306424
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 4.077706310638988
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 4.1103862608464485
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 4.628524555708145
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 4.157150936180595
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.8646478384205367
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 4.126029276014082
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 4.111026445879225
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 4.090718035717101
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 4.015285260723755
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 4.20713883248754
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 4.893496202094462
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 21,
+        "best_validation_macro_mape_pct": 2.8502197913306544,
+        "elapsed_s": 2.670986250000002,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.131362108005364
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.96117142400193
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.690733227333799
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.73551797635428
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.578104941104827
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.514684959280353
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.361443050988656
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.2788496203544
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.291570182480958
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.3828195945077413
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.4993377389362585
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.015806440099387
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.2330276888417977
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.032585720079956
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.4276033844682905
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 2.972553527601878
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.123312338634071
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 2.9460293687515273
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 2.9732425495102284
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 2.997740453717271
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 2.8502197913306544
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 2.985425357343371
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.1092734834989484
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.0357850811863214
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.0534824779630045
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.007874075631249
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 2.8630508377650306
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.206880457952109
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.946028014449847
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.9669817984886544
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.044234536199696
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.270525861581066
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.144380652185725
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 2.9994785817868994
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.052459805067108
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.1612045167303315
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.105683596554207
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.2129726675773833
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.112859161505625
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 2.9788094116580983
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 3.3798749130639782
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 27,
+        "best_validation_macro_mape_pct": 3.0594244299412265,
+        "elapsed_s": 3.068657375000001,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.158189245387652
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.040152402520034
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.9614670743690445
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.835800259715687
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.864359057678873
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.793076421897659
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.6773227938714674
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.6015334388052693
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.838049046972261
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.7817284813187833
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.5034726199644917
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.4550958542123285
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.510286203494078
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.340819783750509
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.61862361779101
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.508060327650773
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.1431099050512374
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.332882425417619
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.399926240322901
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.3607251653244896
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.164392044905297
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.267707595037931
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.141278234628378
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.3698453100332406
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.06358340426618
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.5929399503230224
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.0594244299412265
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.438118278094438
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.394860709708676
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.086669110544584
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.3273027232381516
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.373599610849027
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.3693097282180844
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.708940533922719
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.2163522581053074
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.608196611908326
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.870328939166599
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.457307366761048
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.5526707802104887
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 3.436735723390708
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 3.875483580514339
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 3.4253195491459634
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 3.703130641841507
+          },
+          {
+            "epoch": 44,
+            "validation_macro_mape_pct": 4.073816394677012
+          },
+          {
+            "epoch": 45,
+            "validation_macro_mape_pct": 3.6781437803748664
+          },
+          {
+            "epoch": 46,
+            "validation_macro_mape_pct": 3.9910001537954565
+          },
+          {
+            "epoch": 47,
+            "validation_macro_mape_pct": 3.6240506745565098
+          }
+        ]
+      }
+    ]
+  },
+  "residual_full32": {
+    "config": {
+      "name": "residual_full32",
+      "features": "full",
+      "hidden": 32,
+      "residual": true
+    },
+    "selection_score": 3.400406590399593,
+    "final_epochs": 4,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 4,
+        "best_validation_macro_mape_pct": 3.6090966360704684,
+        "elapsed_s": 2.1848143749999984,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.9816670113444004
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.74778925934233
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.328766563053872
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.6090966360704684
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.0811155784139945
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.874511403998264
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.9101491463310047
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 5.053151607262128
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.631783261019246
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.159820406444543
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 4.722262154521757
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.647524303140493
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 4.951577623981057
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 4.235968895080696
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 4.6061256328113
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 5.00436559196404
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 4.4316229608577045
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.622498749158134
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.141612612087418
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 4.6401883630452065
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 4.148401767490455
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 5.0759325026410425
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 4.8846432998356
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 4.671036239324495
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 19,
+        "best_validation_macro_mape_pct": 2.9216298656455333,
+        "elapsed_s": 3.4855702499999985,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.125806190634725
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.856595352252871
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.9743899283257322
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.415596341519101
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.6935365411619587
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.7373067067210357
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.310620207208431
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.9055767036538116
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.17332952107364
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.5044060573834352
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.245619957603303
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.337848514063998
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.236981898705893
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.0685343398153417
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 2.9891145480318904
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.0126974774467756
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.2232401444296173
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.226591341589421
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 2.9216298656455333
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.1254865372688654
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.588516548593012
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.1553213208685102
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.2145978958342467
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.1841125864791473
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.1810102226977377
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.343514385914748
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.573149762398507
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.0669279630252673
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.4262063665317846
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.71728762025905
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.070563964361325
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.5109345315741978
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.6103587209591987
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.641604054754967
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.0015716031992934
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.1997241664321883
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.2787703136233346
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.667592677210634
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.683292567013576
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 2,
+        "best_validation_macro_mape_pct": 3.6704932694827783,
+        "elapsed_s": 2.1440535000000054,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.037109573175658
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.6704932694827783
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.178808660329836
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.119931965303791
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.9938133321208307
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.379016343481807
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.355518489882011
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.615603903754027
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.390588984113785
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.189657728488469
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 5.084470341809875
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.45222668525467
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 5.065828690713111
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 5.992130860358817
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 5.128287316129924
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.451086020488838
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 4.794148676439785
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.83324941803746
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.223576936035809
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 5.035401340074757
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.8270602627345944
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 4.742820567815054
+          }
+        ]
+      }
+    ]
+  },
+  "residual_full64": {
+    "config": {
+      "name": "residual_full64",
+      "features": "full",
+      "hidden": 64,
+      "residual": true
+    },
+    "selection_score": 3.0792464669786033,
+    "final_epochs": 12,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 12,
+        "best_validation_macro_mape_pct": 3.058431099851217,
+        "elapsed_s": 4.438649792,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.881922053760448
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.381809320380748
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.600159147070279
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.5811099594436833
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.479432634635642
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.2551831536924674
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.68795013048927
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.7534218891497075
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.8733528827636867
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.569734127514579
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.405749766891514
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.058431099851217
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.5852377792738297
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.8455618045955036
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 4.000185382467247
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.108168216332635
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.7721327007085996
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.114154540654644
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.180620768514558
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.7010469196836957
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 4.039347974378922
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.368127803401658
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.668557275399322
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.605595598062127
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.8799320811363787
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 4.188881767936776
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.6349740579514553
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 4.196338217938391
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.5247285151793726
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.8651504258137317
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.863396163064131
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.9485540452142076
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 23,
+        "best_validation_macro_mape_pct": 3.0398061494455577,
+        "elapsed_s": 6.261732084000002,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.7977441290630765
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.7600638915072673
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.8419675724714475
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.360976251635813
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.5546905954313175
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.078077404114815
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.377082350214063
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.7697715717264684
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.3276928562988592
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.090151035378422
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.1488434568674455
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.187353086504019
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.3509004741850257
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.3305983392829157
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.1986504504009488
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.3270301410166843
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.185643000786903
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.553647600199684
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.6880274730778573
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.7022965397010665
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.663489380987804
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.664107347400594
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.0398061494455577
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.477298703583814
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.5580554777989706
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.794966949421186
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.3311624358906364
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.1994272446529415
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.551173370549803
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.580408809728179
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 4.208823692998414
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.343955042561953
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.2534415997014796
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 4.10927804877454
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.518133468969437
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.6228763840931486
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.5376930698115943
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.6956859345217614
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.7201017011996833
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 3.5812983042798665
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 3.9939300409266103
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 3.804431460241701
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 4.115299639449621
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 10,
+        "best_validation_macro_mape_pct": 3.1395021516390353,
+        "elapsed_s": 4.470160917000001,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.8728555193629584
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.644030100304133
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.428185268794927
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.246937158390738
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.713031090826383
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.715992450950435
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.521052446527739
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.241092414706342
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.19074027181184
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.1395021516390353
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.9764988966457997
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.4937744275588316
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.4702106093594383
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 4.22022206285645
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.596302271376197
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.318459920949489
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.98694108093569
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.7352736704131453
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.908401685755508
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 4.067767435376804
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.9132892922390297
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.895945930143372
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.4107654831131065
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.4921942758693136
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 4.040445777121314
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 4.57352256317383
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 4.572765972970424
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.5986641381696423
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 4.339415382185688
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.6960282339366075
+          }
+        ]
+      }
+    ]
+  },
+  "residual_no_thermal32": {
+    "config": {
+      "name": "residual_no_thermal32",
+      "features": "no_thermal",
+      "hidden": 32,
+      "residual": true
+    },
+    "selection_score": 3.5254758809575453,
+    "final_epochs": 4,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 2,
+        "best_validation_macro_mape_pct": 3.714774188247445,
+        "elapsed_s": 2.014991041000002,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.098487585376612
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.714774188247445
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.9192599430227366
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.837888739749745
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.058072375638564
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.581978773727818
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.9439218386368693
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.892796813770216
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.614329649102554
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 5.402549005012174
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 5.020083908591692
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.9600742684798504
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 5.7681046611235836
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 5.2857787458115
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 4.500018001073883
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 5.283789877587229
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 5.277278736675821
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.897941405037789
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.639053104690359
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 5.062789489326897
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 5.586344906800212
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 5.280040784458601
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 15,
+        "best_validation_macro_mape_pct": 3.1563239301427872,
+        "elapsed_s": 3.1852930410000013,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.9698406804092414
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.8473922305631185
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.810174720396909
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.4779956211504297
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.591390613205635
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.3638731914825946
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.3749418863026883
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.198645873139317
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.3058889367663626
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.1655591950127175
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.566750386474277
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.492254741104408
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.280870491263658
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.959010572544289
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.1563239301427872
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.3157235438355315
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.328688240325049
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.5694751799656537
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.3070093083430026
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 4.109450312975513
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.280469653724134
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.890915551310202
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 4.154790228305883
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.4024736027920794
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.8820147885238017
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.8611994879069833
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.824823032020503
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 4.0173312113502515
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 4.096614106387371
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 4.324614771027936
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 4.690364040057753
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.5536852350961388
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 4.217411760644327
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.6059039254816128
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.9814274180029114
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 4,
+        "best_validation_macro_mape_pct": 3.7053295244824036,
+        "elapsed_s": 2.212475167000001,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.061136003129613
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.866252887926713
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.9247549698745505
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.7053295244824036
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.717035249742343
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 5.391613622469793
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.720335706441364
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.540609363858758
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 5.358164088211998
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.123199582389866
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 5.611119716425898
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.9150924776264615
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 4.251294753568361
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 4.937432155040755
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 5.3931517413696195
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.050380029478646
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 4.920264785889216
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.832747582346926
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.334384058849303
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 4.886271640153087
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 4.686459364987125
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 5.134363913255138
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 4.504659973685371
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 4.6433089852527285
+          }
+        ]
+      }
+    ]
+  },
+  "residual_with_altitude32": {
+    "config": {
+      "name": "residual_with_altitude32",
+      "features": "with_altitude",
+      "hidden": 32,
+      "residual": true
+    },
+    "selection_score": 3.667449631378814,
+    "final_epochs": 4,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 4,
+        "best_validation_macro_mape_pct": 3.476764330310499,
+        "elapsed_s": 2.234646749999996,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.057486942375429
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.649867463719589
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.404392364291569
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.476764330310499
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.119822725421939
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.571201561815601
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 3.907320456104228
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 3.7424410665517316
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.265199986506921
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.223579171975745
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 4.18140352418588
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.247774045603019
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 4.051904511195478
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.965851845319983
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.8123050844125728
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.399162202535396
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.7761325874923757
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.315640767876882
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.216000890922494
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.841791529582237
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 4.295614195724638
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 4.550527774873193
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 4.1206816405246505
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 4.0950766082292835
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 4,
+        "best_validation_macro_mape_pct": 3.419432839651276,
+        "elapsed_s": 2.0640957909999997,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 3.9894805784453204
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 3.8434259864023033
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.5733045657535545
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.419432839651276
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.58289332770226
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.398367427006699
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.800483709332239
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.601569954345605
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.749792638041817
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.242702585718773
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 4.224249411071922
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.24593775384118
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 5.52757171046875
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.9991884245422766
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 4.280985413359369
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.393999503953284
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 4.771568182359582
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.098373720795301
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 4.297522659300737
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 4.589756288215558
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 5.354302955185794
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 4.813653459769503
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 4.253213081945212
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 4.704977846750831
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 1,
+        "best_validation_macro_mape_pct": 4.1061517241746675,
+        "elapsed_s": 1.9155215829999932,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.1061517241746675
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.196517555707756
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.3965029336726404
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.276756864917492
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.60454832298601
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 5.122106779627492
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.657691288059488
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 5.139868207045149
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.732990406817665
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 5.061397627914563
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 4.226141285582728
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.210464441854103
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 4.127911437681965
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 4.648837273828005
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 4.35529796516199
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 4.472572241820892
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 4.691632867471067
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 4.584543562038059
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 5.613736183547231
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 5.2754338293069996
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 5.026145589661382
+          }
+        ]
+      }
+    ]
+  },
+  "direct_full32": {
+    "config": {
+      "name": "direct_full32",
+      "features": "full",
+      "hidden": 32,
+      "residual": false
+    },
+    "selection_score": 2.575838595454169,
+    "final_epochs": 17,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 17,
+        "best_validation_macro_mape_pct": 2.5620327392876954,
+        "elapsed_s": 3.2695316670000096,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 7.940767798158338
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 5.257267078895888
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.0995199375075733
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.1177035131249418
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 2.9867424218110368
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 2.9034109285619087
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 2.8449825015359678
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 2.6597105550792106
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 2.592055506109654
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 2.6394779758244242
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 2.730937609401046
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 2.694645003577368
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 2.7295154602721867
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 2.6586257151327493
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 2.6096038378606
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 2.7773327177079987
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 2.5620327392876954
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 2.65742745144401
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 2.6463354892258213
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 2.6985943174346105
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 2.771057478060449
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 2.758919703442362
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 2.7101058018376305
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 2.7321585441719822
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 2.7444885335680604
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 2.63688400352438
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 2.7201722415550145
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.018680330956598
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.770633594147118
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.939547077284177
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 2.716811592800526
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 2.7407992848628733
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 2.76948124058239
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 2.7385381284020025
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 2.674858473645981
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 2.7442401192538606
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 2.790292432296661
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 11,
+        "best_validation_macro_mape_pct": 2.6025303388188603,
+        "elapsed_s": 3.8367746670000002,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 8.305689193927716
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.501094631206886
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.106352278779353
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.059740415231672
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 2.9139537369990287
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 2.7345654268972184
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 2.764573603653725
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 2.6832649330862384
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 2.706507701858756
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 2.730916785341382
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 2.6025303388188603
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 2.6846346051432426
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 2.670900258904948
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 2.729325486161142
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 2.9121189727626566
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 2.6417216776607355
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 2.7621626742019827
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 2.7005223255172366
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 2.7742077996847754
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 2.6708540008229713
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 2.633849329344824
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 2.679897013181139
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 2.6775633993340344
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 2.696440032985706
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 2.8173993350838265
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 2.819510370552518
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 2.699516563543539
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 2.639151864060376
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.924898342948366
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.6392496888825785
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 2.6592183510613574
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 37,
+        "best_validation_macro_mape_pct": 2.5629527082559527,
+        "elapsed_s": 5.15635125,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 6.993137076673413
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 5.158919922282559
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 3.7347253870236434
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 3.5982478118084225
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 3.2414475037523713
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 3.032665855894339
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 2.811717983025558
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 2.799576054513443
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 2.6583893941704972
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.0006175432678552
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 2.8515078218964733
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 2.6883287345545464
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 2.890520684347957
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 2.8133493056385497
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 2.708541655600753
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 2.739192191752617
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 2.7439954236316795
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 2.6761798620107853
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 2.8149938925164095
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 2.7652058028340836
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 2.713820113940371
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 2.594482392643681
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 2.64287723480452
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 2.6459269885783847
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 2.65854225081311
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 2.6785347798481203
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 2.703509934727155
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 2.641240786615498
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 2.6680690706229475
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 2.597779272079865
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 2.5889301570612835
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 2.7413292316142615
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 2.694075486352125
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 2.7143916196308986
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 2.617501518247683
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 2.6776779515938274
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 2.5629527082559527
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 2.777485784347025
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 2.639303417167535
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 2.7601945662945075
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 2.655537936413262
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 2.636033816564992
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 2.729280796076904
+          },
+          {
+            "epoch": 44,
+            "validation_macro_mape_pct": 2.643682955352854
+          },
+          {
+            "epoch": 45,
+            "validation_macro_mape_pct": 2.9279519742768896
+          },
+          {
+            "epoch": 46,
+            "validation_macro_mape_pct": 2.6951627858478484
+          },
+          {
+            "epoch": 47,
+            "validation_macro_mape_pct": 2.6212846716385707
+          },
+          {
+            "epoch": 48,
+            "validation_macro_mape_pct": 2.767179803512947
+          },
+          {
+            "epoch": 49,
+            "validation_macro_mape_pct": 2.659147591676071
+          },
+          {
+            "epoch": 50,
+            "validation_macro_mape_pct": 2.743525513005546
+          },
+          {
+            "epoch": 51,
+            "validation_macro_mape_pct": 2.843158056938613
+          },
+          {
+            "epoch": 52,
+            "validation_macro_mape_pct": 2.6402391669274405
+          },
+          {
+            "epoch": 53,
+            "validation_macro_mape_pct": 2.667470987609866
+          },
+          {
+            "epoch": 54,
+            "validation_macro_mape_pct": 2.84188963207986
+          },
+          {
+            "epoch": 55,
+            "validation_macro_mape_pct": 2.7578023135266703
+          },
+          {
+            "epoch": 56,
+            "validation_macro_mape_pct": 2.6164824531635924
+          },
+          {
+            "epoch": 57,
+            "validation_macro_mape_pct": 2.5997533936330415
+          }
+        ]
+      }
+    ]
+  },
+  "residual_current_only16": {
+    "config": {
+      "name": "residual_current_only16",
+      "features": "current_only",
+      "hidden": 16,
+      "residual": true
+    },
+    "selection_score": 3.1364072742366726,
+    "final_epochs": 21,
+    "seeds": [
+      {
+        "seed": 17,
+        "best_epoch": 21,
+        "best_validation_macro_mape_pct": 3.330887344273708,
+        "elapsed_s": 2.8806109579999912,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.223325633707102
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.217295960661806
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.206482345678145
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.21416831359599
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.1795453323991225
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.16467153182756
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.090691317603167
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.0110421660686635
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 3.8716508353038024
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 3.612029062480169
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.5624779110417704
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.4681797523846782
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.443962712609997
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.658709350524974
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.3536990065478944
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.433981568069167
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.3689849944898738
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.3582663545699836
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.3587463177098416
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.388539645557983
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.330887344273708
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.458137787403435
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.366103392305354
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.4093074624246937
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.5958793638050226
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.4052134205866915
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.706598476745087
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.6199879359634615
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.885421980108159
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.6762512321290997
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.5978590122233585
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.6047916290924205
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.566750095411451
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.994352811415939
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 4.051874029994999
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 4.235510738156482
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 4.171139524124994
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 4.144611041330127
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.944954125731113
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 4.162386704558504
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 4.111129303132079
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "best_epoch": 21,
+        "best_validation_macro_mape_pct": 3.1245545697424495,
+        "elapsed_s": 2.842649624999993,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.29252760784518
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.238214808642281
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.205169416604802
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.201240242185376
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.172287729633798
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.18765383529202
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.171943471103136
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.112856778981642
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.035708911290313
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.137497429627973
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.978118774111132
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 4.047792827085888
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.836856801974954
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.6240343676198576
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.4070607197941234
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.3864309202824976
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.2295400717661806
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.4868637258380404
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.2290548468982507
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.4100072038941684
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 3.1245545697424495
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.313107190175592
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.2280180060450285
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.188943613032874
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.5137979161812836
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.4312284260458012
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.148986601189453
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.4729550867393555
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.5420617377880506
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.369463480925873
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.2622485527606697
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.457096103268337
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 3.366395916224196
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.325437421664816
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.5631165434690475
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 4.042471883448661
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.8159545684447496
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.5635915877872675
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.570814629997931
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 3.87277408895279
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 4.1818383535911945
+          }
+        ]
+      },
+      {
+        "seed": 2026,
+        "best_epoch": 33,
+        "best_validation_macro_mape_pct": 2.9537799086938605,
+        "elapsed_s": 3.9144585829999983,
+        "history": [
+          {
+            "epoch": 1,
+            "validation_macro_mape_pct": 4.219361037188433
+          },
+          {
+            "epoch": 2,
+            "validation_macro_mape_pct": 4.212923858645799
+          },
+          {
+            "epoch": 3,
+            "validation_macro_mape_pct": 4.226497527305662
+          },
+          {
+            "epoch": 4,
+            "validation_macro_mape_pct": 4.239298301389718
+          },
+          {
+            "epoch": 5,
+            "validation_macro_mape_pct": 4.218962229308326
+          },
+          {
+            "epoch": 6,
+            "validation_macro_mape_pct": 4.183459515255363
+          },
+          {
+            "epoch": 7,
+            "validation_macro_mape_pct": 4.239929047771736
+          },
+          {
+            "epoch": 8,
+            "validation_macro_mape_pct": 4.131769585498072
+          },
+          {
+            "epoch": 9,
+            "validation_macro_mape_pct": 4.09186204849251
+          },
+          {
+            "epoch": 10,
+            "validation_macro_mape_pct": 4.018128708950188
+          },
+          {
+            "epoch": 11,
+            "validation_macro_mape_pct": 3.8206153056517467
+          },
+          {
+            "epoch": 12,
+            "validation_macro_mape_pct": 3.83282372580504
+          },
+          {
+            "epoch": 13,
+            "validation_macro_mape_pct": 3.768135660336686
+          },
+          {
+            "epoch": 14,
+            "validation_macro_mape_pct": 3.647369311934206
+          },
+          {
+            "epoch": 15,
+            "validation_macro_mape_pct": 3.624948108158067
+          },
+          {
+            "epoch": 16,
+            "validation_macro_mape_pct": 3.492272773561808
+          },
+          {
+            "epoch": 17,
+            "validation_macro_mape_pct": 3.436679418765428
+          },
+          {
+            "epoch": 18,
+            "validation_macro_mape_pct": 3.357422024766142
+          },
+          {
+            "epoch": 19,
+            "validation_macro_mape_pct": 3.2740403279603876
+          },
+          {
+            "epoch": 20,
+            "validation_macro_mape_pct": 3.15909922169737
+          },
+          {
+            "epoch": 21,
+            "validation_macro_mape_pct": 4.1262130806326995
+          },
+          {
+            "epoch": 22,
+            "validation_macro_mape_pct": 3.3671840528639145
+          },
+          {
+            "epoch": 23,
+            "validation_macro_mape_pct": 3.39282185981667
+          },
+          {
+            "epoch": 24,
+            "validation_macro_mape_pct": 3.196159456091117
+          },
+          {
+            "epoch": 25,
+            "validation_macro_mape_pct": 3.2290522214142903
+          },
+          {
+            "epoch": 26,
+            "validation_macro_mape_pct": 3.112486956131729
+          },
+          {
+            "epoch": 27,
+            "validation_macro_mape_pct": 3.010585476408603
+          },
+          {
+            "epoch": 28,
+            "validation_macro_mape_pct": 3.1127298199149678
+          },
+          {
+            "epoch": 29,
+            "validation_macro_mape_pct": 3.541739020340637
+          },
+          {
+            "epoch": 30,
+            "validation_macro_mape_pct": 3.3328714458913913
+          },
+          {
+            "epoch": 31,
+            "validation_macro_mape_pct": 3.4465031288258166
+          },
+          {
+            "epoch": 32,
+            "validation_macro_mape_pct": 3.510366890347661
+          },
+          {
+            "epoch": 33,
+            "validation_macro_mape_pct": 2.9537799086938605
+          },
+          {
+            "epoch": 34,
+            "validation_macro_mape_pct": 3.187981953707009
+          },
+          {
+            "epoch": 35,
+            "validation_macro_mape_pct": 3.096557847988923
+          },
+          {
+            "epoch": 36,
+            "validation_macro_mape_pct": 3.0799915421542776
+          },
+          {
+            "epoch": 37,
+            "validation_macro_mape_pct": 3.1927365595823316
+          },
+          {
+            "epoch": 38,
+            "validation_macro_mape_pct": 3.1001401652854996
+          },
+          {
+            "epoch": 39,
+            "validation_macro_mape_pct": 3.1042346585378313
+          },
+          {
+            "epoch": 40,
+            "validation_macro_mape_pct": 3.282291772653494
+          },
+          {
+            "epoch": 41,
+            "validation_macro_mape_pct": 3.375501298831966
+          },
+          {
+            "epoch": 42,
+            "validation_macro_mape_pct": 3.200903928376672
+          },
+          {
+            "epoch": 43,
+            "validation_macro_mape_pct": 3.0622130054096974
+          },
+          {
+            "epoch": 44,
+            "validation_macro_mape_pct": 3.2310346300537107
+          },
+          {
+            "epoch": 45,
+            "validation_macro_mape_pct": 3.188918346936228
+          },
+          {
+            "epoch": 46,
+            "validation_macro_mape_pct": 3.2110612746913625
+          },
+          {
+            "epoch": 47,
+            "validation_macro_mape_pct": 3.415127641784994
+          },
+          {
+            "epoch": 48,
+            "validation_macro_mape_pct": 3.207661590005614
+          },
+          {
+            "epoch": 49,
+            "validation_macro_mape_pct": 3.4423753115113636
+          },
+          {
+            "epoch": 50,
+            "validation_macro_mape_pct": 3.2302964259168383
+          },
+          {
+            "epoch": 51,
+            "validation_macro_mape_pct": 3.389495657940998
+          },
+          {
+            "epoch": 52,
+            "validation_macro_mape_pct": 3.215054397195955
+          },
+          {
+            "epoch": 53,
+            "validation_macro_mape_pct": 3.2922971321775547
+          }
+        ]
+      }
+    ]
+  }
+}

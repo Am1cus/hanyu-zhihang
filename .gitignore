@@ -6,3 +6,22 @@ __pycache__/
 *.pyo
 *.png
 **/matplotlib_cache/
+
+# Local runtime, credentials and external original data are not published.
+node_modules/
+target/
+dist/
+.demo-runtime/
+.playwright-cli/
+output/
+*.mv.db
+*.trace.db
+*.rdb
+.env
+.env.*
+!*.example
+**/application-dev.yml
+**/application-local.yml
+demo/data/
+!platform/**/src/**/*.png
+!platform/**/public/**/*.png

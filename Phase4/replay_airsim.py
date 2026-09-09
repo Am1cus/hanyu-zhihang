@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import io
 import json
 import math
@@ -12,6 +13,11 @@ from zipfile import ZipFile
 
 import pandas as pd
 
+# Keep direct-script invocation supported by demo/replay.sh.
+import sys
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 
 ALIASES = {
     "timestamp": ["timestamp", "time", "timestamp_s"],
@@ -21,6 +27,9 @@ ALIASES = {
     "remaining_capacity": ["remaining_capacity_ah", "remaining_capacity_Ah", "capacity_Ah"],
     "temperature": ["ambient_temp", "env_temperature", "env_temperature_C", "temperature_C"],
     "battery_temperature": ["battery_temp", "battery_temperature", "battery_temperature_C"],
+    "wind_x": ["wind_x"],
+    "wind_y": ["wind_y"],
+    "wind_z": ["wind_z"],
     "wind_speed": ["wind_speed", "wind_speed_ms"],
     "wind_direction": ["wind_direction", "wind_direction_deg"],
     "velocity_x": ["velocity_x", "vx"],
@@ -59,6 +68,11 @@ def load_flights(source, member=None):
     flights = []
     if source_path.suffix.lower() == ".zip":
         with ZipFile(source_path) as archive:
+            if any(Path(n).name == "dataset_manifest_batch.json" for n in archive.namelist()):
+                if member:
+                    raise ValueError("新版批次必须按manifest选择架次，不接受--member绕过审计")
+                from Phase4.dataset_v2_replay import load_manifest_flights
+                return load_manifest_flights(archive, hashlib.sha256(source_path.read_bytes()).hexdigest())
             if member:
                 members = [member]
             else:
@@ -126,22 +140,29 @@ def resolve_columns(frame):
 
 
 def prepare_flight(frame, columns, max_samples=None):
+    if "v3_provenance" in frame.attrs:
+        from Phase4.dataset_v2_replay import prepare_v3
+        return prepare_v3(frame, columns, max_samples)
     numeric = pd.DataFrame()
     for canonical, source_column in columns.items():
         if source_column:
             numeric[canonical] = pd.to_numeric(frame[source_column], errors="coerce")
 
-    invalid = [name for name in REQUIRED_COLUMNS if numeric[name].isna().any()]
+    invalid = [name for name in REQUIRED_COLUMNS if not numeric[name].map(lambda x: pd.notna(x) and math.isfinite(x)).all()]
     if invalid:
         raise ValueError("所选架次存在无法转换为数值的必要字段：" + ", ".join(invalid))
 
+    duplicates = numeric[numeric["timestamp"].duplicated(keep=False)]
+    if not duplicates.empty and (duplicates.groupby("timestamp").nunique(dropna=False) > 1).any().any():
+        raise ValueError("同一原始时间戳存在内容冲突，不能自动选择一条覆盖")
     numeric = numeric.sort_values("timestamp").drop_duplicates("timestamp", keep="last")
     if numeric.empty:
         raise ValueError("所选架次没有可回放记录")
     numeric["relative_s"] = numeric["timestamp"] - numeric["timestamp"].iloc[0]
     numeric = numeric.set_index(pd.to_timedelta(numeric["relative_s"], unit="s"))
     numeric = numeric.drop(columns=["timestamp", "relative_s"])
-    numeric = numeric.resample("1s").mean().interpolate(limit_direction="both")
+    # Preserve missing seconds as gaps. Never fabricate future/past telemetry by interpolation.
+    numeric = numeric.resample("1s").mean().dropna(subset=[name for name in REQUIRED_COLUMNS if name != "timestamp"])
 
     if "battery_level" in numeric and numeric["battery_level"].max() <= 1.5:
         numeric["battery_level"] = numeric["battery_level"] * 100.0
@@ -153,7 +174,7 @@ def prepare_flight(frame, columns, max_samples=None):
 def post_json(url, payload):
     request = urllib.request.Request(
         url,
-        data=json.dumps(payload).encode("utf-8"),
+        data=json.dumps(payload, allow_nan=False).encode("utf-8"),
         headers={"Content-Type": "application/json"},
         method="POST",
     )
@@ -181,88 +202,138 @@ def advance_gps_from_ned(latitude, longitude, north_speed_ms, east_speed_ms, sec
     return next_latitude, next_longitude
 
 
+PREPROCESSING_VERSION = "airsim_1hz_mean_no_interpolation_v3"
+
+
+def get_json(url):
+    try:
+        with urllib.request.urlopen(url, timeout=10) as response:
+            result = json.load(response)
+        if result.get("code") != 200:
+            raise RuntimeError(str(result))
+        return result["data"]
+    except urllib.error.URLError as error:
+        raise RuntimeError(f"无法读取后台实验记录: {error}") from error
+
+
+def run_metadata(args, flight_id, frame, prepared, columns):
+    # Fingerprint the complete selected, parsed flight table, not its path or replay clock.
+    source_hash = hashlib.sha256(frame.to_csv(index=False, lineterminator="\n").encode("utf-8")).hexdigest()
+    source_path = Path(args.source).expanduser()
+    bundle_hash = hashlib.sha256(source_path.read_bytes()).hexdigest() if source_path.is_file() else None
+    result = {
+        "flightId": flight_id, "droneId": args.drone_id, "droneCode": args.drone_code,
+        "dataSource": "AIRSIM", "sourceLabel": source_path.name + " / " + flight_id,
+        "sourceSha256": source_hash, "preprocessingVersion": PREPROCESSING_VERSION,
+        "expectedSamples": len(prepared),
+        "configuration": {
+            "sample_period_s": 1, "interpolation": False, "max_samples": args.max_samples,
+            "source_timestamp_origin_s": float(pd.to_numeric(frame[columns["timestamp"]]).min()),
+            "source_bundle_sha256": bundle_hash, "source_hash_definition": "sha256(parsed_flight_csv_utf8)",
+            "soc_source": columns.get("battery_level") or "current_integration_fallback",
+            "capacity_source": columns.get("remaining_capacity"), "latitude_origin": args.latitude,
+            "longitude_origin": args.longitude, "heading_fallback": args.heading,
+            "wind_direction_fallback": args.wind_direction, "nominal_capacity_ah": args.nominal_capacity_ah,
+            "start_battery_pct": args.start_battery_pct,
+            "position_source": "recorded" if columns.get("latitude") and columns.get("longitude") else "integrated_NED_relative",
+        },
+    }
+    if "v3_provenance" in frame.attrs:
+        provenance = frame.attrs["v3_provenance"]
+        result["preprocessingVersion"] = provenance["sampling_contract"]
+        result["sourceSha256"] = provenance["raw_sha256"]
+        result["configuration"].update(provenance)
+        result["configuration"]["source_hash_definition"] = "sha256(raw_10hz_csv_bytes)"
+        result["configuration"]["timestamp_semantics"] = "completed bin [k,k+1), available at k+1"
+    return result
+
+
 def replay(args, flight_id, frame, columns):
     prepared = prepare_flight(frame, columns, args.max_samples)
+    metadata = run_metadata(args, flight_id, frame, prepared, columns)
+    base = args.backend_url.rstrip("/")
+    if args.run_id:
+        run = get_json(base + "/api/runs/" + args.run_id)
+        for key in ["flightId", "droneId", "droneCode", "dataSource", "sourceSha256", "preprocessingVersion", "expectedSamples", "configuration"]:
+            if run.get(key) != metadata[key]:
+                raise ValueError(f"不能续传：已存档的 {key} 与本次输入不一致")
+    else:
+        response = post_json(base + "/api/runs", metadata)
+        if response.get("code") != 200:
+            raise RuntimeError(str(response))
+        run = response["data"]
+    run_id = run["runId"]
+    print(f"实验编号 run_id={run_id}", flush=True)
+    print(f"架次 {flight_id} | {len(frame)} 条原始数据 | {len(prepared)} 条1Hz记录 | 旧记录全部保留", flush=True)
+    started_at = datetime.fromisoformat(run["collectStartTime"])
     battery_level = args.start_battery_pct
-    previous_current = None
-    synthetic_latitude = args.latitude
-    synthetic_longitude = args.longitude
-    started_at = datetime.now().replace(microsecond=0)
-    total = len(prepared)
-
-    print(f"回放架次：{flight_id} | 原始记录：{len(frame)} | 1Hz记录：{total} | 倍速：{args.speed}x")
-    for sequence, (_, row) in enumerate(prepared.iterrows()):
-        current = row_value(row, "current", 0.0)
-        if "battery_level" in prepared.columns:
-            battery_level = min(100.0, max(0.0, row_value(row, "battery_level", battery_level)))
-        elif previous_current is not None:
-            consumed_ah = max(previous_current, 0.0) / 3600.0
-            battery_level = max(0.0, battery_level - consumed_ah / args.nominal_capacity_ah * 100.0)
-        previous_current = current
-
-        velocity_x = row_value(row, "velocity_x", 0.0)
-        velocity_y = row_value(row, "velocity_y", 0.0)
-        velocity_z = row_value(row, "velocity_z", 0.0)
-        speed = math.sqrt(velocity_x ** 2 + velocity_y ** 2 + velocity_z ** 2)
-        temperature = row_value(row, "temperature", 0.0)
-        if columns.get("latitude") and columns.get("longitude"):
-            latitude = row_value(row, "latitude", args.latitude)
-            longitude = row_value(row, "longitude", args.longitude)
-        else:
-            if sequence > 0:
-                synthetic_latitude, synthetic_longitude = advance_gps_from_ned(
-                    synthetic_latitude,
-                    synthetic_longitude,
-                    velocity_x,
-                    velocity_y,
-                )
-            latitude = synthetic_latitude
-            longitude = synthetic_longitude
-
-        if columns.get("heading"):
-            heading = row_value(row, "heading", args.heading)
-        elif abs(velocity_x) + abs(velocity_y) > 0.05:
-            heading = (math.degrees(math.atan2(velocity_y, velocity_x)) + 360.0) % 360.0
-        else:
-            heading = args.heading
-
-        payload = {
-            "droneId": args.drone_id,
-            "droneCode": args.drone_code,
-            "latitude": latitude,
-            "longitude": longitude,
-            "altitude": row_value(row, "altitude", 0.0),
-            "speed": speed,
-            "heading": heading,
-            "voltage": row_value(row, "voltage", 0.0),
-            "current": current,
-            "batteryLevel": round(battery_level, 4),
-            "batteryTemperature": row_value(row, "battery_temperature", temperature),
-            "envTemperature": temperature,
-            "windSpeed": row_value(row, "wind_speed", 0.0),
-            "windDirection": row_value(row, "wind_direction", args.wind_direction),
-            "collectTime": (started_at + timedelta(seconds=sequence)).strftime("%Y-%m-%dT%H:%M:%S"),
-        }
-        if "remaining_capacity" in prepared.columns:
-            payload["remainingCapacityAh"] = row_value(row, "remaining_capacity", 0.0)
-        result = post_json(args.backend_url.rstrip("/") + "/api/telemetry", payload)
-        if result.get("code") != 200:
-            raise RuntimeError(f"遥测上报失败：{result}")
-        print(
-            f"[{sequence + 1:03d}/{total:03d}] "
-            f"SOC={battery_level:6.2f}% temp={temperature:6.1f}°C "
-            f"wind={payload['windSpeed']:4.1f}m/s response=200"
-        )
-        if args.speed > 0:
-            time.sleep(1.0 / args.speed)
-
-    print(f"架次 {flight_id} 回放完成，共上报 {total} 条遥测。")
+    previous_current, previous_source_time = None, None
+    synthetic_latitude, synthetic_longitude = args.latitude, args.longitude
+    try:
+        for sequence, (source_delta, row) in enumerate(prepared.iterrows()):
+            source_time = source_delta.total_seconds()
+            dt = 0 if previous_source_time is None else source_time - previous_source_time
+            current = row_value(row, "current", 0.0)
+            if "battery_level" in prepared.columns:
+                raw_soc = row.get("battery_level")
+                battery_level = None if pd.isna(raw_soc) else float(raw_soc)
+            elif previous_current is not None:
+                battery_level = max(0.0, battery_level - max(previous_current, 0.0) * dt / 3600.0 / args.nominal_capacity_ah * 100.0)
+            previous_current, previous_source_time = current, source_time
+            vx, vy, vz = (row_value(row, name, 0.0) for name in ["velocity_x", "velocity_y", "velocity_z"])
+            temperature = row_value(row, "temperature", 0.0)
+            if columns.get("latitude") and columns.get("longitude"):
+                latitude, longitude = row_value(row, "latitude", args.latitude), row_value(row, "longitude", args.longitude)
+            else:
+                if sequence:
+                    synthetic_latitude, synthetic_longitude = advance_gps_from_ned(synthetic_latitude, synthetic_longitude, vx, vy, dt)
+                latitude, longitude = synthetic_latitude, synthetic_longitude
+            heading = row_value(row, "heading", args.heading) if columns.get("heading") else (
+                (math.degrees(math.atan2(vy, vx)) + 360) % 360 if abs(vx) + abs(vy) > .05 else args.heading)
+            capacity = row.get("remaining_capacity")
+            payload = {
+                "runId": run_id, "flightId": flight_id, "sampleSeq": sequence, "sourceTimeS": source_time,
+                "droneId": args.drone_id, "droneCode": args.drone_code,
+                "latitude": latitude, "longitude": longitude, "altitude": row_value(row, "altitude", 0.0),
+                "speed": math.sqrt(vx*vx + vy*vy + vz*vz), "heading": heading,
+                "voltage": row_value(row, "voltage", 0.0), "current": current,
+                "batteryLevel": None if battery_level is None else round(battery_level, 4),
+                "remainingCapacityAh": None if pd.isna(capacity) else float(capacity),
+                "batteryTemperature": row_value(row, "battery_temperature", temperature),
+                "envTemperature": temperature, "windSpeed": row_value(row, "wind_speed", 0.0),
+                "windDirection": row_value(row, "wind_direction", args.wind_direction),
+                "collectTime": (started_at + timedelta(seconds=source_time)).strftime("%Y-%m-%dT%H:%M:%S"),
+            }
+            if "v3_provenance" in frame.attrs:
+                for column, name in {"velocity_x": "velocityX", "velocity_y": "velocityY", "velocity_z": "velocityZ",
+                                     "wind_x": "windX", "wind_y": "windY", "wind_z": "windZ"}.items():
+                    payload[name] = float(row[column])
+            result = post_json(base + "/api/telemetry", payload)
+            if result.get("code") != 200 or result.get("data") is not True:
+                raise RuntimeError(f"遥测上报失败：{result}")
+            soc_text = "missing" if battery_level is None else f"{battery_level:.2f}%"
+            print(f"[{sequence+1:03d}/{len(prepared):03d}] t={source_time:.0f}s SOC={soc_text} temp={temperature:.1f}°C response=200", flush=True)
+            if args.speed > 0 and sequence >= run.get("sampleCount", 0):
+                time.sleep(1.0 / args.speed)
+        finished = post_json(base + "/api/runs/" + run_id + "/finish", {"status": "COMPLETED"})
+        if finished.get("code") != 200:
+            raise RuntimeError(str(finished))
+        print(f"实验已归档：{run_id}\n指标：{json.dumps(finished['data']['metrics'], ensure_ascii=False)}", flush=True)
+        return finished["data"]
+    except BaseException as error:
+        try:
+            post_json(base + "/api/runs/" + run_id + "/finish", {"status": "INTERRUPTED", "error": str(error)[:500]})
+        except Exception:
+            pass
+        print(f"回放中断；已保存记录不会删除。可用 --run-id {run_id} 重新发送同一份数据。", flush=True)
+        raise
 
 
 def build_parser():
     parser = argparse.ArgumentParser(description="选择AirSim架次，重采样至1Hz并向Spring Boot回放")
     parser.add_argument("source", help="新版/旧版AirSim ZIP、CSV或数据目录")
     parser.add_argument("--flight-id", help="架次ID，也可只写数字；省略时选择数据源中的第一个架次")
+    parser.add_argument("--run-id", help="续传已有实验；会核对数据指纹和预处理配置，同序号同内容重试不会重复推理")
     parser.add_argument("--member", help="兼容旧数据包：直接指定ZIP内CSV成员")
     parser.add_argument("--list", action="store_true", help="列出数据源中的全部架次后退出")
     parser.add_argument("--validate-only", action="store_true", help="只校验所选架次，不连接后台")
@@ -293,7 +364,9 @@ def main():
         if args.list:
             print(f"共发现 {len(flights)} 个架次：")
             for flight_id, frame in flights:
-                print(f"- {flight_id}: {len(frame)} 条原始记录")
+                meta = frame.attrs.get("v3_provenance", {})
+                status = meta.get("quarantine_reason") or meta.get("evaluation_role", "legacy_V2")
+                print(f"- {flight_id}: {len(frame)} 条原始记录 | {status}")
             return
 
         requested_flight_id = args.flight_id or flights[0][0]

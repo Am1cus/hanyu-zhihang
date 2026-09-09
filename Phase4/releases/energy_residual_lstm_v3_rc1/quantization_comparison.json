@@ -1,0 +1,236 @@
+{
+  "default_precision": "FP32",
+  "qnnpack_int8_deployment": false,
+  "scope": "local CPU, batch=1, not edge hardware or end-to-end service",
+  "why_fp32": "Already small and below latency budget; INT8 not selected by tiny test-MAPE fluctuations",
+  "groups": {
+    "test": {
+      "fp32": {
+        "n": 612,
+        "mae_mah": 1.5351202199490086,
+        "rmse_mah": 1.9604959928095664,
+        "mape_pct": 2.8489743125268263,
+        "ape_p90_pct": 5.906829250956511,
+        "bias_mah": -0.05564209573725066,
+        "nonpositive_predictions": 0,
+        "flight_macro_mape_pct": 2.815510227688703,
+        "per_flight": {
+          "F012": {
+            "n": 250,
+            "mae_mah": 1.7122270288503396,
+            "rmse_mah": 2.1882757192496975,
+            "mape_pct": 2.9714277218009575,
+            "ape_p90_pct": 6.257410003819492,
+            "bias_mah": 0.26687936791856903,
+            "nonpositive_predictions": 0
+          },
+          "F018": {
+            "n": 206,
+            "mae_mah": 1.7054082270994924,
+            "rmse_mah": 2.081730041676048,
+            "mape_pct": 2.931985737176292,
+            "ape_p90_pct": 5.354824567214889,
+            "bias_mah": -0.2437587644043687,
+            "nonpositive_predictions": 0
+          },
+          "F022": {
+            "n": 156,
+            "mae_mah": 1.0264277090622622,
+            "rmse_mah": 1.2969145045290744,
+            "mape_pct": 2.54311722408886,
+            "ape_p90_pct": 5.659764515547972,
+            "bias_mah": -0.3240929429714085,
+            "nonpositive_predictions": 0
+          }
+        },
+        "nonoverlap_40s": {
+          "n": 17,
+          "mae_mah": 1.8275095316487993,
+          "rmse_mah": 2.1316368153857397,
+          "mape_pct": 3.3444338140242924,
+          "ape_p90_pct": 5.435676328176143,
+          "bias_mah": 0.7307567789147937,
+          "nonpositive_predictions": 0
+        }
+      },
+      "int8": {
+        "n": 612,
+        "mae_mah": 1.5328959312713482,
+        "rmse_mah": 1.9592694818674343,
+        "mape_pct": 2.8437676703341284,
+        "ape_p90_pct": 5.867043691101356,
+        "bias_mah": -0.07629428992713827,
+        "nonpositive_predictions": 0,
+        "flight_macro_mape_pct": 2.8103374963965755,
+        "per_flight": {
+          "F012": {
+            "n": 250,
+            "mae_mah": 1.709344552534365,
+            "rmse_mah": 2.187041874182903,
+            "mape_pct": 2.9653533723949,
+            "ape_p90_pct": 6.249870171852394,
+            "bias_mah": 0.24176650170520023,
+            "nonpositive_predictions": 0
+          },
+          "F018": {
+            "n": 206,
+            "mae_mah": 1.7038925465153036,
+            "rmse_mah": 2.0818640611496093,
+            "mape_pct": 2.928092978515373,
+            "ape_p90_pct": 5.335044083828672,
+            "bias_mah": -0.26909634883201744,
+            "nonpositive_predictions": 0
+          },
+          "F022": {
+            "n": 156,
+            "mae_mah": 1.0243224821943668,
+            "rmse_mah": 1.2926875276444723,
+            "mape_pct": 2.537566138279452,
+            "ape_p90_pct": 5.643827874853161,
+            "bias_mah": -0.3314095064250838,
+            "nonpositive_predictions": 0
+          }
+        },
+        "nonoverlap_40s": {
+          "n": 17,
+          "mae_mah": 1.8215820142214252,
+          "rmse_mah": 2.1266780935189886,
+          "mape_pct": 3.332073624003794,
+          "ape_p90_pct": 5.416468049182356,
+          "bias_mah": 0.7069406229542616,
+          "nonpositive_predictions": 0
+        }
+      },
+      "maximum_output_difference_mah": 0.09019807848310163
+    },
+    "extra": {
+      "fp32": {
+        "n": 1252,
+        "mae_mah": 1.074934778500027,
+        "rmse_mah": 1.3825549589125283,
+        "mape_pct": 2.260198707171494,
+        "ape_p90_pct": 4.813957597763219,
+        "bias_mah": 0.021055788898240585,
+        "nonpositive_predictions": 0,
+        "flight_macro_mape_pct": 2.2951319281096727,
+        "per_flight": {
+          "F006": {
+            "n": 252,
+            "mae_mah": 1.5452240149805334,
+            "rmse_mah": 1.9101247529384557,
+            "mape_pct": 2.630867185166744,
+            "ape_p90_pct": 5.561724146002308,
+            "bias_mah": -0.3562257127748161,
+            "nonpositive_predictions": 0
+          },
+          "F011": {
+            "n": 329,
+            "mae_mah": 1.1777076404480245,
+            "rmse_mah": 1.4585324068793906,
+            "mape_pct": 2.558116751705724,
+            "ape_p90_pct": 5.22880434414423,
+            "bias_mah": -0.028296008795142647,
+            "nonpositive_predictions": 0
+          },
+          "F016": {
+            "n": 379,
+            "mae_mah": 0.7427582765033519,
+            "rmse_mah": 0.959681935913836,
+            "mape_pct": 1.834931688967488,
+            "ape_p90_pct": 3.9219005681975756,
+            "bias_mah": 0.33290170402550756,
+            "nonpositive_predictions": 0
+          },
+          "F023": {
+            "n": 292,
+            "mae_mah": 0.9844201726190707,
+            "rmse_mah": 1.2060949348654801,
+            "mape_pct": 2.156612086598734,
+            "ape_p90_pct": 4.378189188538138,
+            "bias_mah": -0.0024987383979951103,
+            "nonpositive_predictions": 0
+          }
+        },
+        "nonoverlap_40s": {
+          "n": 34,
+          "mae_mah": 1.0445212960517674,
+          "rmse_mah": 1.3271004880328854,
+          "mape_pct": 2.1861087228428064,
+          "ape_p90_pct": 4.123868092139857,
+          "bias_mah": -0.20320761395252218,
+          "nonpositive_predictions": 0
+        }
+      },
+      "int8": {
+        "n": 1252,
+        "mae_mah": 1.074272095174935,
+        "rmse_mah": 1.3834102914933772,
+        "mape_pct": 2.2568986398232913,
+        "ape_p90_pct": 4.77043668395568,
+        "bias_mah": -0.006621287775140763,
+        "nonpositive_predictions": 0,
+        "flight_macro_mape_pct": 2.2927526962091322,
+        "per_flight": {
+          "F006": {
+            "n": 252,
+            "mae_mah": 1.548785287158427,
+            "rmse_mah": 1.9162429115794386,
+            "mape_pct": 2.6359852202646636,
+            "ape_p90_pct": 5.619573268960049,
+            "bias_mah": -0.3828869637205404,
+            "nonpositive_predictions": 0
+          },
+          "F011": {
+            "n": 329,
+            "mae_mah": 1.1783379739217457,
+            "rmse_mah": 1.4599479197059273,
+            "mape_pct": 2.5579554846479198,
+            "ape_p90_pct": 5.24395328985625,
+            "bias_mah": -0.06279104804513692,
+            "nonpositive_predictions": 0
+          },
+          "F016": {
+            "n": 379,
+            "mae_mah": 0.7376360210831479,
+            "rmse_mah": 0.9539127200590664,
+            "mape_pct": 1.8218046409782513,
+            "ape_p90_pct": 3.8603891611771903,
+            "bias_mah": 0.3160830584288067,
+            "nonpositive_predictions": 0
+          },
+          "F023": {
+            "n": 292,
+            "mae_mah": 0.9844435800833128,
+            "rmse_mah": 1.2059353402924362,
+            "mape_pct": 2.155265438945695,
+            "ape_p90_pct": 4.3835870687571905,
+            "bias_mah": -0.03746425265262931,
+            "nonpositive_predictions": 0
+          }
+        },
+        "nonoverlap_40s": {
+          "n": 34,
+          "mae_mah": 1.0469799942230051,
+          "rmse_mah": 1.332631797095227,
+          "mape_pct": 2.187411122618988,
+          "ape_p90_pct": 4.108606274784692,
+          "bias_mah": -0.23005038494919386,
+          "nonpositive_predictions": 0
+        }
+      },
+      "maximum_output_difference_mah": 0.07892110756220483
+    }
+  },
+  "fp32": {
+    "state_dict_bytes": 83943,
+    "median_ms": 0.9967709999996188,
+    "p99_ms": 1.186700749999243,
+    "n": 300
+  },
+  "int8": {
+    "state_dict_bytes": 45711,
+    "median_ms": 1.1155630000008188,
+    "p99_ms": 1.3942754199994487,
+    "n": 300
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "model_version": "energy_residual_lstm_v3_rc1",
+  "frozen_local": "2026-09-09 12:34:48+0800",
+  "project_method_choice": "motion-feature residual LSTM, 3-seed FP32 ensemble",
+  "candidate": "residual_core32",
+  "research_status": "post_selected_candidate_pending_independent_confirmation",
+  "original_preselected_candidate": "direct_full32",
+  "original_promotion_gate_passed": false,
+  "post_selection_disclosure": "Chosen after inspecting all fixed-candidate test/extra results; old test is exploratory for this decision, not new confirmation",
+  "project_acceptance_passed": false,
+  "validated_on_real_data": false,
+  "online_deployment_changed": false,
+  "architecture": {
+    "input_features": 6,
+    "lookback_seconds": 30,
+    "hidden_size": 32,
+    "layers": 1,
+    "members": 3,
+    "parameters_per_member": 6209,
+    "precision": "FP32"
+  },
+  "features": [
+    "current",
+    "wind_speed",
+    "horizontal_speed",
+    "velocity_z",
+    "relative_air_speed",
+    "wind_along_velocity"
+  ],
+  "training_feature_ranges": {
+    "current": {
+      "min": 8.339341731685641,
+      "max": 27.36415735935305
+    },
+    "wind_speed": {
+      "min": 0.6046615781500156,
+      "max": 9.906639883537554
+    },
+    "horizontal_speed": {
+      "min": 1.8485578498083092e-05,
+      "max": 3.763202144852941
+    },
+    "velocity_z": {
+      "min": -2.630949282646179,
+      "max": 3.5191080570220947
+    },
+    "relative_air_speed": {
+      "min": 0.38035695128871577,
+      "max": 11.863817484291072
+    },
+    "wind_along_velocity": {
+      "min": -9.564377645585056,
+      "max": 9.668632040561796
+    }
+  },
+  "output": "mean(history_charge_drop_10s * exp(each_LSTM_output)); no clipping/calibration/smoothing",
+  "target": "difference of mean charge in two complete bins ten seconds apart, Ah",
+  "sampling_contract": "completed_1hz_bin_means_right_boundary_v1",
+  "supported_data_domain": "AIRSIM_FORMULA_BATTERY",
+  "excluded_claims": [
+    "SOH",
+    "battery aging capacity",
+    "remaining flight time",
+    "remaining range",
+    "validated extreme-cold real flights",
+    "A* savings"
+  ],
+  "members": [
+    {
+      "file": "residual_core32_seed17.pt",
+      "sha256": "3c8a0974c8199293608ef840e55d7099edb185c5d859cc974fb6ac98b5293870",
+      "reference_ah": 0.04829158151610928,
+      "seed": 17,
+      "epochs": 33
+    },
+    {
+      "file": "residual_core32_seed42.pt",
+      "sha256": "698f03bdaaade2f8958162b66060f4027b1872cd760122446b67f391b2c7bf6d",
+      "reference_ah": 0.04829158151610928,
+      "seed": 42,
+      "epochs": 33
+    },
+    {
+      "file": "residual_core32_seed2026.pt",
+      "sha256": "f4816f210c66708748191314cf4f7bcbd920c3668b5e3d33382b13d235f71ed6",
+      "reference_ah": 0.04829158151610928,
+      "seed": 2026,
+      "epochs": 33
+    }
+  ],
+  "source_dataset_sha256": "071a43e240ea48c9c3395cfd2da48642d938b436e63770cbd7411dbf9b7971f4",
+  "source_protocol_sha256": "2d6e00e71f21660fb665f53c78a9f261e73d7b1766f2ed8e71aac9e7626a9b91",
+  "source_selection_sha256": "8149603bf6ca3221619ca09bfb084a1ef9fc57259fc82e7ebfa4f713a223eff9",
+  "source_evaluation_sha256": "ed5905903f17a23d3ab7971e2cb37e93014d3ed6ade6e2a621a49985942f8f26",
+  "artifact_sha256": {
+    "residual_core32_seed17.pt": "3c8a0974c8199293608ef840e55d7099edb185c5d859cc974fb6ac98b5293870",
+    "residual_core32_seed2026.pt": "f4816f210c66708748191314cf4f7bcbd920c3668b5e3d33382b13d235f71ed6",
+    "residual_core32_seed42.pt": "698f03bdaaade2f8958162b66060f4027b1872cd760122446b67f391b2c7bf6d",
+    "runtime.py": "df4d18c12f4474289658c809912e180938919051db12fa74f1bd6b3c0c9e21a3",
+    "scaler.json": "6e384b6686cd01c0fdc2faf49319a041b76b147301c409255482e2dbc23192ab"
+  }
+}

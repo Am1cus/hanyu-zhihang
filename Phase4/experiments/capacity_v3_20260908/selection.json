@@ -1,0 +1,234 @@
+{
+  "selected_lstm": "direct_full32",
+  "selected_comparator": "tree_residual_l7_i120",
+  "lstm_validation_score": 2.575838595454169,
+  "comparator_validation_score": 2.8919356071626665,
+  "selection_basis": "minimum seed-mean development flight-macro MAPE; never test or extra",
+  "final_models": {
+    "residual_core32": [
+      {
+        "file": "residual_core32_seed17.pt",
+        "sha256": "3c8a0974c8199293608ef840e55d7099edb185c5d859cc974fb6ac98b5293870",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 33
+      },
+      {
+        "file": "residual_core32_seed42.pt",
+        "sha256": "698f03bdaaade2f8958162b66060f4027b1872cd760122446b67f391b2c7bf6d",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 33
+      },
+      {
+        "file": "residual_core32_seed2026.pt",
+        "sha256": "f4816f210c66708748191314cf4f7bcbd920c3668b5e3d33382b13d235f71ed6",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 33
+      }
+    ],
+    "residual_full16": [
+      {
+        "file": "residual_full16_seed17.pt",
+        "sha256": "c78793622b67d60ca5dcf93dd48fb2dea90d9bd365cfb38f6ea9704af6cee1c2",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 21
+      },
+      {
+        "file": "residual_full16_seed42.pt",
+        "sha256": "0b540edfdef31e6d31a1fd57d8e96442c962c020a7470d5fd1318a710fc1b23a",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 21
+      },
+      {
+        "file": "residual_full16_seed2026.pt",
+        "sha256": "f32765acdaad2b5aac50dfee642c1f5c3209cf397fa7b90d8da6c200ff12c0a4",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 21
+      }
+    ],
+    "residual_full32": [
+      {
+        "file": "residual_full32_seed17.pt",
+        "sha256": "07ed9f736c93261e2e547b4870492196c1b21aa759f03939fb7f0ad4854d238e",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 4
+      },
+      {
+        "file": "residual_full32_seed42.pt",
+        "sha256": "88c5499dae20249199702b26ca1280db7ead482c469704bb2964889366d14b9c",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 4
+      },
+      {
+        "file": "residual_full32_seed2026.pt",
+        "sha256": "9a8a565a6b152c75761560575a9902dbb7c0bc507d2b734312f29cc4a2e9f2c0",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 4
+      }
+    ],
+    "residual_full64": [
+      {
+        "file": "residual_full64_seed17.pt",
+        "sha256": "43e580125ad96a454a0159b2044defd1c96961a0e5c3afbb99418b1ed7983243",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 12
+      },
+      {
+        "file": "residual_full64_seed42.pt",
+        "sha256": "e584d589573e4e4e181bb3c60537aa18fa280ba3f56f46555dcd91d58f038130",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 12
+      },
+      {
+        "file": "residual_full64_seed2026.pt",
+        "sha256": "c55bcc427e1f0bc1de34ffe5234249c7c106de4cecf830f7484b11edff73b11b",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 12
+      }
+    ],
+    "residual_no_thermal32": [
+      {
+        "file": "residual_no_thermal32_seed17.pt",
+        "sha256": "d09a9b947a1fddccb3a1680e6e30cbb5cb4821000e4f7175db772b8227d774cf",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 4
+      },
+      {
+        "file": "residual_no_thermal32_seed42.pt",
+        "sha256": "b5e73078e85add176fadddffc6ccb0d4033c528bccc8c80e881e29d8ac1076d0",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 4
+      },
+      {
+        "file": "residual_no_thermal32_seed2026.pt",
+        "sha256": "ec154c8c7f0c4811a72a434fefdc519fc1ad2545335815a2b5b499575614a384",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 4
+      }
+    ],
+    "residual_with_altitude32": [
+      {
+        "file": "residual_with_altitude32_seed17.pt",
+        "sha256": "6ef1231e695d88e09f8617ee73a54300ee55485eecb6bfd07e31cd4fd04b6fc1",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 4
+      },
+      {
+        "file": "residual_with_altitude32_seed42.pt",
+        "sha256": "a325640cd69fbb1952ccfd5b0b4366837e23a565552808c3d5b7b0991e1c8463",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 4
+      },
+      {
+        "file": "residual_with_altitude32_seed2026.pt",
+        "sha256": "26da15b1716f7086761def391edabfaf51acf31b0d73f1a53427df7a019f6e85",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 4
+      }
+    ],
+    "direct_full32": [
+      {
+        "file": "direct_full32_seed17.pt",
+        "sha256": "ec1ba3c9c1adc7cd8f14d77850b3cbe6fd05edee6acbf7dd2bbfc5f5b48bcbb8",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 17
+      },
+      {
+        "file": "direct_full32_seed42.pt",
+        "sha256": "7524b17acb7465bb1f10f4eb6234dacf0ea1f871ec1e471c6534c6049dbb2f9e",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 17
+      },
+      {
+        "file": "direct_full32_seed2026.pt",
+        "sha256": "f9842a2e7c44915ed61bb328dbd13c6f6e1fba4b67e6856164ab01ad13ae2729",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 17
+      }
+    ],
+    "residual_current_only16": [
+      {
+        "file": "residual_current_only16_seed17.pt",
+        "sha256": "01ae19260d183a0a2da684511a13a7855378112f6563bb970f1339881cd1555b",
+        "reference_ah": 0.04829158151610928,
+        "seed": 17,
+        "epochs": 21
+      },
+      {
+        "file": "residual_current_only16_seed42.pt",
+        "sha256": "55a30fac4694a3cf517691c41deb85e74a3621f69ad3776ceb799c3f472755ae",
+        "reference_ah": 0.04829158151610928,
+        "seed": 42,
+        "epochs": 21
+      },
+      {
+        "file": "residual_current_only16_seed2026.pt",
+        "sha256": "3f92fd9df4268da15c00aac0cc616413ea31d30287a49018c9f66e5f47d9e24c",
+        "reference_ah": 0.04829158151610928,
+        "seed": 2026,
+        "epochs": 21
+      }
+    ]
+  },
+  "artifact_sha256": {
+    "direct_full32_scaler.joblib": "08a2356071b10464028cc4485469f23a16f9a88ee6736dd37bdcc77269056fce",
+    "direct_full32_seed17.pt": "ec1ba3c9c1adc7cd8f14d77850b3cbe6fd05edee6acbf7dd2bbfc5f5b48bcbb8",
+    "direct_full32_seed2026.pt": "f9842a2e7c44915ed61bb328dbd13c6f6e1fba4b67e6856164ab01ad13ae2729",
+    "direct_full32_seed42.pt": "7524b17acb7465bb1f10f4eb6234dacf0ea1f871ec1e471c6534c6049dbb2f9e",
+    "residual_core32_scaler.joblib": "30c96d5b0eff9be5e74837752684d2dade7c892c447f2760c6e279e8292fb15e",
+    "residual_core32_seed17.pt": "3c8a0974c8199293608ef840e55d7099edb185c5d859cc974fb6ac98b5293870",
+    "residual_core32_seed2026.pt": "f4816f210c66708748191314cf4f7bcbd920c3668b5e3d33382b13d235f71ed6",
+    "residual_core32_seed42.pt": "698f03bdaaade2f8958162b66060f4027b1872cd760122446b67f391b2c7bf6d",
+    "residual_current_only16_scaler.joblib": "d1cfb6b1897ba9217fc34537c4d867fc67a0159ff5b8afba076808ede587b680",
+    "residual_current_only16_seed17.pt": "01ae19260d183a0a2da684511a13a7855378112f6563bb970f1339881cd1555b",
+    "residual_current_only16_seed2026.pt": "3f92fd9df4268da15c00aac0cc616413ea31d30287a49018c9f66e5f47d9e24c",
+    "residual_current_only16_seed42.pt": "55a30fac4694a3cf517691c41deb85e74a3621f69ad3776ceb799c3f472755ae",
+    "residual_full16_scaler.joblib": "08a2356071b10464028cc4485469f23a16f9a88ee6736dd37bdcc77269056fce",
+    "residual_full16_seed17.pt": "c78793622b67d60ca5dcf93dd48fb2dea90d9bd365cfb38f6ea9704af6cee1c2",
+    "residual_full16_seed2026.pt": "f32765acdaad2b5aac50dfee642c1f5c3209cf397fa7b90d8da6c200ff12c0a4",
+    "residual_full16_seed42.pt": "0b540edfdef31e6d31a1fd57d8e96442c962c020a7470d5fd1318a710fc1b23a",
+    "residual_full32_scaler.joblib": "08a2356071b10464028cc4485469f23a16f9a88ee6736dd37bdcc77269056fce",
+    "residual_full32_seed17.pt": "07ed9f736c93261e2e547b4870492196c1b21aa759f03939fb7f0ad4854d238e",
+    "residual_full32_seed2026.pt": "9a8a565a6b152c75761560575a9902dbb7c0bc507d2b734312f29cc4a2e9f2c0",
+    "residual_full32_seed42.pt": "88c5499dae20249199702b26ca1280db7ead482c469704bb2964889366d14b9c",
+    "residual_full64_scaler.joblib": "08a2356071b10464028cc4485469f23a16f9a88ee6736dd37bdcc77269056fce",
+    "residual_full64_seed17.pt": "43e580125ad96a454a0159b2044defd1c96961a0e5c3afbb99418b1ed7983243",
+    "residual_full64_seed2026.pt": "c55bcc427e1f0bc1de34ffe5234249c7c106de4cecf830f7484b11edff73b11b",
+    "residual_full64_seed42.pt": "e584d589573e4e4e181bb3c60537aa18fa280ba3f56f46555dcd91d58f038130",
+    "residual_no_thermal32_scaler.joblib": "b6433e9737cf82b3df2f4dd3405a57fcbf16d9833f2569f009938f936cc151c3",
+    "residual_no_thermal32_seed17.pt": "d09a9b947a1fddccb3a1680e6e30cbb5cb4821000e4f7175db772b8227d774cf",
+    "residual_no_thermal32_seed2026.pt": "ec154c8c7f0c4811a72a434fefdc519fc1ad2545335815a2b5b499575614a384",
+    "residual_no_thermal32_seed42.pt": "b5e73078e85add176fadddffc6ccb0d4033c528bccc8c80e881e29d8ac1076d0",
+    "residual_with_altitude32_scaler.joblib": "0191fba0e01a0998e0a24c63fbcf338387a080a5349373a1b5152ac1d5aaee54",
+    "residual_with_altitude32_seed17.pt": "6ef1231e695d88e09f8617ee73a54300ee55485eecb6bfd07e31cd4fd04b6fc1",
+    "residual_with_altitude32_seed2026.pt": "26da15b1716f7086761def391edabfaf51acf31b0d73f1a53427df7a019f6e85",
+    "residual_with_altitude32_seed42.pt": "a325640cd69fbb1952ccfd5b0b4366837e23a565552808c3d5b7b0991e1c8463",
+    "ridge_residual_a1.joblib": "952ad9c3efd2cd6342d4103d8408ab6788aade02f7e90bb7b4f07d3212d2edc8",
+    "ridge_residual_a10.joblib": "90b37e8eeb68b20fea311e543bc2690e7282cd09270f19df82315e63cb2acaec",
+    "ridge_residual_a100.joblib": "12f6ca4694dc3e33cf83b7463ffe886ec3d51d37dbdd3f2414063ebb997eddc3",
+    "tree_residual_l15_i120.joblib": "fca9d23c7b2528ac9f8884f25326ff9a861c02d9e62dc1f422fade8a28048f53",
+    "tree_residual_l15_i60.joblib": "6213e0ade948a447533b9f269081056b3a7113b79f2e12a56ee8f583890f3b01",
+    "tree_residual_l7_i120.joblib": "da57244031b65ae965afe91a42f52f9dac89942675e111ef96d737730f489dd6",
+    "tree_residual_l7_i60.joblib": "ac35dcfb2f0191fafc0e6e23ad97009ac33265ef5125a495257ba67c1c0ce0a7"
+  }
+}

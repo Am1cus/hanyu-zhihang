@@ -1,0 +1,67 @@
+{
+  "status": "prospective_proposal_no_confirmation_data_received",
+  "frozen_release_manifest_sha256": "41f95daef1d5aa7b9f25a385b69a0f76f02b0d7604b7ead2b3b75dab1afaf6b2",
+  "old_protocol_and_failed_gate_remain_unchanged": true,
+  "purpose": "practical utility confirmation, not a claim of superiority to every ML method or original whole-project acceptance",
+  "recommended_new_flights": 24,
+  "matrix": {
+    "ambient_temperatures_c": [
+      0,
+      -10,
+      -20,
+      -30
+    ],
+    "tracks": [
+      "cruise",
+      "variable",
+      "low_alt"
+    ],
+    "new_seeds_per_cell": 2
+  },
+  "before_collection": [
+    "provide collector and formula-battery code/parameters/hash",
+    "freeze independent wind/payload schedules, avoiding the old fixed pairing",
+    "confirm airborne/landed state and actual source-clock dt"
+  ],
+  "must_not_reuse": {
+    "zip_sha256": "071a43e240ea48c9c3395cfd2da48642d938b436e63770cbd7411dbf9b7971f4",
+    "raw_sha256": [
+      "10038042b881784d273e2db2f137fe8445c98438e549ff34716b8e941a2411e7",
+      "5c86beef9f402199ad90be77692ec908211c1d008c84ef844c9ca2940bd193ec",
+      "4ee5a37d4fb07b11fb2ddb6cc5d6a6d55e91bb1af66de1ab87cb62c2978c6e89",
+      "78d62fcc87c89bc435a8dd05172c2c66207ddfe74385731485f8612470e2189f",
+      "47e2a4c496cd5b562ec2f70505b0bef1804a655a86b4c123e2a4f0d6a0d2e984",
+      "b278bb772d17d18ffef395e61c2ee0ba0948f8c7d18b84948d5c4d33808ee156",
+      "5b5f92b4973e26066310b83089c0827572165208a2cb08c57169ee2198ccaa2c",
+      "0717ce7ffb1051a0b48e3ad8bddebe7f30b19816f358b4533d5060c5a33334c5",
+      "cdff73a628edfaf968030708da2a153082a561721464b2156474619b1eb4cc37",
+      "12b0670bd28af9f41c9ae91f544465ab0f8bcb01c3e821e18a6fcc65d3ef7196",
+      "c68208d1ed0f9363bc09e8a801df87a63c1f2b113d291290da056b7e51813c8d",
+      "2e3747cfdce0380f93faeca2b620ca6611c2c555892467f0cb9eb10d0ad60c38",
+      "55eb04274a2c794eccd52a3264b8293ed40a98887af2b5bddccf9d2715c20af9",
+      "9393a18320fd4330b8a8a6741a65522e6bf7795ba59e3621b2d546fcb46c00c5",
+      "b1608f2804de89a004fdf945d6d36cbabf43880c7e2060ed1c78f5252752f780",
+      "81e5d8e789678165ae8e0c72fb21416a7d3f4163a453769e29e56d67bbe35124",
+      "920c8dc836ae93195eea0a08a9f0a7471f159bd00e23bfdc0f23d695a97b1ad5",
+      "967c94be3a268121b909d4eee76eea8804037d12adf45dd0d8ae533538df62f5",
+      "8ab02a0dac29ca377f13a5a8b59712d6236bad5726704a02878fa7efa0a1ad9a",
+      "77092fefbbb7890ece0a017fba94ff1a0e853a1fc13e1671d22fab36f82acfdb"
+    ]
+  },
+  "no_fitting_or_selection_on_confirmation": true,
+  "fixed_comparators": [
+    "history_10s",
+    "mean_current_20s",
+    "tree_residual_l7_i120",
+    "tree_residual_l15_i120"
+  ],
+  "proposed_utility_criteria_not_original_acceptance": {
+    "flight_macro_mape_pct_max": 5,
+    "relative_improvement_over_history_and_mean20_pct_min": 15,
+    "macro_mape_disadvantage_vs_each_fixed_tree_percentage_points_max": 0.3,
+    "minimum_flights_beating_history": 18,
+    "local_runtime_p99_ms_max": 100
+  },
+  "report_all_failures_and_conditions": true,
+  "independent_real_cold_battery_validation_still_required": true
+}

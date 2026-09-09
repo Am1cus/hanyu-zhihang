@@ -1,0 +1,42 @@
+{
+  "scope": "same five held-out flights and 105 overlapping windows; no fitting",
+  "test_flights": [
+    "flight_036",
+    "flight_010",
+    "flight_025",
+    "flight_003",
+    "flight_009"
+  ],
+  "sample_count": 105,
+  "target": "next_10s_consumption_ah",
+  "dataset_sha256": "e5586d4a4c7b723baa84051935345d4c46099cf9011a68142c8a453f23a8cd1e",
+  "model_sha256": "9d825cef18b7cd917bc4b62752fccc74f20ae2fce0001922a2903d1027c650cd",
+  "quantization_engine": "qnnpack",
+  "methods": [
+    {
+      "id": "lstm_int8",
+      "name": "LSTM V2 · INT8",
+      "mae_ah": 0.0006737795774824917,
+      "rmse_ah": 0.0007942428928799927,
+      "mape_pct": 1.3350573778152466,
+      "r2": 0.9570566209323296
+    },
+    {
+      "id": "current_times_horizon",
+      "name": "当前电流 × 10秒",
+      "mae_ah": 0.0008999877341858583,
+      "rmse_ah": 0.0010570298083330703,
+      "mape_pct": 1.7258631824769906,
+      "r2": 0.9239386547787037
+    },
+    {
+      "id": "last_10s_consumption",
+      "name": "延续过去10秒耗电",
+      "mae_ah": 0.00046502640277873273,
+      "rmse_ah": 0.0005641778558393959,
+      "mape_pct": 0.8925219032427225,
+      "r2": 0.9783318614068301
+    }
+  ],
+  "conclusion": "LSTM has not beaten last-10s persistence on this split. Simulation accuracy is not real-flight validation."
+}

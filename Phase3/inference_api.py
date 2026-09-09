@@ -1,6 +1,8 @@
 import json
+import hashlib
 import os
 import time
+import logging
 from contextlib import asynccontextmanager
 from typing import List, Optional
 
@@ -11,6 +13,7 @@ import torch
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from torch import nn
+from Phase4.energy_v3_service import EnergyV3Service, unavailable as energy_unavailable
 
 from Phase4.flight_time_model import (
     FEATURE_COLUMNS as FLIGHT_TIME_FEATURE_COLUMNS,
@@ -66,7 +69,18 @@ FLIGHT_TIME_SCALER = None
 AIRSIM_CAPACITY_MODEL = None
 AIRSIM_CAPACITY_SCALER = None
 AIRSIM_CAPACITY_REPORT = None
+AIRSIM_CAPACITY_MODEL_SHA256 = None
+AIRSIM_CAPACITY_SCALER_SHA256 = None
 CAPACITY_VALIDATION_CASES = []
+ENERGY_V3 = None
+ENERGY_V3_LOAD_ERROR = None
+
+
+class EnergyV3Request(BaseModel):
+    drone_id: int
+    sampling_contract: str
+    data_source: str
+    samples: List[dict] = Field(max_length=30)
 
 
 class MultiFeatureLSTM(nn.Module):
@@ -157,6 +171,8 @@ class AirSimCapacityResponse(BaseModel):
     forecast_horizon_s: int = AIRSIM_CAPACITY_HORIZON
     inference_time_ms: Optional[float] = None
     model_version: str = AIRSIM_CAPACITY_MODEL_VERSION
+    model_sha256: Optional[str] = None
+    scaler_sha256: Optional[str] = None
     test_mape_pct: Optional[float] = None
     reason: Optional[str] = None
     data_source: str = "AirSim simulation"
@@ -214,6 +230,7 @@ def load_optional_flight_time_assets():
 
 
 def load_airsim_capacity_assets():
+    global AIRSIM_CAPACITY_MODEL_SHA256, AIRSIM_CAPACITY_SCALER_SHA256
     if not os.path.exists(AIRSIM_CAPACITY_MODEL_PATH) or not os.path.exists(AIRSIM_CAPACITY_SCALER_PATH):
         raise FileNotFoundError("未找到AirSim容量模型或标准化器")
     select_quantization_engine()
@@ -226,6 +243,10 @@ def load_airsim_capacity_assets():
     state_dict = torch.load(AIRSIM_CAPACITY_MODEL_PATH, map_location="cpu", weights_only=False)
     quantized_model.load_state_dict(state_dict)
     quantized_model.eval()
+    with open(AIRSIM_CAPACITY_MODEL_PATH, "rb") as model_file:
+        AIRSIM_CAPACITY_MODEL_SHA256 = hashlib.sha256(model_file.read()).hexdigest()
+    with open(AIRSIM_CAPACITY_SCALER_PATH, "rb") as scaler_file:
+        AIRSIM_CAPACITY_SCALER_SHA256 = hashlib.sha256(scaler_file.read()).hexdigest()
     report = None
     if os.path.exists(AIRSIM_CAPACITY_REPORT_PATH):
         with open(AIRSIM_CAPACITY_REPORT_PATH, encoding="utf-8") as report_file:
@@ -318,12 +339,20 @@ async def lifespan(application):
     global MODEL, SCALER, FLIGHT_TIME_MODEL, FLIGHT_TIME_SCALER
     global AIRSIM_CAPACITY_MODEL, AIRSIM_CAPACITY_SCALER, AIRSIM_CAPACITY_REPORT
     global CAPACITY_VALIDATION_CASES
+    global ENERGY_V3, ENERGY_V3_LOAD_ERROR
     torch.set_num_threads(1)
     MODEL = load_quantized_model()
     SCALER = load_scaler()
     CAPACITY_VALIDATION_CASES = build_capacity_validation_cases(SCALER)
     FLIGHT_TIME_MODEL, FLIGHT_TIME_SCALER = load_optional_flight_time_assets()
     AIRSIM_CAPACITY_MODEL, AIRSIM_CAPACITY_SCALER, AIRSIM_CAPACITY_REPORT = load_airsim_capacity_assets()
+    try:
+        ENERGY_V3 = EnergyV3Service()
+        ENERGY_V3_LOAD_ERROR = None
+    except Exception:
+        ENERGY_V3 = None
+        ENERGY_V3_LOAD_ERROR = "candidate_artifacts_unavailable_or_integrity_failed"
+        logging.exception("V3 candidate unavailable; legacy models remain available")
     yield
     MODEL = None
     SCALER = None
@@ -333,6 +362,7 @@ async def lifespan(application):
     AIRSIM_CAPACITY_SCALER = None
     AIRSIM_CAPACITY_REPORT = None
     CAPACITY_VALIDATION_CASES = []
+    ENERGY_V3 = None
 
 
 app = FastAPI(
@@ -357,7 +387,38 @@ def health_check():
         "airsim_capacity_test_mape_pct": airsim_metrics.get("mape_pct"),
         "airsim_capacity_forecast_horizon_s": AIRSIM_CAPACITY_HORIZON,
         "quantization_engine": torch.backends.quantized.engine,
+        "energy_v3_available": ENERGY_V3 is not None,
+        "energy_v3_status": "frozen_candidate_pending_independent_confirmation",
+        "energy_v3_load_error": ENERGY_V3_LOAD_ERROR,
     }
+
+
+@app.post("/api/predict/energy-v3")
+def predict_energy_v3(request: EnergyV3Request):
+    if ENERGY_V3 is None:
+        return energy_unavailable(ENERGY_V3_LOAD_ERROR or "candidate_not_loaded")
+    return ENERGY_V3.predict(request.model_dump())
+
+
+@app.get("/api/models/energy-v3/report")
+def energy_v3_report():
+    if ENERGY_V3 is None:
+        raise HTTPException(status_code=503, detail="V3候选未加载")
+    return ENERGY_V3.report()
+
+
+@app.get("/api/models/airsim-capacity/report")
+def airsim_capacity_report():
+    if AIRSIM_CAPACITY_REPORT is None:
+        raise HTTPException(status_code=503, detail="AirSim模型验证报告未加载")
+    result = dict(AIRSIM_CAPACITY_REPORT)
+    result["model_sha256"] = AIRSIM_CAPACITY_MODEL_SHA256
+    result["scaler_sha256"] = AIRSIM_CAPACITY_SCALER_SHA256
+    baseline_path = os.path.join(PHASE4_DIR, "reports", "capacity_baselines_v2.json")
+    if os.path.exists(baseline_path):
+        with open(baseline_path, encoding="utf-8") as baseline_file:
+            result["baseline_comparison"] = json.load(baseline_file)
+    return result
 
 
 @app.post("/predict", response_model=PredictionResponse)
@@ -434,8 +495,14 @@ def predict_airsim_capacity(request: FlightTimeRequest):
             valid=False,
             reason=f"需要最近{AIRSIM_CAPACITY_LOOKBACK}条1Hz遥测",
         )
+    timestamps = np.asarray([sample.timestamp_s for sample in request.samples], dtype=float)
+    if not np.isfinite(timestamps).all() or not np.allclose(np.diff(timestamps), 1.0, rtol=0, atol=1e-6):
+        return AirSimCapacityResponse(valid=False, reason="non_contiguous_window: 需要连续30条1Hz数据")
+    feature_array = np.asarray([[getattr(sample, name) for name in AIRSIM_CAPACITY_FEATURE_COLUMNS] for sample in request.samples], dtype=float)
+    if not np.isfinite(feature_array).all():
+        return AirSimCapacityResponse(valid=False, reason="non_finite_features")
     current_capacity = request.samples[-1].remaining_capacity_Ah
-    if current_capacity is None:
+    if current_capacity is None or not np.isfinite(current_capacity):
         return AirSimCapacityResponse(
             valid=False,
             reason="缺少当前AirSim实测剩余容量",
@@ -452,11 +519,18 @@ def predict_airsim_capacity(request: FlightTimeRequest):
         predicted_consumption = AIRSIM_CAPACITY_MODEL(input_tensor).item()
     inference_time_ms = (time.perf_counter() - start_time) * 1000
     predicted_capacity = current_capacity - predicted_consumption
+    if not np.isfinite(predicted_consumption) or predicted_consumption < 0 or predicted_capacity < 0:
+        return AirSimCapacityResponse(
+            valid=False, reason="non_physical_model_output: 原始输出超出有效容量范围，未做截断修正",
+            model_sha256=AIRSIM_CAPACITY_MODEL_SHA256, scaler_sha256=AIRSIM_CAPACITY_SCALER_SHA256,
+        )
     metrics = (AIRSIM_CAPACITY_REPORT or {}).get("quantized_test_metrics", {})
     return AirSimCapacityResponse(
         valid=True,
         predicted_capacity_Ah=round(predicted_capacity, 6),
         predicted_consumption_Ah=round(predicted_consumption, 6),
+        model_sha256=AIRSIM_CAPACITY_MODEL_SHA256,
+        scaler_sha256=AIRSIM_CAPACITY_SCALER_SHA256,
         current_measured_capacity_Ah=round(current_capacity, 6),
         inference_time_ms=round(inference_time_ms, 4),
         test_mape_pct=metrics.get("mape_pct"),

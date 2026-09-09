@@ -1,0 +1,5234 @@
+{
+  "selected_lstm": "direct_full32",
+  "selected_comparator": "tree_residual_l7_i120",
+  "prior_test_exposure": "dataset audited and legacy V2 evaluated previously; these are held-out V3 development flights, NOT a pristine new confirmation dataset",
+  "groups": {
+    "test": {
+      "flights": [
+        "F012",
+        "F018",
+        "F022"
+      ],
+      "methods": {
+        "history_10s": {
+          "n": 612,
+          "mae_mah": 2.7180152171444716,
+          "rmse_mah": 3.283226527860196,
+          "mape_pct": 5.408457164253297,
+          "ape_p90_pct": 11.203768027301653,
+          "bias_mah": 0.14441760723577055,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.757926993989938,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.4959048972899067,
+              "rmse_mah": 3.0967925961836564,
+              "mape_pct": 4.329312704405959,
+              "ape_p90_pct": 8.716636044009988,
+              "bias_mah": 0.257543488992817,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.4039843196999064,
+              "rmse_mah": 2.9303725740202218,
+              "mape_pct": 4.166211142431321,
+              "ape_p90_pct": 8.027800587884876,
+              "bias_mah": 0.13266982150172968,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 3.4886430686651235,
+              "rmse_mah": 3.9472730737717088,
+              "mape_pct": 8.778257135132536,
+              "ape_p90_pct": 15.097361407187911,
+              "bias_mah": -0.021360768264544756,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 3.1129717740071365,
+            "rmse_mah": 3.610501112652171,
+            "mape_pct": 6.262169737644754,
+            "ape_p90_pct": 11.432664751804795,
+            "bias_mah": 2.4418811990223332,
+            "nonpositive_predictions": 0
+          }
+        },
+        "current_10s": {
+          "n": 612,
+          "mae_mah": 4.399289988742634,
+          "rmse_mah": 5.611905719071107,
+          "mape_pct": 8.477012928744449,
+          "ape_p90_pct": 17.86662583433629,
+          "bias_mah": 0.05796058779517071,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 8.729296588556387,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 4.326717563519363,
+              "rmse_mah": 5.720473195670053,
+              "mape_pct": 7.518321661004191,
+              "ape_p90_pct": 17.359702854514673,
+              "bias_mah": 0.14904300455734676,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 4.5716007685691995,
+              "rmse_mah": 5.848018603119151,
+              "mape_pct": 7.917977456256381,
+              "ape_p90_pct": 15.858512729389336,
+              "bias_mah": -0.041005662805845375,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 4.288053358367921,
+              "rmse_mah": 5.093988203722592,
+              "mape_pct": 10.751590648408593,
+              "ape_p90_pct": 19.283050279083774,
+              "bias_mah": 0.04268137903405084,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 3.273634448391777,
+            "rmse_mah": 4.079477201237387,
+            "mape_pct": 6.3223079071245625,
+            "ape_p90_pct": 13.886355866606264,
+            "bias_mah": 2.2043024561007725,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_3s": {
+          "n": 612,
+          "mae_mah": 3.4744847963219763,
+          "rmse_mah": 4.315841241634574,
+          "mape_pct": 6.800841216911988,
+          "ape_p90_pct": 14.100051820943703,
+          "bias_mah": 0.10012648519221515,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 7.100803486350965,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 3.420979127683863,
+              "rmse_mah": 4.316770884894206,
+              "mape_pct": 5.93718996844266,
+              "ape_p90_pct": 12.112888470756376,
+              "bias_mah": 0.2063033390490765,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 3.237125117445316,
+              "rmse_mah": 4.0991932702400575,
+              "mape_pct": 5.6168587220855075,
+              "ape_p90_pct": 12.131347019973933,
+              "bias_mah": 0.009812089107549368,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 3.873667559194542,
+              "rmse_mah": 4.58487205659065,
+              "mape_pct": 9.748361768524724,
+              "ape_p90_pct": 18.121389105983607,
+              "bias_mah": 0.049232588584688305,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 3.8111548436966416,
+            "rmse_mah": 4.612215808002852,
+            "mape_pct": 7.275788492862661,
+            "ape_p90_pct": 14.329474127040664,
+            "bias_mah": 1.991154931575635,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_5s": {
+          "n": 612,
+          "mae_mah": 3.2460884618112265,
+          "rmse_mah": 3.9437204215804083,
+          "mape_pct": 6.420747478214503,
+          "ape_p90_pct": 12.931659583410468,
+          "bias_mah": 0.12539106920722304,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 6.7771696514697455,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 3.171310069160958,
+              "rmse_mah": 3.863988495641758,
+              "mape_pct": 5.493751532492095,
+              "ape_p90_pct": 11.335742167935008,
+              "bias_mah": 0.2248994517771954,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.7882050731458476,
+              "rmse_mah": 3.523301841657639,
+              "mape_pct": 4.82738831450357,
+              "ape_p90_pct": 10.444490010770041,
+              "bias_mah": 0.05623983957927557,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 3.970566514552476,
+              "rmse_mah": 4.549287592166985,
+              "mape_pct": 10.01036910741357,
+              "ape_p90_pct": 17.506494692966662,
+              "bias_mah": 0.057237592674300536,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.7843258358055514,
+            "rmse_mah": 3.5064560781006686,
+            "mape_pct": 5.67277387540359,
+            "ape_p90_pct": 12.473422170278067,
+            "bias_mah": 1.9581091961463202,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_10s": {
+          "n": 612,
+          "mae_mah": 2.7069050042418095,
+          "rmse_mah": 3.2702705597944424,
+          "mape_pct": 5.389368885936758,
+          "ape_p90_pct": 11.175874132531202,
+          "bias_mah": 0.14112091270605762,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.7392084239616805,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.496590044965826,
+              "rmse_mah": 3.081283910286035,
+              "mape_pct": 4.3303278778799505,
+              "ape_p90_pct": 8.82581372425935,
+              "bias_mah": 0.2525389451234097,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.369362226926362,
+              "rmse_mah": 2.8957887314272344,
+              "mape_pct": 4.105867905170286,
+              "ape_p90_pct": 7.969167584792842,
+              "bias_mah": 0.1235140794700593,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 3.489677773126285,
+              "rmse_mah": 3.9582177510881675,
+              "mape_pct": 8.781429488834805,
+              "ape_p90_pct": 15.127209397472637,
+              "bias_mah": -0.014183577407547223,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 3.0858045696408793,
+            "rmse_mah": 3.582233420904002,
+            "mape_pct": 6.230370566598664,
+            "ape_p90_pct": 10.833078517647271,
+            "bias_mah": 2.4962617839107235,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_20s": {
+          "n": 612,
+          "mae_mah": 2.067389746262559,
+          "rmse_mah": 2.525970965582226,
+          "mape_pct": 3.9586700114698607,
+          "ape_p90_pct": 7.627353475099624,
+          "bias_mah": 0.17329891724008403,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.033994086197988,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.132357310880766,
+              "rmse_mah": 2.6653364045474364,
+              "mape_pct": 3.711743188384751,
+              "ape_p90_pct": 6.617456269589239,
+              "bias_mah": 0.3109033066479916,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.1447443052582145,
+              "rmse_mah": 2.601337911843615,
+              "mape_pct": 3.717859099414588,
+              "ape_p90_pct": 7.319848767170666,
+              "bias_mah": 0.1889188023168868,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.8611273724955275,
+              "rmse_mah": 2.1704393179696293,
+              "mape_pct": 4.6723799707946245,
+              "ape_p90_pct": 8.31482830217563,
+              "bias_mah": -0.06784719607913564,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.0754920352104316,
+            "rmse_mah": 2.489820472813327,
+            "mape_pct": 4.029231752333228,
+            "ape_p90_pct": 8.137343996068873,
+            "bias_mah": 1.422870881068931,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_30s": {
+          "n": 612,
+          "mae_mah": 2.0751571368328143,
+          "rmse_mah": 2.52341673698003,
+          "mape_pct": 4.061849106547384,
+          "ape_p90_pct": 8.285096764691371,
+          "bias_mah": 0.18432994617035228,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.259171192636142,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.9284507657152217,
+              "rmse_mah": 2.44275346976862,
+              "mape_pct": 3.3482790461271845,
+              "ape_p90_pct": 6.554539245058695,
+              "bias_mah": 0.33820427541420406,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.0526017146302284,
+              "rmse_mah": 2.518778982428495,
+              "mape_pct": 3.5564260943465804,
+              "ape_p90_pct": 7.2120124702831045,
+              "bias_mah": 0.2170342011370509,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 2.34004822499391,
+              "rmse_mah": 2.6533900366020786,
+              "mape_pct": 5.872808437434662,
+              "ape_p90_pct": 10.028134676130623,
+              "bias_mah": -0.10544991815081996,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.283920055196865,
+            "rmse_mah": 2.5638270681040702,
+            "mape_pct": 4.573402052118145,
+            "ape_p90_pct": 7.891833044985944,
+            "bias_mah": 1.449356599417378,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ema_current_0.1": {
+          "n": 612,
+          "mae_mah": 2.293091992767118,
+          "rmse_mah": 2.75987470374704,
+          "mape_pct": 4.516345025681693,
+          "ape_p90_pct": 9.014720307819324,
+          "bias_mah": 0.15547427391207355,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.750694176123974,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.2001307949916544,
+              "rmse_mah": 2.6877747196262205,
+              "mape_pct": 3.821231657054108,
+              "ape_p90_pct": 7.314337218273604,
+              "bias_mah": 0.28208129525729225,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.0945408041457436,
+              "rmse_mah": 2.604566439408921,
+              "mape_pct": 3.6296501105618044,
+              "ape_p90_pct": 7.636749933853735,
+              "bias_mah": 0.14957056237712169,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 2.704257661356021,
+              "rmse_mah": 3.057209666536905,
+              "mape_pct": 6.80120076075601,
+              "ape_p90_pct": 11.503637656314941,
+              "bias_mah": -0.03962566685782768,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.4801128644616,
+            "rmse_mah": 2.8914082282407443,
+            "mape_pct": 4.951185368253196,
+            "ape_p90_pct": 9.616713001192165,
+            "bias_mah": 1.8179548764178242,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ema_current_0.3": {
+          "n": 612,
+          "mae_mah": 2.949194965563775,
+          "rmse_mah": 3.569997494113856,
+          "mape_pct": 5.826725359238235,
+          "ape_p90_pct": 11.89989383804398,
+          "bias_mah": 0.1163534427020935,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 6.147720080665072,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.8457841677430955,
+              "rmse_mah": 3.494655040126739,
+              "mape_pct": 4.935842834506372,
+              "ape_p90_pct": 10.022654763307978,
+              "bias_mah": 0.22024247135859995,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.5959111775715327,
+              "rmse_mah": 3.2586779754549746,
+              "mape_pct": 4.497073913178958,
+              "ape_p90_pct": 9.150619298113632,
+              "bias_mah": 0.05509589273661664,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 3.5814331692918007,
+              "rmse_mah": 4.050327673736453,
+              "mape_pct": 9.010243494309886,
+              "ape_p90_pct": 15.660043100953867,
+              "bias_mah": 0.03075599480953973,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.877698094455188,
+            "rmse_mah": 3.4780467763994722,
+            "mape_pct": 5.696651183769782,
+            "ape_p90_pct": 11.207115010427332,
+            "bias_mah": 2.0758485775643116,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ema_current_0.6": {
+          "n": 612,
+          "mae_mah": 3.474915288722836,
+          "rmse_mah": 4.387073929917882,
+          "mape_pct": 6.775820171007621,
+          "ape_p90_pct": 15.158520316041493,
+          "bias_mah": 0.08518404655294966,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 7.052811288921895,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 3.441378812366997,
+              "rmse_mah": 4.415013828603893,
+              "mape_pct": 5.973574162170256,
+              "ape_p90_pct": 12.608720148965812,
+              "bias_mah": 0.18359240953902684,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 3.28439229277918,
+              "rmse_mah": 4.253924203527877,
+              "mape_pct": 5.691405803944262,
+              "ape_p90_pct": 12.130199629792234,
+              "bias_mah": -0.005295456107170765,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 3.780247700603302,
+              "rmse_mah": 4.5134921542986,
+              "mape_pct": 9.493453900651167,
+              "ape_p90_pct": 17.334361683332666,
+              "bias_mah": 0.046957679895677264,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 3.0403010729125497,
+            "rmse_mah": 3.8443908150572614,
+            "mape_pct": 5.777444752787836,
+            "ape_p90_pct": 12.101462863616778,
+            "bias_mah": 2.0736439968165565,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ridge_residual_a1": {
+          "n": 612,
+          "mae_mah": 1.5107500094000041,
+          "rmse_mah": 1.9020998117418961,
+          "mape_pct": 2.819097170093308,
+          "ape_p90_pct": 5.803162155745595,
+          "bias_mah": 0.3914333585161811,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.761562934901264,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.797773012783282,
+              "rmse_mah": 2.2259793061549993,
+              "mape_pct": 3.1361472961740247,
+              "ape_p90_pct": 6.5758385424540675,
+              "bias_mah": 0.5877214382092707,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.5886485546423943,
+              "rmse_mah": 1.9330989460541177,
+              "mape_pct": 2.761563374459092,
+              "ape_p90_pct": 5.47956127169565,
+              "bias_mah": 0.4436197830140067,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 0.9479112198759542,
+              "rmse_mah": 1.148199584262757,
+              "mape_pct": 2.386978134070675,
+              "ape_p90_pct": 4.523234932234004,
+              "bias_mah": 0.007956285632691225,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.0479905202356967,
+            "rmse_mah": 2.315581331374268,
+            "mape_pct": 3.8092930650855843,
+            "ape_p90_pct": 5.768599896480708,
+            "bias_mah": 0.6181630984473344,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ridge_residual_a10": {
+          "n": 612,
+          "mae_mah": 1.5063529988989968,
+          "rmse_mah": 1.9033722604469254,
+          "mape_pct": 2.809310236406735,
+          "ape_p90_pct": 5.831846045789349,
+          "bias_mah": 0.37320126710233653,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.754727873260721,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.775000469900031,
+              "rmse_mah": 2.2233967438099764,
+              "mape_pct": 3.0949382939030157,
+              "ape_p90_pct": 6.536786908032481,
+              "bias_mah": 0.5684935452684582,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.6018698971980718,
+              "rmse_mah": 1.9303975439690537,
+              "mape_pct": 2.783220407360425,
+              "ape_p90_pct": 5.628855585197197,
+              "bias_mah": 0.4191435431459683,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 0.9496969168485606,
+              "rmse_mah": 1.1702801410462444,
+              "mape_pct": 2.3860249185187206,
+              "ape_p90_pct": 4.925647619912528,
+              "bias_mah": -0.00043449191380782017,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.9729354042635305,
+            "rmse_mah": 2.246232999499627,
+            "mape_pct": 3.6474419449766473,
+            "ape_p90_pct": 5.776243286685528,
+            "bias_mah": 0.5218739223860641,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ridge_residual_a100": {
+          "n": 612,
+          "mae_mah": 1.4792439524687835,
+          "rmse_mah": 1.8947606387842848,
+          "mape_pct": 2.7559079417502605,
+          "ape_p90_pct": 5.818346234424518,
+          "bias_mah": 0.14763875705661278,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.7193534213972175,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.6761273160101708,
+              "rmse_mah": 2.157769338041109,
+              "mape_pct": 2.9135363989922713,
+              "ape_p90_pct": 6.324110181284065,
+              "bias_mah": 0.3269338333116482,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.6195579488876513,
+              "rmse_mah": 1.9619937495488045,
+              "mape_pct": 2.801716752639765,
+              "ape_p90_pct": 5.674802471142886,
+              "bias_mah": 0.13858026252153158,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 0.9784393104967728,
+              "rmse_mah": 1.2408113582379887,
+              "mape_pct": 2.4428071125596156,
+              "ape_p90_pct": 5.269048104886448,
+              "bias_mah": -0.12773123774808054,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.8927098920820626,
+            "rmse_mah": 2.1320200070247424,
+            "mape_pct": 3.4726714914247028,
+            "ape_p90_pct": 5.203853495811644,
+            "bias_mah": 0.3567742630368518,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l7_i60": {
+          "n": 612,
+          "mae_mah": 1.667807645709603,
+          "rmse_mah": 2.13768154173134,
+          "mape_pct": 3.125199690680573,
+          "ape_p90_pct": 6.474907850129214,
+          "bias_mah": 0.3643580763523614,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.090999578321345,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.8432679894991069,
+              "rmse_mah": 2.3438667881682367,
+              "mape_pct": 3.216131554434466,
+              "ape_p90_pct": 6.484405900852944,
+              "bias_mah": 0.5196680490706749,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.8828409448430377,
+              "rmse_mah": 2.3366334614250395,
+              "mape_pct": 3.27436083850563,
+              "ape_p90_pct": 6.623008624504846,
+              "bias_mah": 0.401164680331505,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.102666968986119,
+              "rmse_mah": 1.383250098878922,
+              "mape_pct": 2.782506342023939,
+              "ape_p90_pct": 5.862402734136859,
+              "bias_mah": 0.06686029686978491,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.0624882969602734,
+            "rmse_mah": 2.6261596061703227,
+            "mape_pct": 3.7898785711205574,
+            "ape_p90_pct": 7.187013044121035,
+            "bias_mah": 1.4355475493164764,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l7_i120": {
+          "n": 612,
+          "mae_mah": 1.53989988203228,
+          "rmse_mah": 1.9857520524107106,
+          "mape_pct": 2.878670388062103,
+          "ape_p90_pct": 6.037434223940775,
+          "bias_mah": 0.446321082828982,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.831391267466326,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.7279767229138852,
+              "rmse_mah": 2.2132484860188235,
+              "mape_pct": 3.0203412219160417,
+              "ape_p90_pct": 6.188440379207924,
+              "bias_mah": 0.5942564404942206,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.753090908410863,
+              "rmse_mah": 2.1595663534256926,
+              "mape_pct": 3.0548617891931684,
+              "ape_p90_pct": 6.284854736603649,
+              "bias_mah": 0.5479787047434882,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 0.9569732047605545,
+              "rmse_mah": 1.2086767493275368,
+              "mape_pct": 2.4189707912897678,
+              "ape_p90_pct": 5.1384557553700105,
+              "bias_mah": 0.07500499609373834,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.960214755951542,
+            "rmse_mah": 2.428351259961383,
+            "mape_pct": 3.606513966346984,
+            "ape_p90_pct": 6.636800937520081,
+            "bias_mah": 1.1238749500237388,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l15_i60": {
+          "n": 612,
+          "mae_mah": 1.5674584478161282,
+          "rmse_mah": 2.016768941132246,
+          "mape_pct": 2.9340818733123464,
+          "ape_p90_pct": 6.23769733966884,
+          "bias_mah": 0.43757971555625713,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.8913112860784485,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.7523381026691802,
+              "rmse_mah": 2.2389057798896497,
+              "mape_pct": 3.0648052442130296,
+              "ape_p90_pct": 6.503222163764419,
+              "bias_mah": 0.6251172393301421,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.7738788999616888,
+              "rmse_mah": 2.1982382095400737,
+              "mape_pct": 3.0886546325283413,
+              "ape_p90_pct": 6.332242336861874,
+              "bias_mah": 0.5075037898885727,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 0.99859609617992,
+              "rmse_mah": 1.2419069687144988,
+              "mape_pct": 2.5204739814939754,
+              "ape_p90_pct": 5.369026293754979,
+              "bias_mah": 0.04470317545415327,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.0538129948021138,
+            "rmse_mah": 2.5073697657426766,
+            "mape_pct": 3.775759724639328,
+            "ape_p90_pct": 6.943199118725489,
+            "bias_mah": 1.2638719143441917,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l15_i120": {
+          "n": 612,
+          "mae_mah": 1.4882925948101007,
+          "rmse_mah": 1.930797521171616,
+          "mape_pct": 2.776159720518007,
+          "ape_p90_pct": 6.054268428546627,
+          "bias_mah": 0.4945769930272583,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.719789973623969,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.6912841863691068,
+              "rmse_mah": 2.1722755585149645,
+              "mape_pct": 2.9566608107047614,
+              "ape_p90_pct": 6.464135141543312,
+              "bias_mah": 0.6134305123700908,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.7011915070331531,
+              "rmse_mah": 2.0937141332063662,
+              "mape_pct": 2.964438501895113,
+              "ape_p90_pct": 5.998829926008506,
+              "bias_mah": 0.5945168378256165,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 0.881849813991509,
+              "rmse_mah": 1.1288702839141909,
+              "mape_pct": 2.238270608272031,
+              "ape_p90_pct": 4.9695312505892275,
+              "bias_mah": 0.17213476312873316,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.9485089496088532,
+            "rmse_mah": 2.3297085950764878,
+            "mape_pct": 3.5744972929367074,
+            "ape_p90_pct": 5.980859785935071,
+            "bias_mah": 0.9754259746003894,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_core32": {
+          "n": 612,
+          "mae_mah": 1.535120210615605,
+          "rmse_mah": 1.960495981928606,
+          "mape_pct": 2.8489742974193777,
+          "ape_p90_pct": 5.906829279543658,
+          "bias_mah": -0.0556420998356782,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.8155102159092222,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.7122270050487227,
+              "rmse_mah": 2.1882756953040055,
+              "mape_pct": 2.971427681118989,
+              "ape_p90_pct": 6.257409987396382,
+              "bias_mah": 0.26687935479050234,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.7054082282334662,
+              "rmse_mah": 2.0817300453797034,
+              "mape_pct": 2.9319857389991655,
+              "ape_p90_pct": 5.3548249898999885,
+              "bias_mah": -0.24375879124235633,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.0264277090927916,
+              "rmse_mah": 1.2969144968997746,
+              "mape_pct": 2.5431172276095118,
+              "ape_p90_pct": 5.659763898138208,
+              "bias_mah": -0.3240929025713798,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.8275095788085864,
+            "rmse_mah": 2.1316368604979874,
+            "mape_pct": 3.3444339268799292,
+            "ape_p90_pct": 5.435676406688756,
+            "bias_mah": 0.7307568296341068,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_full16": {
+          "n": 612,
+          "mae_mah": 1.6443653815380015,
+          "rmse_mah": 2.0098375026393747,
+          "mape_pct": 3.1550693262288916,
+          "ape_p90_pct": 6.285797306299247,
+          "bias_mah": 0.37832432555210965,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.218201027741524,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.6983013979925536,
+              "rmse_mah": 2.0765639698491025,
+              "mape_pct": 2.964041516920075,
+              "ape_p90_pct": 6.058853259816917,
+              "bias_mah": 0.6685067097781645,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.6807745719605693,
+              "rmse_mah": 2.023919977139204,
+              "mape_pct": 2.92328888157123,
+              "ape_p90_pct": 5.760922252789566,
+              "bias_mah": 0.47663116054928356,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.5098506549951363,
+              "rmse_mah": 1.8781538026827125,
+              "mape_pct": 3.767272684733266,
+              "ape_p90_pct": 7.446609550329566,
+              "bias_mah": -0.21652698256283617,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.9404611674479382,
+            "rmse_mah": 2.322348302767643,
+            "mape_pct": 3.621334485671886,
+            "ape_p90_pct": 6.886945551737261,
+            "bias_mah": 0.9791284732518941,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_full32": {
+          "n": 612,
+          "mae_mah": 1.8721915488814644,
+          "rmse_mah": 2.3815890594662545,
+          "mape_pct": 3.507455881832069,
+          "ape_p90_pct": 7.239008423127354,
+          "bias_mah": -0.00625907440156024,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.498669869895792,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.032041518327728,
+              "rmse_mah": 2.578596923983465,
+              "mape_pct": 3.512069027674949,
+              "ape_p90_pct": 7.200133193911719,
+              "bias_mah": -0.04993683444559441,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.0709610524779842,
+              "rmse_mah": 2.5642670447960554,
+              "mape_pct": 3.581020239371011,
+              "ape_p90_pct": 7.261065265629753,
+              "bias_mah": -0.011017311482482504,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.3535440482247405,
+              "rmse_mah": 1.7067119646391484,
+              "mape_pct": 3.402920342641415,
+              "ape_p90_pct": 7.233764406446884,
+              "bias_mah": 0.07002064899381494,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.240786817545957,
+            "rmse_mah": 2.79677111375213,
+            "mape_pct": 4.123167713199891,
+            "ape_p90_pct": 8.044542387296088,
+            "bias_mah": 1.2143935345835082,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_full64": {
+          "n": 612,
+          "mae_mah": 1.5861371862152076,
+          "rmse_mah": 1.965347939640191,
+          "mape_pct": 3.0078198115670816,
+          "ape_p90_pct": 6.020834145245179,
+          "bias_mah": -0.1585459153486012,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.0641990384571405,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.5962386153203083,
+              "rmse_mah": 2.023170977469533,
+              "mape_pct": 2.7553202272028128,
+              "ape_p90_pct": 5.72547042054439,
+              "bias_mah": -0.04216267600522572,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.7189792200694731,
+              "rmse_mah": 2.064624188094596,
+              "mape_pct": 2.9548094664809494,
+              "ape_p90_pct": 5.775252935781067,
+              "bias_mah": -0.31888563704603407,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.3945293897392221,
+              "rmse_mah": 1.7218259124135005,
+              "mape_pct": 3.4824674216876597,
+              "ape_p90_pct": 6.924289376692359,
+              "bias_mah": -0.1333268587215032,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 1.6927796529925683,
+            "rmse_mah": 2.0811289852669645,
+            "mape_pct": 3.1708916707646195,
+            "ape_p90_pct": 5.642609005737681,
+            "bias_mah": 0.5149670874834634,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_no_thermal32": {
+          "n": 612,
+          "mae_mah": 1.8610588324299127,
+          "rmse_mah": 2.3774315623845546,
+          "mape_pct": 3.484061761701036,
+          "ape_p90_pct": 7.1951846888235815,
+          "bias_mah": -0.2019985729382617,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.4837902132691045,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.9890785778177664,
+              "rmse_mah": 2.5497149693241647,
+              "mape_pct": 3.4462260803820857,
+              "ape_p90_pct": 6.9960938088468465,
+              "bias_mah": 0.13395340744431541,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.0595172887891353,
+              "rmse_mah": 2.548246750804862,
+              "mape_pct": 3.557734535903546,
+              "ape_p90_pct": 7.213101235273642,
+              "bias_mah": -0.09653045920454072,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.3938320480904032,
+              "rmse_mah": 1.7834700303795217,
+              "mape_pct": 3.4474100235216825,
+              "ape_p90_pct": 7.393573027670027,
+              "bias_mah": -0.8796551532253821,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.392585828528752,
+            "rmse_mah": 2.8355266280021967,
+            "mape_pct": 4.530441194665163,
+            "ape_p90_pct": 7.674200433809726,
+            "bias_mah": 0.814960125742988,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_with_altitude32": {
+          "n": 612,
+          "mae_mah": 1.8486692786397203,
+          "rmse_mah": 2.354683884316518,
+          "mape_pct": 3.473640872871085,
+          "ape_p90_pct": 7.035602926369523,
+          "bias_mah": -0.1745070948713092,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.488101573829805,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.953431779305283,
+              "rmse_mah": 2.4967432391637328,
+              "mape_pct": 3.369314986638511,
+              "ape_p90_pct": 6.9821689497327535,
+              "bias_mah": -0.22597038354031354,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.0537018673880416,
+              "rmse_mah": 2.5575142106711395,
+              "mape_pct": 3.5344213780147054,
+              "ape_p90_pct": 6.949288140201472,
+              "bias_mah": -0.4261476040257021,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.4100324937131488,
+              "rmse_mah": 1.7675917805488268,
+              "mape_pct": 3.5605683568361974,
+              "ape_p90_pct": 7.495254891522732,
+              "bias_mah": 0.24026064264828081,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.114452268084671,
+            "rmse_mah": 2.6079901514706236,
+            "mape_pct": 3.8827113876037025,
+            "ape_p90_pct": 7.54816300572108,
+            "bias_mah": 0.9495219754300894,
+            "nonpositive_predictions": 0
+          }
+        },
+        "direct_full32": {
+          "n": 612,
+          "mae_mah": 1.934680368095389,
+          "rmse_mah": 2.31607691905912,
+          "mape_pct": 3.960723258207112,
+          "ape_p90_pct": 8.867733221785215,
+          "bias_mah": 0.8360028658725246,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.314663165247542,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 1.6032043155616102,
+              "rmse_mah": 2.001127110755066,
+              "mape_pct": 2.7846298570401866,
+              "ape_p90_pct": 5.572021678458012,
+              "bias_mah": 0.26104420369609593,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 1.653725566498319,
+              "rmse_mah": 1.9482666010578815,
+              "mape_pct": 2.8589013225024997,
+              "ape_p90_pct": 5.468002417560541,
+              "bias_mah": 0.021294012378999503,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 2.8368964082392427,
+              "rmse_mah": 3.100710722846531,
+              "mape_pct": 7.300458316199941,
+              "ape_p90_pct": 11.513868154580454,
+              "bias_mah": 2.833244464358251,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.4020284923000457,
+            "rmse_mah": 2.643044236444528,
+            "mape_pct": 4.986487321982721,
+            "ape_p90_pct": 10.293443400144696,
+            "bias_mah": 1.346638038207334,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_current_only16": {
+          "n": 612,
+          "mae_mah": 1.801281162127881,
+          "rmse_mah": 2.3277937947949994,
+          "mape_pct": 3.3335914304541494,
+          "ape_p90_pct": 6.822936354182075,
+          "bias_mah": 0.21275962413324065,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.2525654354752422,
+          "per_flight": {
+            "F012": {
+              "n": 250,
+              "mae_mah": 2.0729277615394737,
+              "rmse_mah": 2.6250144170971943,
+              "mape_pct": 3.603053751768614,
+              "ape_p90_pct": 7.0993569462820005,
+              "bias_mah": 0.2775642137245983,
+              "nonpositive_predictions": 0
+            },
+            "F018": {
+              "n": 206,
+              "mae_mah": 2.0685359639002194,
+              "rmse_mah": 2.5513886208468715,
+              "mape_pct": 3.5854055793855264,
+              "ape_p90_pct": 7.252245052514306,
+              "bias_mah": 0.14786197204189575,
+              "nonpositive_predictions": 0
+            },
+            "F022": {
+              "n": 156,
+              "mae_mah": 1.0130366812432667,
+              "rmse_mah": 1.2723600202283178,
+              "mape_pct": 2.5692369752715867,
+              "ape_p90_pct": 5.135035071383708,
+              "bias_mah": 0.1946042967805334,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 17,
+            "mae_mah": 2.3335808450975732,
+            "rmse_mah": 2.849567795901684,
+            "mape_pct": 4.294431173795338,
+            "ape_p90_pct": 8.28339012300083,
+            "bias_mah": 1.4743011683323635,
+            "nonpositive_predictions": 0
+          }
+        }
+      },
+      "lstm_seeds": {
+        "residual_core32": [
+          {
+            "n": 612,
+            "mae_mah": 1.5271839958121656,
+            "rmse_mah": 1.9522017758108543,
+            "mape_pct": 2.821347762113281,
+            "ape_p90_pct": 5.904823767059284,
+            "bias_mah": -0.13668116713374331,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.7729294812863547,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.7476895866714783,
+                "rmse_mah": 2.1690787568864653,
+                "mape_pct": 3.023314523783478,
+                "ape_p90_pct": 5.997573256657348,
+                "bias_mah": -0.008543271387656703,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.697158285546579,
+                "rmse_mah": 2.1259561038636234,
+                "mape_pct": 2.8948453587133463,
+                "ape_p90_pct": 5.981025258457819,
+                "bias_mah": -0.6788529483008862,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 0.9493564227344912,
+                "rmse_mah": 1.2012453333264497,
+                "mape_pct": 2.40062856136224,
+                "ape_p90_pct": 4.7731731701158955,
+                "bias_mah": 0.37391442891696036,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.7943942443281098,
+              "rmse_mah": 2.09735306604201,
+              "mape_pct": 3.2737889950731813,
+              "ape_p90_pct": 5.554256397917317,
+              "bias_mah": 0.474719219819523,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.6140789794607013,
+            "rmse_mah": 2.0630839487187167,
+            "mape_pct": 3.030374671711437,
+            "ape_p90_pct": 6.382802408751857,
+            "bias_mah": -0.22025468880956742,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.053881384491745,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.6932703634238102,
+                "rmse_mah": 2.19121026999171,
+                "mape_pct": 2.93338825655473,
+                "ape_p90_pct": 6.4163706154533555,
+                "bias_mah": 0.21858302158484816,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.741597891816339,
+                "rmse_mah": 2.138750910442422,
+                "mape_pct": 2.9926863005823643,
+                "ape_p90_pct": 5.819927741168209,
+                "bias_mah": -0.2889344820685005,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.3187793516655817,
+                "rmse_mah": 1.721317653225254,
+                "mape_pct": 3.235569596338141,
+                "ape_p90_pct": 7.15238333318363,
+                "bias_mah": -0.8328277028304885,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.8135305968250064,
+              "rmse_mah": 2.1698045348265547,
+              "mape_pct": 3.32420351628745,
+              "ape_p90_pct": 6.044534369610646,
+              "bias_mah": 0.5941531772047273,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.6434942633722869,
+            "rmse_mah": 2.0963476369284617,
+            "mape_pct": 3.053876582928495,
+            "ape_p90_pct": 6.356802201111624,
+            "bias_mah": 0.19000955643627662,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.0055276275574543,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.8701824190417649,
+                "rmse_mah": 2.373542329883957,
+                "mape_pct": 3.2568460948140276,
+                "ape_p90_pct": 6.84289673992715,
+                "bias_mah": 0.590598314174316,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.803012952331676,
+                "rmse_mah": 2.199459824310637,
+                "mape_pct": 3.124840122856635,
+                "ape_p90_pct": 6.193465686746149,
+                "bias_mah": 0.236511056642319,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.0695654887376482,
+                "rmse_mah": 1.3506026363613166,
+                "mape_pct": 2.6348966650017016,
+                "ape_p90_pct": 5.8010509709994516,
+                "bias_mah": -0.5133654338006115,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.9063954794666267,
+              "rmse_mah": 2.3399876174433816,
+              "mape_pct": 3.51686077047153,
+              "ape_p90_pct": 6.385005087245664,
+              "bias_mah": 1.123398091878073,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_full16": [
+          {
+            "n": 612,
+            "mae_mah": 1.7603202234896267,
+            "rmse_mah": 2.139057849933894,
+            "mape_pct": 3.38661908960907,
+            "ape_p90_pct": 6.766912426208318,
+            "bias_mah": 0.6927466754004138,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.43395767271578,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.9175722167208633,
+                "rmse_mah": 2.3486916877236594,
+                "mape_pct": 3.3523669745185924,
+                "ape_p90_pct": 6.859597836498247,
+                "bias_mah": 0.8897648585027683,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.7293505334294086,
+                "rmse_mah": 2.057137712274942,
+                "mape_pct": 3.0079239281003636,
+                "ape_p90_pct": 5.586266370471876,
+                "bias_mah": 0.5169233001015001,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.5492096968524203,
+                "rmse_mah": 1.8766543901157677,
+                "mape_pct": 3.9415821155283837,
+                "ape_p90_pct": 7.569392564263897,
+                "bias_mah": 0.6091894288362314,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.112303907551145,
+              "rmse_mah": 2.4365510809114395,
+              "mape_pct": 4.041516619424561,
+              "ape_p90_pct": 6.973673424297263,
+              "bias_mah": 1.116407435979322,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.6559176511343037,
+            "rmse_mah": 2.042131897851505,
+            "mape_pct": 3.1832327073915185,
+            "ape_p90_pct": 6.304419975924263,
+            "bias_mah": -0.053495531205683594,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.2832459542903774,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.6631013021119494,
+                "rmse_mah": 2.0289298747593407,
+                "mape_pct": 2.887473955970591,
+                "ape_p90_pct": 5.825080132582557,
+                "bias_mah": 0.37398412581846846,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.6279373569573574,
+                "rmse_mah": 1.9849749610969916,
+                "mape_pct": 2.8031351690895505,
+                "ape_p90_pct": 5.450808854376336,
+                "bias_mah": -0.17637521775877282,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.681353727134557,
+                "rmse_mah": 2.1355060998748114,
+                "mape_pct": 4.15912873781099,
+                "ape_p90_pct": 8.419356485537321,
+                "bias_mah": -0.5762948826550532,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.6771448164491285,
+              "rmse_mah": 2.0649546118834685,
+              "mape_pct": 3.1361469036422607,
+              "ape_p90_pct": 6.041747047092608,
+              "bias_mah": 0.5798391350086409,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.7421960207584868,
+            "rmse_mah": 2.1325168349351493,
+            "mape_pct": 3.344150506814318,
+            "ape_p90_pct": 6.598536195775854,
+            "bias_mah": 0.49572183246159884,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.424899617008993,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.6655664985674346,
+                "rmse_mah": 2.057262134773084,
+                "mape_pct": 2.910691207207201,
+                "ape_p90_pct": 6.054161811006105,
+                "bias_mah": 0.7417711450132567,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.9443736247020864,
+                "rmse_mah": 2.343123669521504,
+                "mape_pct": 3.4032423186535428,
+                "ape_p90_pct": 6.6819551190140976,
+                "bias_mah": 1.0893453993051223,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.59802162419042,
+                "rmse_mah": 1.951461348010121,
+                "mape_pct": 3.960765325166235,
+                "ape_p90_pct": 7.580870422123455,
+                "bias_mah": -0.6824754938696858,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.2120473726709173,
+              "rmse_mah": 2.6386920684562325,
+              "mape_pct": 4.132056400323185,
+              "ape_p90_pct": 7.713628998330015,
+              "bias_mah": 1.24113884876772,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_full32": [
+          {
+            "n": 612,
+            "mae_mah": 1.8359513261599352,
+            "rmse_mah": 2.3507580336638685,
+            "mape_pct": 3.4346662422368017,
+            "ape_p90_pct": 7.289382853854537,
+            "bias_mah": 0.05793058357255325,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.4184401472467933,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.016057163501556,
+                "rmse_mah": 2.5669232505222666,
+                "mape_pct": 3.491682079598757,
+                "ape_p90_pct": 7.298244034092371,
+                "bias_mah": 0.22383945497584792,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.011301544960684,
+                "rmse_mah": 2.517155605498175,
+                "mape_pct": 3.4793527171028105,
+                "ape_p90_pct": 7.316405969321431,
+                "bias_mah": 0.008231805468077545,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.315767964567886,
+                "rmse_mah": 1.659174404028273,
+                "mape_pct": 3.2842856450388127,
+                "ape_p90_pct": 7.084161454860029,
+                "bias_mah": -0.14232114438450869,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.234108447743979,
+              "rmse_mah": 2.837666383034215,
+              "mape_pct": 4.116458423743741,
+              "ape_p90_pct": 8.597911744986208,
+              "bias_mah": 1.2162861580664597,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 2.0957357148412648,
+            "rmse_mah": 2.639911709106843,
+            "mape_pct": 3.995171536288756,
+            "ape_p90_pct": 8.32695715352061,
+            "bias_mah": 0.21984119061826882,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.048532766395053,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.194934706088059,
+                "rmse_mah": 2.7786316944718727,
+                "mape_pct": 3.794702145852294,
+                "ape_p90_pct": 7.875405920918977,
+                "bias_mah": -0.08455745333722467,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.2417451056546125,
+                "rmse_mah": 2.7817959581652354,
+                "mape_pct": 3.87259287651437,
+                "ape_p90_pct": 7.823820725369627,
+                "bias_mah": -0.11189676750549347,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.7439556999742898,
+                "rmse_mah": 2.1791601808589367,
+                "mape_pct": 4.478303276818494,
+                "ape_p90_pct": 9.248473569029096,
+                "bias_mah": 1.145723757043707,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.5276022185820284,
+              "rmse_mah": 3.0234386839673353,
+              "mape_pct": 4.810232198817106,
+              "ape_p90_pct": 10.066309286465101,
+              "bias_mah": 1.5219222935793484,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.8684593435040346,
+            "rmse_mah": 2.3610375809671234,
+            "mape_pct": 3.522832386104077,
+            "ape_p90_pct": 7.297627361162193,
+            "bias_mah": -0.29654899739550195,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.5657805872637733,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.9368878616967722,
+                "rmse_mah": 2.475110678163482,
+                "mape_pct": 3.339352496885201,
+                "ape_p90_pct": 7.012852386594134,
+                "bias_mah": -0.28909250497540606,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.0027115973272918,
+                "rmse_mah": 2.457587690639999,
+                "mape_pct": 3.4657794149808163,
+                "ape_p90_pct": 6.94304045266507,
+                "bias_mah": 0.0706130275899707,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.5815164343003478,
+                "rmse_mah": 2.0189232413217084,
+                "mape_pct": 3.8922098499253024,
+                "ape_p90_pct": 8.133678016785174,
+                "bias_mah": -0.793340665677754,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.23477446163882,
+              "rmse_mah": 2.652796935882686,
+              "mape_pct": 4.125161187595218,
+              "ape_p90_pct": 7.699804985133832,
+              "bias_mah": 0.9049721521047163,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_full64": [
+          {
+            "n": 612,
+            "mae_mah": 1.5965678108672725,
+            "rmse_mah": 1.9936058432189285,
+            "mape_pct": 3.0065574475972046,
+            "ape_p90_pct": 6.080963237794811,
+            "bias_mah": -0.27009224566526213,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.0469250165109045,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.623291484314609,
+                "rmse_mah": 2.061317007706703,
+                "mape_pct": 2.8010402736528848,
+                "ape_p90_pct": 5.844480731066011,
+                "bias_mah": -0.049964122251242526,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.7583824445139746,
+                "rmse_mah": 2.1112936219222234,
+                "mape_pct": 3.0150892895802945,
+                "ape_p90_pct": 5.718254149668807,
+                "bias_mah": -0.499670497448716,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.3400631128348706,
+                "rmse_mah": 1.7019175803744246,
+                "mape_pct": 3.3246454862995347,
+                "ape_p90_pct": 6.730218478094433,
+                "bias_mah": -0.3197006494223993,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.5902803508435541,
+              "rmse_mah": 2.040094887923924,
+              "mape_pct": 2.9228574455987113,
+              "ape_p90_pct": 5.429740571148213,
+              "bias_mah": 0.3895294651203197,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.589441592699042,
+            "rmse_mah": 1.965614009791964,
+            "mape_pct": 3.020586233262293,
+            "ape_p90_pct": 5.949302529151705,
+            "bias_mah": -0.20173913155337395,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.08577971516158,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.5820946880380853,
+                "rmse_mah": 2.0198232005739074,
+                "mape_pct": 2.7233223594390945,
+                "ape_p90_pct": 5.79532554916696,
+                "bias_mah": -0.2621924852792752,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.7281804041789188,
+                "rmse_mah": 2.0759526736613,
+                "mape_pct": 2.969231325472581,
+                "ape_p90_pct": 5.655940571954137,
+                "bias_mah": -0.35787903248264924,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.4180090991117649,
+                "rmse_mah": 1.711297124709355,
+                "mape_pct": 3.564785460573062,
+                "ape_p90_pct": 6.694017533288166,
+                "bias_mah": 0.10132598397807481,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.7346012611242643,
+              "rmse_mah": 2.1154846800693763,
+              "mape_pct": 3.2860781430849415,
+              "ape_p90_pct": 6.076447753998859,
+              "bias_mah": 0.46432352415847006,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.603277013268449,
+            "rmse_mah": 1.9759874519683787,
+            "mape_pct": 3.05867858623443,
+            "ape_p90_pct": 6.122188517474695,
+            "bias_mah": -0.0038063688271686865,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.1268593960330473,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.6166415407070769,
+                "rmse_mah": 2.0300729011455134,
+                "mape_pct": 2.7985350724365463,
+                "ape_p90_pct": 5.726133145324236,
+                "bias_mah": 0.18566857951483934,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.6871850901128362,
+                "rmse_mah": 2.0362019793535833,
+                "mape_pct": 2.9095760124593872,
+                "ape_p90_pct": 5.824851665637221,
+                "bias_mah": -0.09910738120673805,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.4710578101299838,
+                "rmse_mah": 1.7995205130340994,
+                "mape_pct": 3.6724671032032083,
+                "ape_p90_pct": 7.39966758900975,
+                "bias_mah": -0.1816059107201862,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 1.7984536019110653,
+              "rmse_mah": 2.123864607125617,
+              "mape_pct": 3.412548504674343,
+              "ape_p90_pct": 5.678167199888135,
+              "bias_mah": 0.6910482731715982,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_no_thermal32": [
+          {
+            "n": 612,
+            "mae_mah": 1.9864222767863164,
+            "rmse_mah": 2.5090378150823556,
+            "mape_pct": 3.7361606006591983,
+            "ape_p90_pct": 7.848515873426655,
+            "bias_mah": 0.18282802397791245,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.7282225335748547,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.1894169770826024,
+                "rmse_mah": 2.735769624643829,
+                "mape_pct": 3.808520177122406,
+                "ape_p90_pct": 7.474707870611566,
+                "bias_mah": 0.6901170050248673,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.11375548540704,
+                "rmse_mah": 2.632741747188052,
+                "mape_pct": 3.6744249048178133,
+                "ape_p90_pct": 8.174520752724568,
+                "bias_mah": 0.42153684637436956,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.49296512262003,
+                "rmse_mah": 1.8840474837765568,
+                "mape_pct": 3.701722518784345,
+                "ape_p90_pct": 7.94639308295443,
+                "bias_mah": -0.9453531470182981,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.5456577319500053,
+              "rmse_mah": 3.06916656922409,
+              "mape_pct": 4.829730855256236,
+              "ape_p90_pct": 8.833390855187234,
+              "bias_mah": 1.1413329768006404,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.949840300988509,
+            "rmse_mah": 2.5141625835789103,
+            "mape_pct": 3.607542906637037,
+            "ape_p90_pct": 7.529532370619791,
+            "bias_mah": -0.5750418534922964,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.5738855227958197,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.1247347223191633,
+                "rmse_mah": 2.7090888054664664,
+                "mape_pct": 3.6587283590369393,
+                "ape_p90_pct": 7.925007414909636,
+                "bias_mah": -0.5339848886040464,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.22917364230183,
+                "rmse_mah": 2.7827645695181977,
+                "mape_pct": 3.82634736887901,
+                "ape_p90_pct": 7.229267021774011,
+                "bias_mah": -0.6965186546829053,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.3006975212243574,
+                "rmse_mah": 1.6764800564240077,
+                "mape_pct": 3.2365808404715097,
+                "ape_p90_pct": 6.869087065551186,
+                "bias_mah": -0.48042659821535455,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.3026234452404157,
+              "rmse_mah": 2.738662926809552,
+              "mape_pct": 4.319710103044568,
+              "ape_p90_pct": 6.9798355270186585,
+              "bias_mah": 0.5712202939403522,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.8006733866668618,
+            "rmse_mah": 2.2862908134150657,
+            "mape_pct": 3.404548194085961,
+            "ape_p90_pct": 7.060680393743793,
+            "bias_mah": -0.21378188930040123,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.449770138520096,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.8375651071629109,
+                "rmse_mah": 2.399943736384498,
+                "mape_pct": 3.190369302746858,
+                "ape_p90_pct": 6.721245294207375,
+                "bias_mah": 0.24572810591212566,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.9577648512395918,
+                "rmse_mah": 2.391065415183416,
+                "mape_pct": 3.3839271098999806,
+                "ape_p90_pct": 6.86351864385046,
+                "bias_mah": -0.014609569305086495,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.53411074675664,
+                "rmse_mah": 1.9304020223604281,
+                "mape_pct": 3.775014002913449,
+                "ape_p90_pct": 7.572884030284394,
+                "bias_mah": -1.2131857144424945,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.4172361258189525,
+              "rmse_mah": 2.7923503710128914,
+              "mape_pct": 4.589984170639262,
+              "ape_p90_pct": 7.209909642440792,
+              "bias_mah": 0.7323271064879739,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_with_altitude32": [
+          {
+            "n": 612,
+            "mae_mah": 1.9393782682150673,
+            "rmse_mah": 2.456131761628441,
+            "mape_pct": 3.6364480062883175,
+            "ape_p90_pct": 7.321622020412881,
+            "bias_mah": -0.38554921055125546,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.6473385482483955,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.097402656594828,
+                "rmse_mah": 2.6575246218131965,
+                "mape_pct": 3.608246105482258,
+                "ape_p90_pct": 7.8441575672956585,
+                "bias_mah": -0.5277391112205411,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.0847006046094534,
+                "rmse_mah": 2.598868882502535,
+                "mape_pct": 3.587532107057379,
+                "ape_p90_pct": 7.0601157800078695,
+                "bias_mah": -0.45387519337723264,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.4942340477523512,
+                "rmse_mah": 1.8518581238044758,
+                "mape_pct": 3.74623743220555,
+                "ape_p90_pct": 7.553124550039566,
+                "bias_mah": -0.0674554436956611,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.120072473791159,
+              "rmse_mah": 2.6031235992055612,
+              "mape_pct": 3.8855872699853324,
+              "ape_p90_pct": 7.689325333844854,
+              "bias_mah": 0.8464053735953171,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.8487411469931287,
+            "rmse_mah": 2.349879717363978,
+            "mape_pct": 3.4944050601032104,
+            "ape_p90_pct": 7.125651735092499,
+            "bias_mah": -0.12726884794969437,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.5353376650610358,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.8876971085933016,
+                "rmse_mah": 2.442222570567826,
+                "mape_pct": 3.2561072418698638,
+                "ape_p90_pct": 6.81498164222371,
+                "bias_mah": -0.19937426348042403,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.0753388586518997,
+                "rmse_mah": 2.5761370209193255,
+                "mape_pct": 3.55927577597666,
+                "ape_p90_pct": 6.588045267142736,
+                "bias_mah": -0.7002553035603247,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.4870865380075526,
+                "rmse_mah": 1.8278402117976418,
+                "mape_pct": 3.7906299773365837,
+                "ape_p90_pct": 7.948308689445515,
+                "bias_mah": 0.7449206631943589,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.1222600114506114,
+              "rmse_mah": 2.5286286428235156,
+              "mape_pct": 3.9546380694122556,
+              "ape_p90_pct": 7.027003127053681,
+              "bias_mah": 0.8794152186793587,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.8416554600960786,
+            "rmse_mah": 2.3452941512864665,
+            "mape_pct": 3.475235237594669,
+            "ape_p90_pct": 7.296243857902764,
+            "bias_mah": -0.010703226112977676,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.503584069863481,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.9052418918219418,
+                "rmse_mah": 2.4532153476458083,
+                "mape_pct": 3.2955632700214283,
+                "ape_p90_pct": 7.223819322577252,
+                "bias_mah": 0.049202224080023754,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.0541302007787183,
+                "rmse_mah": 2.552467568180849,
+                "mape_pct": 3.547673466596285,
+                "ape_p90_pct": 7.203766531814995,
+                "bias_mah": -0.12431231513954945,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.4591785080955038,
+                "rmse_mah": 1.824991363843051,
+                "mape_pct": 3.6675154729727284,
+                "ape_p90_pct": 7.491642650817711,
+                "bias_mah": 0.04331670844614685,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.1820780217777584,
+              "rmse_mah": 2.7421530875844424,
+              "mape_pct": 4.023627050420584,
+              "ape_p90_pct": 7.9281605562647,
+              "bias_mah": 1.1227453340155897,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "direct_full32": [
+          {
+            "n": 612,
+            "mae_mah": 1.840254600771322,
+            "rmse_mah": 2.2048940888560864,
+            "mape_pct": 3.723738627084712,
+            "ape_p90_pct": 8.323951340751508,
+            "bias_mah": 0.7387612334864859,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.006721170080789,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.59837196635049,
+                "rmse_mah": 1.9990879496169738,
+                "mape_pct": 2.7753072029195835,
+                "ape_p90_pct": 5.390588578152945,
+                "bias_mah": 0.26624777051508774,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.653549559331109,
+                "rmse_mah": 1.9472157403838843,
+                "mape_pct": 2.8580731020718733,
+                "ape_p90_pct": 5.326030913960568,
+                "bias_mah": 0.015484994715549552,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 2.4744334286039624,
+                "rmse_mah": 2.767839086802197,
+                "mape_pct": 6.386783205250911,
+                "ape_p90_pct": 10.354140709358676,
+                "bias_mah": 2.451089893292014,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.2942985275824386,
+              "rmse_mah": 2.5075096807028068,
+              "mape_pct": 4.72163346914772,
+              "ape_p90_pct": 9.136790423867819,
+              "bias_mah": 1.2349927777013083,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.849612199949696,
+            "rmse_mah": 2.2072317147090326,
+            "mape_pct": 3.7385977478756343,
+            "ape_p90_pct": 8.124002530525686,
+            "bias_mah": 0.6975885509634275,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.022358406761959,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.6123354891628345,
+                "rmse_mah": 2.008019355215373,
+                "mape_pct": 2.7980113176724273,
+                "ape_p90_pct": 5.3278634219470105,
+                "bias_mah": 0.2059165768192543,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.6512749803613442,
+                "rmse_mah": 1.9468300957669382,
+                "mape_pct": 2.850900469481676,
+                "ape_p90_pct": 5.409514219050743,
+                "bias_mah": -0.05276488166154537,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 2.4917701802824905,
+                "rmse_mah": 2.7651445062879123,
+                "mape_pct": 6.418163433131772,
+                "ape_p90_pct": 10.438836080933614,
+                "bias_mah": 2.476375734660784,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.2691413372177043,
+              "rmse_mah": 2.475322778660953,
+              "mape_pct": 4.656112372223472,
+              "ape_p90_pct": 9.06777519737594,
+              "bias_mah": 1.16178459123465,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 2.128322053839125,
+            "rmse_mah": 2.5762837667951675,
+            "mape_pct": 4.448189699261438,
+            "ape_p90_pct": 10.592215899011538,
+            "bias_mah": 1.0716588131676597,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.946981795267775,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.6081772194727009,
+                "rmse_mah": 2.014983597757737,
+                "mape_pct": 2.79659486056827,
+                "ape_p90_pct": 5.439048801655974,
+                "bias_mah": 0.3109682637539451,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.6660923336036122,
+                "rmse_mah": 1.9648105019876299,
+                "mape_pct": 2.88449397738528,
+                "ape_p90_pct": 5.559297486821565,
+                "bias_mah": 0.10116192408299264,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 3.572267765121955,
+                "rmse_mah": 3.7991994909111124,
+                "mape_pct": 9.159856547849776,
+                "ape_p90_pct": 13.837865165053284,
+                "bias_mah": 3.572267765121955,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.6501564007890366,
+              "rmse_mah": 2.975755252649175,
+              "mape_pct": 5.594493111114292,
+              "ape_p90_pct": 12.595312315314931,
+              "bias_mah": 1.6431367456860477,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_current_only16": [
+          {
+            "n": 612,
+            "mae_mah": 2.090087232911367,
+            "rmse_mah": 2.6838813468007987,
+            "mape_pct": 3.8548839476026204,
+            "ape_p90_pct": 7.8349725319604175,
+            "bias_mah": -0.10820411848215251,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.7631250228723805,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.4199398716731437,
+                "rmse_mah": 3.029898653719201,
+                "mape_pct": 4.176049403361572,
+                "ape_p90_pct": 8.574433952650661,
+                "bias_mah": -0.3671362782371409,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.385420087784574,
+                "rmse_mah": 2.9209567832377776,
+                "mape_pct": 4.10995642625084,
+                "ape_p90_pct": 7.8364639533216245,
+                "bias_mah": -0.5004452520443599,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.1714864137169765,
+                "rmse_mah": 1.510028398420027,
+                "mape_pct": 3.0033692390047295,
+                "ape_p90_pct": 6.428264027364445,
+                "bias_mah": 0.8247107113419616,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.3943187851064605,
+              "rmse_mah": 2.9105643161026125,
+              "mape_pct": 4.4563234165154695,
+              "ape_p90_pct": 8.55549879790804,
+              "bias_mah": 1.389671186263231,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.8604240488482653,
+            "rmse_mah": 2.400325688413427,
+            "mape_pct": 3.452024513201305,
+            "ape_p90_pct": 7.092470398144708,
+            "bias_mah": 0.29373666505986995,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.3772365117428733,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 2.1203266089783375,
+                "rmse_mah": 2.695668773362368,
+                "mape_pct": 3.6967171372754697,
+                "ape_p90_pct": 7.352039817584726,
+                "bias_mah": 0.528804408110679,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 2.122562482916769,
+                "rmse_mah": 2.612040798426332,
+                "mape_pct": 3.6920180735927968,
+                "ape_p90_pct": 7.5525891324476895,
+                "bias_mah": 0.4267498268383646,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.0977563728826891,
+                "rmse_mah": 1.3958071462260382,
+                "mape_pct": 2.742974324360354,
+                "ape_p90_pct": 5.694878147986149,
+                "bias_mah": -0.258620047049567,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.450573762820306,
+              "rmse_mah": 2.9991558358904724,
+              "mape_pct": 4.539178627599353,
+              "ape_p90_pct": 8.736690179356218,
+              "bias_mah": 1.5768540003167995,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 612,
+            "mae_mah": 1.745752754681186,
+            "rmse_mah": 2.251431129098005,
+            "mape_pct": 3.2632607243197773,
+            "ape_p90_pct": 6.617663990908474,
+            "bias_mah": 0.45274632582200447,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.2159469443653017,
+            "per_flight": {
+              "F012": {
+                "n": 250,
+                "mae_mah": 1.9425653484723022,
+                "rmse_mah": 2.496093818203574,
+                "mape_pct": 3.3913761169468795,
+                "ape_p90_pct": 6.868600067583873,
+                "bias_mah": 0.6710245113002558,
+                "nonpositive_predictions": 0
+              },
+              "F018": {
+                "n": 206,
+                "mae_mah": 1.9919036496905438,
+                "rmse_mah": 2.480187038999345,
+                "mape_pct": 3.4652607665547164,
+                "ape_p90_pct": 7.332792296219127,
+                "bias_mah": 0.5172813413316827,
+                "nonpositive_predictions": 0
+              },
+              "F022": {
+                "n": 156,
+                "mae_mah": 1.1053025442984503,
+                "rmse_mah": 1.3334887237143866,
+                "mape_pct": 2.791203949594311,
+                "ape_p90_pct": 5.123651918708638,
+                "bias_mah": 0.01772222604920648,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 17,
+              "mae_mah": 2.3098587214156723,
+              "rmse_mah": 2.784954771392052,
+              "mape_pct": 4.288286972907127,
+              "ape_p90_pct": 7.5579813917382355,
+              "bias_mah": 1.4563783184170596,
+              "nonpositive_predictions": 0
+            }
+          }
+        ]
+      }
+    },
+    "extra": {
+      "flights": [
+        "F006",
+        "F011",
+        "F016",
+        "F023"
+      ],
+      "methods": {
+        "history_10s": {
+          "n": 1252,
+          "mae_mah": 1.9626988144656115,
+          "rmse_mah": 2.433331827405461,
+          "mape_pct": 4.3691745230781205,
+          "ape_p90_pct": 9.59264631153201,
+          "bias_mah": 0.03168403096408093,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.144651311557053,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.843026874463898,
+              "rmse_mah": 2.238578360055689,
+              "mape_pct": 3.1582405879507682,
+              "ape_p90_pct": 6.327164171960794,
+              "bias_mah": 0.07176338194345155,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.3787243965414013,
+              "rmse_mah": 1.6974237721342527,
+              "mape_pct": 2.9963196720586,
+              "ape_p90_pct": 6.1535926310456714,
+              "bias_mah": 0.01520968508610671,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 3.002425905573399,
+              "rmse_mah": 3.3946910540323696,
+              "mape_pct": 7.4105697315750785,
+              "ape_p90_pct": 12.35695565905982,
+              "bias_mah": 0.048190448585337296,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.3744397214780952,
+              "rmse_mah": 1.6909229050916743,
+              "mape_pct": 3.013475254643763,
+              "ape_p90_pct": 6.12810788607642,
+              "bias_mah": -0.005767574965384983,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.2870186493863343,
+            "rmse_mah": 2.6282420728970046,
+            "mape_pct": 4.99493571520584,
+            "ape_p90_pct": 8.443712374578226,
+            "bias_mah": -0.5982392861901945,
+            "nonpositive_predictions": 0
+          }
+        },
+        "current_10s": {
+          "n": 1252,
+          "mae_mah": 3.5943667461988418,
+          "rmse_mah": 4.5615752516554675,
+          "mape_pct": 7.782870440154771,
+          "ape_p90_pct": 15.93828828765036,
+          "bias_mah": 0.04931739172088846,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 7.632543354306873,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 4.211610431831573,
+              "rmse_mah": 5.471069421887882,
+              "mape_pct": 7.223322771015624,
+              "ape_p90_pct": 16.437207829259012,
+              "bias_mah": 0.14661729118434044,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 3.0952752976738696,
+              "rmse_mah": 3.999848432060392,
+              "mape_pct": 6.740727152732347,
+              "ape_p90_pct": 13.648263044075115,
+              "bias_mah": 0.013907808583392339,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 4.071966333957033,
+              "rmse_mah": 4.856029906655844,
+              "mape_pct": 9.987001832561772,
+              "ape_p90_pct": 19.07111427805556,
+              "bias_mah": -0.000491528064270998,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 3.0041113832704607,
+              "rmse_mah": 3.8409078930147196,
+              "mape_pct": 6.579121660917745,
+              "ape_p90_pct": 13.691264196559628,
+              "bias_mah": 0.06989190811137397,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 3.008027679705277,
+            "rmse_mah": 3.5049564909181887,
+            "mape_pct": 6.589052654196958,
+            "ape_p90_pct": 13.00186345164912,
+            "bias_mah": 0.4673510516225443,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_3s": {
+          "n": 1252,
+          "mae_mah": 2.648648085933606,
+          "rmse_mah": 3.296993762753857,
+          "mape_pct": 5.788740288336005,
+          "ape_p90_pct": 11.819717474081159,
+          "bias_mah": 0.048772230298724926,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.615670574315474,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 3.0621718938543947,
+              "rmse_mah": 3.776284635425607,
+              "mape_pct": 5.263512397944611,
+              "ape_p90_pct": 10.209946828832374,
+              "bias_mah": 0.14365354187685178,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 2.043729328075128,
+              "rmse_mah": 2.587874662303312,
+              "mape_pct": 4.45106882840379,
+              "ape_p90_pct": 9.142902632474385,
+              "bias_mah": 0.020103487210992036,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 3.425177175189722,
+              "rmse_mah": 4.006969337734396,
+              "mape_pct": 8.439661603023547,
+              "ape_p90_pct": 15.657539912508446,
+              "bias_mah": 0.0036156241483072645,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.9654485890546078,
+              "rmse_mah": 2.4322000359057907,
+              "mape_pct": 4.308439467889951,
+              "ape_p90_pct": 8.937961824878052,
+              "bias_mah": 0.057800585398671674,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.783676444082127,
+            "rmse_mah": 3.3481166394316157,
+            "mape_pct": 5.973614247272295,
+            "ape_p90_pct": 11.001195927679678,
+            "bias_mah": -0.458249367527135,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_5s": {
+          "n": 1252,
+          "mae_mah": 2.361594604148525,
+          "rmse_mah": 2.956716006930489,
+          "mape_pct": 5.214781209056118,
+          "ape_p90_pct": 10.761435422584794,
+          "bias_mah": 0.049543136279202246,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.994972439583757,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 2.5529047472099125,
+              "rmse_mah": 3.1176914558897737,
+              "mape_pct": 4.384007039553969,
+              "ape_p90_pct": 8.642774401986257,
+              "bias_mah": 0.13538255478907976,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.690749527683392,
+              "rmse_mah": 2.16158799546287,
+              "mape_pct": 3.6816874614307484,
+              "ape_p90_pct": 8.208460029404055,
+              "bias_mah": 0.0261424658615692,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 3.4152668441069376,
+              "rmse_mah": 3.9072846726857478,
+              "mape_pct": 8.43581735417991,
+              "ape_p90_pct": 14.671163865759299,
+              "bias_mah": 0.022341036650445106,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.5847319163448303,
+              "rmse_mah": 2.003738791454416,
+              "mape_pct": 3.478377903170399,
+              "ape_p90_pct": 7.279200805563982,
+              "bias_mah": 0.03713520087581558,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.6193512226996023,
+            "rmse_mah": 3.118946672088862,
+            "mape_pct": 5.720243883100315,
+            "ape_p90_pct": 11.473912949252243,
+            "bias_mah": -0.7512766484117656,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_10s": {
+          "n": 1252,
+          "mae_mah": 1.9552830569837722,
+          "rmse_mah": 2.4323187704493403,
+          "mape_pct": 4.353251995915816,
+          "ape_p90_pct": 9.737371852462784,
+          "bias_mah": 0.03341888075245088,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.128145037484884,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.8496942173440925,
+              "rmse_mah": 2.242742295137696,
+              "mape_pct": 3.171023112355101,
+              "ape_p90_pct": 6.071914156194792,
+              "bias_mah": 0.07854640680426475,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.3611012752830274,
+              "rmse_mah": 1.6853945649035118,
+              "mape_pct": 2.9585618791444115,
+              "ape_p90_pct": 6.143623792197291,
+              "bias_mah": 0.01697639474373907,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 3.008418244743383,
+              "rmse_mah": 3.4071905094332213,
+              "mape_pct": 7.424968161725483,
+              "ape_p90_pct": 12.578057735539575,
+              "bias_mah": 0.04407771237149033,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.3489678433120316,
+              "rmse_mah": 1.6605660502071156,
+              "mape_pct": 2.95802699671454,
+              "ape_p90_pct": 5.937140585169336,
+              "bias_mah": -0.0008354201099014145,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.217292061371641,
+            "rmse_mah": 2.619842258555023,
+            "mape_pct": 4.844243442207136,
+            "ape_p90_pct": 8.88291047029772,
+            "bias_mah": -0.6086213678287204,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_20s": {
+          "n": 1252,
+          "mae_mah": 1.4175441111273834,
+          "rmse_mah": 1.733199169503699,
+          "mape_pct": 3.0757881860658087,
+          "ape_p90_pct": 6.340539456640039,
+          "bias_mah": 0.022238597232853773,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.014569738024057,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.6467083091131434,
+              "rmse_mah": 2.0146571932751,
+              "mape_pct": 2.825878440694571,
+              "ape_p90_pct": 5.668085079662184,
+              "bias_mah": 0.05694191094209111,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.274387179594115,
+              "rmse_mah": 1.5944697582583327,
+              "mape_pct": 2.7698295174058107,
+              "ape_p90_pct": 6.0491247067985965,
+              "bias_mah": 0.029312450121073155,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 1.586276659373451,
+              "rmse_mah": 1.8511549513435201,
+              "mape_pct": 3.912882763517957,
+              "ape_p90_pct": 7.055412519443511,
+              "bias_mah": 0.03160892001098827,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.1620633467327746,
+              "rmse_mah": 1.4370085867062379,
+              "mape_pct": 2.5496882304778863,
+              "ape_p90_pct": 5.291978100623084,
+              "bias_mah": -0.027843200670793336,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.5677993571989213,
+            "rmse_mah": 1.857115206571479,
+            "mape_pct": 3.341241906977591,
+            "ape_p90_pct": 6.467955360153622,
+            "bias_mah": -0.40395709628471277,
+            "nonpositive_predictions": 0
+          }
+        },
+        "mean_current_30s": {
+          "n": 1252,
+          "mae_mah": 1.5303654496861114,
+          "rmse_mah": 1.8501096163611557,
+          "mape_pct": 3.3550583213688605,
+          "ape_p90_pct": 6.85190104968312,
+          "bias_mah": 0.021210699780269304,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.2385389076749025,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.6656065069637234,
+              "rmse_mah": 1.993465782987347,
+              "mape_pct": 2.8581636646882562,
+              "ape_p90_pct": 5.419399070977194,
+              "bias_mah": 0.059485707682918214,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2765079098775034,
+              "rmse_mah": 1.5761392393344786,
+              "mape_pct": 2.7737589622747056,
+              "ape_p90_pct": 5.935296248344798,
+              "bias_mah": 0.026542532599639887,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 2.001502692699311,
+              "rmse_mah": 2.2709760101737566,
+              "mape_pct": 4.938126887044749,
+              "ape_p90_pct": 8.473393518809727,
+              "bias_mah": 0.03180440437366851,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.0881646587993687,
+              "rmse_mah": 1.3243219871018106,
+              "mape_pct": 2.3841061166919006,
+              "ape_p90_pct": 4.524931888537187,
+              "bias_mah": -0.031578646212671604,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.501137656380426,
+            "rmse_mah": 1.7350023428943806,
+            "mape_pct": 3.2994626604267574,
+            "ape_p90_pct": 5.597728310408317,
+            "bias_mah": -0.22397572171941996,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ema_current_0.1": {
+          "n": 1252,
+          "mae_mah": 1.6435231430879793,
+          "rmse_mah": 2.0167668979090276,
+          "mape_pct": 3.6264225547780726,
+          "ape_p90_pct": 7.619238936112142,
+          "bias_mah": 0.029615565123989007,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.4765375690010987,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.714880466118746,
+              "rmse_mah": 2.0661025824014785,
+              "mape_pct": 2.944333338087165,
+              "ape_p90_pct": 5.670546764032115,
+              "bias_mah": 0.076654460061844,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2550134637105717,
+              "rmse_mah": 1.5645966493142456,
+              "mape_pct": 2.7299048110072164,
+              "ape_p90_pct": 5.703596574727406,
+              "bias_mah": 0.023360861598543656,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 2.312448722279416,
+              "rmse_mah": 2.6192919535179895,
+              "mape_pct": 5.7063449828170505,
+              "ape_p90_pct": 9.553572684487365,
+              "bias_mah": 0.03344766920912903,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.1514506930806476,
+              "rmse_mah": 1.4465437195993116,
+              "mape_pct": 2.525567144092962,
+              "ape_p90_pct": 5.288957333089364,
+              "bias_mah": -0.008906255125106897,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.7827009529006754,
+            "rmse_mah": 2.0748244368872544,
+            "mape_pct": 3.87035006151593,
+            "ape_p90_pct": 6.655740952525767,
+            "bias_mah": -0.44480779729165537,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ema_current_0.3": {
+          "n": 1252,
+          "mae_mah": 2.1678210533936713,
+          "rmse_mah": 2.6887589201884707,
+          "mape_pct": 4.782083805470491,
+          "ape_p90_pct": 9.872103470178082,
+          "bias_mah": 0.04371232470515614,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.584426914806489,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 2.3148155438777276,
+              "rmse_mah": 2.842356760381116,
+              "mape_pct": 3.976803196318815,
+              "ape_p90_pct": 7.686277575429753,
+              "bias_mah": 0.12146226028783294,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.5751614694747287,
+              "rmse_mah": 2.012026734977181,
+              "mape_pct": 3.4306520270440624,
+              "ape_p90_pct": 7.219799539028915,
+              "bias_mah": 0.02029942517318042,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 3.099089309919722,
+              "rmse_mah": 3.4982538089681663,
+              "mape_pct": 7.640187250657467,
+              "ape_p90_pct": 13.184931230738448,
+              "bias_mah": 0.019948126016640092,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.499984485873042,
+              "rmse_mah": 1.8920709273220395,
+              "mape_pct": 3.2900651852056106,
+              "ape_p90_pct": 6.915078817757019,
+              "bias_mah": 0.03383729553437887,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.234122373486318,
+            "rmse_mah": 2.7251629401214386,
+            "mape_pct": 4.832968039366912,
+            "ape_p90_pct": 10.343523120662919,
+            "bias_mah": -0.5249995063731201,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ema_current_0.6": {
+          "n": 1252,
+          "mae_mah": 2.73425574416982,
+          "rmse_mah": 3.4123075656762523,
+          "mape_pct": 5.969758237463073,
+          "ape_p90_pct": 12.48494349609912,
+          "bias_mah": 0.048380990408395365,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.795736737210659,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 3.0914493952664928,
+              "rmse_mah": 3.9378133404616267,
+              "mape_pct": 5.30887691457772,
+              "ape_p90_pct": 11.507923478489765,
+              "bias_mah": 0.14304204674812523,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 2.1986013769389605,
+              "rmse_mah": 2.7733875047255885,
+              "mape_pct": 4.788785195978644,
+              "ape_p90_pct": 9.71386375573386,
+              "bias_mah": 0.01751316491628593,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 3.4574783178289423,
+              "rmse_mah": 4.016164398640564,
+              "mape_pct": 8.50444630544385,
+              "ape_p90_pct": 15.221230015828713,
+              "bias_mah": 0.003467371850804004,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 2.0908178377512705,
+              "rmse_mah": 2.6346047284653453,
+              "mape_pct": 4.580838532842425,
+              "ape_p90_pct": 9.312220951590717,
+              "bias_mah": 0.05976177747215976,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.565539049926448,
+            "rmse_mah": 3.077707879332637,
+            "mape_pct": 5.602941559903146,
+            "ape_p90_pct": 11.134439146759236,
+            "bias_mah": -0.18540197873222913,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ridge_residual_a1": {
+          "n": 1252,
+          "mae_mah": 2.4178030919595646,
+          "rmse_mah": 3.034827062558353,
+          "mape_pct": 5.1997379229814555,
+          "ape_p90_pct": 11.368818863198351,
+          "bias_mah": 1.8269758572566595,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.309334005038831,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.5824596647551055,
+              "rmse_mah": 1.9514776343439284,
+              "mape_pct": 2.6984489721390874,
+              "ape_p90_pct": 4.8251314305688515,
+              "bias_mah": -0.19626512283919959,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 3.5115256895312235,
+              "rmse_mah": 3.7940942486875,
+              "mape_pct": 7.695293467737816,
+              "ape_p90_pct": 12.633393584513222,
+              "bias_mah": 3.5115256895312235,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.6202635684845507,
+              "rmse_mah": 0.7954112684022393,
+              "mape_pct": 1.5170328996171278,
+              "ape_p90_pct": 3.3752992626644405,
+              "bias_mah": -0.14880516865073348,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 4.239512983916684,
+              "rmse_mah": 4.377584011105127,
+              "mape_pct": 9.326560680661297,
+              "ape_p90_pct": 12.77674479809516,
+              "bias_mah": 4.239512983916684,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.542173634599665,
+            "rmse_mah": 3.212854819556679,
+            "mape_pct": 5.456977761249654,
+            "ape_p90_pct": 11.633521174200489,
+            "bias_mah": 1.7160557378027823,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ridge_residual_a10": {
+          "n": 1252,
+          "mae_mah": 2.5495409903555974,
+          "rmse_mah": 3.192642380111569,
+          "mape_pct": 5.48920472946217,
+          "ape_p90_pct": 11.804889796361394,
+          "bias_mah": 1.956564092206773,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.596010193052477,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.573549212793975,
+              "rmse_mah": 1.9335370873443287,
+              "mape_pct": 2.6823567512461963,
+              "ape_p90_pct": 4.997257493140996,
+              "bias_mah": -0.2250415502904232,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 3.8144835856061694,
+              "rmse_mah": 4.057576448334677,
+              "mape_pct": 8.351438592624092,
+              "ape_p90_pct": 12.940023605832211,
+              "bias_mah": 3.8144835856061694,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.6318092970734961,
+              "rmse_mah": 0.8123120590851514,
+              "mape_pct": 1.547533999127588,
+              "ape_p90_pct": 3.4522443171981867,
+              "bias_mah": -0.1311516638369517,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 4.455719503581649,
+              "rmse_mah": 4.5903258699016725,
+              "mape_pct": 9.802711429212033,
+              "ape_p90_pct": 13.365403591507533,
+              "bias_mah": 4.455719503581649,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.6009969616562962,
+            "rmse_mah": 3.312290831027975,
+            "mape_pct": 5.591658172116042,
+            "ape_p90_pct": 12.371625751028224,
+            "bias_mah": 1.8437882632989682,
+            "nonpositive_predictions": 0
+          }
+        },
+        "ridge_residual_a100": {
+          "n": 1252,
+          "mae_mah": 2.402113524790014,
+          "rmse_mah": 2.996207572494437,
+          "mape_pct": 5.180604855011287,
+          "ape_p90_pct": 11.038165600166366,
+          "bias_mah": 1.842770918706855,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 5.266409609949717,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.5217942267450384,
+              "rmse_mah": 1.8655235485454489,
+              "mape_pct": 2.593062086166682,
+              "ape_p90_pct": 4.86402456447817,
+              "bias_mah": -0.2826596003182291,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 3.5960362240646835,
+              "rmse_mah": 3.848431391254643,
+              "mape_pct": 7.876445964230374,
+              "ape_p90_pct": 12.342743523550878,
+              "bias_mah": 3.5960362240646835,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.6871531658271048,
+              "rmse_mah": 0.8787538526901,
+              "mape_pct": 1.692469388770179,
+              "ape_p90_pct": 3.721456082142815,
+              "bias_mah": 0.0391991331195267,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 4.0425582888068305,
+              "rmse_mah": 4.2188535969175565,
+              "mape_pct": 8.903661000631631,
+              "ape_p90_pct": 12.936927647429947,
+              "bias_mah": 4.0425582888068305,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 2.343193775073982,
+            "rmse_mah": 2.9859786673977946,
+            "mape_pct": 5.033134935100764,
+            "ape_p90_pct": 11.16692682005644,
+            "bias_mah": 1.6009938015188692,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l7_i60": {
+          "n": 1252,
+          "mae_mah": 1.2340001654013442,
+          "rmse_mah": 1.534829394524678,
+          "mape_pct": 2.643572485342206,
+          "ape_p90_pct": 5.413634216865245,
+          "bias_mah": 0.0636712493125068,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.6394600932716332,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.5029609745694898,
+              "rmse_mah": 1.8140746526152343,
+              "mape_pct": 2.577153073742439,
+              "ape_p90_pct": 4.809854680255414,
+              "bias_mah": 0.16016983129521217,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2409530146270893,
+              "rmse_mah": 1.5579934752681965,
+              "mape_pct": 2.7097994668761913,
+              "ape_p90_pct": 5.665456908379229,
+              "bias_mah": 0.23908741898272676,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 1.0802730483835958,
+              "rmse_mah": 1.3123888809136126,
+              "mape_pct": 2.6400793722120977,
+              "ape_p90_pct": 5.109159504346669,
+              "bias_mah": -0.4124439860278216,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.1935788162372476,
+              "rmse_mah": 1.5132602295058222,
+              "mape_pct": 2.6308084602558055,
+              "ape_p90_pct": 5.614555071651732,
+              "bias_mah": 0.40071957709620665,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.2172061956002105,
+            "rmse_mah": 1.5535862545103154,
+            "mape_pct": 2.550558183743211,
+            "ape_p90_pct": 5.375299389324257,
+            "bias_mah": -0.39892575512875256,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l7_i120": {
+          "n": 1252,
+          "mae_mah": 1.1727978939900998,
+          "rmse_mah": 1.4618577981392853,
+          "mape_pct": 2.5092339723786896,
+          "ape_p90_pct": 5.140303507858136,
+          "bias_mah": 0.023768883620072536,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.5086965728996993,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.4156577983451926,
+              "rmse_mah": 1.739020976657889,
+              "mape_pct": 2.4232462453832566,
+              "ape_p90_pct": 4.738454117387569,
+              "bias_mah": 0.10504163630297589,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2238768786242862,
+              "rmse_mah": 1.5184688016441539,
+              "mape_pct": 2.66757696282791,
+              "ape_p90_pct": 5.509467347998227,
+              "bias_mah": 0.13224963701475795,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.9845100038106628,
+              "rmse_mah": 1.184007549792387,
+              "mape_pct": 2.4095728558846954,
+              "ape_p90_pct": 4.61607490622406,
+              "bias_mah": -0.385696193141755,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.1500425122636473,
+              "rmse_mah": 1.4613295327113434,
+              "mape_pct": 2.5343902275029357,
+              "ape_p90_pct": 5.600728983310433,
+              "bias_mah": 0.3628660156398995,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.1303235732144357,
+            "rmse_mah": 1.5026521093678304,
+            "mape_pct": 2.3732493283323364,
+            "ape_p90_pct": 5.286614730744215,
+            "bias_mah": -0.3648247120752606,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l15_i60": {
+          "n": 1252,
+          "mae_mah": 1.1638286661881103,
+          "rmse_mah": 1.4550077298858521,
+          "mape_pct": 2.4899435584593053,
+          "ape_p90_pct": 5.129804808087202,
+          "bias_mah": 0.007915431073581334,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.489238164115539,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.3809535206572585,
+              "rmse_mah": 1.6956395097840198,
+              "mape_pct": 2.369310665191238,
+              "ape_p90_pct": 4.786410814775039,
+              "bias_mah": 0.166289327182906,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2298124229896539,
+              "rmse_mah": 1.5354790568254961,
+              "mape_pct": 2.6789394766264927,
+              "ape_p90_pct": 5.5821116615170565,
+              "bias_mah": 0.1004176654811785,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.9681065604196538,
+              "rmse_mah": 1.175965946897694,
+              "mape_pct": 2.3635727066272385,
+              "ape_p90_pct": 4.703428457373435,
+              "bias_mah": -0.4022347479199942,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.1561387989700012,
+              "rmse_mah": 1.4644125798117376,
+              "mape_pct": 2.545129808017188,
+              "ape_p90_pct": 5.69783893292402,
+              "bias_mah": 0.2993656396315123,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.2120724682452744,
+            "rmse_mah": 1.526889269944348,
+            "mape_pct": 2.5537936464662288,
+            "ape_p90_pct": 5.331694813510113,
+            "bias_mah": -0.4545352632893205,
+            "nonpositive_predictions": 0
+          }
+        },
+        "tree_residual_l15_i120": {
+          "n": 1252,
+          "mae_mah": 1.1177181589784295,
+          "rmse_mah": 1.4099346513866102,
+          "mape_pct": 2.3891618737577227,
+          "ape_p90_pct": 5.00822905982114,
+          "bias_mah": 0.04470250910961579,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.394420295223188,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.3216128713410018,
+              "rmse_mah": 1.6691456996887142,
+              "mape_pct": 2.2671802454863346,
+              "ape_p90_pct": 4.738546770969035,
+              "bias_mah": 0.21053166674426374,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2149417040763308,
+              "rmse_mah": 1.5071426163990063,
+              "mape_pct": 2.644538307247538,
+              "ape_p90_pct": 5.448868478899986,
+              "bias_mah": 0.07169449547819538,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.88089207771709,
+              "rmse_mah": 1.0712881027838201,
+              "mape_pct": 2.1538741790262135,
+              "ape_p90_pct": 4.290246412371241,
+              "bias_mah": -0.35806483153403446,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.1395985389286687,
+              "rmse_mah": 1.4388298399525992,
+              "mape_pct": 2.512088449132665,
+              "ape_p90_pct": 5.423136502382736,
+              "bias_mah": 0.39394740933136063,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.1231790662518684,
+            "rmse_mah": 1.4663121836416062,
+            "mape_pct": 2.3869409728969786,
+            "ape_p90_pct": 5.823834335925691,
+            "bias_mah": -0.3168087054240967,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_core32": {
+          "n": 1252,
+          "mae_mah": 1.074934770330117,
+          "rmse_mah": 1.3825549529095686,
+          "mape_pct": 2.260198692843782,
+          "ape_p90_pct": 4.813957564317227,
+          "bias_mah": 0.02105581333086872,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.2951319114030424,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.5452239918991901,
+              "rmse_mah": 1.91012474432185,
+              "mape_pct": 2.630867145150915,
+              "ape_p90_pct": 5.561724363004816,
+              "bias_mah": -0.35622572259347424,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.1777076235016595,
+              "rmse_mah": 1.4585323896683962,
+              "mape_pct": 2.558116714533518,
+              "ape_p90_pct": 5.228804521564282,
+              "bias_mah": -0.028295999127575727,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.7427582818791534,
+              "rmse_mah": 0.9596819420139859,
+              "mape_pct": 1.834931704482282,
+              "ape_p90_pct": 3.921900312767242,
+              "bias_mah": 0.33290175366237945,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 0.9844201696248818,
+              "rmse_mah": 1.2060949342885448,
+              "mape_pct": 2.156612081445453,
+              "ape_p90_pct": 4.37818960719014,
+              "bias_mah": -0.002498700483788471,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.044521254743333,
+            "rmse_mah": 1.327100425393127,
+            "mape_pct": 2.1861086361015594,
+            "ape_p90_pct": 4.123868113118332,
+            "bias_mah": -0.20320760157929574,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_full16": {
+          "n": 1252,
+          "mae_mah": 1.714110286053976,
+          "rmse_mah": 2.2178192370130843,
+          "mape_pct": 3.696077773812962,
+          "ape_p90_pct": 8.36005189344228,
+          "bias_mah": 1.0598877463066751,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.677963026185119,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.4650034676339732,
+              "rmse_mah": 1.8952511941759778,
+              "mape_pct": 2.4906225128244004,
+              "ape_p90_pct": 5.316601804523232,
+              "bias_mah": -0.36258032134538637,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 3.0142084026635105,
+              "rmse_mah": 3.3865899870318064,
+              "mape_pct": 6.613314122338924,
+              "ape_p90_pct": 11.222935809775718,
+              "bias_mah": 2.96953475352029,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.8675393765845241,
+              "rmse_mah": 1.0633126073649661,
+              "mape_pct": 2.144377427770647,
+              "ape_p90_pct": 4.540973984877421,
+              "bias_mah": 0.1455822002630422,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.5630589592259834,
+              "rmse_mah": 1.8974148534007982,
+              "mape_pct": 3.4635380418065043,
+              "ape_p90_pct": 7.193929678444242,
+              "bias_mah": 1.3225928477641309,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.6001593487886014,
+            "rmse_mah": 2.261777026824786,
+            "mape_pct": 3.4132476028485197,
+            "ape_p90_pct": 8.127830298829153,
+            "bias_mah": 0.8481816684906114,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_full32": {
+          "n": 1252,
+          "mae_mah": 1.9279446711180925,
+          "rmse_mah": 2.373458166446774,
+          "mape_pct": 4.153325401266454,
+          "ape_p90_pct": 8.455832921043942,
+          "bias_mah": 1.2283634985436362,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.185484170672827,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.7927442331272863,
+              "rmse_mah": 2.179855375719646,
+              "mape_pct": 3.0492580886779916,
+              "ape_p90_pct": 6.014459581526922,
+              "bias_mah": -0.6116594636801532,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 2.557706607342259,
+              "rmse_mah": 2.9575499921448043,
+              "mape_pct": 5.616507559653654,
+              "ape_p90_pct": 10.70818385599163,
+              "bias_mah": 2.471998272307595,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 1.0448989255472985,
+              "rmse_mah": 1.3171568330828545,
+              "mape_pct": 2.5916946537893586,
+              "ape_p90_pct": 5.427220074677895,
+              "bias_mah": 0.4714290740669732,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 2.4812089551155685,
+              "rmse_mah": 2.818800532072313,
+              "mape_pct": 5.484476380570303,
+              "ape_p90_pct": 10.076689957509481,
+              "bias_mah": 2.397569295765238,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.87389050386557,
+            "rmse_mah": 2.423913138401386,
+            "mape_pct": 3.9361733285857925,
+            "ape_p90_pct": 8.321839666666678,
+            "bias_mah": 0.5948008394269998,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_full64": {
+          "n": 1252,
+          "mae_mah": 1.6379176903010584,
+          "rmse_mah": 2.0383915974697264,
+          "mape_pct": 3.5259169258603786,
+          "ape_p90_pct": 7.502176403165297,
+          "bias_mah": 0.9609373044495831,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.5541600631936934,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.550009746069373,
+              "rmse_mah": 1.9177494002105866,
+              "mape_pct": 2.626831586846616,
+              "ape_p90_pct": 5.1344730263623894,
+              "bias_mah": -0.7180007496124744,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 2.21514045555111,
+              "rmse_mah": 2.597445814448506,
+              "mape_pct": 4.874108343226838,
+              "ape_p90_pct": 9.21101265801984,
+              "bias_mah": 2.0813336250538663,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.8718272627559969,
+              "rmse_mah": 1.0759070920755567,
+              "mape_pct": 2.160003357947494,
+              "ape_p90_pct": 4.591826879993746,
+              "bias_mah": 0.30283475736276594,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 2.0577628417349487,
+              "rmse_mah": 2.353167836321681,
+              "mape_pct": 4.555696964753827,
+              "ape_p90_pct": 8.234709071067119,
+              "bias_mah": 2.0017005424315455,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.6663478149415152,
+            "rmse_mah": 2.1566928131566176,
+            "mape_pct": 3.54517605561738,
+            "ape_p90_pct": 8.341496561742437,
+            "bias_mah": 0.709308130473091,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_no_thermal32": {
+          "n": 1252,
+          "mae_mah": 1.5779573179093371,
+          "rmse_mah": 1.9665585664577858,
+          "mape_pct": 3.3903463666536036,
+          "ape_p90_pct": 7.003375860620496,
+          "bias_mah": 0.7165127080560911,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.4116039523056783,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.6789493475946058,
+              "rmse_mah": 2.0193049563127565,
+              "mape_pct": 2.8687332116249,
+              "ape_p90_pct": 5.49861257032565,
+              "bias_mah": -0.13634513471197474,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.9126848552702607,
+              "rmse_mah": 2.336211746223969,
+              "mape_pct": 4.208330234234635,
+              "ape_p90_pct": 8.928709820168745,
+              "bias_mah": 1.7029058083907431,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 1.0262055193871171,
+              "rmse_mah": 1.2837186444071242,
+              "mape_pct": 2.5172568339723433,
+              "ape_p90_pct": 5.4528826404885855,
+              "bias_mah": -0.29253612154147873,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.829801771222657,
+              "rmse_mah": 2.185068451212376,
+              "mape_pct": 4.052095529390836,
+              "ape_p90_pct": 8.130597098851247,
+              "bias_mah": 1.6508495326620192,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.5509245705739259,
+            "rmse_mah": 2.020792310062223,
+            "mape_pct": 3.266437759618885,
+            "ape_p90_pct": 6.682646536182575,
+            "bias_mah": 0.07821968855941423,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_with_altitude32": {
+          "n": 1252,
+          "mae_mah": 1.9745684702388209,
+          "rmse_mah": 2.4187432724111964,
+          "mape_pct": 4.257070452277312,
+          "ape_p90_pct": 8.761942642198386,
+          "bias_mah": 1.2622096356864145,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 4.273311623122457,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.7773641714728108,
+              "rmse_mah": 2.1513313496612447,
+              "mape_pct": 3.0219390220647027,
+              "ape_p90_pct": 6.159301218252281,
+              "bias_mah": -0.6171928147082769,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 2.810860124455668,
+              "rmse_mah": 3.1809856034035633,
+              "mape_pct": 6.167778061656109,
+              "ape_p90_pct": 11.20016231442203,
+              "bias_mah": 2.7534699171323425,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 1.0728923423562666,
+              "rmse_mah": 1.331306525299732,
+              "mape_pct": 2.6585517591434042,
+              "ape_p90_pct": 5.646827516991698,
+              "bias_mah": 0.4528855061681803,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 2.3728245713319014,
+              "rmse_mah": 2.7182243714625516,
+              "mape_pct": 5.244977649625614,
+              "ape_p90_pct": 9.82549268959889,
+              "bias_mah": 2.2543967246972465,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.9245256736673977,
+            "rmse_mah": 2.415019919962358,
+            "mape_pct": 4.068661694468694,
+            "ape_p90_pct": 7.647329164919999,
+            "bias_mah": 0.6843810942649119,
+            "nonpositive_predictions": 0
+          }
+        },
+        "direct_full32": {
+          "n": 1252,
+          "mae_mah": 1.399842240152967,
+          "rmse_mah": 1.6670319765074828,
+          "mape_pct": 3.059013777224689,
+          "ape_p90_pct": 5.93292256194724,
+          "bias_mah": 0.7780318637782697,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 3.028369011127191,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.457601456278774,
+              "rmse_mah": 1.7912742159495008,
+              "mape_pct": 2.476275577726082,
+              "ape_p90_pct": 4.896036431062641,
+              "bias_mah": -0.5330301210454921,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.269587096884344,
+              "rmse_mah": 1.5142733864577218,
+              "mape_pct": 2.779089395588433,
+              "ape_p90_pct": 5.354147340719876,
+              "bias_mah": 0.5608110022046082,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 1.3244471434004883,
+              "rmse_mah": 1.528247144157196,
+              "mape_pct": 3.3215512593221095,
+              "ape_p90_pct": 6.169340451388541,
+              "bias_mah": 1.276295272373503,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.5946140255668817,
+              "rmse_mah": 1.8791803462014687,
+              "mape_pct": 3.5365598118721384,
+              "ape_p90_pct": 6.7589083790159625,
+              "bias_mah": 1.5075231369828221,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.6401259104690122,
+            "rmse_mah": 1.9139617078039264,
+            "mape_pct": 3.5453826967303605,
+            "ape_p90_pct": 6.38106923701192,
+            "bias_mah": 0.5637850082305645,
+            "nonpositive_predictions": 0
+          }
+        },
+        "residual_current_only16": {
+          "n": 1252,
+          "mae_mah": 1.2049456833209307,
+          "rmse_mah": 1.5127793943149093,
+          "mape_pct": 2.564025384432032,
+          "ape_p90_pct": 5.393172400527192,
+          "bias_mah": 0.31575769505075424,
+          "nonpositive_predictions": 0,
+          "flight_macro_mape_pct": 2.593307783063596,
+          "per_flight": {
+            "F006": {
+              "n": 252,
+              "mae_mah": 1.597365185242619,
+              "rmse_mah": 1.9257341398970054,
+              "mape_pct": 2.736317817796917,
+              "ape_p90_pct": 5.45362638523942,
+              "bias_mah": 0.0032817474844711023,
+              "nonpositive_predictions": 0
+            },
+            "F011": {
+              "n": 329,
+              "mae_mah": 1.2446873089465789,
+              "rmse_mah": 1.5448047918755172,
+              "mape_pct": 2.72610831542571,
+              "ape_p90_pct": 5.614390117736202,
+              "bias_mah": 0.5639990238730708,
+              "nonpositive_predictions": 0
+            },
+            "F016": {
+              "n": 379,
+              "mae_mah": 0.8866774645624641,
+              "rmse_mah": 1.1021059245538702,
+              "mape_pct": 2.18118385898562,
+              "ape_p90_pct": 4.456719088599163,
+              "bias_mah": 0.03965015955641314,
+              "nonpositive_predictions": 0
+            },
+            "F023": {
+              "n": 292,
+              "mae_mah": 1.234599606589269,
+              "rmse_mah": 1.5318463954507289,
+              "mape_pct": 2.729621140046138,
+              "ape_p90_pct": 5.77631073106021,
+              "bias_mah": 0.6641046044908794,
+              "nonpositive_predictions": 0
+            }
+          },
+          "nonoverlap_40s": {
+            "n": 34,
+            "mae_mah": 1.286378515627764,
+            "rmse_mah": 1.6046555924275652,
+            "mape_pct": 2.6805874126416245,
+            "ape_p90_pct": 5.642863210742843,
+            "bias_mah": 0.0700063449041607,
+            "nonpositive_predictions": 0
+          }
+        }
+      },
+      "lstm_seeds": {
+        "residual_core32": [
+          {
+            "n": 1252,
+            "mae_mah": 1.2077567628915242,
+            "rmse_mah": 1.56314561200708,
+            "mape_pct": 2.555251904321961,
+            "ape_p90_pct": 5.410870417148177,
+            "bias_mah": 0.28573573001143393,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.5891382441823607,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.6704082060702174,
+                "rmse_mah": 2.152091488878331,
+                "mape_pct": 2.8267858745192407,
+                "ape_p90_pct": 5.844101467280085,
+                "bias_mah": -0.8538567381937077,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.2638754675458423,
+                "rmse_mah": 1.5510113061019666,
+                "mape_pct": 2.768616515842215,
+                "ape_p90_pct": 5.392912008819071,
+                "bias_mah": 0.5994263403934349,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.8663817388146211,
+                "rmse_mah": 1.1041575244446813,
+                "mape_pct": 2.134419987364426,
+                "ape_p90_pct": 4.584014040128526,
+                "bias_mah": 0.5283386551801813,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.1883386690998972,
+                "rmse_mah": 1.4787447259899946,
+                "mape_pct": 2.6267305990035617,
+                "ape_p90_pct": 5.890215788014413,
+                "bias_mah": 0.6008952592342491,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.1229099411729737,
+              "rmse_mah": 1.5945329042939382,
+              "mape_pct": 2.3371693363765527,
+              "ape_p90_pct": 4.974669668919427,
+              "bias_mah": 0.06330956535635993,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.1297818560647583,
+            "rmse_mah": 1.4339171701474172,
+            "mape_pct": 2.3711207521468367,
+            "ape_p90_pct": 4.846996778530756,
+            "bias_mah": -0.3221951259662554,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.396235584875416,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5482511465478328,
+                "rmse_mah": 1.9107972432165727,
+                "mape_pct": 2.6329352575665115,
+                "ape_p90_pct": 5.44970711322441,
+                "bias_mah": -0.4628582780818588,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.317282902300447,
+                "rmse_mah": 1.5870445077423199,
+                "mape_pct": 2.8425247738144903,
+                "ape_p90_pct": 5.40594009431242,
+                "bias_mah": -0.4622910258118312,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.7952721568145014,
+                "rmse_mah": 1.0048648970827212,
+                "mape_pct": 1.953839220975602,
+                "ape_p90_pct": 4.166459638992295,
+                "bias_mah": -0.07515369603583576,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 0.991552645799591,
+                "rmse_mah": 1.2314642714266453,
+                "mape_pct": 2.155643087145061,
+                "ape_p90_pct": 4.209243169927657,
+                "bias_mah": -0.3635993607652369,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.1508294818555298,
+              "rmse_mah": 1.4635049373702316,
+              "mape_pct": 2.390811877908304,
+              "ape_p90_pct": 4.227812329035887,
+              "bias_mah": -0.5858670624247655,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.194015431128081,
+            "rmse_mah": 1.507134031920697,
+            "mape_pct": 2.5230713040845685,
+            "ape_p90_pct": 5.235496120399736,
+            "bias_mah": 0.09962683594742798,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.550542050334869,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.6298909832853532,
+                "rmse_mah": 1.9524678353320808,
+                "mape_pct": 2.799001567636837,
+                "ape_p90_pct": 5.3481290625023865,
+                "bias_mah": 0.24803784849514404,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.3213076082918096,
+                "rmse_mah": 1.6419289149642182,
+                "mape_pct": 2.863502831432085,
+                "ape_p90_pct": 5.859245845154962,
+                "bias_mah": -0.2220233119643302,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.865513343835763,
+                "rmse_mah": 1.107647010610355,
+                "mape_pct": 2.136351906497002,
+                "ape_p90_pct": 4.578899485263032,
+                "bias_mah": 0.545520301842793,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.100804902543455,
+                "rmse_mah": 1.3488361617275464,
+                "mape_pct": 2.403311895773552,
+                "ape_p90_pct": 4.748144397776422,
+                "bias_mah": -0.24479199992037795,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.064954702108473,
+              "rmse_mah": 1.2761254178551564,
+              "mape_pct": 2.272156476405086,
+              "ape_p90_pct": 4.2265531387094395,
+              "bias_mah": -0.08706530766948194,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_full16": [
+          {
+            "n": 1252,
+            "mae_mah": 2.448913757091022,
+            "rmse_mah": 3.026191741880681,
+            "mape_pct": 5.299487345546461,
+            "ape_p90_pct": 11.150442144933239,
+            "bias_mah": 1.7664141996982718,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 5.348122974689554,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.644685148810104,
+                "rmse_mah": 2.092042891404069,
+                "mape_pct": 2.7846258960088814,
+                "ape_p90_pct": 5.9783576819894995,
+                "bias_mah": -0.8291175508864032,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 3.49840151142905,
+                "rmse_mah": 3.836911769018741,
+                "mape_pct": 7.664001918194684,
+                "ape_p90_pct": 12.329970438093234,
+                "bias_mah": 3.4784469478937234,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.0026662484565565,
+                "rmse_mah": 1.2383904631049716,
+                "mape_pct": 2.484683759240496,
+                "ape_p90_pct": 5.108222464215975,
+                "bias_mah": 0.4195809509067042,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 3.837653290933633,
+                "rmse_mah": 4.112275353295813,
+                "mape_pct": 8.459180325314152,
+                "ape_p90_pct": 13.314379358845239,
+                "bias_mah": 3.825541008886761,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 2.410374119067992,
+              "rmse_mah": 3.0033186208248757,
+              "mape_pct": 5.143327283300674,
+              "ape_p90_pct": 11.446169886999792,
+              "bias_mah": 1.5292926988754443,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.676635695372003,
+            "rmse_mah": 2.1716818888362885,
+            "mape_pct": 3.610456001734568,
+            "ape_p90_pct": 7.967270107458974,
+            "bias_mah": 0.9880015673898789,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.5992801574238547,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5284259524060548,
+                "rmse_mah": 1.9953975383451739,
+                "mape_pct": 2.596099565034684,
+                "ape_p90_pct": 5.5155662294013394,
+                "bias_mah": -0.5017316771902077,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.805555598418513,
+                "rmse_mah": 3.2026987178342647,
+                "mape_pct": 6.1526825117025306,
+                "ape_p90_pct": 11.02130631897399,
+                "bias_mah": 2.6244383940073486,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.8905929467242009,
+                "rmse_mah": 1.1422177837774021,
+                "mape_pct": 2.2129473559656376,
+                "ape_p90_pct": 4.873751357016459,
+                "bias_mah": 0.37099239958939706,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.5528151777782848,
+                "rmse_mah": 1.8801482916487355,
+                "mape_pct": 3.435391196992567,
+                "ape_p90_pct": 6.7445908617623225,
+                "bias_mah": 1.2307123080522648,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.707984987002269,
+              "rmse_mah": 2.3205305659596203,
+              "mape_pct": 3.666332301814968,
+              "ape_p90_pct": 8.961260237246206,
+              "bias_mah": 0.8151844712806504,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.6753072922428893,
+            "rmse_mah": 2.143290883222378,
+            "mape_pct": 3.595446551397646,
+            "ape_p90_pct": 7.932730271587006,
+            "bias_mah": 0.42524747183187467,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.5665735198961563,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5057745139183474,
+                "rmse_mah": 1.8899388855576118,
+                "mape_pct": 2.5793472615117254,
+                "ape_p90_pct": 5.093017483169762,
+                "bias_mah": 0.24310826404045116,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.839217764628584,
+                "rmse_mah": 3.2314526226370117,
+                "mape_pct": 6.234739553189681,
+                "ape_p90_pct": 10.72217432321977,
+                "bias_mah": 2.805718918659799,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.9787821601686308,
+                "rmse_mah": 1.1730775298138814,
+                "mape_pct": 2.3934452655585354,
+                "ape_p90_pct": 4.724875210757959,
+                "bias_mah": -0.3538267497069747,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.4142755791573929,
+                "rmse_mah": 1.749890436480625,
+                "mape_pct": 3.0587619993246844,
+                "ape_p90_pct": 5.797268037861744,
+                "bias_mah": -1.0884747736466334,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.510082003228819,
+              "rmse_mah": 2.0867770720505496,
+              "mape_pct": 3.2201044979437263,
+              "ape_p90_pct": 7.057513504113872,
+              "bias_mah": 0.20006783531574024,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_full32": [
+          {
+            "n": 1252,
+            "mae_mah": 2.30616170195135,
+            "rmse_mah": 2.815086234762536,
+            "mape_pct": 4.989857917187217,
+            "ape_p90_pct": 10.241403880516302,
+            "bias_mah": 1.736599176377029,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 5.016102877016295,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.7626171069474446,
+                "rmse_mah": 2.1253654628953207,
+                "mape_pct": 3.010470437114663,
+                "ape_p90_pct": 5.937923854513683,
+                "bias_mah": -0.16529382230415224,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 3.3005270450168736,
+                "rmse_mah": 3.6691508481108728,
+                "mape_pct": 7.232907358093229,
+                "ape_p90_pct": 12.490148460046326,
+                "bias_mah": 3.2578854475797563,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.1206912813863708,
+                "rmse_mah": 1.4380603366140916,
+                "mape_pct": 2.773508013775855,
+                "ape_p90_pct": 5.968079503375692,
+                "bias_mah": 0.5817409123926494,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 3.1935600905354384,
+                "rmse_mah": 3.4967755275046186,
+                "mape_pct": 7.047525699081435,
+                "ape_p90_pct": 11.53675963582679,
+                "bias_mah": 3.1628496369662074,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 2.1611467822511545,
+              "rmse_mah": 2.7244431030534644,
+              "mape_pct": 4.611449498911429,
+              "ape_p90_pct": 9.547179489503135,
+              "bias_mah": 1.04409587982574,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.578787110796984,
+            "rmse_mah": 1.9454201467637153,
+            "mape_pct": 3.4089883378928696,
+            "ape_p90_pct": 6.965824434174195,
+            "bias_mah": 0.7769761662068179,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.4120704064822496,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.8105053437492717,
+                "rmse_mah": 2.2021047863502554,
+                "mape_pct": 3.088008771869064,
+                "ape_p90_pct": 6.030611818115763,
+                "bias_mah": -0.3771032623833991,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.5356256751168962,
+                "rmse_mah": 1.9189350244177947,
+                "mape_pct": 3.366891061423442,
+                "ape_p90_pct": 6.981327736401031,
+                "bias_mah": 0.9336943760416593,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.3006932437795653,
+                "rmse_mah": 1.585997761336265,
+                "mape_pct": 3.237937308881609,
+                "ape_p90_pct": 6.358960704382096,
+                "bias_mah": 0.8680309792761652,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.7883922246133348,
+                "rmse_mah": 2.151429861896051,
+                "mape_pct": 3.9554444837548832,
+                "ape_p90_pct": 8.015444992987675,
+                "bias_mah": 1.4782020251649999,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.7693694491090384,
+              "rmse_mah": 2.1792429702599643,
+              "mape_pct": 3.7391508114127925,
+              "ape_p90_pct": 8.002402233133445,
+              "bias_mah": 0.18164941779439348,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 2.1660351432719454,
+            "rmse_mah": 2.6581944654504217,
+            "mape_pct": 4.646470511524503,
+            "ape_p90_pct": 9.432577368854142,
+            "bias_mah": 1.1715151530470616,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.678270985150621,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.9415532432878935,
+                "rmse_mah": 2.4054115382875083,
+                "mape_pct": 3.2835593941252528,
+                "ape_p90_pct": 6.690333391360997,
+                "bias_mah": -1.2925813063529084,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 3.239541140255463,
+                "rmse_mah": 3.5832684197064686,
+                "mape_pct": 7.098724279552965,
+                "ape_p90_pct": 12.329304708821297,
+                "bias_mah": 3.2244149933013673,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.0365439500308402,
+                "rmse_mah": 1.3031147687162206,
+                "mape_pct": 2.5500016918885167,
+                "ape_p90_pct": 5.7311014203358,
+                "bias_mah": -0.03548466946789376,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.616251335144488,
+                "rmse_mah": 2.9381027708704868,
+                "mape_pct": 5.780798575035751,
+                "ape_p90_pct": 10.098917533600506,
+                "bias_mah": 2.5516562251645056,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 2.1236410381595747,
+              "rmse_mah": 2.70375371709738,
+              "mape_pct": 4.412473404960121,
+              "ape_p90_pct": 8.93695999745398,
+              "bias_mah": 0.5586572206608672,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_full64": [
+          {
+            "n": 1252,
+            "mae_mah": 1.4555830080766328,
+            "rmse_mah": 1.8304770260755954,
+            "mape_pct": 3.117571640799791,
+            "ape_p90_pct": 6.54830187355369,
+            "bias_mah": 0.6995441945279323,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.1425058595409747,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5537836087523562,
+                "rmse_mah": 1.9029287936295458,
+                "mape_pct": 2.637125707926205,
+                "ape_p90_pct": 5.066199537846428,
+                "bias_mah": -0.6221468122480407,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.9732039593251647,
+                "rmse_mah": 2.3462347587488037,
+                "mape_pct": 4.344816553883736,
+                "ape_p90_pct": 8.566730790550707,
+                "bias_mah": 1.79147901612085,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.8296647664296125,
+                "rmse_mah": 1.0407693979859156,
+                "mape_pct": 2.0399961627681606,
+                "ape_p90_pct": 4.369438577693592,
+                "bias_mah": 0.04823569601284324,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.6000322178477675,
+                "rmse_mah": 1.9060682374630424,
+                "mape_pct": 3.5480850135857973,
+                "ape_p90_pct": 6.911852787514381,
+                "bias_mah": 1.455247955968665,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.4510937537726687,
+              "rmse_mah": 1.920203898836698,
+              "mape_pct": 3.058719997703233,
+              "ape_p90_pct": 7.422065512195214,
+              "bias_mah": 0.41088081701518925,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.8349703766907208,
+            "rmse_mah": 2.2674509323875816,
+            "mape_pct": 3.949707262969302,
+            "ape_p90_pct": 8.333803751741291,
+            "bias_mah": 1.1150034974626568,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.990763090373453,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.6558493229852362,
+                "rmse_mah": 2.0485997576852784,
+                "mape_pct": 2.7989541737815697,
+                "ape_p90_pct": 5.405851519772146,
+                "bias_mah": -1.0289145143877536,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.4536412808086325,
+                "rmse_mah": 2.843651240331868,
+                "mape_pct": 5.393108436418363,
+                "ape_p90_pct": 9.86350817801703,
+                "bias_mah": 2.3219782580923285,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.9078599926455222,
+                "rmse_mah": 1.125594095121506,
+                "mape_pct": 2.255578833162733,
+                "ape_p90_pct": 4.71029057690594,
+                "bias_mah": 0.4534146838763978,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.4958286425541445,
+                "rmse_mah": 2.76894316909527,
+                "mape_pct": 5.515410918131145,
+                "ape_p90_pct": 9.218874446321513,
+                "bias_mah": 2.4640267957103754,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.952297131379506,
+              "rmse_mah": 2.436722759568787,
+              "mape_pct": 4.1525850460560285,
+              "ape_p90_pct": 8.655813680966185,
+              "bias_mah": 0.8799824483249475,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.6722773560974569,
+            "rmse_mah": 2.067667986610449,
+            "mape_pct": 3.6157334278457567,
+            "ape_p90_pct": 7.575171264675374,
+            "bias_mah": 1.0682642213581603,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.6328431918895374,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5012541748180368,
+                "rmse_mah": 1.8596078418651645,
+                "mape_pct": 2.5492989921682416,
+                "ape_p90_pct": 5.092842429189239,
+                "bias_mah": -0.5029409222016288,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.239209053551508,
+                "rmse_mah": 2.623275214199173,
+                "mape_pct": 4.927925205098594,
+                "ape_p90_pct": 9.434731239187492,
+                "bias_mah": 2.13054360094842,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.9405443141869197,
+                "rmse_mah": 1.153071888413982,
+                "mape_pct": 2.3376566739538998,
+                "ape_p90_pct": 4.821134959838098,
+                "bias_mah": 0.40685389219905715,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.130853164673225,
+                "rmse_mah": 2.4222259994002373,
+                "mape_pct": 4.7164918963374145,
+                "ape_p90_pct": 8.571890829149849,
+                "bias_mah": 2.085826875615596,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.6939236226241818,
+              "rmse_mah": 2.1603853473948895,
+              "mape_pct": 3.6281118430474355,
+              "ape_p90_pct": 8.375683119686807,
+              "bias_mah": 0.8370611260791357,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_no_thermal32": [
+          {
+            "n": 1252,
+            "mae_mah": 1.4919275936244156,
+            "rmse_mah": 1.8711990693870382,
+            "mape_pct": 3.2002661005172164,
+            "ape_p90_pct": 6.654231705061561,
+            "bias_mah": 0.751165037343203,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.221719117768086,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.7755898144084088,
+                "rmse_mah": 2.126507366173811,
+                "mape_pct": 3.054109308203716,
+                "ape_p90_pct": 6.036545414773819,
+                "bias_mah": 0.6003286125654739,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.7348093788986954,
+                "rmse_mah": 2.1573710768627032,
+                "mape_pct": 3.816505957127125,
+                "ape_p90_pct": 7.876221772945257,
+                "bias_mah": 1.4149029985253259,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.0474387739848914,
+                "rmse_mah": 1.3176802296088834,
+                "mape_pct": 2.5829756345847708,
+                "ape_p90_pct": 5.589741885966133,
+                "bias_mah": -0.10126850139736426,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.5503874417428247,
+                "rmse_mah": 1.9006883655430178,
+                "mape_pct": 3.433285571156735,
+                "ape_p90_pct": 7.250894356979629,
+                "bias_mah": 1.2399092188423275,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.4664502808060058,
+              "rmse_mah": 1.8332164888071587,
+              "mape_pct": 3.128353861011492,
+              "ape_p90_pct": 5.631498181378441,
+              "bias_mah": 0.1146278435223838,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.511557298441432,
+            "rmse_mah": 1.9088430222598003,
+            "mape_pct": 3.223968306880578,
+            "ape_p90_pct": 6.88707619140133,
+            "bias_mah": 0.4561575054638407,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.2548511695985973,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.8507669519840573,
+                "rmse_mah": 2.272997501262559,
+                "mape_pct": 3.1454356800755,
+                "ape_p90_pct": 6.4521208515181225,
+                "bias_mah": -0.7838287283882626,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.687616777315064,
+                "rmse_mah": 2.1130463404227244,
+                "mape_pct": 3.706837667680421,
+                "ape_p90_pct": 8.148981022360832,
+                "bias_mah": 1.2517814352948724,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.0446414962580333,
+                "rmse_mah": 1.2999466287505932,
+                "mape_pct": 2.5678918117490346,
+                "ape_p90_pct": 5.5446367024284315,
+                "bias_mah": -0.06852901037888287,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.6264774620898623,
+                "rmse_mah": 1.9849572836987128,
+                "mape_pct": 3.5992395188894357,
+                "ape_p90_pct": 7.704081530105951,
+                "bias_mah": 1.3108576682060082,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.6563172922432943,
+              "rmse_mah": 2.1489917570032184,
+              "mape_pct": 3.410256970624189,
+              "ape_p90_pct": 7.225343787947573,
+              "bias_mah": -0.22327863328017397,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.9078940745057142,
+            "rmse_mah": 2.3207297081567306,
+            "mape_pct": 4.1285974444779105,
+            "ape_p90_pct": 8.330414115594404,
+            "bias_mah": 0.94221558136123,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.1319788794468275,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5965156479818594,
+                "rmse_mah": 1.9333944056406316,
+                "mape_pct": 2.724818517319651,
+                "ape_p90_pct": 5.457942435994144,
+                "bias_mah": -0.22553528831313657,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.5063082178018816,
+                "rmse_mah": 2.8888801159689823,
+                "mape_pct": 5.505385105729913,
+                "ape_p90_pct": 10.446299352468088,
+                "bias_mah": 2.4420329913520327,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.1681935812698079,
+                "rmse_mah": 1.4398922999897665,
+                "mape_pct": 2.8522547249796277,
+                "ape_p90_pct": 5.634001637297238,
+                "bias_mah": -0.7078108528481881,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.462468037779622,
+                "rmse_mah": 2.787899777487532,
+                "mape_pct": 5.445457169758119,
+                "ape_p90_pct": 10.014634033936428,
+                "bias_mah": 2.4017817109377217,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.7729489921399377,
+              "rmse_mah": 2.27392921319589,
+              "mape_pct": 3.77853655406316,
+              "ape_p90_pct": 8.151295281852091,
+              "bias_mah": 0.3433098554360308,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_with_altitude32": [
+          {
+            "n": 1252,
+            "mae_mah": 1.9377898509256744,
+            "rmse_mah": 2.385845375258151,
+            "mape_pct": 4.161047281533236,
+            "ape_p90_pct": 8.62820854644608,
+            "bias_mah": 1.109476271955304,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.205740816832841,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.8709834952302251,
+                "rmse_mah": 2.294964598155788,
+                "mape_pct": 3.170850148093178,
+                "ape_p90_pct": 6.452955514090131,
+                "bias_mah": -0.9953401097005597,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.5011722016955718,
+                "rmse_mah": 2.8789752603229086,
+                "mape_pct": 5.493111046349781,
+                "ape_p90_pct": 10.300717398993179,
+                "bias_mah": 2.414941149563189,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.0256902178311234,
+                "rmse_mah": 1.2841529904864621,
+                "mape_pct": 2.5392508003176846,
+                "ape_p90_pct": 5.485189627365368,
+                "bias_mah": 0.37170338938123626,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.544530156318798,
+                "rmse_mah": 2.895173298376994,
+                "mape_pct": 5.6197512725707215,
+                "ape_p90_pct": 10.324928203963763,
+                "bias_mah": 2.412667045721932,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.9717998007151676,
+              "rmse_mah": 2.4520100177072357,
+              "mape_pct": 4.125037917303039,
+              "ape_p90_pct": 8.14164809894726,
+              "bias_mah": 0.49913654413552533,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 2.042277234188816,
+            "rmse_mah": 2.4837489955443353,
+            "mape_pct": 4.4276660469037115,
+            "ape_p90_pct": 9.346832528815183,
+            "bias_mah": 1.4686783893691946,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.424029531041086,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.7040842189038516,
+                "rmse_mah": 2.0539648628362523,
+                "mape_pct": 2.9071469607351603,
+                "ape_p90_pct": 5.677303978862876,
+                "bias_mah": -0.26578390932717855,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 2.861114977941275,
+                "rmse_mah": 3.241652666656969,
+                "mape_pct": 6.276534656502994,
+                "ape_p90_pct": 11.052396451414737,
+                "bias_mah": 2.787713392145353,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.2044622092991002,
+                "rmse_mah": 1.4977683700877964,
+                "mape_pct": 2.991097639152351,
+                "ape_p90_pct": 6.132429710691154,
+                "bias_mah": 0.7564795775490778,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.4989858526492745,
+                "rmse_mah": 2.838712160674258,
+                "mape_pct": 5.521338867773838,
+                "ape_p90_pct": 9.913829428481431,
+                "bias_mah": 2.4037651463484893,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.9558630470260363,
+              "rmse_mah": 2.4333189333244003,
+              "mape_pct": 4.20068564005536,
+              "ape_p90_pct": 8.067571285616877,
+              "bias_mah": 0.9226111009818942,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.9968019609088605,
+            "rmse_mah": 2.4727711955564695,
+            "mape_pct": 4.300031891604455,
+            "ape_p90_pct": 8.94047436998696,
+            "bias_mah": 1.208474245734745,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 4.299446106687055,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.814023149972179,
+                "rmse_mah": 2.1910976558971385,
+                "mape_pct": 3.086045223625716,
+                "ape_p90_pct": 6.074747334055745,
+                "bias_mah": -0.5904544250970928,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 3.085682717251215,
+                "rmse_mah": 3.4662397422032196,
+                "mape_pct": 6.765534789604091,
+                "ape_p90_pct": 12.264374214824286,
+                "bias_mah": 3.0577552096884855,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.094334948394467,
+                "rmse_mah": 1.3506935438368943,
+                "mape_pct": 2.7011942230801673,
+                "ape_p90_pct": 5.702763723034044,
+                "bias_mah": 0.2304735515742268,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 2.099039937834766,
+                "rmse_mah": 2.483737781366775,
+                "mape_pct": 4.645010190438247,
+                "ape_p90_pct": 9.203018661911125,
+                "bias_mah": 1.9467579820213168,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.909191363078301,
+              "rmse_mah": 2.4521952803029143,
+              "mape_pct": 4.026076819335625,
+              "ape_p90_pct": 8.360612318186208,
+              "bias_mah": 0.6313956376773132,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "direct_full32": [
+          {
+            "n": 1252,
+            "mae_mah": 1.5131106066084485,
+            "rmse_mah": 1.8066130696703138,
+            "mape_pct": 3.326425527626517,
+            "ape_p90_pct": 6.664867892832563,
+            "bias_mah": 1.0398420416339773,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.2907265829670607,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.3691841577541963,
+                "rmse_mah": 1.7165664469010773,
+                "mape_pct": 2.3289356813460866,
+                "ape_p90_pct": 4.618025371390535,
+                "bias_mah": -0.3839259109935273,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.4246788591183357,
+                "rmse_mah": 1.7276444280375327,
+                "mape_pct": 3.1389533007843884,
+                "ape_p90_pct": 6.585449360128443,
+                "bias_mah": 1.0686720328245587,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.3668417073866135,
+                "rmse_mah": 1.5795202742273802,
+                "mape_pct": 3.426807664456255,
+                "ape_p90_pct": 6.440022875308248,
+                "bias_mah": 1.3030746528262642,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.9268072601721278,
+                "rmse_mah": 2.2023121849921745,
+                "mape_pct": 4.268209685281512,
+                "ape_p90_pct": 7.61608565079427,
+                "bias_mah": 1.894428676286556,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.632706718335988,
+              "rmse_mah": 2.0005069507987514,
+              "mape_pct": 3.5606031437465355,
+              "ape_p90_pct": 6.769706502837702,
+              "bias_mah": 0.8396496597852264,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.271646318191351,
+            "rmse_mah": 1.5532431493443972,
+            "mape_pct": 2.737281748405474,
+            "ape_p90_pct": 5.338475112164597,
+            "bias_mah": 0.5026943399511091,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.747902018674143,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5158638851135624,
+                "rmse_mah": 1.8521350086572657,
+                "mape_pct": 2.575186544327168,
+                "ape_p90_pct": 4.987857119996288,
+                "bias_mah": -0.596996212395987,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.2223878885125836,
+                "rmse_mah": 1.4803515383858252,
+                "mape_pct": 2.65939299145384,
+                "ape_p90_pct": 5.123346999465034,
+                "bias_mah": 0.21914622766472777,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.0185162645771755,
+                "rmse_mah": 1.2047914758366436,
+                "mape_pct": 2.5533001411672296,
+                "ape_p90_pct": 5.009042236594633,
+                "bias_mah": 0.8874488144092954,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.4449322319574118,
+                "rmse_mah": 1.7408839262507998,
+                "mape_pct": 3.2037283977483346,
+                "ape_p90_pct": 6.212426793342668,
+                "bias_mah": 1.2718292793827364,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.606316523865091,
+              "rmse_mah": 1.8573900303263278,
+              "mape_pct": 3.426466057550964,
+              "ape_p90_pct": 5.6455339863002445,
+              "bias_mah": 0.30109859246620685,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.4714753261050963,
+            "rmse_mah": 1.7392097098153858,
+            "mape_pct": 3.2368363633644663,
+            "ape_p90_pct": 6.209737675119501,
+            "bias_mah": 0.7915592097497228,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.165471476482427,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5110942802696838,
+                "rmse_mah": 1.8435319713205323,
+                "mape_pct": 2.565173390273681,
+                "ape_p90_pct": 5.009559989176528,
+                "bias_mah": -0.6181682397469627,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.2282929928713289,
+                "rmse_mah": 1.4768739853161228,
+                "mape_pct": 2.681817498199324,
+                "ape_p90_pct": 5.158169158499749,
+                "bias_mah": 0.39461474612453845,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 1.646170411032294,
+                "rmse_mah": 1.8545068720376126,
+                "mape_pct": 4.122162420441488,
+                "ape_p90_pct": 7.0140273486244995,
+                "bias_mah": 1.6383623498849493,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.4845355110264158,
+                "rmse_mah": 1.7649626533180167,
+                "mape_pct": 3.2927325970152137,
+                "ape_p90_pct": 6.387016912686874,
+                "bias_mah": 1.356311455279173,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.704813002816401,
+              "rmse_mah": 1.9626739863006386,
+              "mape_pct": 3.6964219921442933,
+              "ape_p90_pct": 6.298769643615037,
+              "bias_mah": 0.5506067724402576,
+              "nonpositive_predictions": 0
+            }
+          }
+        ],
+        "residual_current_only16": [
+          {
+            "n": 1252,
+            "mae_mah": 1.4584277179171392,
+            "rmse_mah": 1.8267157996719874,
+            "mape_pct": 3.105135459167606,
+            "ape_p90_pct": 6.414288081616797,
+            "bias_mah": 0.5907516499002011,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 3.1489066177736245,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.8596661169408741,
+                "rmse_mah": 2.272952847329631,
+                "mape_pct": 3.1689143564275426,
+                "ape_p90_pct": 6.262764083090355,
+                "bias_mah": -0.5475270705146629,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.5466241041500588,
+                "rmse_mah": 1.8669624897903876,
+                "mape_pct": 3.3967811304452797,
+                "ape_p90_pct": 6.851216282727437,
+                "bias_mah": 1.1532237874751616,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.983350162164245,
+                "rmse_mah": 1.2284476679618048,
+                "mape_pct": 2.4227854913663878,
+                "ape_p90_pct": 5.2210563761887485,
+                "bias_mah": 0.3629929603867828,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.6294061631422596,
+                "rmse_mah": 1.9907211500671158,
+                "mape_pct": 3.607145492855288,
+                "ape_p90_pct": 7.752537304540902,
+                "bias_mah": 1.2349757855439312,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.7119008085950336,
+              "rmse_mah": 2.2040022141737126,
+              "mape_pct": 3.516090066459199,
+              "ape_p90_pct": 7.440774559092549,
+              "bias_mah": 0.3053373640668289,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.2097471159039157,
+            "rmse_mah": 1.5202405205414475,
+            "mape_pct": 2.5756582583119134,
+            "ape_p90_pct": 5.279879011856833,
+            "bias_mah": 0.18108066432054098,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.5939566384188586,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.5732831745770994,
+                "rmse_mah": 1.9228495085215362,
+                "mape_pct": 2.7021850854853247,
+                "ape_p90_pct": 5.534740714114972,
+                "bias_mah": 0.22244603119991885,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.245192035824623,
+                "rmse_mah": 1.5465622580707383,
+                "mape_pct": 2.721060697902577,
+                "ape_p90_pct": 5.7276541653903985,
+                "bias_mah": 0.42731657367188014,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.9522424842370815,
+                "rmse_mah": 1.1998293816106926,
+                "mape_pct": 2.326332681957544,
+                "ape_p90_pct": 4.871516539535634,
+                "bias_mah": -0.28547281695447185,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.1903011911168446,
+                "rmse_mah": 1.4680139908529508,
+                "mape_pct": 2.62624808832999,
+                "ape_p90_pct": 5.303498487803604,
+                "bias_mah": 0.4735056053240893,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.1976220135465612,
+              "rmse_mah": 1.5349133890095876,
+              "mape_pct": 2.4950756625267365,
+              "ape_p90_pct": 5.373038759148267,
+              "bias_mah": -0.15838014216432447,
+              "nonpositive_predictions": 0
+            }
+          },
+          {
+            "n": 1252,
+            "mae_mah": 1.161112335821319,
+            "rmse_mah": 1.459218042242089,
+            "mape_pct": 2.4733392394588107,
+            "ape_p90_pct": 5.128113011449358,
+            "bias_mah": 0.1754407709315206,
+            "nonpositive_predictions": 0,
+            "flight_macro_mape_pct": 2.4871442695204844,
+            "per_flight": {
+              "F006": {
+                "n": 252,
+                "mae_mah": 1.539103660991279,
+                "rmse_mah": 1.8934505312163143,
+                "mape_pct": 2.646257471696782,
+                "ape_p90_pct": 5.483048604607502,
+                "bias_mah": 0.334926281768157,
+                "nonpositive_predictions": 0
+              },
+              "F011": {
+                "n": 329,
+                "mae_mah": 1.1845799487950868,
+                "rmse_mah": 1.468717794286278,
+                "mape_pct": 2.578201852593959,
+                "ape_p90_pct": 5.178465055467352,
+                "bias_mah": 0.11145671047217016,
+                "nonpositive_predictions": 0
+              },
+              "F016": {
+                "n": 379,
+                "mae_mah": 0.9434244797756071,
+                "rmse_mah": 1.173096191458074,
+                "mape_pct": 2.322908635912642,
+                "ape_p90_pct": 4.943037996091316,
+                "bias_mah": 0.041430335236928906,
+                "nonpositive_predictions": 0
+              },
+              "F023": {
+                "n": 292,
+                "mae_mah": 1.091006304417638,
+                "rmse_mah": 1.3487528213302376,
+                "mape_pct": 2.401209117878555,
+                "ape_p90_pct": 4.841681660264145,
+                "bias_mah": 0.2838324226046171,
+                "nonpositive_predictions": 0
+              }
+            },
+            "nonoverlap_40s": {
+              "n": 34,
+              "mae_mah": 1.1669439034314097,
+              "rmse_mah": 1.3795231287974326,
+              "mape_pct": 2.4816900837472993,
+              "ape_p90_pct": 4.6354978658128,
+              "bias_mah": 0.06306181280998097,
+              "nonpositive_predictions": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "latency_local_cpu_fp32_three_seed_ensemble_ms": {
+    "n": 300,
+    "median": 1.0518545000002266,
+    "p99": 1.1883851699999324,
+    "max": 1.2436249999998594,
+    "scope": "includes scaling and all three models; no HTTP/backend/browser or edge-device timing"
+  },
+  "gate": {
+    "test": {
+      "relative_macro_improvement_over_comparator_pct": -52.38668052785669,
+      "relative_macro_improvement_over_history_pct": 25.06568475510125,
+      "flight_wins": 2,
+      "required_wins": 2,
+      "all_three_seeds_better": false,
+      "passes": false
+    },
+    "extra": {
+      "relative_macro_improvement_over_comparator_pct": -20.7148382885868,
+      "relative_macro_improvement_over_history_pct": 26.93308113319911,
+      "flight_wins": 0,
+      "required_wins": 3,
+      "all_three_seeds_better": false,
+      "passes": false
+    }
+  },
+  "promotion_eligible": false,
+  "online_model_changed": false
+}

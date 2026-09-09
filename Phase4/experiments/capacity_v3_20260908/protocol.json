@@ -1,0 +1,306 @@
+{
+  "experiment": "capacity_v3_dataset_v2_20260908",
+  "created_local": "2026-09-08 18:15:19+0800",
+  "source": "/Users/kedong/Downloads/dataset_v2.zip",
+  "source_sha256": "071a43e240ea48c9c3395cfd2da48642d938b436e63770cbd7411dbf9b7971f4",
+  "implementation": {
+    "train_capacity_v3.py": "37aa5431a22a14d238f06cf8fb12390ed3cd511d5a199881188c4c366dfd1a0c",
+    "capacity_v3.py": "2775fbd4fe4370e44b9337dcdee0160a613a894acbcaa2846be83101c162e211"
+  },
+  "splits": {
+    "train": [
+      "F002",
+      "F003",
+      "F004",
+      "F008",
+      "F009",
+      "F010",
+      "F014",
+      "F015",
+      "F020",
+      "F021"
+    ],
+    "val": [
+      "F005",
+      "F017",
+      "F024"
+    ],
+    "test": [
+      "F012",
+      "F018",
+      "F022"
+    ],
+    "extra": [
+      "F006",
+      "F011",
+      "F016",
+      "F023"
+    ]
+  },
+  "development_fit": [
+    "F002",
+    "F003",
+    "F004",
+    "F009",
+    "F014",
+    "F015",
+    "F020",
+    "F021"
+  ],
+  "development_validation": [
+    "F005",
+    "F008",
+    "F010",
+    "F017",
+    "F024"
+  ],
+  "excluded": {
+    "F001": "suspected_ground_record_pending_source_verification",
+    "F007": "suspected_ground_record_pending_source_verification",
+    "F013": "suspected_ground_record_pending_source_verification",
+    "F019": "suspected_ground_record_pending_source_verification",
+    "F025": "collision",
+    "F026": "safety_abort"
+  },
+  "metadata": {
+    "F002": {
+      "split": "train",
+      "temperature_c": 0,
+      "track": "climb_cruise",
+      "raw_member": "dataset_v2/flight_F002/flights/F002_raw_10Hz.csv",
+      "raw_sha256": "10038042b881784d273e2db2f137fe8445c98438e549ff34716b8e941a2411e7"
+    },
+    "F003": {
+      "split": "train",
+      "temperature_c": 0,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F003/flights/F003_raw_10Hz.csv",
+      "raw_sha256": "5c86beef9f402199ad90be77692ec908211c1d008c84ef844c9ca2940bd193ec"
+    },
+    "F004": {
+      "split": "train",
+      "temperature_c": 0,
+      "track": "variable",
+      "raw_member": "dataset_v2/flight_F004/flights/F004_raw_10Hz.csv",
+      "raw_sha256": "4ee5a37d4fb07b11fb2ddb6cc5d6a6d55e91bb1af66de1ab87cb62c2978c6e89"
+    },
+    "F005": {
+      "split": "val",
+      "temperature_c": 0,
+      "track": "low_alt",
+      "raw_member": "dataset_v2/flight_F005/flights/F005_raw_10Hz.csv",
+      "raw_sha256": "78d62fcc87c89bc435a8dd05172c2c66207ddfe74385731485f8612470e2189f"
+    },
+    "F006": {
+      "split": "extra",
+      "temperature_c": 0,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F006/flights/F006_raw_10Hz.csv",
+      "raw_sha256": "47e2a4c496cd5b562ec2f70505b0bef1804a655a86b4c123e2a4f0d6a0d2e984"
+    },
+    "F008": {
+      "split": "train",
+      "temperature_c": -10,
+      "track": "climb_cruise",
+      "raw_member": "dataset_v2/flight_F008/flights/F008_raw_10Hz.csv",
+      "raw_sha256": "b278bb772d17d18ffef395e61c2ee0ba0948f8c7d18b84948d5c4d33808ee156"
+    },
+    "F009": {
+      "split": "train",
+      "temperature_c": -10,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F009/flights/F009_raw_10Hz.csv",
+      "raw_sha256": "5b5f92b4973e26066310b83089c0827572165208a2cb08c57169ee2198ccaa2c"
+    },
+    "F010": {
+      "split": "train",
+      "temperature_c": -10,
+      "track": "variable",
+      "raw_member": "dataset_v2/flight_F010/flights/F010_raw_10Hz.csv",
+      "raw_sha256": "0717ce7ffb1051a0b48e3ad8bddebe7f30b19816f358b4533d5060c5a33334c5"
+    },
+    "F011": {
+      "split": "extra",
+      "temperature_c": -10,
+      "track": "low_alt",
+      "raw_member": "dataset_v2/flight_F011/flights/F011_raw_10Hz.csv",
+      "raw_sha256": "cdff73a628edfaf968030708da2a153082a561721464b2156474619b1eb4cc37"
+    },
+    "F012": {
+      "split": "test",
+      "temperature_c": -10,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F012/flights/F012_raw_10Hz.csv",
+      "raw_sha256": "12b0670bd28af9f41c9ae91f544465ab0f8bcb01c3e821e18a6fcc65d3ef7196"
+    },
+    "F014": {
+      "split": "train",
+      "temperature_c": -20,
+      "track": "climb_cruise",
+      "raw_member": "dataset_v2/flight_F014/flights/F014_raw_10Hz.csv",
+      "raw_sha256": "c68208d1ed0f9363bc09e8a801df87a63c1f2b113d291290da056b7e51813c8d"
+    },
+    "F015": {
+      "split": "train",
+      "temperature_c": -20,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F015/flights/F015_raw_10Hz.csv",
+      "raw_sha256": "2e3747cfdce0380f93faeca2b620ca6611c2c555892467f0cb9eb10d0ad60c38"
+    },
+    "F016": {
+      "split": "extra",
+      "temperature_c": -20,
+      "track": "variable",
+      "raw_member": "dataset_v2/flight_F016/flights/F016_raw_10Hz.csv",
+      "raw_sha256": "55eb04274a2c794eccd52a3264b8293ed40a98887af2b5bddccf9d2715c20af9"
+    },
+    "F017": {
+      "split": "val",
+      "temperature_c": -20,
+      "track": "low_alt",
+      "raw_member": "dataset_v2/flight_F017/flights/F017_raw_10Hz.csv",
+      "raw_sha256": "9393a18320fd4330b8a8a6741a65522e6bf7795ba59e3621b2d546fcb46c00c5"
+    },
+    "F018": {
+      "split": "test",
+      "temperature_c": -20,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F018/flights/F018_raw_10Hz.csv",
+      "raw_sha256": "b1608f2804de89a004fdf945d6d36cbabf43880c7e2060ed1c78f5252752f780"
+    },
+    "F020": {
+      "split": "train",
+      "temperature_c": -30,
+      "track": "climb_cruise",
+      "raw_member": "dataset_v2/flight_F020/flights/F020_raw_10Hz.csv",
+      "raw_sha256": "81e5d8e789678165ae8e0c72fb21416a7d3f4163a453769e29e56d67bbe35124"
+    },
+    "F021": {
+      "split": "train",
+      "temperature_c": -30,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F021/flights/F021_raw_10Hz.csv",
+      "raw_sha256": "920c8dc836ae93195eea0a08a9f0a7471f159bd00e23bfdc0f23d695a97b1ad5"
+    },
+    "F022": {
+      "split": "test",
+      "temperature_c": -30,
+      "track": "variable",
+      "raw_member": "dataset_v2/flight_F022/flights/F022_raw_10Hz.csv",
+      "raw_sha256": "967c94be3a268121b909d4eee76eea8804037d12adf45dd0d8ae533538df62f5"
+    },
+    "F023": {
+      "split": "extra",
+      "temperature_c": -30,
+      "track": "low_alt",
+      "raw_member": "dataset_v2/flight_F023/flights/F023_raw_10Hz.csv",
+      "raw_sha256": "8ab02a0dac29ca377f13a5a8b59712d6236bad5726704a02878fa7efa0a1ad9a"
+    },
+    "F024": {
+      "split": "val",
+      "temperature_c": -30,
+      "track": "cruise",
+      "raw_member": "dataset_v2/flight_F024/flights/F024_raw_10Hz.csv",
+      "raw_sha256": "77092fefbbb7890ece0a017fba94ff1a0e853a1fc13e1671d22fab36f82acfdb"
+    }
+  },
+  "target": "mean_charge(t)-mean_charge(t+10), Ah; 30 complete 1Hz input bins",
+  "availability": "[k,k+1) bin emitted at k+1; discard incomplete terminal bin; no interpolation",
+  "excluded_inputs": [
+    "flight_id",
+    "absolute_time",
+    "termination_time",
+    "future_current",
+    "phase",
+    "position",
+    "available_capacity_ah"
+  ],
+  "seeds": [
+    17,
+    42,
+    2026
+  ],
+  "configs": [
+    {
+      "name": "residual_core32",
+      "features": "core",
+      "hidden": 32,
+      "residual": true
+    },
+    {
+      "name": "residual_full16",
+      "features": "full",
+      "hidden": 16,
+      "residual": true
+    },
+    {
+      "name": "residual_full32",
+      "features": "full",
+      "hidden": 32,
+      "residual": true
+    },
+    {
+      "name": "residual_full64",
+      "features": "full",
+      "hidden": 64,
+      "residual": true
+    },
+    {
+      "name": "residual_no_thermal32",
+      "features": "no_thermal",
+      "hidden": 32,
+      "residual": true
+    },
+    {
+      "name": "residual_with_altitude32",
+      "features": "with_altitude",
+      "hidden": 32,
+      "residual": true
+    },
+    {
+      "name": "direct_full32",
+      "features": "full",
+      "hidden": 32,
+      "residual": false
+    },
+    {
+      "name": "residual_current_only16",
+      "features": "current_only",
+      "hidden": 16,
+      "residual": true
+    }
+  ],
+  "epochs_max": 120,
+  "patience": 20,
+  "lr": 0.002,
+  "weight_decay": 0.0001,
+  "batch_size": 128,
+  "train_stride": 2,
+  "selection": "minimum seed-mean development flight-macro MAPE; never test or extra",
+  "final_fit": "original 10 eligible train flights only, same 3 seeds; fixed median best development epoch; arithmetic mean of 3 predictions",
+  "baseline_search": {
+    "ridge_alpha": [
+      1,
+      10,
+      100
+    ],
+    "tree_leaves": [
+      7,
+      15
+    ],
+    "tree_iterations": [
+      60,
+      120
+    ]
+  },
+  "reporting": "all fixed candidates, seed results, per-flight and nonoverlap metrics; no seed or test-flight cherry-picking",
+  "prior_test_exposure": "dataset audited and legacy V2 evaluated previously; these are held-out V3 development flights, NOT a pristine new confirmation dataset",
+  "promotion_gate": "selected LSTM beats validation-selected non-neural comparator and history_10s by >=10% relative macro-MAPE on BOTH test and extra, wins >=2/3 test and >=3/4 extra flights, all 3 seeds beat comparator group macro, positive finite outputs; no automatic online deployment",
+  "limitations": "simulation kinematics + formula battery; only 3 main test flights and 4 supplementary flights; fresh-seed confirmation and real battery validation needed",
+  "runtime": {
+    "python": "3.9.6",
+    "torch": "2.8.0",
+    "sklearn": "1.6.1",
+    "platform": "macOS-15.5-arm64-arm-64bit"
+  }
+}

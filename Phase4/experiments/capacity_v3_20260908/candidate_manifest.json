@@ -1,0 +1,36 @@
+{
+  "version": "capacity_v3_dataset_v2_20260908",
+  "architecture": "direct_full32",
+  "mode": "arithmetic mean of three independently trained FP32 models",
+  "members": [
+    {
+      "file": "direct_full32_seed17.pt",
+      "sha256": "ec1ba3c9c1adc7cd8f14d77850b3cbe6fd05edee6acbf7dd2bbfc5f5b48bcbb8",
+      "reference_ah": 0.04829158151610928,
+      "seed": 17,
+      "epochs": 17
+    },
+    {
+      "file": "direct_full32_seed42.pt",
+      "sha256": "7524b17acb7465bb1f10f4eb6234dacf0ea1f871ec1e471c6534c6049dbb2f9e",
+      "reference_ah": 0.04829158151610928,
+      "seed": 42,
+      "epochs": 17
+    },
+    {
+      "file": "direct_full32_seed2026.pt",
+      "sha256": "f9842a2e7c44915ed61bb328dbd13c6f6e1fba4b67e6856164ab01ad13ae2729",
+      "reference_ah": 0.04829158151610928,
+      "seed": 2026,
+      "epochs": 17
+    }
+  ],
+  "scaler_sha256": "08a2356071b10464028cc4485469f23a16f9a88ee6736dd37bdcc77269056fce",
+  "target": "mean_charge(t)-mean_charge(t+10), Ah; 30 complete 1Hz input bins",
+  "availability": "[k,k+1) bin emitted at k+1; discard incomplete terminal bin; no interpolation",
+  "protocol_sha256": "2d6e00e71f21660fb665f53c78a9f261e73d7b1766f2ed8e71aac9e7626a9b91",
+  "promotion_eligible": false,
+  "validated_on_real_data": false,
+  "deployed": false,
+  "prediction_transform": "training_geometric_mean_consumption * exp(LSTM_output), no history anchor or post-hoc correction"
+}

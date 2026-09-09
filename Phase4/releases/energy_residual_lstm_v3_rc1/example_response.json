@@ -1,0 +1,24 @@
+{
+  "valid": true,
+  "model_version": "energy_residual_lstm_v3_rc1",
+  "method": "motion_residual_lstm_ensemble",
+  "precision": "FP32",
+  "member_count": 3,
+  "forecast_horizon_seconds": 10,
+  "research_status": "frozen_candidate_pending_independent_confirmation",
+  "validated_on_real_data": false,
+  "project_acceptance_passed": false,
+  "predicted_consumption_ah": 0.040959688905178045,
+  "predicted_future_capacity_ah": 0.9238781581850231,
+  "reason": "candidate_inference_only_not_acceptance_certification",
+  "prediction_available_at_s": 60.0,
+  "target_available_at_s": 70.0,
+  "history_10s_baseline_ah": 0.03707736932318928,
+  "member_consumption_ah": [
+    0.04231060908552747,
+    0.03976779461885181,
+    0.04080066301115484
+  ],
+  "outside_training_range_features": [],
+  "inference_time_ms": 0.8350419999998415
+}

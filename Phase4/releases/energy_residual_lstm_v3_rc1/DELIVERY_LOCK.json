@@ -1,0 +1,18 @@
+{
+  "evidence_sha256": {
+    "MODEL_DECISION.md": "1469b3a8965148ea76aa4b446adec72958aac863a30d817f0a56deee7bd30c1a",
+    "RELEASE_LOCK.json": "3ba8b6a604cf8fb81489e219380fc33520a0abce41142d216b229a5c7a1c2367",
+    "confirmation_protocol.json": "a8a63f6b643469a6dc4f9249eb48764c79533aa0c8feb21282255507d6f3b481",
+    "example_request.json": "4ca8a218a0ba43d456094bbc5d1930e173ae4469eb2d5ebec187f6a76fef8af2",
+    "example_response.json": "e5285b7b4c23933ada9b0589379cc0afa49313dcccadce284fb2c9e70d50651c",
+    "manifest.json": "41f95daef1d5aa7b9f25a385b69a0f76f02b0d7604b7ead2b3b75dab1afaf6b2",
+    "quantization_comparison.json": "30975854276bb97f25965028ae276bbcecd18cb9d159e474223c4e9d5f9c69a1",
+    "residual_core32_seed17.pt": "3c8a0974c8199293608ef840e55d7099edb185c5d859cc974fb6ac98b5293870",
+    "residual_core32_seed2026.pt": "f4816f210c66708748191314cf4f7bcbd920c3668b5e3d33382b13d235f71ed6",
+    "residual_core32_seed42.pt": "698f03bdaaade2f8958162b66060f4027b1872cd760122446b67f391b2c7bf6d",
+    "runtime.py": "df4d18c12f4474289658c809912e180938919051db12fa74f1bd6b3c0c9e21a3",
+    "runtime_reproduction.json": "609cf7898d138c88f580dba4d2d18d333ac5004937ff230403f6bd44b4c9391e",
+    "runtime_verification.json": "58f3ab00199cb96f16d8995657ae9383b7f07f5071fa09460998318c3691b15b",
+    "scaler.json": "6e384b6686cd01c0fdc2faf49319a041b76b147301c409255482e2dbc23192ab"
+  }
+}

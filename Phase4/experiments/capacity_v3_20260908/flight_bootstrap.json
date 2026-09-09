@@ -1,0 +1,20 @@
+{
+  "test": {
+    "independent_flights": 3,
+    "macro_mape_difference_pp": -1.4832718977812165,
+    "paired_flight_bootstrap_95pct_interval_pp": [
+      -4.881487524910173,
+      0.2357113648758551
+    ],
+    "warning": "Very few flights; descriptive interval, not a population-level significance claim"
+  },
+  "extra": {
+    "independent_flights": 4,
+    "macro_mape_difference_pp": -0.5196724382274913,
+    "paired_flight_bootstrap_95pct_interval_pp": [
+      -0.9570739939033084,
+      -0.08227088255167425
+    ],
+    "warning": "Very few flights; descriptive interval, not a population-level significance claim"
+  }
+}
