@@ -1,0 +1,11 @@
+[
+  {"run_id":"synthetic-risk-unit-example","t_s":0,"voltage_v":12,"risk":false},
+  {"run_id":"synthetic-risk-unit-example","t_s":1,"voltage_v":12,"risk":false},
+  {"run_id":"synthetic-risk-unit-example","t_s":2,"voltage_v":12,"risk":true},
+  {"run_id":"synthetic-risk-unit-example","t_s":3,"voltage_v":12,"risk":false},
+  {"run_id":"synthetic-risk-unit-example","t_s":4,"voltage_v":10,"risk":false},
+  {"run_id":"synthetic-risk-unit-example","t_s":5,"voltage_v":10,"risk":false},
+  {"run_id":"synthetic-risk-unit-example","t_s":6,"voltage_v":12,"risk":true},
+  {"run_id":"synthetic-risk-unit-example","t_s":7,"voltage_v":12,"risk":false},
+  {"run_id":"synthetic-risk-unit-example","t_s":8,"voltage_v":12,"risk":false}
+]

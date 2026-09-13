@@ -1,0 +1,12 @@
+{
+  "width": 5,
+  "height": 3,
+  "cell_size_m": 10,
+  "start": [0, 1],
+  "goal": [4, 1],
+  "blocked": [],
+  "energy_wh_per_m": [[1,1,1,1,1],[1,10,10,10,1],[1,1,1,1,1]],
+  "cost_source": "synthetic_software_fixture_not_calibrated_power",
+  "available_wh": 150,
+  "reserve_wh": 10
+}

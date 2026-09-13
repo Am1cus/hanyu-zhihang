@@ -1,0 +1,13 @@
+{
+  "schema_version":1,
+  "sampling_contract":"completed_1hz_bin_means_right_boundary_v1",
+  "telemetry":{
+    "runId":"synthetic-run-a",
+    "flightId":"synthetic-flight-a",
+    "droneId":1,
+    "droneCode":"synthetic-drone-a",
+    "sampleSeq":0,
+    "sourceTimeS":1,
+    "windX":null
+  }
+}

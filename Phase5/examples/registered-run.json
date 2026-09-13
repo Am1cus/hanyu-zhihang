@@ -1,0 +1,8 @@
+{
+  "runId":"synthetic-run-a",
+  "flightId":"synthetic-flight-a",
+  "droneId":1,
+  "droneCode":"synthetic-drone-a",
+  "status":"RUNNING",
+  "sampling_contract":"completed_1hz_bin_means_right_boundary_v1"
+}

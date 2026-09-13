@@ -3,8 +3,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', redirect: '/dashboard' },
-    { path: '/dashboard', component: () => import('@/views/Dashboard.vue'), meta: { title: '飞行监测' } },
-    { path: '/experiments', component: () => import('@/views/Experiments.vue'), meta: { title: '实验验证' } },
+    { path: '/dashboard', component: () => import('@/views/Dashboard.vue'), meta: { title: '预测看板' } },
+    { path: '/experiments', component: () => import('@/views/Experiments.vue'), meta: { title: '模型对比' } },
     { path: '/warning', component: () => import('@/views/WarningCenter.vue'), meta: { title: '预警记录' } },
     // Old URLs resolve to working pages; unfinished source modules remain in the repository.
     { path: '/battery', redirect: '/experiments' },
