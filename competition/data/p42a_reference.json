@@ -1,0 +1,3260 @@
+{
+  "schema_version": 1,
+  "source": {
+    "title": "Molicel INR-21700-P42A Product Data Sheet version 1.7",
+    "url": "https://www.molicel.com/cn/wp-content/uploads/INR21700P42A_1.7_Product-Data-Sheet-of-INR-21700-P42A-80092.pdf",
+    "sha256": "dca433d5bba5c3b10d157fc3ab22ddaaa1b9d4162de70c7d76a347d925fe4db5",
+    "page": 1,
+    "digitization_method": "Original PDF vector polylines and axis calibration; no fitting, smoothing, or invented temperature coefficients",
+    "axes_pdf_pt": {
+      "capacity_zero_x": 378.025497991125,
+      "capacity_4_4ah_x": 553.90370618475,
+      "voltage_zero_y": 521.1674739277896,
+      "voltage_5v_y": 403.599516232386
+    },
+    "charge_conditions": "CC-CV 4.2A to 4.2V, 50mA cut at 23C",
+    "discharge_conditions": "4.2A constant current, 2.5V cutoff",
+    "limitation": "Reference curves, not performance guarantee. Endpoint voltage differs slightly from 2.5V because plotted vector coordinates are approximate. No real aircraft calibration."
+  },
+  "discharge_current_a": 4.2,
+  "series_cells": 4,
+  "parallel_cells": 1,
+  "reference_temperature_c": 23,
+  "interpolation": "Piecewise linear voltage versus discharged Ah; interpolate temperature voltage on union normalized capacity nodes, then integrate energy; never extrapolate temperature",
+  "temperature_scope_c": [
+    -20,
+    23
+  ],
+  "curves": [
+    {
+      "temperature_c": -20,
+      "points": [
+        {
+          "capacity_ah": 0.0,
+          "voltage_v": 4.18097856
+        },
+        {
+          "capacity_ah": 0.000918,
+          "voltage_v": 3.62380545
+        },
+        {
+          "capacity_ah": 0.00277986,
+          "voltage_v": 3.595176
+        },
+        {
+          "capacity_ah": 0.00371079,
+          "voltage_v": 3.58416467
+        },
+        {
+          "capacity_ah": 0.00464172,
+          "voltage_v": 3.57469493
+        },
+        {
+          "capacity_ah": 0.00742158,
+          "voltage_v": 3.56038021
+        },
+        {
+          "capacity_ah": 0.00928344,
+          "voltage_v": 3.54936888
+        },
+        {
+          "capacity_ah": 0.01299423,
+          "voltage_v": 3.53813733
+        },
+        {
+          "capacity_ah": 0.01763594,
+          "voltage_v": 3.527126
+        },
+        {
+          "capacity_ah": 0.02320859,
+          "voltage_v": 3.51765626
+        },
+        {
+          "capacity_ah": 0.03157403,
+          "voltage_v": 3.50664493
+        },
+        {
+          "capacity_ah": 0.05509293,
+          "voltage_v": 3.50179994
+        },
+        {
+          "capacity_ah": 0.07830152,
+          "voltage_v": 3.50818651
+        },
+        {
+          "capacity_ah": 0.09688133,
+          "voltage_v": 3.51765624
+        },
+        {
+          "capacity_ah": 0.11451727,
+          "voltage_v": 3.52866756
+        },
+        {
+          "capacity_ah": 0.13123522,
+          "voltage_v": 3.5381373
+        },
+        {
+          "capacity_ah": 0.14826347,
+          "voltage_v": 3.54936885
+        },
+        {
+          "capacity_ah": 0.16683034,
+          "voltage_v": 3.55883859
+        },
+        {
+          "capacity_ah": 0.18447922,
+          "voltage_v": 3.56830832
+        },
+        {
+          "capacity_ah": 0.20675688,
+          "voltage_v": 3.57931964
+        },
+        {
+          "capacity_ah": 0.22718561,
+          "voltage_v": 3.58900961
+        },
+        {
+          "capacity_ah": 0.25071744,
+          "voltage_v": 3.59847934
+        },
+        {
+          "capacity_ah": 0.27361573,
+          "voltage_v": 3.60640749
+        },
+        {
+          "capacity_ah": 0.29714756,
+          "voltage_v": 3.61433564
+        },
+        {
+          "capacity_ah": 0.32035615,
+          "voltage_v": 3.62050198
+        },
+        {
+          "capacity_ah": 0.34357767,
+          "voltage_v": 3.62688854
+        },
+        {
+          "capacity_ah": 0.36709658,
+          "voltage_v": 3.63217397
+        },
+        {
+          "capacity_ah": 0.3903181,
+          "voltage_v": 3.63701895
+        },
+        {
+          "capacity_ah": 0.41352669,
+          "voltage_v": 3.64120325
+        },
+        {
+          "capacity_ah": 0.43674821,
+          "voltage_v": 3.64472687
+        },
+        {
+          "capacity_ah": 0.46026711,
+          "voltage_v": 3.64803026
+        },
+        {
+          "capacity_ah": 0.48347571,
+          "voltage_v": 3.64957184
+        },
+        {
+          "capacity_ah": 0.50669723,
+          "voltage_v": 3.65111342
+        },
+        {
+          "capacity_ah": 0.52990582,
+          "voltage_v": 3.65375614
+        },
+        {
+          "capacity_ah": 0.55312734,
+          "voltage_v": 3.65375613
+        },
+        {
+          "capacity_ah": 0.57664624,
+          "voltage_v": 3.65529771
+        },
+        {
+          "capacity_ah": 0.6007987,
+          "voltage_v": 3.65529771
+        },
+        {
+          "capacity_ah": 0.62400729,
+          "voltage_v": 3.6552977
+        },
+        {
+          "capacity_ah": 0.64721588,
+          "voltage_v": 3.65529769
+        },
+        {
+          "capacity_ah": 0.67074771,
+          "voltage_v": 3.65529769
+        },
+        {
+          "capacity_ah": 0.6939563,
+          "voltage_v": 3.65529768
+        },
+        {
+          "capacity_ah": 0.71717783,
+          "voltage_v": 3.65375609
+        },
+        {
+          "capacity_ah": 0.74038642,
+          "voltage_v": 3.65265496
+        },
+        {
+          "capacity_ah": 0.76391825,
+          "voltage_v": 3.65265495
+        },
+        {
+          "capacity_ah": 0.78708805,
+          "voltage_v": 3.64957177
+        },
+        {
+          "capacity_ah": 0.81036129,
+          "voltage_v": 3.64803018
+        },
+        {
+          "capacity_ah": 0.83350524,
+          "voltage_v": 3.64803018
+        },
+        {
+          "capacity_ah": 0.85677848,
+          "voltage_v": 3.64472677
+        },
+        {
+          "capacity_ah": 0.88031031,
+          "voltage_v": 3.64120314
+        },
+        {
+          "capacity_ah": 0.90345425,
+          "voltage_v": 3.63789974
+        },
+        {
+          "capacity_ah": 0.92672749,
+          "voltage_v": 3.63701883
+        },
+        {
+          "capacity_ah": 0.95000073,
+          "voltage_v": 3.63371543
+        },
+        {
+          "capacity_ah": 0.97340327,
+          "voltage_v": 3.62842998
+        },
+        {
+          "capacity_ah": 0.99667651,
+          "voltage_v": 3.62688839
+        },
+        {
+          "capacity_ah": 1.01994975,
+          "voltage_v": 3.6220434
+        },
+        {
+          "capacity_ah": 1.0430937,
+          "voltage_v": 3.6178591
+        },
+        {
+          "capacity_ah": 1.06636694,
+          "voltage_v": 3.61433547
+        },
+        {
+          "capacity_ah": 1.08989877,
+          "voltage_v": 3.61103206
+        },
+        {
+          "capacity_ah": 1.11304271,
+          "voltage_v": 3.6064073
+        },
+        {
+          "capacity_ah": 1.13631595,
+          "voltage_v": 3.60376458
+        },
+        {
+          "capacity_ah": 1.1594599,
+          "voltage_v": 3.60002072
+        },
+        {
+          "capacity_ah": 1.18299173,
+          "voltage_v": 3.59517573
+        },
+        {
+          "capacity_ah": 1.20626497,
+          "voltage_v": 3.59055097
+        },
+        {
+          "capacity_ah": 1.22940891,
+          "voltage_v": 3.58724757
+        },
+        {
+          "capacity_ah": 1.25268215,
+          "voltage_v": 3.5826228
+        },
+        {
+          "capacity_ah": 1.27621398,
+          "voltage_v": 3.5793194
+        },
+        {
+          "capacity_ah": 1.29935793,
+          "voltage_v": 3.57469464
+        },
+        {
+          "capacity_ah": 1.32353624,
+          "voltage_v": 3.57139123
+        },
+        {
+          "capacity_ah": 1.34577511,
+          "voltage_v": 3.56830806
+        },
+        {
+          "capacity_ah": 1.36904835,
+          "voltage_v": 3.56346307
+        },
+        {
+          "capacity_ah": 1.39348526,
+          "voltage_v": 3.55883831
+        },
+        {
+          "capacity_ah": 1.4167585,
+          "voltage_v": 3.55245173
+        },
+        {
+          "capacity_ah": 1.43990244,
+          "voltage_v": 3.54936856
+        },
+        {
+          "capacity_ah": 1.46317568,
+          "voltage_v": 3.54606515
+        },
+        {
+          "capacity_ah": 1.48670751,
+          "voltage_v": 3.54144039
+        },
+        {
+          "capacity_ah": 1.50985146,
+          "voltage_v": 3.5365954
+        },
+        {
+          "capacity_ah": 1.5331247,
+          "voltage_v": 3.53042905
+        },
+        {
+          "capacity_ah": 1.55626864,
+          "voltage_v": 3.52712565
+        },
+        {
+          "capacity_ah": 1.57980047,
+          "voltage_v": 3.52073907
+        },
+        {
+          "capacity_ah": 1.60268583,
+          "voltage_v": 3.51611431
+        },
+        {
+          "capacity_ah": 1.62621766,
+          "voltage_v": 3.51126932
+        },
+        {
+          "capacity_ah": 1.6494909,
+          "voltage_v": 3.50664456
+        },
+        {
+          "capacity_ah": 1.67263484,
+          "voltage_v": 3.50025799
+        },
+        {
+          "capacity_ah": 1.69616667,
+          "voltage_v": 3.495413
+        },
+        {
+          "capacity_ah": 1.71943991,
+          "voltage_v": 3.49078824
+        },
+        {
+          "capacity_ah": 1.74258386,
+          "voltage_v": 3.48440166
+        },
+        {
+          "capacity_ah": 1.7658571,
+          "voltage_v": 3.47955667
+        },
+        {
+          "capacity_ah": 1.78938893,
+          "voltage_v": 3.47493191
+        },
+        {
+          "capacity_ah": 1.81266217,
+          "voltage_v": 3.46854534
+        },
+        {
+          "capacity_ah": 1.83580612,
+          "voltage_v": 3.46392057
+        },
+        {
+          "capacity_ah": 1.85907936,
+          "voltage_v": 3.45533173
+        },
+        {
+          "capacity_ah": 1.8822233,
+          "voltage_v": 3.45268901
+        },
+        {
+          "capacity_ah": 1.90575513,
+          "voltage_v": 3.4443204
+        },
+        {
+          "capacity_ah": 1.92902837,
+          "voltage_v": 3.43947541
+        },
+        {
+          "capacity_ah": 1.95217232,
+          "voltage_v": 3.43374951
+        },
+        {
+          "capacity_ah": 1.97544556,
+          "voltage_v": 3.42846407
+        },
+        {
+          "capacity_ah": 1.99897739,
+          "voltage_v": 3.4220775
+        },
+        {
+          "capacity_ah": 2.02212133,
+          "voltage_v": 3.41789319
+        },
+        {
+          "capacity_ah": 2.04539457,
+          "voltage_v": 3.41260774
+        },
+        {
+          "capacity_ah": 2.06853852,
+          "voltage_v": 3.40467958
+        },
+        {
+          "capacity_ah": 2.09297542,
+          "voltage_v": 3.40005482
+        },
+        {
+          "capacity_ah": 2.11534359,
+          "voltage_v": 3.39366825
+        },
+        {
+          "capacity_ah": 2.13848753,
+          "voltage_v": 3.38728167
+        },
+        {
+          "capacity_ah": 2.16266584,
+          "voltage_v": 3.38265691
+        },
+        {
+          "capacity_ah": 2.18593908,
+          "voltage_v": 3.37627034
+        },
+        {
+          "capacity_ah": 2.20947092,
+          "voltage_v": 3.37142535
+        },
+        {
+          "capacity_ah": 2.23261486,
+          "voltage_v": 3.365259
+        },
+        {
+          "capacity_ah": 2.2558881,
+          "voltage_v": 3.35887242
+        },
+        {
+          "capacity_ah": 2.27903204,
+          "voltage_v": 3.35402744
+        },
+        {
+          "capacity_ah": 2.30256388,
+          "voltage_v": 3.34764086
+        },
+        {
+          "capacity_ah": 2.32583712,
+          "voltage_v": 3.34147451
+        },
+        {
+          "capacity_ah": 2.34898106,
+          "voltage_v": 3.33662952
+        },
+        {
+          "capacity_ah": 2.3722543,
+          "voltage_v": 3.33024295
+        },
+        {
+          "capacity_ah": 2.39578613,
+          "voltage_v": 3.32561819
+        },
+        {
+          "capacity_ah": 2.41893008,
+          "voltage_v": 3.32231478
+        },
+        {
+          "capacity_ah": 2.44220332,
+          "voltage_v": 3.31438662
+        },
+        {
+          "capacity_ah": 2.46534726,
+          "voltage_v": 3.31130345
+        },
+        {
+          "capacity_ah": 2.4886205,
+          "voltage_v": 3.30491687
+        },
+        {
+          "capacity_ah": 2.51215233,
+          "voltage_v": 3.3018337
+        },
+        {
+          "capacity_ah": 2.53529628,
+          "voltage_v": 3.29544712
+        },
+        {
+          "capacity_ah": 2.55856952,
+          "voltage_v": 3.29082236
+        },
+        {
+          "capacity_ah": 2.58184276,
+          "voltage_v": 3.28597737
+        },
+        {
+          "capacity_ah": 2.60524529,
+          "voltage_v": 3.28135261
+        },
+        {
+          "capacity_ah": 2.62851853,
+          "voltage_v": 3.27650762
+        },
+        {
+          "capacity_ah": 2.65179178,
+          "voltage_v": 3.27166263
+        },
+        {
+          "capacity_ah": 2.67493572,
+          "voltage_v": 3.26703787
+        },
+        {
+          "capacity_ah": 2.69820896,
+          "voltage_v": 3.26219288
+        },
+        {
+          "capacity_ah": 2.72174079,
+          "voltage_v": 3.25690744
+        },
+        {
+          "capacity_ah": 2.74488474,
+          "voltage_v": 3.25272313
+        },
+        {
+          "capacity_ah": 2.76815798,
+          "voltage_v": 3.24809836
+        },
+        {
+          "capacity_ah": 2.79130192,
+          "voltage_v": 3.24105111
+        },
+        {
+          "capacity_ah": 2.81483375,
+          "voltage_v": 3.2368668
+        },
+        {
+          "capacity_ah": 2.83810699,
+          "voltage_v": 3.23224204
+        },
+        {
+          "capacity_ah": 2.86215601,
+          "voltage_v": 3.22849818
+        },
+        {
+          "capacity_ah": 2.88542925,
+          "voltage_v": 3.22277229
+        },
+        {
+          "capacity_ah": 2.90805601,
+          "voltage_v": 3.2179273
+        },
+        {
+          "capacity_ah": 2.93223432,
+          "voltage_v": 3.21264186
+        },
+        {
+          "capacity_ah": 2.95537826,
+          "voltage_v": 3.20625528
+        },
+        {
+          "capacity_ah": 2.9786515,
+          "voltage_v": 3.20008893
+        },
+        {
+          "capacity_ah": 3.00179545,
+          "voltage_v": 3.19524395
+        },
+        {
+          "capacity_ah": 3.02532728,
+          "voltage_v": 3.19039896
+        },
+        {
+          "capacity_ah": 3.04860052,
+          "voltage_v": 3.18423261
+        },
+        {
+          "capacity_ah": 3.07174446,
+          "voltage_v": 3.17938762
+        },
+        {
+          "capacity_ah": 3.0950177,
+          "voltage_v": 3.17145946
+        },
+        {
+          "capacity_ah": 3.11854954,
+          "voltage_v": 3.1668347
+        },
+        {
+          "capacity_ah": 3.14169348,
+          "voltage_v": 3.15890654
+        },
+        {
+          "capacity_ah": 3.16496672,
+          "voltage_v": 3.15251996
+        },
+        {
+          "capacity_ah": 3.18811067,
+          "voltage_v": 3.14613339
+        },
+        {
+          "capacity_ah": 3.21138391,
+          "voltage_v": 3.13974681
+        },
+        {
+          "capacity_ah": 3.23491574,
+          "voltage_v": 3.13181865
+        },
+        {
+          "capacity_ah": 3.25805968,
+          "voltage_v": 3.1256523
+        },
+        {
+          "capacity_ah": 3.28133292,
+          "voltage_v": 3.11772414
+        },
+        {
+          "capacity_ah": 3.30447687,
+          "voltage_v": 3.11287916
+        },
+        {
+          "capacity_ah": 3.3280087,
+          "voltage_v": 3.10340941
+        },
+        {
+          "capacity_ah": 3.35128194,
+          "voltage_v": 3.09548125
+        },
+        {
+          "capacity_ah": 3.37442588,
+          "voltage_v": 3.08755309
+        },
+        {
+          "capacity_ah": 3.39769912,
+          "voltage_v": 3.07962493
+        },
+        {
+          "capacity_ah": 3.42123095,
+          "voltage_v": 3.07015518
+        },
+        {
+          "capacity_ah": 3.44450419,
+          "voltage_v": 3.06024498
+        },
+        {
+          "capacity_ah": 3.46764814,
+          "voltage_v": 3.05121569
+        },
+        {
+          "capacity_ah": 3.48988701,
+          "voltage_v": 3.04108527
+        },
+        {
+          "capacity_ah": 3.51316025,
+          "voltage_v": 3.03007393
+        },
+        {
+          "capacity_ah": 3.53578701,
+          "voltage_v": 3.02104464
+        },
+        {
+          "capacity_ah": 3.55427631,
+          "voltage_v": 3.00937263
+        },
+        {
+          "capacity_ah": 3.5700504,
+          "voltage_v": 2.99990289
+        },
+        {
+          "capacity_ah": 3.58685885,
+          "voltage_v": 2.99043314
+        },
+        {
+          "capacity_ah": 3.60263293,
+          "voltage_v": 2.97942181
+        },
+        {
+          "capacity_ah": 3.62060505,
+          "voltage_v": 2.96664867
+        },
+        {
+          "capacity_ah": 3.6341811,
+          "voltage_v": 2.95717893
+        },
+        {
+          "capacity_ah": 3.64749857,
+          "voltage_v": 2.94770918
+        },
+        {
+          "capacity_ah": 3.65952307,
+          "voltage_v": 2.93669785
+        },
+        {
+          "capacity_ah": 3.66883237,
+          "voltage_v": 2.92722811
+        },
+        {
+          "capacity_ah": 3.67904674,
+          "voltage_v": 2.91775837
+        },
+        {
+          "capacity_ah": 3.68835603,
+          "voltage_v": 2.90652681
+        },
+        {
+          "capacity_ah": 3.69676026,
+          "voltage_v": 2.89705707
+        },
+        {
+          "capacity_ah": 3.70594026,
+          "voltage_v": 2.88604574
+        },
+        {
+          "capacity_ah": 3.71343941,
+          "voltage_v": 2.87591532
+        },
+        {
+          "capacity_ah": 3.72080927,
+          "voltage_v": 2.86710626
+        },
+        {
+          "capacity_ah": 3.72766195,
+          "voltage_v": 2.8558747
+        },
+        {
+          "capacity_ah": 3.73503181,
+          "voltage_v": 2.8442027
+        },
+        {
+          "capacity_ah": 3.74072082,
+          "voltage_v": 2.83539363
+        },
+        {
+          "capacity_ah": 3.74628054,
+          "voltage_v": 2.82526321
+        },
+        {
+          "capacity_ah": 3.75274533,
+          "voltage_v": 2.81425189
+        },
+        {
+          "capacity_ah": 3.75830505,
+          "voltage_v": 2.80324056
+        },
+        {
+          "capacity_ah": 3.7629597,
+          "voltage_v": 2.79355059
+        },
+        {
+          "capacity_ah": 3.76761435,
+          "voltage_v": 2.78253926
+        },
+        {
+          "capacity_ah": 3.77226899,
+          "voltage_v": 2.77306952
+        },
+        {
+          "capacity_ah": 3.77692364,
+          "voltage_v": 2.76205819
+        },
+        {
+          "capacity_ah": 3.78157829,
+          "voltage_v": 2.75082664
+        },
+        {
+          "capacity_ah": 3.78519857,
+          "voltage_v": 2.7413569
+        },
+        {
+          "capacity_ah": 3.78985322,
+          "voltage_v": 2.72880398
+        },
+        {
+          "capacity_ah": 3.79269773,
+          "voltage_v": 2.71933424
+        },
+        {
+          "capacity_ah": 3.79631801,
+          "voltage_v": 2.70964428
+        },
+        {
+          "capacity_ah": 3.80006759,
+          "voltage_v": 2.69863295
+        },
+        {
+          "capacity_ah": 3.80381716,
+          "voltage_v": 2.68762162
+        },
+        {
+          "capacity_ah": 3.80653238,
+          "voltage_v": 2.67484848
+        },
+        {
+          "capacity_ah": 3.81028195,
+          "voltage_v": 2.66383716
+        },
+        {
+          "capacity_ah": 3.81338505,
+          "voltage_v": 2.65436741
+        },
+        {
+          "capacity_ah": 3.81584167,
+          "voltage_v": 2.64269541
+        },
+        {
+          "capacity_ah": 3.81868618,
+          "voltage_v": 2.63168408
+        },
+        {
+          "capacity_ah": 3.82269435,
+          "voltage_v": 2.61891094
+        },
+        {
+          "capacity_ah": 3.8242459,
+          "voltage_v": 2.6094412
+        },
+        {
+          "capacity_ah": 3.82696111,
+          "voltage_v": 2.59842987
+        },
+        {
+          "capacity_ah": 3.82915914,
+          "voltage_v": 2.58896013
+        },
+        {
+          "capacity_ah": 3.83200364,
+          "voltage_v": 2.57772858
+        },
+        {
+          "capacity_ah": 3.83355519,
+          "voltage_v": 2.56671725
+        },
+        {
+          "capacity_ah": 3.83665829,
+          "voltage_v": 2.55570593
+        },
+        {
+          "capacity_ah": 3.83846843,
+          "voltage_v": 2.54447437
+        },
+        {
+          "capacity_ah": 3.84131294,
+          "voltage_v": 2.53346305
+        },
+        {
+          "capacity_ah": 3.84286449,
+          "voltage_v": 2.51914832
+        },
+        {
+          "capacity_ah": 3.84583829,
+          "voltage_v": 2.50813699
+        },
+        {
+          "capacity_ah": 3.84777773,
+          "voltage_v": 2.49382227
+        }
+      ],
+      "cell_energy_wh": 13.01993961,
+      "endpoint_capacity_ah": 3.84777773,
+      "extracted_point_count": 212,
+      "original_vector_bbox_pdf_pt": [
+        378.025497991125,
+        422.85765186784556,
+        531.830100825,
+        462.5287557168432
+      ]
+    },
+    {
+      "temperature_c": 0,
+      "points": [
+        {
+          "capacity_ah": 0.0,
+          "voltage_v": 4.18097856
+        },
+        {
+          "capacity_ah": 0.000918,
+          "voltage_v": 3.95238343
+        },
+        {
+          "capacity_ah": 0.00277986,
+          "voltage_v": 3.9413721
+        },
+        {
+          "capacity_ah": 0.00464172,
+          "voltage_v": 3.92705737
+        },
+        {
+          "capacity_ah": 0.00835251,
+          "voltage_v": 3.91296288
+        },
+        {
+          "capacity_ah": 0.0120633,
+          "voltage_v": 3.90173132
+        },
+        {
+          "capacity_ah": 0.01670501,
+          "voltage_v": 3.89071999
+        },
+        {
+          "capacity_ah": 0.02227766,
+          "voltage_v": 3.87970867
+        },
+        {
+          "capacity_ah": 0.02878124,
+          "voltage_v": 3.86847711
+        },
+        {
+          "capacity_ah": 0.04085747,
+          "voltage_v": 3.85746578
+        },
+        {
+          "capacity_ah": 0.054162,
+          "voltage_v": 3.84799604
+        },
+        {
+          "capacity_ah": 0.07738352,
+          "voltage_v": 3.84116901
+        },
+        {
+          "capacity_ah": 0.10059212,
+          "voltage_v": 3.83786561
+        },
+        {
+          "capacity_ah": 0.12381364,
+          "voltage_v": 3.83632402
+        },
+        {
+          "capacity_ah": 0.14733254,
+          "voltage_v": 3.8378656
+        },
+        {
+          "capacity_ah": 0.17054113,
+          "voltage_v": 3.83786559
+        },
+        {
+          "capacity_ah": 0.19376265,
+          "voltage_v": 3.83786559
+        },
+        {
+          "capacity_ah": 0.21697125,
+          "voltage_v": 3.83786558
+        },
+        {
+          "capacity_ah": 0.24019277,
+          "voltage_v": 3.84116898
+        },
+        {
+          "capacity_ah": 0.26371167,
+          "voltage_v": 3.83962738
+        },
+        {
+          "capacity_ah": 0.28693319,
+          "voltage_v": 3.83962738
+        },
+        {
+          "capacity_ah": 0.31014178,
+          "voltage_v": 3.83962737
+        },
+        {
+          "capacity_ah": 0.33336331,
+          "voltage_v": 3.83962737
+        },
+        {
+          "capacity_ah": 0.35688221,
+          "voltage_v": 3.84116895
+        },
+        {
+          "capacity_ah": 0.38010373,
+          "voltage_v": 3.83786555
+        },
+        {
+          "capacity_ah": 0.40331232,
+          "voltage_v": 3.84116894
+        },
+        {
+          "capacity_ah": 0.42653384,
+          "voltage_v": 3.84116893
+        },
+        {
+          "capacity_ah": 0.44974244,
+          "voltage_v": 3.83962734
+        },
+        {
+          "capacity_ah": 0.47295103,
+          "voltage_v": 3.83962734
+        },
+        {
+          "capacity_ah": 0.49648286,
+          "voltage_v": 3.83786552
+        },
+        {
+          "capacity_ah": 0.51969145,
+          "voltage_v": 3.83962733
+        },
+        {
+          "capacity_ah": 0.54291298,
+          "voltage_v": 3.83786551
+        },
+        {
+          "capacity_ah": 0.56643188,
+          "voltage_v": 3.83544301
+        },
+        {
+          "capacity_ah": 0.5896534,
+          "voltage_v": 3.83368119
+        },
+        {
+          "capacity_ah": 0.61286199,
+          "voltage_v": 3.835443
+        },
+        {
+          "capacity_ah": 0.63608351,
+          "voltage_v": 3.8321396
+        },
+        {
+          "capacity_ah": 0.65960242,
+          "voltage_v": 3.83059801
+        },
+        {
+          "capacity_ah": 0.68282394,
+          "voltage_v": 3.82905642
+        },
+        {
+          "capacity_ah": 0.70603253,
+          "voltage_v": 3.82531256
+        },
+        {
+          "capacity_ah": 0.72925405,
+          "voltage_v": 3.82531255
+        },
+        {
+          "capacity_ah": 0.75246264,
+          "voltage_v": 3.82046756
+        },
+        {
+          "capacity_ah": 0.77660217,
+          "voltage_v": 3.81782484
+        },
+        {
+          "capacity_ah": 0.80014693,
+          "voltage_v": 3.81782484
+        },
+        {
+          "capacity_ah": 0.82329087,
+          "voltage_v": 3.81099781
+        },
+        {
+          "capacity_ah": 0.84656411,
+          "voltage_v": 3.80637305
+        },
+        {
+          "capacity_ah": 0.87009594,
+          "voltage_v": 3.80306964
+        },
+        {
+          "capacity_ah": 0.89323989,
+          "voltage_v": 3.80042692
+        },
+        {
+          "capacity_ah": 0.91651313,
+          "voltage_v": 3.79051672
+        },
+        {
+          "capacity_ah": 0.93978637,
+          "voltage_v": 3.78721332
+        },
+        {
+          "capacity_ah": 0.9631889,
+          "voltage_v": 3.78413014
+        },
+        {
+          "capacity_ah": 0.98620355,
+          "voltage_v": 3.78258855
+        },
+        {
+          "capacity_ah": 1.00973538,
+          "voltage_v": 3.7731188
+        },
+        {
+          "capacity_ah": 1.03287933,
+          "voltage_v": 3.76827381
+        },
+        {
+          "capacity_ah": 1.05615257,
+          "voltage_v": 3.76519064
+        },
+        {
+          "capacity_ah": 1.0796844,
+          "voltage_v": 3.75726248
+        },
+        {
+          "capacity_ah": 1.10282835,
+          "voltage_v": 3.75241749
+        },
+        {
+          "capacity_ah": 1.12610159,
+          "voltage_v": 3.74779273
+        },
+        {
+          "capacity_ah": 1.14924553,
+          "voltage_v": 3.74294774
+        },
+        {
+          "capacity_ah": 1.17277736,
+          "voltage_v": 3.73832297
+        },
+        {
+          "capacity_ah": 1.1960506,
+          "voltage_v": 3.73347799
+        },
+        {
+          "capacity_ah": 1.21919455,
+          "voltage_v": 3.728633
+        },
+        {
+          "capacity_ah": 1.24246779,
+          "voltage_v": 3.72400823
+        },
+        {
+          "capacity_ah": 1.26561173,
+          "voltage_v": 3.71916325
+        },
+        {
+          "capacity_ah": 1.28914356,
+          "voltage_v": 3.71608007
+        },
+        {
+          "capacity_ah": 1.3124168,
+          "voltage_v": 3.71123508
+        },
+        {
+          "capacity_ah": 1.33556075,
+          "voltage_v": 3.7081519
+        },
+        {
+          "capacity_ah": 1.35883399,
+          "voltage_v": 3.70176533
+        },
+        {
+          "capacity_ah": 1.38236582,
+          "voltage_v": 3.70022374
+        },
+        {
+          "capacity_ah": 1.40550976,
+          "voltage_v": 3.69559898
+        },
+        {
+          "capacity_ah": 1.428783,
+          "voltage_v": 3.69229557
+        },
+        {
+          "capacity_ah": 1.45205624,
+          "voltage_v": 3.6892124
+        },
+        {
+          "capacity_ah": 1.47558808,
+          "voltage_v": 3.68436741
+        },
+        {
+          "capacity_ah": 1.49847343,
+          "voltage_v": 3.67974264
+        },
+        {
+          "capacity_ah": 1.52291033,
+          "voltage_v": 3.67489766
+        },
+        {
+          "capacity_ah": 1.54605427,
+          "voltage_v": 3.6711538
+        },
+        {
+          "capacity_ah": 1.56932752,
+          "voltage_v": 3.6654279
+        },
+        {
+          "capacity_ah": 1.59285935,
+          "voltage_v": 3.66234473
+        },
+        {
+          "capacity_ah": 1.61600329,
+          "voltage_v": 3.65705929
+        },
+        {
+          "capacity_ah": 1.63927653,
+          "voltage_v": 3.65265475
+        },
+        {
+          "capacity_ah": 1.66242048,
+          "voltage_v": 3.64957157
+        },
+        {
+          "capacity_ah": 1.68595231,
+          "voltage_v": 3.64472658
+        },
+        {
+          "capacity_ah": 1.70922555,
+          "voltage_v": 3.63789956
+        },
+        {
+          "capacity_ah": 1.73236949,
+          "voltage_v": 3.63371525
+        },
+        {
+          "capacity_ah": 1.75564273,
+          "voltage_v": 3.62842981
+        },
+        {
+          "capacity_ah": 1.77891597,
+          "voltage_v": 3.62380504
+        },
+        {
+          "capacity_ah": 1.80205992,
+          "voltage_v": 3.61785892
+        },
+        {
+          "capacity_ah": 1.82559175,
+          "voltage_v": 3.61257348
+        },
+        {
+          "capacity_ah": 1.84886499,
+          "voltage_v": 3.60794872
+        },
+        {
+          "capacity_ah": 1.87200893,
+          "voltage_v": 3.6020026
+        },
+        {
+          "capacity_ah": 1.89554076,
+          "voltage_v": 3.59671715
+        },
+        {
+          "capacity_ah": 1.91881401,
+          "voltage_v": 3.59363398
+        },
+        {
+          "capacity_ah": 1.94195795,
+          "voltage_v": 3.58570582
+        },
+        {
+          "capacity_ah": 1.96523119,
+          "voltage_v": 3.58108105
+        },
+        {
+          "capacity_ah": 1.98876302,
+          "voltage_v": 3.57469448
+        },
+        {
+          "capacity_ah": 2.01190697,
+          "voltage_v": 3.56984949
+        },
+        {
+          "capacity_ah": 2.03518021,
+          "voltage_v": 3.56522473
+        },
+        {
+          "capacity_ah": 2.05832415,
+          "voltage_v": 3.55729657
+        },
+        {
+          "capacity_ah": 2.08159739,
+          "voltage_v": 3.55245158
+        },
+        {
+          "capacity_ah": 2.10512922,
+          "voltage_v": 3.54782682
+        },
+        {
+          "capacity_ah": 2.12827317,
+          "voltage_v": 3.54144024
+        },
+        {
+          "capacity_ah": 2.15154641,
+          "voltage_v": 3.53813684
+        },
+        {
+          "capacity_ah": 2.17469035,
+          "voltage_v": 3.53042891
+        },
+        {
+          "capacity_ah": 2.19822218,
+          "voltage_v": 3.5271255
+        },
+        {
+          "capacity_ah": 2.22149542,
+          "voltage_v": 3.52073893
+        },
+        {
+          "capacity_ah": 2.24476866,
+          "voltage_v": 3.51281077
+        },
+        {
+          "capacity_ah": 2.26791261,
+          "voltage_v": 3.50818601
+        },
+        {
+          "capacity_ah": 2.29234951,
+          "voltage_v": 3.50334102
+        },
+        {
+          "capacity_ah": 2.31562275,
+          "voltage_v": 3.49871625
+        },
+        {
+          "capacity_ah": 2.33876669,
+          "voltage_v": 3.49387127
+        },
+        {
+          "capacity_ah": 2.36203993,
+          "voltage_v": 3.48748469
+        },
+        {
+          "capacity_ah": 2.38518388,
+          "voltage_v": 3.48285993
+        },
+        {
+          "capacity_ah": 2.40871571,
+          "voltage_v": 3.47955653
+        },
+        {
+          "capacity_ah": 2.43198895,
+          "voltage_v": 3.47493176
+        },
+        {
+          "capacity_ah": 2.4551329,
+          "voltage_v": 3.47008677
+        },
+        {
+          "capacity_ah": 2.47840614,
+          "voltage_v": 3.46392043
+        },
+        {
+          "capacity_ah": 2.50193797,
+          "voltage_v": 3.46061702
+        },
+        {
+          "capacity_ah": 2.52508191,
+          "voltage_v": 3.45423045
+        },
+        {
+          "capacity_ah": 2.54835515,
+          "voltage_v": 3.45114727
+        },
+        {
+          "capacity_ah": 2.57162839,
+          "voltage_v": 3.44432024
+        },
+        {
+          "capacity_ah": 2.59477234,
+          "voltage_v": 3.44123707
+        },
+        {
+          "capacity_ah": 2.61830417,
+          "voltage_v": 3.43683253
+        },
+        {
+          "capacity_ah": 2.64157741,
+          "voltage_v": 3.43374935
+        },
+        {
+          "capacity_ah": 2.66472135,
+          "voltage_v": 3.42846391
+        },
+        {
+          "capacity_ah": 2.68799459,
+          "voltage_v": 3.42361892
+        },
+        {
+          "capacity_ah": 2.71152642,
+          "voltage_v": 3.41789303
+        },
+        {
+          "capacity_ah": 2.73467037,
+          "voltage_v": 3.41414917
+        },
+        {
+          "capacity_ah": 2.75794361,
+          "voltage_v": 3.41260758
+        },
+        {
+          "capacity_ah": 2.78108755,
+          "voltage_v": 3.40622101
+        },
+        {
+          "capacity_ah": 2.80461939,
+          "voltage_v": 3.40159624
+        },
+        {
+          "capacity_ah": 2.82789263,
+          "voltage_v": 3.39829284
+        },
+        {
+          "capacity_ah": 2.85103657,
+          "voltage_v": 3.39366808
+        },
+        {
+          "capacity_ah": 2.87430981,
+          "voltage_v": 3.38882309
+        },
+        {
+          "capacity_ah": 2.89745375,
+          "voltage_v": 3.38573991
+        },
+        {
+          "capacity_ah": 2.92098559,
+          "voltage_v": 3.37935334
+        },
+        {
+          "capacity_ah": 2.94425883,
+          "voltage_v": 3.37472858
+        },
+        {
+          "capacity_ah": 2.96740277,
+          "voltage_v": 3.37142517
+        },
+        {
+          "capacity_ah": 2.99067601,
+          "voltage_v": 3.36680041
+        },
+        {
+          "capacity_ah": 3.01420784,
+          "voltage_v": 3.36349701
+        },
+        {
+          "capacity_ah": 3.03735179,
+          "voltage_v": 3.35733066
+        },
+        {
+          "capacity_ah": 3.0615301,
+          "voltage_v": 3.35402726
+        },
+        {
+          "capacity_ah": 3.08480334,
+          "voltage_v": 3.34764068
+        },
+        {
+          "capacity_ah": 3.10833517,
+          "voltage_v": 3.34301592
+        },
+        {
+          "capacity_ah": 3.13122052,
+          "voltage_v": 3.33993274
+        },
+        {
+          "capacity_ah": 3.15475235,
+          "voltage_v": 3.33024277
+        },
+        {
+          "capacity_ah": 3.1778963,
+          "voltage_v": 3.32870118
+        },
+        {
+          "capacity_ah": 3.20116954,
+          "voltage_v": 3.3223146
+        },
+        {
+          "capacity_ah": 3.22470137,
+          "voltage_v": 3.31768984
+        },
+        {
+          "capacity_ah": 3.24784532,
+          "voltage_v": 3.31284485
+        },
+        {
+          "capacity_ah": 3.27111856,
+          "voltage_v": 3.30667851
+        },
+        {
+          "capacity_ah": 3.2942625,
+          "voltage_v": 3.30183352
+        },
+        {
+          "capacity_ah": 3.31779433,
+          "voltage_v": 3.29544694
+        },
+        {
+          "capacity_ah": 3.34106757,
+          "voltage_v": 3.28906037
+        },
+        {
+          "capacity_ah": 3.36421152,
+          "voltage_v": 3.28135243
+        },
+        {
+          "capacity_ah": 3.38748476,
+          "voltage_v": 3.27496586
+        },
+        {
+          "capacity_ah": 3.410758,
+          "voltage_v": 3.26857928
+        },
+        {
+          "capacity_ah": 3.43428983,
+          "voltage_v": 3.2637343
+        },
+        {
+          "capacity_ah": 3.45743377,
+          "voltage_v": 3.25844885
+        },
+        {
+          "capacity_ah": 3.48070701,
+          "voltage_v": 3.25272296
+        },
+        {
+          "capacity_ah": 3.50385096,
+          "voltage_v": 3.24633638
+        },
+        {
+          "capacity_ah": 3.52738279,
+          "voltage_v": 3.23840822
+        },
+        {
+          "capacity_ah": 3.55065603,
+          "voltage_v": 3.22849803
+        },
+        {
+          "capacity_ah": 3.57379997,
+          "voltage_v": 3.22277213
+        },
+        {
+          "capacity_ah": 3.59616814,
+          "voltage_v": 3.21264171
+        },
+        {
+          "capacity_ah": 3.61931209,
+          "voltage_v": 3.20625513
+        },
+        {
+          "capacity_ah": 3.64193885,
+          "voltage_v": 3.1952438
+        },
+        {
+          "capacity_ah": 3.66508279,
+          "voltage_v": 3.18731564
+        },
+        {
+          "capacity_ah": 3.68745096,
+          "voltage_v": 3.17784589
+        },
+        {
+          "capacity_ah": 3.70322505,
+          "voltage_v": 3.16683456
+        },
+        {
+          "capacity_ah": 3.72675688,
+          "voltage_v": 3.15560301
+        },
+        {
+          "capacity_ah": 3.74524618,
+          "voltage_v": 3.14613326
+        },
+        {
+          "capacity_ah": 3.76011519,
+          "voltage_v": 3.13666352
+        },
+        {
+          "capacity_ah": 3.77782871,
+          "voltage_v": 3.12565219
+        },
+        {
+          "capacity_ah": 3.78804308,
+          "voltage_v": 3.11618244
+        },
+        {
+          "capacity_ah": 3.80381716,
+          "voltage_v": 3.10649247
+        },
+        {
+          "capacity_ah": 3.8149366,
+          "voltage_v": 3.09548114
+        },
+        {
+          "capacity_ah": 3.82825407,
+          "voltage_v": 3.0860114
+        },
+        {
+          "capacity_ah": 3.83846843,
+          "voltage_v": 3.07433939
+        },
+        {
+          "capacity_ah": 3.84777773,
+          "voltage_v": 3.06376852
+        },
+        {
+          "capacity_ah": 3.85889717,
+          "voltage_v": 3.05429877
+        },
+        {
+          "capacity_ah": 3.86536195,
+          "voltage_v": 3.04262677
+        },
+        {
+          "capacity_ah": 3.87376618,
+          "voltage_v": 3.0338177
+        },
+        {
+          "capacity_ah": 3.88217041,
+          "voltage_v": 3.02368728
+        },
+        {
+          "capacity_ah": 3.88773012,
+          "voltage_v": 3.01267595
+        },
+        {
+          "capacity_ah": 3.89419491,
+          "voltage_v": 3.00166463
+        },
+        {
+          "capacity_ah": 3.90156477,
+          "voltage_v": 2.99043307
+        },
+        {
+          "capacity_ah": 3.90841745,
+          "voltage_v": 2.97788016
+        },
+        {
+          "capacity_ah": 3.91462365,
+          "voltage_v": 2.96510702
+        },
+        {
+          "capacity_ah": 3.92018336,
+          "voltage_v": 2.95563728
+        },
+        {
+          "capacity_ah": 3.9250966,
+          "voltage_v": 2.94462595
+        },
+        {
+          "capacity_ah": 3.92949266,
+          "voltage_v": 2.93339439
+        },
+        {
+          "capacity_ah": 3.9344059,
+          "voltage_v": 2.92238307
+        },
+        {
+          "capacity_ah": 3.93776759,
+          "voltage_v": 2.91137174
+        },
+        {
+          "capacity_ah": 3.94281013,
+          "voltage_v": 2.901902
+        },
+        {
+          "capacity_ah": 3.94746477,
+          "voltage_v": 2.88912886
+        },
+        {
+          "capacity_ah": 3.95017999,
+          "voltage_v": 2.87811753
+        },
+        {
+          "capacity_ah": 3.95392956,
+          "voltage_v": 2.86710621
+        },
+        {
+          "capacity_ah": 3.95767914,
+          "voltage_v": 2.85587465
+        },
+        {
+          "capacity_ah": 3.96129942,
+          "voltage_v": 2.84266106
+        },
+        {
+          "capacity_ah": 3.96414393,
+          "voltage_v": 2.83164973
+        },
+        {
+          "capacity_ah": 3.96789351,
+          "voltage_v": 2.81887659
+        },
+        {
+          "capacity_ah": 3.97151379,
+          "voltage_v": 2.80676413
+        },
+        {
+          "capacity_ah": 3.97526337,
+          "voltage_v": 2.79046737
+        },
+        {
+          "capacity_ah": 3.97810787,
+          "voltage_v": 2.77945604
+        },
+        {
+          "capacity_ah": 3.98082309,
+          "voltage_v": 2.76822449
+        },
+        {
+          "capacity_ah": 3.98276252,
+          "voltage_v": 2.75875475
+        },
+        {
+          "capacity_ah": 3.98547773,
+          "voltage_v": 2.74774342
+        },
+        {
+          "capacity_ah": 3.98741717,
+          "voltage_v": 2.73673209
+        },
+        {
+          "capacity_ah": 3.99013238,
+          "voltage_v": 2.72550054
+        },
+        {
+          "capacity_ah": 3.99194252,
+          "voltage_v": 2.7160308
+        },
+        {
+          "capacity_ah": 3.99478703,
+          "voltage_v": 2.70501947
+        },
+        {
+          "capacity_ah": 3.99659717,
+          "voltage_v": 2.69400815
+        },
+        {
+          "capacity_ah": 3.99944168,
+          "voltage_v": 2.67969342
+        },
+        {
+          "capacity_ah": 4.00125182,
+          "voltage_v": 2.66692028
+        },
+        {
+          "capacity_ah": 4.00435492,
+          "voltage_v": 2.65282578
+        },
+        {
+          "capacity_ah": 4.00590647,
+          "voltage_v": 2.64005265
+        },
+        {
+          "capacity_ah": 4.00875097,
+          "voltage_v": 2.62419634
+        },
+        {
+          "capacity_ah": 4.01056111,
+          "voltage_v": 2.61274456
+        },
+        {
+          "capacity_ah": 4.01366421,
+          "voltage_v": 2.59512643
+        },
+        {
+          "capacity_ah": 4.01612083,
+          "voltage_v": 2.58103193
+        },
+        {
+          "capacity_ah": 4.01806027,
+          "voltage_v": 2.56363404
+        },
+        {
+          "capacity_ah": 4.01987041,
+          "voltage_v": 2.54931931
+        },
+        {
+          "capacity_ah": 4.02297351,
+          "voltage_v": 2.533463
+        },
+        {
+          "capacity_ah": 4.02452506,
+          "voltage_v": 2.51760669
+        },
+        {
+          "capacity_ah": 4.0263352,
+          "voltage_v": 2.50813695
+        },
+        {
+          "capacity_ah": 4.02853323,
+          "voltage_v": 2.48919747
+        }
+      ],
+      "cell_energy_wh": 14.24762315,
+      "endpoint_capacity_ah": 4.02853323,
+      "extracted_point_count": 225,
+      "original_vector_bbox_pdf_pt": [
+        378.025497991125,
+        422.85765186784556,
+        539.0553174705001,
+        462.6375013362125
+      ]
+    },
+    {
+      "temperature_c": 23,
+      "points": [
+        {
+          "capacity_ah": 0.0,
+          "voltage_v": 4.13032646
+        },
+        {
+          "capacity_ah": 0.0120633,
+          "voltage_v": 4.09068568
+        },
+        {
+          "capacity_ah": 0.02320859,
+          "voltage_v": 4.07482937
+        },
+        {
+          "capacity_ah": 0.03559513,
+          "voltage_v": 4.06381804
+        },
+        {
+          "capacity_ah": 0.04643011,
+          "voltage_v": 4.05390784
+        },
+        {
+          "capacity_ah": 0.05880372,
+          "voltage_v": 4.04796172
+        },
+        {
+          "capacity_ah": 0.06994902,
+          "voltage_v": 4.0411347
+        },
+        {
+          "capacity_ah": 0.08202524,
+          "voltage_v": 4.03474813
+        },
+        {
+          "capacity_ah": 0.09317054,
+          "voltage_v": 4.03056382
+        },
+        {
+          "capacity_ah": 0.10523383,
+          "voltage_v": 4.02527838
+        },
+        {
+          "capacity_ah": 0.11637913,
+          "voltage_v": 4.02219521
+        },
+        {
+          "capacity_ah": 0.12845536,
+          "voltage_v": 4.0180109
+        },
+        {
+          "capacity_ah": 0.13989803,
+          "voltage_v": 4.0147075
+        },
+        {
+          "capacity_ah": 0.15166395,
+          "voltage_v": 4.01096365
+        },
+        {
+          "capacity_ah": 0.16311955,
+          "voltage_v": 4.00942206
+        },
+        {
+          "capacity_ah": 0.17519578,
+          "voltage_v": 4.00633888
+        },
+        {
+          "capacity_ah": 0.18632815,
+          "voltage_v": 4.00325571
+        },
+        {
+          "capacity_ah": 0.19840437,
+          "voltage_v": 4.0014939
+        },
+        {
+          "capacity_ah": 0.20954967,
+          "voltage_v": 4.00061299
+        },
+        {
+          "capacity_ah": 0.22161296,
+          "voltage_v": 3.99841072
+        },
+        {
+          "capacity_ah": 0.23275826,
+          "voltage_v": 3.99686913
+        },
+        {
+          "capacity_ah": 0.2451448,
+          "voltage_v": 3.99356573
+        },
+        {
+          "capacity_ah": 0.25597978,
+          "voltage_v": 3.99356573
+        },
+        {
+          "capacity_ah": 0.26835339,
+          "voltage_v": 3.99202414
+        },
+        {
+          "capacity_ah": 0.27949869,
+          "voltage_v": 3.99048255
+        },
+        {
+          "capacity_ah": 0.29157491,
+          "voltage_v": 3.98894096
+        },
+        {
+          "capacity_ah": 0.30272021,
+          "voltage_v": 3.98739937
+        },
+        {
+          "capacity_ah": 0.3147835,
+          "voltage_v": 3.98563756
+        },
+        {
+          "capacity_ah": 0.3259288,
+          "voltage_v": 3.98563756
+        },
+        {
+          "capacity_ah": 0.33800502,
+          "voltage_v": 3.98409597
+        },
+        {
+          "capacity_ah": 0.34946063,
+          "voltage_v": 3.98255438
+        },
+        {
+          "capacity_ah": 0.36121362,
+          "voltage_v": 3.98101279
+        },
+        {
+          "capacity_ah": 0.37266922,
+          "voltage_v": 3.98101279
+        },
+        {
+          "capacity_ah": 0.38474545,
+          "voltage_v": 3.9794712
+        },
+        {
+          "capacity_ah": 0.39587782,
+          "voltage_v": 3.97770939
+        },
+        {
+          "capacity_ah": 0.40795404,
+          "voltage_v": 3.97770938
+        },
+        {
+          "capacity_ah": 0.41909934,
+          "voltage_v": 3.97616779
+        },
+        {
+          "capacity_ah": 0.43117556,
+          "voltage_v": 3.97462621
+        },
+        {
+          "capacity_ah": 0.44261824,
+          "voltage_v": 3.9746262
+        },
+        {
+          "capacity_ah": 0.45438416,
+          "voltage_v": 3.97308461
+        },
+        {
+          "capacity_ah": 0.46552945,
+          "voltage_v": 3.97308461
+        },
+        {
+          "capacity_ah": 0.47791599,
+          "voltage_v": 3.97154302
+        },
+        {
+          "capacity_ah": 0.48997928,
+          "voltage_v": 3.97000144
+        },
+        {
+          "capacity_ah": 0.50112458,
+          "voltage_v": 3.96823962
+        },
+        {
+          "capacity_ah": 0.51320081,
+          "voltage_v": 3.96823962
+        },
+        {
+          "capacity_ah": 0.52433317,
+          "voltage_v": 3.96669803
+        },
+        {
+          "capacity_ah": 0.5364094,
+          "voltage_v": 3.96515644
+        },
+        {
+          "capacity_ah": 0.547865,
+          "voltage_v": 3.96515644
+        },
+        {
+          "capacity_ah": 0.55963092,
+          "voltage_v": 3.96361485
+        },
+        {
+          "capacity_ah": 0.5710736,
+          "voltage_v": 3.96207326
+        },
+        {
+          "capacity_ah": 0.58314982,
+          "voltage_v": 3.96031145
+        },
+        {
+          "capacity_ah": 0.59429512,
+          "voltage_v": 3.95876986
+        },
+        {
+          "capacity_ah": 0.60635841,
+          "voltage_v": 3.95876986
+        },
+        {
+          "capacity_ah": 0.61750371,
+          "voltage_v": 3.95722827
+        },
+        {
+          "capacity_ah": 0.62957994,
+          "voltage_v": 3.95568668
+        },
+        {
+          "capacity_ah": 0.64072523,
+          "voltage_v": 3.95414509
+        },
+        {
+          "capacity_ah": 0.65309884,
+          "voltage_v": 3.95238328
+        },
+        {
+          "capacity_ah": 0.66393382,
+          "voltage_v": 3.95084169
+        },
+        {
+          "capacity_ah": 0.67632036,
+          "voltage_v": 3.9493001
+        },
+        {
+          "capacity_ah": 0.68746566,
+          "voltage_v": 3.94775851
+        },
+        {
+          "capacity_ah": 0.69952895,
+          "voltage_v": 3.94467534
+        },
+        {
+          "capacity_ah": 0.71067425,
+          "voltage_v": 3.94291352
+        },
+        {
+          "capacity_ah": 0.72275047,
+          "voltage_v": 3.94137193
+        },
+        {
+          "capacity_ah": 0.73389577,
+          "voltage_v": 3.93828876
+        },
+        {
+          "capacity_ah": 0.74595907,
+          "voltage_v": 3.93674717
+        },
+        {
+          "capacity_ah": 0.75741467,
+          "voltage_v": 3.93344377
+        },
+        {
+          "capacity_ah": 0.76918059,
+          "voltage_v": 3.93190218
+        },
+        {
+          "capacity_ah": 0.78062326,
+          "voltage_v": 3.92881901
+        },
+        {
+          "capacity_ah": 0.79264777,
+          "voltage_v": 3.92551561
+        },
+        {
+          "capacity_ah": 0.8038965,
+          "voltage_v": 3.92397402
+        },
+        {
+          "capacity_ah": 0.81592101,
+          "voltage_v": 3.92089085
+        },
+        {
+          "capacity_ah": 0.82704045,
+          "voltage_v": 3.91758745
+        },
+        {
+          "capacity_ah": 0.83919425,
+          "voltage_v": 3.91450427
+        },
+        {
+          "capacity_ah": 0.85031369,
+          "voltage_v": 3.9114211
+        },
+        {
+          "capacity_ah": 0.8623382,
+          "voltage_v": 3.9081177
+        },
+        {
+          "capacity_ah": 0.87345763,
+          "voltage_v": 3.90503452
+        },
+        {
+          "capacity_ah": 0.88587003,
+          "voltage_v": 3.90173112
+        },
+        {
+          "capacity_ah": 0.89698947,
+          "voltage_v": 3.89864795
+        },
+        {
+          "capacity_ah": 0.90914327,
+          "voltage_v": 3.89556477
+        },
+        {
+          "capacity_ah": 0.92026271,
+          "voltage_v": 3.89226137
+        },
+        {
+          "capacity_ah": 0.93228721,
+          "voltage_v": 3.88763661
+        },
+        {
+          "capacity_ah": 0.94340665,
+          "voltage_v": 3.88433321
+        },
+        {
+          "capacity_ah": 0.95581904,
+          "voltage_v": 3.88125004
+        },
+        {
+          "capacity_ah": 0.96667989,
+          "voltage_v": 3.87816687
+        },
+        {
+          "capacity_ah": 0.97909228,
+          "voltage_v": 3.87486346
+        },
+        {
+          "capacity_ah": 0.99021172,
+          "voltage_v": 3.87178029
+        },
+        {
+          "capacity_ah": 1.00223623,
+          "voltage_v": 3.8669353
+        },
+        {
+          "capacity_ah": 1.01426074,
+          "voltage_v": 3.86385213
+        },
+        {
+          "capacity_ah": 1.02550947,
+          "voltage_v": 3.86076896
+        },
+        {
+          "capacity_ah": 1.03753398,
+          "voltage_v": 3.85746556
+        },
+        {
+          "capacity_ah": 1.04865341,
+          "voltage_v": 3.8537217
+        },
+        {
+          "capacity_ah": 1.06106581,
+          "voltage_v": 3.85107898
+        },
+        {
+          "capacity_ah": 1.07192665,
+          "voltage_v": 3.84799581
+        },
+        {
+          "capacity_ah": 1.08433905,
+          "voltage_v": 3.84491263
+        },
+        {
+          "capacity_ah": 1.09545849,
+          "voltage_v": 3.84116878
+        },
+        {
+          "capacity_ah": 1.10748299,
+          "voltage_v": 3.83786538
+        },
+        {
+          "capacity_ah": 1.11860243,
+          "voltage_v": 3.83544288
+        },
+        {
+          "capacity_ah": 1.13075623,
+          "voltage_v": 3.83213948
+        },
+        {
+          "capacity_ah": 1.14187567,
+          "voltage_v": 3.8305979
+        },
+        {
+          "capacity_ah": 1.15390018,
+          "voltage_v": 3.82685404
+        },
+        {
+          "capacity_ah": 1.1654075,
+          "voltage_v": 3.82377087
+        },
+        {
+          "capacity_ah": 1.17717342,
+          "voltage_v": 3.82222928
+        },
+        {
+          "capacity_ah": 1.18855145,
+          "voltage_v": 3.81958656
+        },
+        {
+          "capacity_ah": 1.20070525,
+          "voltage_v": 3.81628316
+        },
+        {
+          "capacity_ah": 1.21182469,
+          "voltage_v": 3.81474157
+        },
+        {
+          "capacity_ah": 1.22384919,
+          "voltage_v": 3.81099772
+        },
+        {
+          "capacity_ah": 1.23496863,
+          "voltage_v": 3.80945613
+        },
+        {
+          "capacity_ah": 1.24712243,
+          "voltage_v": 3.80637295
+        },
+        {
+          "capacity_ah": 1.25824187,
+          "voltage_v": 3.80483137
+        },
+        {
+          "capacity_ah": 1.27026638,
+          "voltage_v": 3.80306955
+        },
+        {
+          "capacity_ah": 1.28138582,
+          "voltage_v": 3.80042683
+        },
+        {
+          "capacity_ah": 1.29379821,
+          "voltage_v": 3.79844479
+        },
+        {
+          "capacity_ah": 1.30491765,
+          "voltage_v": 3.79514139
+        },
+        {
+          "capacity_ah": 1.31707145,
+          "voltage_v": 3.7935998
+        },
+        {
+          "capacity_ah": 1.32819089,
+          "voltage_v": 3.79205821
+        },
+        {
+          "capacity_ah": 1.3402154,
+          "voltage_v": 3.78897504
+        },
+        {
+          "capacity_ah": 1.35146413,
+          "voltage_v": 3.78721322
+        },
+        {
+          "capacity_ah": 1.36374723,
+          "voltage_v": 3.78633231
+        },
+        {
+          "capacity_ah": 1.37486666,
+          "voltage_v": 3.78413005
+        },
+        {
+          "capacity_ah": 1.38663258,
+          "voltage_v": 3.78104687
+        },
+        {
+          "capacity_ah": 1.3981399,
+          "voltage_v": 3.77950528
+        },
+        {
+          "capacity_ah": 1.41016441,
+          "voltage_v": 3.77774347
+        },
+        {
+          "capacity_ah": 1.42141314,
+          "voltage_v": 3.77620188
+        },
+        {
+          "capacity_ah": 1.43343765,
+          "voltage_v": 3.77311871
+        },
+        {
+          "capacity_ah": 1.44455709,
+          "voltage_v": 3.77157712
+        },
+        {
+          "capacity_ah": 1.4565816,
+          "voltage_v": 3.7698153
+        },
+        {
+          "capacity_ah": 1.46808892,
+          "voltage_v": 3.76673213
+        },
+        {
+          "capacity_ah": 1.47985484,
+          "voltage_v": 3.76519054
+        },
+        {
+          "capacity_ah": 1.49136216,
+          "voltage_v": 3.76364895
+        },
+        {
+          "capacity_ah": 1.50338667,
+          "voltage_v": 3.76034555
+        },
+        {
+          "capacity_ah": 1.5145061,
+          "voltage_v": 3.75880396
+        },
+        {
+          "capacity_ah": 1.52665991,
+          "voltage_v": 3.75726238
+        },
+        {
+          "capacity_ah": 1.53868442,
+          "voltage_v": 3.7541792
+        },
+        {
+          "capacity_ah": 1.54980385,
+          "voltage_v": 3.75241739
+        },
+        {
+          "capacity_ah": 1.56182836,
+          "voltage_v": 3.7508758
+        },
+        {
+          "capacity_ah": 1.57333568,
+          "voltage_v": 3.74779262
+        },
+        {
+          "capacity_ah": 1.5851016,
+          "voltage_v": 3.74625104
+        },
+        {
+          "capacity_ah": 1.59660892,
+          "voltage_v": 3.74294763
+        },
+        {
+          "capacity_ah": 1.60863343,
+          "voltage_v": 3.74140605
+        },
+        {
+          "capacity_ah": 1.61975287,
+          "voltage_v": 3.73832287
+        },
+        {
+          "capacity_ah": 1.63177738,
+          "voltage_v": 3.73656106
+        },
+        {
+          "capacity_ah": 1.64302611,
+          "voltage_v": 3.73347788
+        },
+        {
+          "capacity_ah": 1.65505062,
+          "voltage_v": 3.7319363
+        },
+        {
+          "capacity_ah": 1.66617005,
+          "voltage_v": 3.72863289
+        },
+        {
+          "capacity_ah": 1.67858245,
+          "voltage_v": 3.72709131
+        },
+        {
+          "capacity_ah": 1.68944329,
+          "voltage_v": 3.72400813
+        },
+        {
+          "capacity_ah": 1.70172639,
+          "voltage_v": 3.72092496
+        },
+        {
+          "capacity_ah": 1.71297513,
+          "voltage_v": 3.71916314
+        },
+        {
+          "capacity_ah": 1.72499963,
+          "voltage_v": 3.71607997
+        },
+        {
+          "capacity_ah": 1.73611907,
+          "voltage_v": 3.71453838
+        },
+        {
+          "capacity_ah": 1.74827287,
+          "voltage_v": 3.71123498
+        },
+        {
+          "capacity_ah": 1.75939231,
+          "voltage_v": 3.70815181
+        },
+        {
+          "capacity_ah": 1.7718047,
+          "voltage_v": 3.70661022
+        },
+        {
+          "capacity_ah": 1.78292414,
+          "voltage_v": 3.70330682
+        },
+        {
+          "capacity_ah": 1.79469006,
+          "voltage_v": 3.70022364
+        },
+        {
+          "capacity_ah": 1.80606809,
+          "voltage_v": 3.69868206
+        },
+        {
+          "capacity_ah": 1.81822189,
+          "voltage_v": 3.69559888
+        },
+        {
+          "capacity_ah": 1.82934133,
+          "voltage_v": 3.69229548
+        },
+        {
+          "capacity_ah": 1.84136583,
+          "voltage_v": 3.69075389
+        },
+        {
+          "capacity_ah": 1.85248527,
+          "voltage_v": 3.68767072
+        },
+        {
+          "capacity_ah": 1.86463907,
+          "voltage_v": 3.68436732
+        },
+        {
+          "capacity_ah": 1.8760171,
+          "voltage_v": 3.68282573
+        },
+        {
+          "capacity_ah": 1.88778302,
+          "voltage_v": 3.67974256
+        },
+        {
+          "capacity_ah": 1.89890246,
+          "voltage_v": 3.67643916
+        },
+        {
+          "capacity_ah": 1.91131485,
+          "voltage_v": 3.67489757
+        },
+        {
+          "capacity_ah": 1.92243429,
+          "voltage_v": 3.67115371
+        },
+        {
+          "capacity_ah": 1.93458809,
+          "voltage_v": 3.66851099
+        },
+        {
+          "capacity_ah": 1.94570753,
+          "voltage_v": 3.6669694
+        },
+        {
+          "capacity_ah": 1.95773203,
+          "voltage_v": 3.66388623
+        },
+        {
+          "capacity_ah": 1.96885147,
+          "voltage_v": 3.66058283
+        },
+        {
+          "capacity_ah": 1.98126387,
+          "voltage_v": 3.6570592
+        },
+        {
+          "capacity_ah": 1.99212471,
+          "voltage_v": 3.65529739
+        },
+        {
+          "capacity_ah": 2.00453711,
+          "voltage_v": 3.65265467
+        },
+        {
+          "capacity_ah": 2.01565654,
+          "voltage_v": 3.64957149
+        },
+        {
+          "capacity_ah": 2.02768105,
+          "voltage_v": 3.64648832
+        },
+        {
+          "capacity_ah": 2.03983485,
+          "voltage_v": 3.6447265
+        },
+        {
+          "capacity_ah": 2.05095429,
+          "voltage_v": 3.64120288
+        },
+        {
+          "capacity_ah": 2.0629788,
+          "voltage_v": 3.63789948
+        },
+        {
+          "capacity_ah": 2.07409824,
+          "voltage_v": 3.63525675
+        },
+        {
+          "capacity_ah": 2.08651063,
+          "voltage_v": 3.63371517
+        },
+        {
+          "capacity_ah": 2.09737148,
+          "voltage_v": 3.63063199
+        },
+        {
+          "capacity_ah": 2.10978387,
+          "voltage_v": 3.62688814
+        },
+        {
+          "capacity_ah": 2.12090331,
+          "voltage_v": 3.62380496
+        },
+        {
+          "capacity_ah": 2.13292781,
+          "voltage_v": 3.62204315
+        },
+        {
+          "capacity_ah": 2.14404725,
+          "voltage_v": 3.61940043
+        },
+        {
+          "capacity_ah": 2.15620105,
+          "voltage_v": 3.61631726
+        },
+        {
+          "capacity_ah": 2.16732049,
+          "voltage_v": 3.6125734
+        },
+        {
+          "capacity_ah": 2.17973289,
+          "voltage_v": 3.61103181
+        },
+        {
+          "capacity_ah": 2.19085232,
+          "voltage_v": 3.60794864
+        },
+        {
+          "capacity_ah": 2.20261824,
+          "voltage_v": 3.60464524
+        },
+        {
+          "capacity_ah": 2.21412556,
+          "voltage_v": 3.60200252
+        },
+        {
+          "capacity_ah": 2.22615007,
+          "voltage_v": 3.60002048
+        },
+        {
+          "capacity_ah": 2.23726951,
+          "voltage_v": 3.59671708
+        },
+        {
+          "capacity_ah": 2.24929402,
+          "voltage_v": 3.5936339
+        },
+        {
+          "capacity_ah": 2.26054275,
+          "voltage_v": 3.59209231
+        },
+        {
+          "capacity_ah": 2.27256726,
+          "voltage_v": 3.58900914
+        },
+        {
+          "capacity_ah": 2.28407458,
+          "voltage_v": 3.58570574
+        },
+        {
+          "capacity_ah": 2.2958405,
+          "voltage_v": 3.58416415
+        },
+        {
+          "capacity_ah": 2.30695993,
+          "voltage_v": 3.58108098
+        },
+        {
+          "capacity_ah": 2.31924303,
+          "voltage_v": 3.57777758
+        },
+        {
+          "capacity_ah": 2.33049176,
+          "voltage_v": 3.57623599
+        },
+        {
+          "capacity_ah": 2.34251627,
+          "voltage_v": 3.57315281
+        },
+        {
+          "capacity_ah": 2.35363571,
+          "voltage_v": 3.571391
+        },
+        {
+          "capacity_ah": 2.36578951,
+          "voltage_v": 3.56830782
+        },
+        {
+          "capacity_ah": 2.37690895,
+          "voltage_v": 3.56522465
+        },
+        {
+          "capacity_ah": 2.38919205,
+          "voltage_v": 3.56346284
+        },
+        {
+          "capacity_ah": 2.40005289,
+          "voltage_v": 3.56037966
+        },
+        {
+          "capacity_ah": 2.41246529,
+          "voltage_v": 3.55883807
+        },
+        {
+          "capacity_ah": 2.42358473,
+          "voltage_v": 3.5557549
+        },
+        {
+          "capacity_ah": 2.43573853,
+          "voltage_v": 3.55399308
+        },
+        {
+          "capacity_ah": 2.44685797,
+          "voltage_v": 3.55090991
+        },
+        {
+          "capacity_ah": 2.45888247,
+          "voltage_v": 3.54936832
+        },
+        {
+          "capacity_ah": 2.47000191,
+          "voltage_v": 3.54606492
+        },
+        {
+          "capacity_ah": 2.48215571,
+          "voltage_v": 3.54452333
+        },
+        {
+          "capacity_ah": 2.49353374,
+          "voltage_v": 3.54298174
+        },
+        {
+          "capacity_ah": 2.50529966,
+          "voltage_v": 3.53989857
+        },
+        {
+          "capacity_ah": 2.51680698,
+          "voltage_v": 3.53813676
+        },
+        {
+          "capacity_ah": 2.52883149,
+          "voltage_v": 3.53505358
+        },
+        {
+          "capacity_ah": 2.53995093,
+          "voltage_v": 3.53351199
+        },
+        {
+          "capacity_ah": 2.55210473,
+          "voltage_v": 3.53197041
+        },
+        {
+          "capacity_ah": 2.56412924,
+          "voltage_v": 3.528667
+        },
+        {
+          "capacity_ah": 2.57524867,
+          "voltage_v": 3.52712542
+        },
+        {
+          "capacity_ah": 2.58766107,
+          "voltage_v": 3.52404224
+        },
+        {
+          "capacity_ah": 2.59878051,
+          "voltage_v": 3.52250065
+        },
+        {
+          "capacity_ah": 2.61054642,
+          "voltage_v": 3.52073884
+        },
+        {
+          "capacity_ah": 2.62205375,
+          "voltage_v": 3.51765567
+        },
+        {
+          "capacity_ah": 2.63407825,
+          "voltage_v": 3.51611408
+        },
+        {
+          "capacity_ah": 2.64519769,
+          "voltage_v": 3.51457249
+        },
+        {
+          "capacity_ah": 2.65735149,
+          "voltage_v": 3.51126909
+        },
+        {
+          "capacity_ah": 2.66847093,
+          "voltage_v": 3.5097275
+        },
+        {
+          "capacity_ah": 2.68049544,
+          "voltage_v": 3.50818591
+        },
+        {
+          "capacity_ah": 2.69200276,
+          "voltage_v": 3.50664432
+        },
+        {
+          "capacity_ah": 2.70376868,
+          "voltage_v": 3.50334092
+        },
+        {
+          "capacity_ah": 2.71488812,
+          "voltage_v": 3.50179933
+        },
+        {
+          "capacity_ah": 2.72730051,
+          "voltage_v": 3.49871616
+        },
+        {
+          "capacity_ah": 2.73841995,
+          "voltage_v": 3.49717457
+        },
+        {
+          "capacity_ah": 2.75044445,
+          "voltage_v": 3.49541276
+        },
+        {
+          "capacity_ah": 2.76156389,
+          "voltage_v": 3.49232958
+        },
+        {
+          "capacity_ah": 2.77371769,
+          "voltage_v": 3.49078799
+        },
+        {
+          "capacity_ah": 2.78483713,
+          "voltage_v": 3.48924641
+        },
+        {
+          "capacity_ah": 2.79724953,
+          "voltage_v": 3.48594301
+        },
+        {
+          "capacity_ah": 2.80836896,
+          "voltage_v": 3.48440142
+        },
+        {
+          "capacity_ah": 2.82039347,
+          "voltage_v": 3.48285983
+        },
+        {
+          "capacity_ah": 2.83151291,
+          "voltage_v": 3.48131824
+        },
+        {
+          "capacity_ah": 2.84366671,
+          "voltage_v": 3.47801484
+        },
+        {
+          "capacity_ah": 2.85478615,
+          "voltage_v": 3.47647325
+        },
+        {
+          "capacity_ah": 2.86681066,
+          "voltage_v": 3.47493166
+        },
+        {
+          "capacity_ah": 2.87805939,
+          "voltage_v": 3.47118781
+        },
+        {
+          "capacity_ah": 2.8900839,
+          "voltage_v": 3.47008667
+        },
+        {
+          "capacity_ah": 2.90159122,
+          "voltage_v": 3.46854509
+        },
+        {
+          "capacity_ah": 2.91322784,
+          "voltage_v": 3.46546191
+        },
+        {
+          "capacity_ah": 2.92473516,
+          "voltage_v": 3.46392032
+        },
+        {
+          "capacity_ah": 2.93675967,
+          "voltage_v": 3.46061692
+        },
+        {
+          "capacity_ah": 2.9480084,
+          "voltage_v": 3.45863488
+        },
+        {
+          "capacity_ah": 2.96003291,
+          "voltage_v": 3.45687307
+        },
+        {
+          "capacity_ah": 2.97115235,
+          "voltage_v": 3.45423035
+        },
+        {
+          "capacity_ah": 2.98330615,
+          "voltage_v": 3.45268876
+        },
+        {
+          "capacity_ah": 2.99442559,
+          "voltage_v": 3.45114717
+        },
+        {
+          "capacity_ah": 3.00670869,
+          "voltage_v": 3.448064
+        },
+        {
+          "capacity_ah": 3.01756953,
+          "voltage_v": 3.44652241
+        },
+        {
+          "capacity_ah": 3.02998193,
+          "voltage_v": 3.44277855
+        },
+        {
+          "capacity_ah": 3.04110136,
+          "voltage_v": 3.44123697
+        },
+        {
+          "capacity_ah": 3.05325517,
+          "voltage_v": 3.43947515
+        },
+        {
+          "capacity_ah": 3.06527968,
+          "voltage_v": 3.43683243
+        },
+        {
+          "capacity_ah": 3.07639911,
+          "voltage_v": 3.43529084
+        },
+        {
+          "capacity_ah": 3.08842362,
+          "voltage_v": 3.43220767
+        },
+        {
+          "capacity_ah": 3.09993094,
+          "voltage_v": 3.4300054
+        },
+        {
+          "capacity_ah": 3.11195545,
+          "voltage_v": 3.42846381
+        },
+        {
+          "capacity_ah": 3.1228163,
+          "voltage_v": 3.42538064
+        },
+        {
+          "capacity_ah": 3.13522869,
+          "voltage_v": 3.42361882
+        },
+        {
+          "capacity_ah": 3.14634813,
+          "voltage_v": 3.42119633
+        },
+        {
+          "capacity_ah": 3.15837264,
+          "voltage_v": 3.41943451
+        },
+        {
+          "capacity_ah": 3.16962137,
+          "voltage_v": 3.41789292
+        },
+        {
+          "capacity_ah": 3.18164588,
+          "voltage_v": 3.41414907
+        },
+        {
+          "capacity_ah": 3.19276531,
+          "voltage_v": 3.41260748
+        },
+        {
+          "capacity_ah": 3.20517771,
+          "voltage_v": 3.40952431
+        },
+        {
+          "capacity_ah": 3.21629715,
+          "voltage_v": 3.40798272
+        },
+        {
+          "capacity_ah": 3.22845095,
+          "voltage_v": 3.40467932
+        },
+        {
+          "capacity_ah": 3.23957039,
+          "voltage_v": 3.40357818
+        },
+        {
+          "capacity_ah": 3.25159489,
+          "voltage_v": 3.40005456
+        },
+        {
+          "capacity_ah": 3.26271433,
+          "voltage_v": 3.39829274
+        },
+        {
+          "capacity_ah": 3.27486813,
+          "voltage_v": 3.39675115
+        },
+        {
+          "capacity_ah": 3.28598757,
+          "voltage_v": 3.39366798
+        },
+        {
+          "capacity_ah": 3.29801208,
+          "voltage_v": 3.39212639
+        },
+        {
+          "capacity_ah": 3.3095194,
+          "voltage_v": 3.38882299
+        },
+        {
+          "capacity_ah": 3.32128532,
+          "voltage_v": 3.38573982
+        },
+        {
+          "capacity_ah": 3.33266335,
+          "voltage_v": 3.38419823
+        },
+        {
+          "capacity_ah": 3.34481715,
+          "voltage_v": 3.38089483
+        },
+        {
+          "capacity_ah": 3.35593659,
+          "voltage_v": 3.37935324
+        },
+        {
+          "capacity_ah": 3.36796109,
+          "voltage_v": 3.37627007
+        },
+        {
+          "capacity_ah": 3.37908053,
+          "voltage_v": 3.37296667
+        },
+        {
+          "capacity_ah": 3.39123433,
+          "voltage_v": 3.37142508
+        },
+        {
+          "capacity_ah": 3.40235377,
+          "voltage_v": 3.3683419
+        },
+        {
+          "capacity_ah": 3.41476617,
+          "voltage_v": 3.36525873
+        },
+        {
+          "capacity_ah": 3.42549772,
+          "voltage_v": 3.36349691
+        },
+        {
+          "capacity_ah": 3.43791011,
+          "voltage_v": 3.36041374
+        },
+        {
+          "capacity_ah": 3.44902955,
+          "voltage_v": 3.35733057
+        },
+        {
+          "capacity_ah": 3.46118335,
+          "voltage_v": 3.35402717
+        },
+        {
+          "capacity_ah": 3.47230279,
+          "voltage_v": 3.35094399
+        },
+        {
+          "capacity_ah": 3.48432729,
+          "voltage_v": 3.3494024
+        },
+        {
+          "capacity_ah": 3.49557603,
+          "voltage_v": 3.346099
+        },
+        {
+          "capacity_ah": 3.50760053,
+          "voltage_v": 3.34301583
+        },
+        {
+          "capacity_ah": 3.51897856,
+          "voltage_v": 3.33993265
+        },
+        {
+          "capacity_ah": 3.53074448,
+          "voltage_v": 3.33662925
+        },
+        {
+          "capacity_ah": 3.5422518,
+          "voltage_v": 3.33354608
+        },
+        {
+          "capacity_ah": 3.55427631,
+          "voltage_v": 3.33024268
+        },
+        {
+          "capacity_ah": 3.56552504,
+          "voltage_v": 3.32715951
+        },
+        {
+          "capacity_ah": 3.57754955,
+          "voltage_v": 3.32407633
+        },
+        {
+          "capacity_ah": 3.58957406,
+          "voltage_v": 3.31923134
+        },
+        {
+          "capacity_ah": 3.6006935,
+          "voltage_v": 3.31614817
+        },
+        {
+          "capacity_ah": 3.61310589,
+          "voltage_v": 3.31284477
+        },
+        {
+          "capacity_ah": 3.62422533,
+          "voltage_v": 3.30822001
+        },
+        {
+          "capacity_ah": 3.63637913,
+          "voltage_v": 3.30491661
+        },
+        {
+          "capacity_ah": 3.64749857,
+          "voltage_v": 3.30029185
+        },
+        {
+          "capacity_ah": 3.65952307,
+          "voltage_v": 3.29698845
+        },
+        {
+          "capacity_ah": 3.67077181,
+          "voltage_v": 3.29236369
+        },
+        {
+          "capacity_ah": 3.68279632,
+          "voltage_v": 3.2875187
+        },
+        {
+          "capacity_ah": 3.69391575,
+          "voltage_v": 3.28289394
+        },
+        {
+          "capacity_ah": 3.70594026,
+          "voltage_v": 3.27804896
+        },
+        {
+          "capacity_ah": 3.71744758,
+          "voltage_v": 3.27276352
+        },
+        {
+          "capacity_ah": 3.7292135,
+          "voltage_v": 3.26703763
+        },
+        {
+          "capacity_ah": 3.74072082,
+          "voltage_v": 3.26219264
+        },
+        {
+          "capacity_ah": 3.75274533,
+          "voltage_v": 3.25536562
+        },
+        {
+          "capacity_ah": 3.76386477,
+          "voltage_v": 3.24963972
+        },
+        {
+          "capacity_ah": 3.77588928,
+          "voltage_v": 3.2428127
+        },
+        {
+          "capacity_ah": 3.78713801,
+          "voltage_v": 3.23532499
+        },
+        {
+          "capacity_ah": 3.79916252,
+          "voltage_v": 3.22849797
+        },
+        {
+          "capacity_ah": 3.81028195,
+          "voltage_v": 3.22101026
+        },
+        {
+          "capacity_ah": 3.82269435,
+          "voltage_v": 3.21264165
+        },
+        {
+          "capacity_ah": 3.83355519,
+          "voltage_v": 3.20515395
+        },
+        {
+          "capacity_ah": 3.84583829,
+          "voltage_v": 3.19524375
+        },
+        {
+          "capacity_ah": 3.85708702,
+          "voltage_v": 3.18577401
+        },
+        {
+          "capacity_ah": 3.86911153,
+          "voltage_v": 3.17630427
+        },
+        {
+          "capacity_ah": 3.88023097,
+          "voltage_v": 3.16507271
+        },
+        {
+          "capacity_ah": 3.89238477,
+          "voltage_v": 3.15406138
+        },
+        {
+          "capacity_ah": 3.90350421,
+          "voltage_v": 3.14305005
+        },
+        {
+          "capacity_ah": 3.91552872,
+          "voltage_v": 3.13027691
+        },
+        {
+          "capacity_ah": 3.92703604,
+          "voltage_v": 3.117724
+        },
+        {
+          "capacity_ah": 3.93880196,
+          "voltage_v": 3.10495086
+        },
+        {
+          "capacity_ah": 3.95017999,
+          "voltage_v": 3.09085636
+        },
+        {
+          "capacity_ah": 3.96233379,
+          "voltage_v": 3.07654163
+        },
+        {
+          "capacity_ah": 3.97345323,
+          "voltage_v": 3.06024486
+        },
+        {
+          "capacity_ah": 3.98547773,
+          "voltage_v": 3.04438855
+        },
+        {
+          "capacity_ah": 3.99659717,
+          "voltage_v": 3.02853224
+        },
+        {
+          "capacity_ah": 4.00875097,
+          "voltage_v": 3.01113434
+        },
+        {
+          "capacity_ah": 4.01987041,
+          "voltage_v": 2.99197463
+        },
+        {
+          "capacity_ah": 4.03228281,
+          "voltage_v": 2.97303515
+        },
+        {
+          "capacity_ah": 4.04301435,
+          "voltage_v": 2.95255408
+        },
+        {
+          "capacity_ah": 4.05542675,
+          "voltage_v": 2.93031119
+        },
+        {
+          "capacity_ah": 4.06654619,
+          "voltage_v": 2.90652673
+        },
+        {
+          "capacity_ah": 4.07869999,
+          "voltage_v": 2.88120067
+        },
+        {
+          "capacity_ah": 4.08981943,
+          "voltage_v": 2.85124986
+        },
+        {
+          "capacity_ah": 4.10184393,
+          "voltage_v": 2.81887656
+        },
+        {
+          "capacity_ah": 4.11399774,
+          "voltage_v": 2.7809976
+        },
+        {
+          "capacity_ah": 4.12537577,
+          "voltage_v": 2.73981523
+        },
+        {
+          "capacity_ah": 4.13714168,
+          "voltage_v": 2.69070472
+        },
+        {
+          "capacity_ah": 4.14735605,
+          "voltage_v": 2.64005261
+        },
+        {
+          "capacity_ah": 4.15692394,
+          "voltage_v": 2.59050164
+        },
+        {
+          "capacity_ah": 4.16532816,
+          "voltage_v": 2.53984954
+        },
+        {
+          "capacity_ah": 4.17373239,
+          "voltage_v": 2.48919744
+        }
+      ],
+      "cell_energy_wh": 15.07914889,
+      "endpoint_capacity_ah": 4.17373239,
+      "extracted_point_count": 360,
+      "original_vector_bbox_pdf_pt": [
+        378.025497991125,
+        424.04866467664556,
+        544.85926474725,
+        462.6375021166969
+      ]
+    }
+  ]
+}
