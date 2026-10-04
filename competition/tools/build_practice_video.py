@@ -21,7 +21,7 @@ def duration(ffprobe, path):
 
 def caption(path, text, font):
     from PIL import Image, ImageDraw, ImageFont
-    im = Image.new("RGBA", (1280, 38), (36, 74, 61, 240))
+    im = Image.new("RGBA", (1280, 32), (36, 74, 61, 240))
     draw = ImageDraw.Draw(im)
     draw.text((18, 4), text, font=ImageFont.truetype(str(font), 23), fill="white")
     im.save(path)
@@ -79,13 +79,16 @@ def main():
              "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", segment])
         print(f"Rendered practice slide {i}/12", flush=True)
     report = {"type": "synthetic_narration_practice_only", "voice": "macOS Tingting", "voice_rate": 150, "duration_seconds": 540,
-              "talk_sha256": hashlib.sha256(talk_path.read_bytes()).hexdigest(), "slides": metrics}
+              "talk_sha256": hashlib.sha256(talk_path.read_bytes()).hexdigest(), "slides": metrics,
+              "demo_path": str(args.demo), "demo_sha256": hashlib.sha256(args.demo.read_bytes()).hexdigest(),
+              "slide_png_sha256": {f"slide-{i:02d}.png": hashlib.sha256((presentation / "slides" / f"slide-{i:02d}.png").read_bytes()).hexdigest() for i in range(1, 13)}}
     if not args.audio_only:
         listing = work / "concat.txt"
         listing.write_text("\n".join(f"file '{(work / f'slide-{i:02d}.mp4').as_posix()}'" for i in range(1, 13)), encoding="utf-8")
         final = output / "寒域智航_9分钟_合成旁白练习版.mp4"
         run([ffmpeg, "-hide_banner", "-y", "-f", "concat", "-safe", "0", "-i", listing, "-c", "copy", "-movflags", "+faststart", final])
         report["file"] = final.name
+        report["video_sha256"] = hashlib.sha256(final.read_bytes()).hexdigest()
         report["actual_duration_seconds"] = duration(ffprobe, final)
         assert abs(report["actual_duration_seconds"] - 540) < .2
     (output / "practice-video-provenance.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")

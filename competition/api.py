@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import asyncio
+import copy
 from contextlib import asynccontextmanager
 import json
 import os
 from pathlib import Path
 import time
+import threading
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, JSONResponse
@@ -47,6 +49,7 @@ class ControlInput(BaseModel):
 
 def create_app(db_path=None, curve_path=None, tick_enabled=True):
     live = {}
+    execution_lock = threading.RLock()
     library = CurveLibrary(curve_path or os.environ.get("COMPETITION_CURVES_PATH", DEFAULT_PATH))
     app_store = None
 
@@ -67,13 +70,14 @@ def create_app(db_path=None, curve_path=None, tick_enabled=True):
                     await asyncio.sleep(.1)
                     now = time.monotonic()
                     elapsed, previous = min(now - previous, .5), now
-                    for run in list(live.values()):
-                        if run.status == "RUNNING":
-                            run.advance(elapsed * run.speedup)
-                            if run.status in TERMINAL:
+                    with execution_lock:
+                        for run in list(live.values()):
+                            if run.status == "RUNNING":
+                                run.advance(elapsed * run.speedup)
+                                if run.status in TERMINAL:
+                                    app_store.save(run)
+                            if now - checkpoint >= .5 and run.status not in TERMINAL:
                                 app_store.save(run)
-                        if now - checkpoint >= .5 and run.status not in TERMINAL:
-                            app_store.save(run)
                     if now - checkpoint >= .5:
                         checkpoint = now
             except asyncio.CancelledError:
@@ -88,26 +92,51 @@ def create_app(db_path=None, curve_path=None, tick_enabled=True):
                 task.cancel()
                 await task
             for run in live.values():
+                actions = []
                 if run.status == "RUNNING":
                     run.status = "PAUSED"
-                app_store.save(run)
+                    actions.append(audit_action(run, "pause", "server_shutdown", "RUNNING"))
+                app_store.save(run, actions)
             app_store.close()
 
     app = FastAPI(title="寒域智航 · 本机二维任务仿真", version="1.0.0", lifespan=lifespan)
 
+    def audit_action(run, action, source, status_before=None, source_run_id=None):
+        return {"action": action, "t_s": run.t_s, "source": source,
+                "source_run_id": source_run_id, "status_before": status_before,
+                "status_after": run.status}
+
+    def creation_actions(run, request, source):
+        actions = [audit_action(run, "create", source)]
+        if request.replay_of_run_id:
+            actions.append(audit_action(run, "replay_origin", "replay", source_run_id=request.replay_of_run_id))
+        return actions
+
+    def attach_audit(exported):
+        audit = app_store.execution_audit(exported["state"]["id"])
+        exported["execution_audit"] = audit
+        exported["state"]["execution_audit"] = audit
+        return exported
+
     def get_export(run_id):
-        if run_id in live:
-            exported = live[run_id].export()
-            exported["state"]["runtime_available"] = True
-            return exported
-        archived = app_store.get(run_id)
-        if archived is None:
-            raise HTTPException(404, "run_not_found")
-        archived["state"]["runtime_available"] = False
-        return archived
+        with execution_lock:
+            if run_id in live:
+                # JSON serialization happens after this lock is released.
+                # Detach nested telemetry/budget/route objects before ticks
+                # can mutate them, keeping the response and its hash aligned.
+                exported = copy.deepcopy(live[run_id].export())
+                exported["state"]["runtime_available"] = True
+                return attach_audit(exported)
+            archived = app_store.get(run_id)
+            if archived is None:
+                raise HTTPException(404, "run_not_found")
+            archived["state"]["runtime_available"] = False
+            return attach_audit(archived)
 
     def live_state(run):
-        return {**run.state(), "runtime_available": True}
+        with execution_lock:
+            return {**copy.deepcopy(run.state()), "runtime_available": True,
+                    "execution_audit": app_store.execution_audit(run.id)}
 
     def get_live(run_id):
         if run_id not in live:
@@ -145,25 +174,30 @@ def create_app(db_path=None, curve_path=None, tick_enabled=True):
                                "status": ["RUNNING", "PAUSED", "COMPLETED", "CANCELLED", "FAILED", "UNAVAILABLE"],
                                "event_payloads": [{"type": "wind", "wind": [-3, 0]}, {"type": "obstacle", "cells": [[10, 7]]}],
                                "create": RunInput().model_dump(), "control": {"action": "pause|resume|cancel"},
+                               "execution_audit": {"schema_version": 1, "hash_scope": "excluded_from_result_sha256",
+                                                   "actions": ["create", "pause", "resume", "cancel", "replay_origin"],
+                                                   "historical_missing": "unknown_origin_and_empty_records"},
                                "replay": {"replay_of_run_id": "original_id_configuration_and_applied_manual_events_are_reused"},
                                "temperature": "source_nodes_-20_0_23_and_linear_normalized_capacity_interpolation_without_extrapolation",
                                "forecast_visibility": "planner_receives_only_current_map_wind_not_scheduled_events"}}
 
     @app.post("/api/competition/runs")
     def create_run(request: RunInput):
-        try:
-            run = MissionRun(configuration(request), library)
-        except ValueError as exc:
-            raise HTTPException(400, str(exc)) from exc
-        live[run.id] = run
-        app_store.save(run)
-        return live_state(run)
+        with execution_lock:
+            try:
+                run = MissionRun(configuration(request), library)
+            except ValueError as exc:
+                raise HTTPException(400, str(exc)) from exc
+            app_store.save(run, creation_actions(run, request, "operator"))
+            live[run.id] = run
+            return live_state(run)
 
     @app.get("/api/competition/runs")
     def list_runs():
         stored = app_store.list(50)
         states = [live_state(live[s["state"]["id"]]) if s["state"]["id"] in live
-                  else {**s["state"], "runtime_available": False} for s in stored]
+                  else {**s["state"], "runtime_available": False,
+                        "execution_audit": app_store.execution_audit(s["state"]["id"])} for s in stored]
         return {"runs": states}
 
     @app.get("/api/competition/runs/{run_id}")
@@ -172,31 +206,37 @@ def create_app(db_path=None, curve_path=None, tick_enabled=True):
 
     @app.post("/api/competition/runs/{run_id}/events")
     def event(run_id: str, request: EventInput):
-        run = get_live(run_id)
-        if run.status in TERMINAL:
-            raise HTTPException(409, "terminal_run_does_not_accept_events")
-        try:
-            run.apply_event(request.model_dump(exclude_none=True))
-        except ValueError as exc:
-            raise HTTPException(400, str(exc)) from exc
-        app_store.save(run)
-        return live_state(run)
+        with execution_lock:
+            run = get_live(run_id)
+            if run.status in TERMINAL:
+                raise HTTPException(409, "terminal_run_does_not_accept_events")
+            try:
+                run.apply_event(request.model_dump(exclude_none=True))
+            except ValueError as exc:
+                raise HTTPException(400, str(exc)) from exc
+            app_store.save(run)
+            return live_state(run)
 
     @app.post("/api/competition/runs/{run_id}/control")
     def control(run_id: str, request: ControlInput):
-        run = get_live(run_id)
-        if request.action not in ("pause", "resume", "cancel"):
-            raise HTTPException(400, "control_action_must_be_pause_resume_cancel")
-        if run.status in TERMINAL:
-            raise HTTPException(409, "terminal_run_control_refused")
-        if request.action == "pause":
-            run.status = "PAUSED"
-        elif request.action == "resume":
-            run.status = "RUNNING"
-        else:
-            run.cancel()
-        app_store.save(run)
-        return live_state(run)
+        with execution_lock:
+            run = get_live(run_id)
+            if request.action not in ("pause", "resume", "cancel"):
+                raise HTTPException(400, "control_action_must_be_pause_resume_cancel")
+            if run.status in TERMINAL:
+                raise HTTPException(409, "terminal_run_control_refused")
+            if ((request.action == "pause" and run.status != "RUNNING") or
+                    (request.action == "resume" and run.status != "PAUSED")):
+                raise HTTPException(409, "control_requires_running_to_pause_or_paused_to_resume")
+            status_before = run.status
+            if request.action == "pause":
+                run.status = "PAUSED"
+            elif request.action == "resume":
+                run.status = "RUNNING"
+            else:
+                run.cancel()
+            app_store.save(run, [audit_action(run, request.action, "operator", status_before)])
+            return live_state(run)
 
     @app.get("/api/competition/runs/{run_id}/export")
     def export(run_id: str):
@@ -209,12 +249,16 @@ def create_app(db_path=None, curve_path=None, tick_enabled=True):
         def execute():
             paired = []
             for strategy in ("distance", "energy"):
-                run = MissionRun({**config, "strategy": strategy}, library).run_all()
+                run = MissionRun({**config, "strategy": strategy}, library)
+                app_store.save(run, creation_actions(run, request, "evaluation"))
+                run.run_all()
                 app_store.save(run)
                 paired.append(run)
-            return {"runs": [{**r.state(), "runtime_available": False} for r in paired], "comparison": compare_runs(*paired),
-                    "whole_mission_budget": {r.strategy: r.initial_whole_mission_budget for r in paired},
-                    "data_source": "LOCAL_2D_SIM", "curve_sha256": library.sha256}
+            return copy.deepcopy({"runs": [{**r.state(), "runtime_available": False,
+                                             "execution_audit": app_store.execution_audit(r.id)} for r in paired],
+                                  "comparison": compare_runs(*paired),
+                                  "whole_mission_budget": {r.strategy: r.initial_whole_mission_budget for r in paired},
+                                  "data_source": "LOCAL_2D_SIM", "curve_sha256": library.sha256})
 
         try:
             return await asyncio.to_thread(execute)

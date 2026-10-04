@@ -92,13 +92,16 @@ py -3.12 -m venv .competition-venv
 presentation/ 已提供可编辑成品；附带的演示文稿及媒体制作脚本需另外配置其工具与运行时，
 这些制作工具不属于比赛网页的启动依赖。
 
-网页视觉于2026-10-04更新；PPT截图和视频保留2026-10-03的原界面及原证据来源。
+网页、PPT和90秒实际录屏于2026-10-04同步到低初始能量主案例。
+0℃实际完成3点并返回，−20℃实际完成1点并返回；初始保守预算与执行结果分开显示。
+组员Windows操作材料和4份档案已经核验，详细范围见evidence/team/20261004/audit.md。
 
 安装 fonts/ 中的思源黑体后，在实际 PowerPoint/WPS 上检查版式与视频。
 
 作品为给定参考模型下的本机软件仿真；不是实飞、真实低温试验或景区合作证据。
 实际运行备用录屏只证明软件操作；合成旁白练习视频不是学生真人答辩录像。
-学生真人答辩录制、真实调研、需求核对、试用、身份登记和真人演练尚未完成。
+学生真人答辩录制、真实调研、需求核对、同学试用、身份登记和真人演练尚未完成。
+新版保存成功的暂停、继续、取消和复演来源；旧版缺少的历史显示未知。
 2027 届规则和提交要求须在正式发布后复核。计划封版日为 2026-11-29。
 """
     (destination / "先读我.md").write_text(welcome, encoding="utf-8")
@@ -160,7 +163,7 @@ pause
     files = [{"path": p.relative_to(destination).as_posix(), "bytes": p.stat().st_size,
               "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
              for p in sorted(destination.rglob("*")) if p.is_file()]
-    manifest = {"package_version": "4c-local-sim-first-delivery-1.2", "prepared_date": "2026-10-04",
+    manifest = {"package_version": "4c-local-sim-first-delivery-1.3", "prepared_date": "2026-10-04",
                 "source_root": "learn/competition", "runtime_root": "output/4C/runtime",
                 "python_environment_included": False, "web_build_included": True,
                 "files": files, "file_count": len(files), "no_real_flight_claim": True}

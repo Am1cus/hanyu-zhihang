@@ -1,4 +1,5 @@
-"""Independent SQLite snapshots and append-only task events in a separate DB."""
+"""Independent SQLite snapshots, task events, and execution provenance."""
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 import sqlite3
@@ -14,9 +15,12 @@ class RunStore:
         self.connection.execute("PRAGMA journal_mode=WAL")
         self.connection.execute("CREATE TABLE IF NOT EXISTS runs (id TEXT PRIMARY KEY, status TEXT NOT NULL, snapshot TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)")
         self.connection.execute("CREATE TABLE IF NOT EXISTS event_log (run_id TEXT NOT NULL, seq INTEGER NOT NULL, payload TEXT NOT NULL, PRIMARY KEY(run_id,seq))")
+        self.connection.execute("CREATE TABLE IF NOT EXISTS execution_audit (run_id TEXT NOT NULL, seq INTEGER NOT NULL, payload TEXT NOT NULL, PRIMARY KEY(run_id,seq))")
         self.connection.commit()
 
-    def save(self, run):
+    def save(self, run, audit_actions=None):
+        # Execution actions belong to API provenance, not the deterministic
+        # simulator export or its result_sha256.
         snapshot = run.export()
         encoded = json.dumps(snapshot, ensure_ascii=False, allow_nan=False, separators=(",", ":"))
         with self.lock, self.connection:
@@ -27,6 +31,24 @@ class RunStore:
                 if prior is not None and prior[0] != payload:
                     raise ValueError("immutable task event conflict")
                 self.connection.execute("INSERT OR IGNORE INTO event_log VALUES(?,?,?)", (run.id, i, payload))
+            for action in audit_actions or []:
+                row = self.connection.execute("SELECT COALESCE(MAX(seq),0) FROM execution_audit WHERE run_id=?", (run.id,)).fetchone()
+                seq = row[0] + 1
+                payload = {**action, "seq": seq,
+                           "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds")}
+                self.connection.execute("INSERT INTO execution_audit VALUES(?,?,?)",
+                                        (run.id, seq, json.dumps(payload, ensure_ascii=False, allow_nan=False, separators=(",", ":"))))
+
+    def execution_audit(self, run_id):
+        with self.lock:
+            rows = self.connection.execute("SELECT payload FROM execution_audit WHERE run_id=? ORDER BY seq", (run_id,)).fetchall()
+        records = [json.loads(row[0]) for row in rows]
+        replay = next((record for record in records if record["action"] == "replay_origin"), None)
+        created = any(record["action"] == "create" for record in records)
+        origin = {"status": "replay" if replay else "original" if created else "unknown",
+                  "source_run_id": replay["source_run_id"] if replay else None}
+        return {"schema_version": 1, "status": "recorded" if records else "unknown",
+                "origin": origin, "records": records}
 
     def get(self, run_id):
         with self.lock:
