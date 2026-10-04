@@ -13,7 +13,7 @@ const path = computed(() => {
 </script>
 <template>
   <div class="trace-chart">
-    <div class="section-heading"><h3>累计仿真耗能</h3><span>{{ last?.discharged_wh?.toFixed(2) || '—' }} Wh</span></div>
+    <div class="section-heading"><h2>累计仿真耗能</h2><span>{{ last?.discharged_wh?.toFixed(2) || '—' }} Wh</span></div>
     <svg v-if="records.length > 1" viewBox="0 0 600 160" role="img" aria-label="累计仿真耗能随时间变化">
       <path d="M30 20V130H570" fill="none" stroke="#d4ded6" />
       <path d="M30 80H570M30 30H570" fill="none" stroke="#edf1ed" />

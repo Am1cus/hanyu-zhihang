@@ -1,12 +1,13 @@
 # 寒域智航 4C 首版交付状态
 
-更新日期：2026-10-03。作品定位为东北冰雪景区无人机巡检任务决策与仿真验证平台，按下一届4C“软件应用与开发—算法设计与应用”准备。计划2026-11-29封版；当届规程发布后再核对资格、作品时间窗口、AI使用和材料要求。
+更新日期：2026-10-04。作品定位为东北冰雪景区无人机巡检任务决策与仿真验证平台，按下一届4C“软件应用与开发—算法设计与应用”准备。计划2026-11-29封版；当届规程发布后再核对资格、作品时间窗口、AI使用和材料要求。
 
 ## 已交付
 
 | 内容 | 交付状态 |
 |---|---|
 | Vue、FastAPI、独立SQLite软件 | 预演、执行、动态障碍/风、暂停恢复、档案导出与复演均可运行；默认本机8091 |
+| 网页视觉优化 | 松绿导航、三列预算工作台、当前判断、手机适配、键盘坐标输入；10月4日构建 |
 | 低温参考来源 | P42A v1.7原始PDF、矢量提取坐标、参数与SHA记录；−10℃插值 |
 | 正式仿真 | 固定24场景、两策略48执行；44全部三点、4部分巡检、48实际回到基地 |
 | 补充证据 | 336次单因素敏感性；四个独立边界例；原始电压、电流、时间可复算 |
@@ -16,6 +17,8 @@
 | 独立启动包 | 已构建网页、源码、锁定依赖清单、完整实验、字体与授权；首次安装Python依赖需联网 |
 
 最终演示稿版本为`20261003T055325`。正式PPTX的SHA256为`16201e6510ffda746b46112fccadabe3c515bb0aa96ba908af237913cd6f8d18`。实际录屏来自核心`mission-core-v1.1`、前端`index-BpmyuDzV.js`，演示运行ID为`fde50fae-d954-403e-bcc2-a4eb0deb6db4`；完成三个点并返回，参考积分耗能16.183741 Wh。
+
+网页已于10月4日使用 ui-ux-pro-max 规范优化，仿真核心仍为`mission-core-v1.1`。10月3日PPT截图和视频保留原界面及其来源记录，尚未换成新界面；不把旧录屏标为新视觉版本。
 
 ## 核验依据与适用范围
 
@@ -35,4 +38,4 @@
 
 ## 证据入口
 
-完整交付位于原工作区`output/4C/`。ZIP内根目录`先读我.md`提供可移植启动指令；`presentation/`为PPT、PDF和讲稿，`media/`为视频，`evidence/`为正式实验、敏感性、边界和验收记录，`learn/competition/`为源码与本资料。证据文件包括`formal/report.json`、`raw-telemetry-audit.json`、`package-verification.json`、`presentation-qa.json`、`demo/actual-ui-run.json`。ZIP的`MANIFEST.json`记录每个文件的SHA256。
+完整交付位于原工作区`output/4C/`。ZIP内根目录`先读我.md`提供可移植启动指令；`presentation/`为PPT、PDF和讲稿，`media/`为视频，`evidence/`为正式实验、敏感性、边界和验收记录，`learn/competition/`为源码与本资料。网页核验记录见`ui-ux-20261004.json`，截图见`ui/`。证据文件包括`formal/report.json`、`raw-telemetry-audit.json`、`package-verification.json`、`presentation-qa.json`、`demo/actual-ui-run.json`。ZIP的`MANIFEST.json`记录每个文件的SHA256。

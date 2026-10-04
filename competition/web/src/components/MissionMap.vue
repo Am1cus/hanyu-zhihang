@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   scene: { type: Object, default: null },
@@ -8,6 +8,8 @@ const props = defineProps({
   interactive: Boolean,
 })
 const emit = defineEmits(['cell'])
+const obstacleX = ref(0)
+const obstacleY = ref(0)
 const unit = 30
 const width = computed(() => props.scene?.width || 22)
 const height = computed(() => props.scene?.height || 14)
@@ -17,6 +19,7 @@ const winds = computed(() => props.scene?.wind?.regions || props.scene?.wind_reg
 const cells = computed(() => Array.from({ length: width.value * height.value }, (_, index) => [index % width.value, Math.floor(index / width.value)]))
 const visited = (target) => (props.scene?.visited_targets || []).some((item) => Array.isArray(item) && item[0] === target[0] && item[1] === target[1])
 const viewPath = (run) => run?.executed_path?.length ? run.executed_path : run?.path
+const coordinateValid = computed(() => Number.isInteger(obstacleX.value) && Number.isInteger(obstacleY.value) && obstacleX.value >= 0 && obstacleY.value >= 0 && obstacleX.value < width.value && obstacleY.value < height.value)
 
 function onClick(event) {
   if (!props.interactive) return
@@ -47,7 +50,7 @@ function onClick(event) {
       <g v-for="(region, index) in winds" :key="`w-${index}`">
         <rect :x="region.x_min * unit" :y="region.y_min * unit" :width="(region.x_max - region.x_min + 1) * unit" :height="(region.y_max - region.y_min + 1) * unit" fill="#dcebf0" fill-opacity="0.65" stroke="#a9c7cf" stroke-dasharray="4 4" />
         <path :d="`M${(region.x_min + 0.8) * unit},${(region.y_min + 0.8) * unit}l${(region.vector?.[0] || 0) * 7},${(region.vector?.[1] || 0) * 7}`" stroke="#6c97a0" stroke-width="2" marker-end="url(#wind-arrow)" />
-        <text :x="(region.x_min + 0.4) * unit" :y="(region.y_min + 1.7) * unit" font-size="10" fill="#527580">风场 {{ region.vector?.join(', ') }} m/s</text>
+        <text :x="(region.x_min + 0.4) * unit" :y="(region.y_min + 1.7) * unit" font-size="10" fill="#375c68">风场 {{ region.vector?.join(', ') }} m/s</text>
       </g>
       <rect v-for="point in scene?.blocked || []" :key="`b-${point}`" :x="point[0] * unit + 1" :y="point[1] * unit + 1" :width="unit - 2" :height="unit - 2" rx="2" fill="url(#obstacle-fill)" />
       <polyline v-if="distanceRun" :points="polyline(viewPath(distanceRun))" fill="none" stroke="#bc8645" stroke-width="3" stroke-dasharray="7 5" stroke-linejoin="round" opacity="0.85" />
@@ -69,8 +72,13 @@ function onClick(event) {
         <circle r="7" fill="#285848" stroke="white" stroke-width="2" />
       </g>
     </svg>
+    <div v-if="interactive" class="map-coordinate-input">
+      <p class="helper">也可输入网格坐标新增障碍。</p>
+      <div class="coordinate-row"><label class="field">障碍坐标 x<input v-model.number="obstacleX" type="number" min="0" :max="width - 1" step="1" /></label><label class="field">障碍坐标 y<input v-model.number="obstacleY" type="number" min="0" :max="height - 1" step="1" /></label><button class="button secondary" :disabled="!coordinateValid" @click="emit('cell', [obstacleX, obstacleY])">确认新增障碍</button></div>
+    </div>
     <div class="map-legend">
-      <span><i class="legend-line green"></i>{{ energyRun ? '能量策略执行轨迹' : '待执行路线' }}</span>
+      <span v-if="energyRun || scene?.path?.length"><i class="legend-line green"></i>{{ energyRun ? '能量策略执行轨迹' : '待执行路线' }}</span>
+      <span v-if="!energyRun && !distanceRun && scene?.executed_path?.length"><i class="legend-line executed"></i>已执行轨迹</span>
       <span v-if="distanceRun"><i class="legend-line amber"></i>距离策略执行轨迹</span>
       <span v-if="scene?.position"><i class="legend-dot"></i>后端仿真位置</span>
       <span><i class="legend-block"></i>障碍</span>
