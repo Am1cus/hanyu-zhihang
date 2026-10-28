@@ -21,7 +21,7 @@ from urllib.request import urlopen
 import webbrowser
 
 PROJECT = Path(__file__).resolve().parents[2]
-LOCK = PROJECT / 'competition' / 'requirements-lock.txt'
+LOCK = Path(__file__).with_name('requirements-lock.txt')
 VENV = PROJECT / '.competition-venv'
 
 
@@ -39,7 +39,7 @@ def environment_report():
         versions[name] = actual
         if actual != expected:
             missing.append(f'{name}: {actual or "未安装"}，需要 {expected}')
-    python_ok = (3, 12) <= sys.version_info[:2] < (3, 14)
+    python_ok = sys.version_info[:2] == (3, 12)
     return {'ready': python_ok and not missing,
             'python': sys.version.split()[0], 'python_supported': python_ok,
             'executable': sys.executable, 'dependencies': versions,
@@ -51,18 +51,23 @@ def prepare_environment():
     # Comparing prefixes avoids resolving a venv symlink back to the system Python.
     if Path(sys.prefix).resolve() != VENV.resolve():
         if not python.exists():
-            if not (3, 12) <= sys.version_info[:2] < (3, 14):
+            if sys.version_info[:2] != (3, 12):
                 raise RuntimeError('请安装 Python 3.12 后再双击启动。本机已验证 Python 3.12。')
             print('首次启动：正在建立项目专用 Python 环境…', flush=True)
             subprocess.run([sys.executable, '-m', 'venv', str(VENV)], check=True)
         os.execv(str(python), [str(python), str(Path(__file__).resolve()), *sys.argv[1:]])
     report = environment_report()
     if not report['python_supported']:
-        raise RuntimeError('项目环境的 Python 版本不支持；需要 Python 3.12 或 3.13，已验证 3.12。')
+        raise RuntimeError('项目环境需要 Python 3.12；离线依赖包也按此版本准备。')
     if report['dependency_mismatches']:
-        print('首次安装或依赖不完整：正在安装固定版本依赖，需要联网。\n'
-              '安装成功后，演示过程不需要互联网。', flush=True)
-        subprocess.run([sys.executable, '-m', 'pip', 'install', '-r', str(LOCK)], check=True)
+        wheels = PROJECT / 'wheelhouse'
+        command = [sys.executable, '-m', 'pip', 'install', '-r', str(LOCK)]
+        if wheels.is_dir():
+            print('首次安装：使用包内固定依赖，不连接网络。', flush=True)
+            command += ['--no-index', '--find-links', str(wheels)]
+        else:
+            print('首次安装：正在联网安装固定依赖；安装成功后可离线演示。', flush=True)
+        subprocess.run(command, check=True)
     if not environment_report()['ready']:
         raise RuntimeError('依赖仍未安装完整；请保留窗口中的错误信息。')
 
@@ -127,7 +132,10 @@ def main():
           '这是本机二维参考仿真，不控制真实无人机。', flush=True)
     if not args.no_browser:
         threading.Thread(target=open_when_ready, args=(url,), daemon=True).start()
-    uvicorn.run(create_app(args.db), host='127.0.0.1', port=args.port, access_log=False)
+    database = args.db
+    if database is None and (PROJECT / 'PORTABLE_PACKAGE').is_file():
+        database = PROJECT / 'runtime' / 'missions-v2.sqlite3'
+    uvicorn.run(create_app(database), host='127.0.0.1', port=args.port, access_log=False)
     return 0
 
 
