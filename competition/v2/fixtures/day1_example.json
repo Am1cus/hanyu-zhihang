@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "day1-five-task-handcheck",
+  "source": "SYNTHETIC_HANDCHECK_NOT_A_FLIGHT_OR_FORMAL_BENCHMARK",
+  "description": "五点手算例：代价和权重为教学构造，不是景区测量或厂家能耗。",
+  "base": "S",
+  "positions": {"S": [0, 0], "A": [1, 0], "B": [2, 0], "C": [0, 3], "D": [0, 4], "E": [3, 2]},
+  "tasks": [
+    {"id": "A", "name": "普通点A", "value": 1, "service_wh": "0.5"},
+    {"id": "B", "name": "普通点B", "value": 1, "service_wh": "0.5"},
+    {"id": "C", "name": "重要点C", "value": 5, "service_wh": "0.5"},
+    {"id": "D", "name": "重要点D", "value": 5, "service_wh": "0.5"},
+    {"id": "E", "name": "较重要点E", "value": 3, "service_wh": "0.5"}
+  ],
+  "cost_rule": {"east_wh_per_unit": "1", "west_wh_per_unit": "1.2", "north_south_wh_per_unit": "1"},
+  "available_wh": "11",
+  "reserve_wh": "2",
+  "available_fraction_error": "0.1",
+  "cost_fraction_error": "0.1",
+  "expected": {
+    "nominal": {"route": ["C", "D"], "value": 10, "route_wh": "9", "margin_wh": "0"},
+    "bounded": {"route": ["C"], "value": 5, "route_wh": "6.5", "margin_wh": "0.75"}
+  }
+}

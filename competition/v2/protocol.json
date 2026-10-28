@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "version": "competition-v2-design-0.3",
+  "design_date": "2026-10-09",
+  "status": "SOFTWARE_COMPARISON_AND_RESERVE_SENSITIVITY_COMPLETED_ENGINEERING_AND_HUMAN_ACCEPTANCE_PENDING",
+  "human_need_validation": "PAUSED_BY_USER_UNVERIFIED",
+  "externally_timestamped_preregistration": false,
+  "task_source": "LOCAL_2D_SIM",
+  "task_count_range": [
+    5,
+    8
+  ],
+  "objective": "maximize_completed_task_value_subject_to_directed_return_and_reserve",
+  "tie_break": [
+    "minimize_assessed_energy",
+    "lexicographic_task_ids"
+  ],
+  "value_source": "synthetic_1_3_5_pending_real_need_check",
+  "observation_policy": "current_snapshot_only_no_future_events_or_executor_truth",
+  "selectors": [
+    "fixed_order",
+    "nearest_feasible",
+    "value_per_cost",
+    "subset_dp"
+  ],
+  "budget_modes": [
+    "nominal",
+    "bounded"
+  ],
+  "reserve": {
+    "reference": "23C_full_reference_Wh",
+    "fraction": 0.2,
+    "meaning": "simulation_policy_not_safety_standard"
+  },
+  "declared_uncertainty": {
+    "available_fraction": 0.1,
+    "cost_fraction": 0.1,
+    "source": "design_stress_range_not_calibrated_probability"
+  },
+  "error_profiles": [
+    {
+      "id": "no_added_bias",
+      "available_hat_divisor": 1.0,
+      "planner_power_divisor": 1.0
+    },
+    {
+      "id": "joint_within_declared",
+      "available_hat_divisor": 0.9,
+      "planner_power_divisor": 1.1
+    },
+    {
+      "id": "joint_outside_declared",
+      "available_hat_divisor": 0.8,
+      "planner_power_divisor": 1.3
+    }
+  ],
+  "error_profile_contract": "executor_4.2A_reference_unchanged; estimated_available=true_remaining/divisor; estimator_power=nominal_estimator_power/divisor; errors_are_estimation_stress_not_physical_load_tests",
+  "planned_matrix": {
+    "development_map_count": 2,
+    "held_out_map_count": 4,
+    "held_out_topologies": [
+      "open",
+      "detour_corridor",
+      "connected_zones",
+      "sparse_obstacles"
+    ],
+    "temperature_c": [
+      0,
+      -10,
+      -20
+    ],
+    "scenario_kinds": [
+      "normal",
+      "low_budget",
+      "gust",
+      "dynamic_obstacle"
+    ],
+    "base_conditions": 48,
+    "paired_conditions_including_error_profiles": 144,
+    "policy_combinations": 8,
+    "planned_executions": 1152,
+    "actual_formal_executions": 1152,
+    "real_flights": 0,
+    "freeze_status": "FROZEN_BEFORE_EXECUTION_COMPLETED_2026_10_22_NOW_USED_TEST_SET"
+  },
+  "primary_metric": "normalized_task_value_if_returned_and_actual_reserve_met_else_zero",
+  "companion_metrics": [
+    "raw_task_value",
+    "completed_task_count",
+    "returned",
+    "refused",
+    "failed",
+    "cancelled",
+    "timeout",
+    "reserve_violation_wh",
+    "integrated_wh",
+    "integrated_ah",
+    "interval_coverage",
+    "static_reference_gap",
+    "decision_wall_ms"
+  ],
+  "analysis": "paired_all_conditions_and_stratified_descriptive_results_no_real_world_success_probability",
+  "numerical_tolerance_wh": 1e-07,
+  "dynamic_event_acceptance": "event_applied_plus_logged_behavior_effect_in_predeclared_probe_cases_not_applied_flag_alone",
+  "formal_entry_command": ".competition-venv/bin/python -m competition.v2.tools.evaluate run --output ../output/4C/v2/evaluation-20261022",
+  "formal_timeout_seconds": 30,
+  "formal_execution_budget_status": "completed_1152_no_process_timeouts_or_execution_exceptions_all_mission_failures_retained",
+  "day1_fixture": "fixtures/day1_example.json",
+  "day1_entry": "python3 competition/v2/tools/check_day1_contract.py --output ../output/4C/v2/day1-contract-check.json",
+  "change_rule": "version_and_keep_old_results; used_holdout_is_not_unseen_after_tuning",
+  "implementation_status": "formal_software_comparison_and_audit_completed_no_real_flights",
+  "revision_date": "2026-10-11",
+  "contract_version": "competition-v2-contract-0.3",
+  "development_scenarios": "data/development_scenarios.json",
+  "development_probes": "data/development_probes.json",
+  "parameter_sources": "data/parameter_sources.json",
+  "day2_entry": "HISTORICAL_ONLY: source snapshot output/4C/v2/day11/before/source; original output output/4C/v2/day2",
+  "change_log": [
+    {
+      "date": "2026-10-10",
+      "change": "D2 adds validated current-snapshot contracts and two development maps; no new formal results and no validated human needs"
+    },
+    {
+      "date": "2026-10-11",
+      "change": "Public-source requirement records; explicit optional observation/dwell/exclusion scope; paired decision accounting; 13 business labels. No geometry/value change, no human interview or formal execution."
+    },
+    {
+      "date": "2026-10-13",
+      "change": "Final verification of the October 11 work item: explicit verification date, required probe set, matching mapping literals. Original October 11 source and evidence retained in checkpoint-20261011. No new formal executions or interviews."
+    },
+    {
+      "date": "2026-10-18",
+      "work_item_date": "2026-10-13",
+      "change": "Four current-snapshot selectors, independent enumeration and offline comparison. Interviews paused by user. No execution or flight claims."
+    },
+    {
+      "date": "2026-10-20",
+      "work_period": "2026-10-20/2026-10-26",
+      "change": "Reference-model fixed-step execution, current-observation event response, independent archives/replay and plain-language live UI. Same-state counterfactual separates event impact from progress. Twenty declared development runs; formal holdout and real flights remain zero. Interviews paused."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "User cannot collect offline flight data. Current delivery uses software simulation and reproducible comparisons; no hardware collection/test dependency. Model parameters and execution code unchanged. Formal evaluation remains pending; physical performance stays unvalidated."
+    },
+    {
+      "date": "2026-10-22",
+      "change": "Advance D5 software comparison. Twelve development-only timing probes; normal initial Ah fraction 0.55 and low-budget 0.35. Four new fixed topologies; freeze all 1152 configurations before outcomes. Scenario schema admits explicitly tagged held_out maps; selectors and physical execution unchanged. Old source snapshots retained."
+    },
+    {
+      "date": "2026-10-23",
+      "change": "Close out October 22 evaluation: verify all 1152 archive hashes; synchronize status and plain-language delivery notes. No rerun or overwrite of frozen outcomes. Reserve-fraction sensitivity and human acceptance remain pending. User requests text-only progress reporting."
+    },
+    {
+      "date": "2026-10-27",
+      "change": "Complete separate 10/20/30 percent reserve sensitivity on already-used test conditions: 3456 executions including 1152 exact controls, 24 exact replays, 82 tests. Frozen production executor and default remain unchanged. Track three engineering delivery gaps; text-only progress reporting."
+    }
+  ],
+  "public_need_records": [
+    "output/4C/v2/needs/need-01.md",
+    "output/4C/v2/needs/need-02.md"
+  ],
+  "need_evidence": {
+    "public_document_records": 2,
+    "direct_interviews": 0,
+    "operator_validation": "PAUSED_BY_USER_UNVERIFIED",
+    "record_type": "PUBLIC_SOURCE_REVIEW_NOT_INTERVIEW"
+  },
+  "service_scope": {
+    "service_level": "optional_supplemental_observation",
+    "action_semantics": "simulated_dwell_only",
+    "mandatory_inspections": "REJECTED_NOT_REPLACED_BY_HIGH_VALUE",
+    "delivery": "DEFERRED_REQUIRES_NEW_COST_PRECEDENCE_AND_DEADLINE_MODEL",
+    "unselected_follow_up": "REQUIRES_OPERATOR_REVIEW_NOT_ACCEPTED_BY_OPERATOR"
+  },
+  "revision_spec": "TASK_SPEC_0_3.md",
+  "day11_entry": ".competition-venv/bin/python -m competition.v2.tools.prepare_day11 --output ../output/4C/v2/day11 --verified-on 2026-10-13",
+  "final_verified_on": "2026-10-20",
+  "selector_version": "competition-v2-selectors-0.1",
+  "interview_work_status": "PAUSED_BY_USER",
+  "day13_entry": ".competition-venv/bin/python -m competition.v2.tools.prepare_day13 --output ../output/4C/v2/day13 --verified-on 2026-10-20",
+  "day13_case_matrix": {
+    "version": "day13-current-snapshots-0.1",
+    "maps": 2,
+    "temperatures_c": [
+      0,
+      -10,
+      -20
+    ],
+    "remaining_ah_fractions": [
+      0.35,
+      0.55,
+      0.85
+    ],
+    "budget_modes": [
+      "nominal",
+      "bounded"
+    ],
+    "matrix_conditions": 36,
+    "extra_conditions": [
+      "low_budget",
+      "missing_data"
+    ],
+    "strategies_per_condition": 4,
+    "scope": "development_current_snapshot_not_formal_execution"
+  },
+  "runtime_version": "competition-v2-runtime-0.1",
+  "day20_entry": ".competition-venv/bin/python -m competition.v2.tools.prepare_day20 --output ../output/4C/v2/day20 --verified-on 2026-10-20",
+  "day20_acceptance": {
+    "declared_development_executions": 20,
+    "results": "output/4C/v2/day20/report.json",
+    "scope": "reference_model_development_execution_not_formal_holdout_or_real_flight",
+    "live_url": "http://127.0.0.1:8094/",
+    "database": "output/4C/v2/runtime/missions-v2.sqlite3"
+  },
+  "validation_plan_revision": "software-validation-20261027",
+  "validation_plan": "VALIDATION_SOFTWARE.md",
+  "validation_scope": {
+    "route": "SOFTWARE_SIMULATION_WITH_TRACEABLE_REFERENCE_PARAMETERS",
+    "constraint_date": "2026-10-22",
+    "constraint_source": "USER_NO_OFFLINE_DATA_COLLECTION_HARDWARE",
+    "offline_flight_data_collection_required": false,
+    "hardware_tests_in_current_scope": false,
+    "real_flight_performance": "UNVALIDATED_OUTSIDE_CURRENT_DELIVERY",
+    "external_flight_data": "OPTIONAL_IF_APPLICABLE_NOT_A_DEPENDENCY",
+    "human_software_tryout": "PENDING_CAN_BE_REMOTE",
+    "interview_work_status": "PAUSED_BY_USER"
+  },
+  "formal_evaluation_version": "competition-v2-evaluation-0.1",
+  "formal_initial_ah_fraction": {
+    "normal_gust_obstacle": 0.55,
+    "low_budget": 0.35,
+    "meaning": "remaining_capacity_Ah_fraction_not_Wh_fraction"
+  },
+  "formal_acceptance": {
+    "executed_on": "2026-10-22",
+    "integrity_checked_on": "2026-10-23",
+    "result_directory": "output/4C/v2/evaluation-20261022",
+    "executions": 1152,
+    "software_tests": 73,
+    "archive_checks_passed": 1152,
+    "predeclared_subset_replays": 24,
+    "replay_matches": 24,
+    "static_reference_checks": 12,
+    "static_reference_matches": 12,
+    "actual_mission_failed": 57,
+    "refused": 16,
+    "process_errors": 0,
+    "real_flights": 0,
+    "reserve_fraction_sensitivity": "COMPLETED_SUPPLEMENT_2026_10_27_USED_TEST_SET",
+    "human_independent_reproduction": "PENDING"
+  },
+  "reporting_preference": "plain_text_progress_updates_no_separate_explanatory_website_per_delivery",
+  "reserve_sensitivity_acceptance": {
+    "verified_on": "2026-10-27",
+    "scope": "supplementary_sensitivity_on_used_synthetic_test_set_not_unseen_evaluation",
+    "executions": 3456,
+    "new_reserve_variants": 2304,
+    "twenty_percent_control_executions": 1152,
+    "baseline_matches": 1152,
+    "archives_checked": 3456,
+    "archives_passed": 3456,
+    "replays": 24,
+    "replays_matching": 24,
+    "process_errors": 0,
+    "original_artifacts_changed": [],
+    "real_flights": 0,
+    "production_default_changed": false,
+    "passed": true,
+    "output": "output/4C/v2/reserve-20261027",
+    "software_tests": 82,
+    "fractions": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "comparator_fraction": 0.2
+  },
+  "technical_remaining": [
+    "v2_portable_package_and_clean_environment",
+    "final_source_ui_recording_version_alignment"
+  ],
+  "technical_checklist": "TECHNICAL_REMAINING.md",
+  "ui_usability_acceptance": {
+    "verified_on": "2026-10-27",
+    "status": "MAC_LOCAL_BROWSER_CHECKS_PASSED",
+    "automated_full_demo_cycles": 3,
+    "software_tests": 87,
+    "browser_evidence": "output/playwright/usable-20261027",
+    "record": "DAY27_USABLE.md",
+    "human_rehearsals_completed": 0,
+    "windows_runtime_verified": false,
+    "clean_environment_verified": false
+  }
+}

@@ -1,0 +1,3 @@
+# Preserve published evidence bytes and Windows launcher line endings.
+competition/v2/evidence/*.csv -text whitespace=cr-at-eol
+competition/v2/start_v2.bat -text whitespace=cr-at-eol

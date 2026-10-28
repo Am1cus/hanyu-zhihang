@@ -1,0 +1,25 @@
+{
+  "version": "v2-parameter-sources-0.2",
+  "review_date": "2026-10-10",
+  "reference_file": "competition/data/p42a_reference.json",
+  "reference_pdf": "output/4C/evidence/sources/Molicel-P42A-v1.7.pdf",
+  "source_url": "https://www.molicel.com/cn/wp-content/uploads/INR21700P42A_1.7_Product-Data-Sheet-of-INR-21700-P42A-80092.pdf",
+  "parameters": [
+    {"id":"temperature_nodes","value":[-20,0,23],"unit":"degC","type":"manufacturer_reference_curve","note":"-10C为节点间插值；不外推；非团队实测"},
+    {"id":"reference_current","value":4.2,"unit":"A","type":"manufacturer_test_condition","note":"指定恒流测试；不外推为真实无人机负载"},
+    {"id":"charge_temperature","value":23,"unit":"degC","type":"manufacturer_test_condition","note":"原曲线的充电环境条件"},
+    {"id":"cutoff_voltage","value":2.5,"unit":"V_per_cell","type":"manufacturer_test_condition","note":"矢量曲线提取的末端会有近似误差"},
+    {"id":"series_cells","value":4,"unit":"cells","type":"simulation_assumption","note":"理想一致4S1P，不是厂家给出的无人机电池包"},
+    {"id":"planner_power","value":70.56,"unit":"W","type":"derived_reference_estimator","formula":"4.2V*4cells*4.2A","note":"恒功率乘当前观测航段时间，非真机推进功率模型"},
+    {"id":"grid_size","value":80,"unit":"m_per_cell","type":"scenario_assumption","note":"用于两张开发地图"},
+    {"id":"airspeed","value":5,"unit":"m/s","type":"scenario_assumption","note":"固定空速假设，不是产品技术指标"},
+    {"id":"fixed_height","value":40,"unit":"m","type":"scenario_assumption","note":"高度仅标注，不建模起降/三维障碍"},
+    {"id":"task_dwell","value":10,"unit":"s","type":"scenario_assumption","note":"停留视为完成动作，不含图像识别"},
+    {"id":"task_values","value":[1,3,5],"unit":"relative_points","type":"unvalidated_need_assumption","note":"全部任务可选择；不是实际必检规定"},
+    {"id":"initial_soc","value":0.55,"unit":"remaining_Ah_fraction","type":"development_fixture_setting","note":"不是剩余Wh占满电Wh的精确比例"},
+    {"id":"reserve_fraction","value":0.2,"unit":"fraction_of_23C_full_reference_Wh","type":"simulation_policy","note":"不是安全标准"},
+    {"id":"available_fraction_error","value":0.1,"unit":"fraction_of_reported_Wh","type":"design_stress_range","note":"未经校准，不是95%置信度"},
+    {"id":"cost_fraction_error","value":0.1,"unit":"fraction_of_estimated_route_Wh","type":"design_stress_range","note":"不改变参考执行器的4.2A物理合同"}
+  ],
+  "limitations": ["默认电芯与环境热平衡", "无自热/老化/高倍率标定", "无真实无人机低温验证", "开发地图与任务价值待真实需求核对"]
+}

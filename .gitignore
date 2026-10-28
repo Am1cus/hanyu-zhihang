@@ -26,3 +26,4 @@ output/
 demo/data/
 !platform/**/src/**/*.png
 !platform/**/public/**/*.png
+!competition/v2/presentation/assets/*.png

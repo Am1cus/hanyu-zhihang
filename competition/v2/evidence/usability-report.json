@@ -1,0 +1,216 @@
+{
+  "verified_on": "2026-10-27",
+  "scope": "MAC_LOCAL_USABILITY_NOT_HUMAN_REHEARSAL",
+  "passed": true,
+  "software_tests": 87,
+  "full_demo_cycles": 3,
+  "checks": {
+    "cycle1-browser": {
+      "cycle": 1,
+      "id": "8bbb9ebb-d0fe-44cc-83c9-483776cad3be",
+      "status": "COMPLETED_RETURNED",
+      "t_s": 1173.604993904861,
+      "completed": 8,
+      "duplicate_click_created": 1,
+      "refresh_preserved_pause": true,
+      "pageerrors": []
+    },
+    "cycle2-browser": {
+      "cycle": 2,
+      "id": "175c84ec-d300-4731-9668-8b67117f8c77",
+      "status": "COMPLETED_RETURNED",
+      "completed": 8,
+      "automatic_reconnect": true,
+      "stale_controls_disabled": true,
+      "events": 1
+    },
+    "cycle3-browser": {
+      "cycle": 3,
+      "id": "0f114a97-f8e6-4e5a-b94c-9305413c46a6",
+      "status": "COMPLETED_RETURNED",
+      "completed": 8,
+      "manual_events": 1,
+      "events": 2,
+      "result_sha256": "6732eaabaf556dc36f3d282bb916ebe4df4b807c05b5c2e0d472a4205b8e65b9",
+      "export_download": true
+    },
+    "replay-browser": {
+      "originalId": "0f114a97-f8e6-4e5a-b94c-9305413c46a6",
+      "replayId": "eed38118-b5cd-4af1-8fdd-1fda1f9e27ed",
+      "result_sha256": "6732eaabaf556dc36f3d282bb916ebe4df4b807c05b5c2e0d472a4205b8e65b9",
+      "matching": true,
+      "origin": {
+        "status": "replay",
+        "source_run_id": "0f114a97-f8e6-4e5a-b94c-9305413c46a6"
+      }
+    },
+    "failure-browser": {
+      "failure_states": [
+        {
+          "preset": "low_budget",
+          "id": "06810482-7b29-433a-897e-8fe3697a0118",
+          "status": "REFUSED",
+          "returned": false,
+          "reason": "NO_FEASIBLE_TASK",
+          "shown": "未起飞\n\n没有可行任务"
+        },
+        {
+          "preset": "unavailable",
+          "id": "237e1f03-37df-4087-9d7a-488a45170831",
+          "status": "UNAVAILABLE",
+          "returned": false,
+          "reason": "temperature_outside_source_nodes_no_extrapolation",
+          "shown": "信息不足\n\n温度超出参考曲线范围"
+        },
+        {
+          "preset": "blocked_return",
+          "id": "88e66e9b-0444-4fe2-99c6-5abda6bd594a",
+          "status": "FAILED",
+          "returned": false,
+          "reason": "wind_exceeds_track_hold_model",
+          "shown": "运行失败\n\n风超出当前航迹保持模型"
+        }
+      ],
+      "portrait": {
+        "width": 375,
+        "scroll": 360
+      },
+      "landscape": {
+        "width": 812,
+        "scroll": 797
+      },
+      "reduced_motion": true,
+      "restart_target": "6a5fd2cc-2771-459a-a843-ae68a1f7a37e"
+    },
+    "restart-browser": {
+      "id": "6a5fd2cc-2771-459a-a843-ae68a1f7a37e",
+      "status": "已归档 · 已暂停",
+      "archive_persisted": true,
+      "continue_disabled": true,
+      "replayId": "e37504ab-f17b-4adc-80b3-5efa4a45cbb0",
+      "replay_origin": {
+        "status": "replay",
+        "source_run_id": "6a5fd2cc-2771-459a-a843-ae68a1f7a37e"
+      },
+      "replay_cancelled": true
+    },
+    "network-edge-browser": {
+      "lost_create_response": {
+        "intercepted": true,
+        "new_runs": 1,
+        "selected_correct": true
+      },
+      "request_timeout": {
+        "reported": true,
+        "start_disabled": true,
+        "recovered_requested_temperature": true
+      }
+    },
+    "timeout-final-browser": {
+      "timeout_recovery": true,
+      "requested_temperature": -10,
+      "page_errors": []
+    }
+  },
+  "archive_integral_audit": [
+    {
+      "id": "2b5b008e-254a-4f67-bd74-14943c343fec",
+      "status": "UNAVAILABLE",
+      "energy_error_wh": 0.0,
+      "sha256": "37cdfee4d7c0ba8a35d7c2654b3891ce471b7c29a48a0b93c718c785bbb0a872"
+    },
+    {
+      "id": "e37504ab-f17b-4adc-80b3-5efa4a45cbb0",
+      "status": "CANCELLED",
+      "energy_error_wh": 0.0,
+      "sha256": "db822596f93749f62648300b21fb9604427e03520533d77fdfa2f7a00a8a5693"
+    },
+    {
+      "id": "6a5fd2cc-2771-459a-a843-ae68a1f7a37e",
+      "status": "PAUSED",
+      "energy_error_wh": 1.4566126083082054e-13,
+      "sha256": "6b5f704531d37db712baf96bc15f896df26752fd6c203511213b370105047e81"
+    },
+    {
+      "id": "88e66e9b-0444-4fe2-99c6-5abda6bd594a",
+      "status": "FAILED",
+      "energy_error_wh": 2.6201263381153694e-13,
+      "sha256": "7cb3536c20e7a5e700c77b1ce5740383b254b971eb94c06f0f45b2b4d2b09005"
+    },
+    {
+      "id": "237e1f03-37df-4087-9d7a-488a45170831",
+      "status": "UNAVAILABLE",
+      "energy_error_wh": 0.0,
+      "sha256": "d93e0bf725031c814a79460d867073c8ac36b110f908142084d3f77c4fc86e3d"
+    },
+    {
+      "id": "06810482-7b29-433a-897e-8fe3697a0118",
+      "status": "REFUSED",
+      "energy_error_wh": 0.0,
+      "sha256": "d58d2ad03696fb15d48993fd3f0b2b935f50a88c790a75e892ce4c463b98c883"
+    },
+    {
+      "id": "eed38118-b5cd-4af1-8fdd-1fda1f9e27ed",
+      "status": "COMPLETED_RETURNED",
+      "energy_error_wh": 1.4495071809506044e-12,
+      "sha256": "cc78bd566a5c0cab4dded821f228b9c82ff62dbad1e77ea42d451aac3935f2c3"
+    },
+    {
+      "id": "0f114a97-f8e6-4e5a-b94c-9305413c46a6",
+      "status": "COMPLETED_RETURNED",
+      "energy_error_wh": 1.4495071809506044e-12,
+      "sha256": "4505516e100548a76d5076e61aa5f223ac752007f2a2c700cfbb6e7923ebee2b"
+    },
+    {
+      "id": "175c84ec-d300-4731-9668-8b67117f8c77",
+      "status": "COMPLETED_RETURNED",
+      "energy_error_wh": 8.064660050877137e-13,
+      "sha256": "d589e62cb3b59c9f09140b4cb83042110aef87dae2934f7e165a35b66e43cb46"
+    },
+    {
+      "id": "8bbb9ebb-d0fe-44cc-83c9-483776cad3be",
+      "status": "COMPLETED_RETURNED",
+      "energy_error_wh": 1.6271428648906294e-12,
+      "sha256": "8aac2d4dbdbd08796aa414ac8a54243621688a7d425a8c44eb5ca49da79e733f"
+    },
+    {
+      "id": "e77e33b6-8f3b-437d-acd3-31be1e6c887c",
+      "status": "CANCELLED",
+      "energy_error_wh": 2.8727020762175925e-15,
+      "sha256": "1f8e3499715e79cb5ac19ca2b65fc52ad05598e046c8a9faf39f9938ff4627b5"
+    }
+  ],
+  "previous_evidence": {
+    "formal_freeze_sha256": "0d3ef2d09bb5ad774ebfb8d0eb6f0f630e8530a545e9d266010358299ad20847",
+    "reserve_freeze_sha256": "a1c68857e4203d26c74116136ca8dc920678f00459c2dea1dcbc3857a63984f2",
+    "frozen_sources_and_inputs_unchanged": true
+  },
+  "production_url": "http://127.0.0.1:8094/",
+  "production_health": {
+    "status": "ok",
+    "runtime_version": "competition-v2-runtime-0.1",
+    "source": "LOCAL_2D_SIM",
+    "library_available": true
+  },
+  "execution_source_sha256": {
+    "competition/v2/runtime.py": "09c687ebbe7ea26f8d3142100da4f55be2af16fe7939c75b184cc0bf82b11c82",
+    "competition/v2/selectors.py": "6c05d7ce9e6eff2f76d46005ec4db40969a48e6e6a7eadc9d9c5dbf033554be5",
+    "competition/v2/contracts.py": "7f1bd1f30559dfea600b76b3b63a0b8718f9fb931a0e189b902450754e01cf14",
+    "competition/v2/planning_inputs.py": "f9ff12747146f63c779531ed2f96025588b2246aa3f1fa70bae3197194fc0b5b",
+    "competition/v2/scenarios.py": "440f09308be05481ce99092c3a4ed85ce6b5e4fbac4daf45646c9ba78a695d09",
+    "competition/core/curves.py": "29bfdc5ff319f265a5fc55fdd7a3e8e111ad2bf9427c36864f8e61fff8ea6b74",
+    "competition/core/planning.py": "ddd9fc0d7fe93b273518d36154debcb53a4e48ecfefea1dc8ec87fc13f0e9714"
+  },
+  "windows_runtime_verified": false,
+  "clean_environment_verified": false,
+  "human_rehearsals_completed": 0,
+  "real_flights": 0,
+  "harness_notes": [
+    "Initial harness used an unsupported dynamic import and relative request URL; corrected before completed cycles.",
+    "First timeout harness tried to abort an already handled route after teardown; retained logs and reran with safe cleanup (timeout-final-browser.log)."
+  ],
+  "remaining": [
+    "portable_package_and_clean_environment",
+    "final_ui_recording_version_alignment"
+  ]
+}

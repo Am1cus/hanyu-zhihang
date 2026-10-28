@@ -1,0 +1,53 @@
+[
+  {
+    "id": "dev-snowfield-5",
+    "version": "v2-development-maps-0.2",
+    "split": "development",
+    "label": "拟定雪场：五点取舍",
+    "provenance": "synthetic_software_map_not_a_real_park",
+    "need_validation": "PENDING",
+    "grid": {
+      "width": 14, "height": 11, "cell_size_m": 80.0,
+      "blocked": [[6,4],[6,5],[6,6]],
+      "wind_regions": [{"id":"central","x_min":5,"x_max":12,"y_min":1,"y_max":9,"vector":[-2.0,0.0]}]
+    },
+    "base": [1,5],
+    "tasks": [
+      {"id":"A","label":"近区普通点A","position":[3,4],"value":1,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"B","label":"近区普通点B","position":[4,7],"value":1,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"C","label":"远区重要点C","position":[10,3],"value":5,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"D","label":"远区重要点D","position":[11,7],"value":5,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"E","label":"较重要点E","position":[7,9],"value":3,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"}
+    ],
+    "airspeed_ms": 5.0, "fixed_height_m": 40.0,
+    "scheduled_events": []
+  },
+  {
+    "id": "dev-two-gates-8",
+    "version": "v2-development-maps-0.2",
+    "split": "development",
+    "label": "拟定分区景区：八点与两条通道",
+    "provenance": "synthetic_software_map_not_a_real_park",
+    "need_validation": "PENDING",
+    "grid": {
+      "width": 18, "height": 13, "cell_size_m": 80.0,
+      "blocked": [[8,0],[8,1],[8,2],[8,4],[8,5],[8,6],[8,7],[8,8],[8,10],[8,11],[8,12]],
+      "wind_regions": [{"id":"east","x_min":9,"x_max":17,"y_min":0,"y_max":12,"vector":[-1.5,0.0]}]
+    },
+    "base": [2,6],
+    "tasks": [
+      {"id":"A","label":"近区普通点A","position":[4,3],"value":1,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"B","label":"近区普通点B","position":[5,9],"value":1,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"C","label":"东侧重要点C","position":[11,3],"value":5,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"D","label":"东侧较重要点D","position":[15,3],"value":3,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"E","label":"东侧重要点E","position":[12,9],"value":5,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"F","label":"东侧较重要点F","position":[15,10],"value":3,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"G","label":"近区普通点G","position":[4,11],"value":1,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"},
+      {"id":"H","label":"东侧较重要点H","position":[16,6],"value":3,"dwell_s":10.0,"value_source":"synthetic_assumption_pending_need_check"}
+    ],
+    "airspeed_ms": 5.0, "fixed_height_m": 40.0,
+    "scheduled_events": [
+      {"id":"close-north-gate","at_s":32.0,"type":"obstacle","cells":[[8,3]]}
+    ]
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "version": "heilongjiang-application-0.2",
+  "date": "2026-10-11",
+  "final_verified_on": "2026-10-13",
+  "source_kind": "user_direction_plus_public_context_and_team_design",
+  "external_need_validation": "PENDING",
+  "scope": "display_mapping_and_development_labels_not_runtime",
+  "runtime_integrated": false,
+  "linked_contract": "competition-v2-contract-0.3",
+  "scenario_source": "competition/v2/data/development_scenarios.json",
+  "scenario_source_sha256": "ba5b98e0a5cc94747af5798756b47409122e2a2a1840bb555038bcef52c9e53e",
+  "scene_name": "龙江冰雪小镇（合成）",
+  "base_label": "景区管理站",
+  "main_use_case": "可推迟或交回人工的补充巡看任务",
+  "core_question": "去哪里？能回来吗？没做的怎么办？",
+  "task_service_level": "optional_supplemental_observation",
+  "priority_source": "unchanged_D2_synthetic_weights_not_field_validated",
+  "action_semantics": "simulated_dwell_only",
+  "action_limitation": "no_actual_image_capture_or_detection",
+  "blocked_cell_meaning": "fixed_altitude_2d_exclusion_area",
+  "blocked_cell_limitation": "not_ground_snow_blockage",
+  "extension_only": [
+    "tourist_guidance",
+    "light_supply_delivery"
+  ],
+  "delivery_prerequisites": [
+    "payload_dependent_cost",
+    "pickup_delivery_precedence",
+    "deadlines",
+    "handover_state"
+  ],
+  "scenario_labels": [
+    {
+      "scenario_id": "dev-snowfield-5",
+      "display_name": "五点巡看：重要点与导览画面的取舍",
+      "tasks": [
+        {
+          "task_id": "A",
+          "display_name": "冰雕展示区",
+          "purpose": "更新导览景观画面",
+          "category": "view_update"
+        },
+        {
+          "task_id": "B",
+          "display_name": "入口导览区",
+          "purpose": "更新入口环境画面",
+          "category": "view_update"
+        },
+        {
+          "task_id": "C",
+          "display_name": "栈道转弯处",
+          "purpose": "获取辅助复核画面供人工查看",
+          "category": "supplemental_review"
+        },
+        {
+          "task_id": "D",
+          "display_name": "游客返程通道",
+          "purpose": "获取通道概况供人工复核",
+          "category": "supplemental_review"
+        },
+        {
+          "task_id": "E",
+          "display_name": "远端服务站",
+          "purpose": "查看站点外围环境",
+          "category": "service_site_view"
+        }
+      ]
+    },
+    {
+      "scenario_id": "dev-two-gates-8",
+      "display_name": "八点巡看：作业通道变化后的任务调整",
+      "tasks": [
+        {
+          "task_id": "A",
+          "display_name": "西区冰雕展示点",
+          "purpose": "更新导览景观画面",
+          "category": "view_update"
+        },
+        {
+          "task_id": "B",
+          "display_name": "入口导览广场",
+          "purpose": "更新入口环境画面",
+          "category": "view_update"
+        },
+        {
+          "task_id": "C",
+          "display_name": "东区栈道转弯处",
+          "purpose": "获取辅助复核画面供人工查看",
+          "category": "supplemental_review"
+        },
+        {
+          "task_id": "D",
+          "display_name": "东区休息亭",
+          "purpose": "查看休息点外围环境",
+          "category": "service_site_view"
+        },
+        {
+          "task_id": "E",
+          "display_name": "东区返程通道",
+          "purpose": "获取通道概况供人工复核",
+          "category": "supplemental_review"
+        },
+        {
+          "task_id": "F",
+          "display_name": "东区服务站",
+          "purpose": "查看站点外围环境",
+          "category": "service_site_view"
+        },
+        {
+          "task_id": "G",
+          "display_name": "西区观景点",
+          "purpose": "更新导览景观画面",
+          "category": "view_update"
+        },
+        {
+          "task_id": "H",
+          "display_name": "东区换乘等候区",
+          "purpose": "查看等候区外围环境",
+          "category": "service_site_view"
+        }
+      ]
+    }
+  ],
+  "development_labels_integrated": true
+}

@@ -1,0 +1,49 @@
+{
+  "published_on": "2026-10-28",
+  "content": "source_reports_and_per_execution_statistics_not_full_raw_archives",
+  "files": {
+    "evaluation-report.json": {
+      "local_evidence_relative_path": "output/4C/v2/evaluation-20261022/report.json",
+      "original_sha256": "39d9706394920decbace2edfa95604b69d0e06f6655a507733abdf807e16f1e0",
+      "published_sha256": "39d9706394920decbace2edfa95604b69d0e06f6655a507733abdf807e16f1e0",
+      "transformation": "none"
+    },
+    "evaluation-analysis.json": {
+      "local_evidence_relative_path": "output/4C/v2/evaluation-20261022/analysis.json",
+      "original_sha256": "ec52d5575c04b0223fba02382707f1443e988d2e87674c13a87ded23e34651df",
+      "published_sha256": "ec52d5575c04b0223fba02382707f1443e988d2e87674c13a87ded23e34651df",
+      "transformation": "none"
+    },
+    "evaluation-results.csv": {
+      "local_evidence_relative_path": "output/4C/v2/evaluation-20261022/全部1152项结果.csv",
+      "original_sha256": "eacce70d285c80362b5c0c8b8181eedf72827b7c6e7de249721179efd0e6fe4d",
+      "published_sha256": "eacce70d285c80362b5c0c8b8181eedf72827b7c6e7de249721179efd0e6fe4d",
+      "transformation": "none"
+    },
+    "reserve-report.json": {
+      "local_evidence_relative_path": "output/4C/v2/reserve-20261027/report.json",
+      "original_sha256": "ac05495f4a5d1b40ee09f0bda94c052299d4d393bd36823679c508924127e487",
+      "published_sha256": "ac05495f4a5d1b40ee09f0bda94c052299d4d393bd36823679c508924127e487",
+      "transformation": "none"
+    },
+    "reserve-results.csv": {
+      "local_evidence_relative_path": "output/4C/v2/reserve-20261027/全部储备比例结果.csv",
+      "original_sha256": "062a4c6769769fc1e6422daed4fbb11c023babaaf21e7a07cf383bd969450585",
+      "published_sha256": "062a4c6769769fc1e6422daed4fbb11c023babaaf21e7a07cf383bd969450585",
+      "transformation": "none"
+    },
+    "usability-report.json": {
+      "local_evidence_relative_path": "output/playwright/usable-20261027/report.json",
+      "original_sha256": "d818da1bb1af79a10162c27ad724166e2bc2c5742cb35b2308e7f8895442fd15",
+      "published_sha256": "d818da1bb1af79a10162c27ad724166e2bc2c5742cb35b2308e7f8895442fd15",
+      "transformation": "none"
+    },
+    "software-tests-20261027.txt": {
+      "local_evidence_relative_path": "output/playwright/usable-20261027/software-tests-final.txt",
+      "original_sha256": "6b4a7b36d492a4d47adbdbdf253207c9d51606a9762a4ce87e90401f7ec129c1",
+      "published_sha256": "f7ad8a3256db6ec09263c7a6134ed9034f6d5e822bb100cf7a4200c6390342fb",
+      "transformation": "local_repository_path_redacted"
+    }
+  },
+  "geometry_fixture_sha256": "7f69e62e85753e6e4267620aaf664f795a29129990483be961ccdf602a3bee77"
+}

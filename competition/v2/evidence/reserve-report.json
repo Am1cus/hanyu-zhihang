@@ -1,0 +1,17 @@
+{
+  "verified_on": "2026-10-27",
+  "scope": "supplementary_sensitivity_on_used_synthetic_test_set_not_unseen_evaluation",
+  "executions": 3456,
+  "new_reserve_variants": 2304,
+  "twenty_percent_control_executions": 1152,
+  "baseline_matches": 1152,
+  "archives_checked": 3456,
+  "archives_passed": 3456,
+  "replays": 24,
+  "replays_matching": 24,
+  "process_errors": 0,
+  "original_artifacts_changed": [],
+  "real_flights": 0,
+  "production_default_changed": false,
+  "passed": true
+}

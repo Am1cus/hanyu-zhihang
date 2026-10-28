@@ -1,0 +1,13 @@
+{
+  "version": "v2-development-probes-0.2",
+  "scope": "planned_path_probe_not_executed_flight",
+  "scenario_id": "dev-two-gates-8",
+  "target_id": "C",
+  "observation_s": 32.0,
+  "event_variants": [
+    {"id":"close-north-gate","at_s":32.0,"type":"obstacle","cells":[[8,3]]},
+    {"id":"close-both-gates","at_s":32.0,"type":"obstacle","cells":[[8,3],[8,9]]},
+    {"id":"east-gust","at_s":32.0,"type":"wind","region_id":"east","vector":[-3.0,0.0]}
+  ],
+  "expectations": ["north gate is on the unexecuted probe suffix", "closing north gate selects south gate and increases distance", "closing both gates is unreachable", "eastward gust increases outbound energy from the same probe position"]
+}
