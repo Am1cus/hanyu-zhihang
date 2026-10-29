@@ -2,6 +2,10 @@
 
 本目录发布已有软件实验的机器报告和**全部逐项统计**，不是精选成功案例。没有真实飞行数据。发布日为2026年10月28日；各报告保留原验证日期。
 
+10月29日补充：[公开CSV算术复核](evidence-review-20261029.json)与[证据边界说明](../EVIDENCE_REVIEW_20261029.md)。本次复算不计作新执行。
+
+10月28日新增：[技术交付状态](technical-delivery-20261028.json)、[独立包检查](delivery-verification-20261028.json)、[HTTP服务重启和复演](delivery-service-20261028.json)、[离线首次安装](offline-install-20261028.json)、[同版本视频指纹](video-manifest-20261028.json)。验证平台为Apple芯片Mac；Windows尚未实机核验。
+
 | 文件 | 可以核对什么 |
 |---|---|
 | [固定条件报告](evaluation-report.json) | 1,152项执行核验、24项复演、12项静态枚举对照 |

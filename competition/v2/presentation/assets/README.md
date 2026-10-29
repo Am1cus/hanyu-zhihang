@@ -1,3 +1,3 @@
 # 页面截图来源
 
-`workbench.png`来自2026年10月27日本机真实浏览器操作的完整截图，未合成数据或修改画面。对应障碍与手动事件示例，50倍软件验收播放；日常界面默认20倍。原证据位于团队工作区`output/playwright/usable-20261027/presentation-desktop.png`，运行记录摘要在`../../evidence/usability-report.json`。
+`workbench.png`更新为2026年10月28日当前交付版的真实浏览器截图，未合成数据或修改画面。对应90秒备用视频的同一轮运行，20倍播放；来源摘要与版本指纹在`../../evidence/video-manifest-20261028.json`。10月27日旧截图仍保存在本地历史证据，不覆盖它。

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "version": "competition-v2-design-0.3",
   "design_date": "2026-10-09",
-  "status": "SOFTWARE_COMPARISON_AND_RESERVE_SENSITIVITY_COMPLETED_ENGINEERING_AND_HUMAN_ACCEPTANCE_PENDING",
+  "status": "LOCAL_TECHNICAL_DELIVERY_VERIFIED_TARGET_COMPUTER_AND_HUMAN_ACCEPTANCE_PENDING",
   "human_need_validation": "PAUSED_BY_USER_UNVERIFIED",
   "externally_timestamped_preregistration": false,
   "task_source": "LOCAL_2D_SIM",
@@ -153,6 +153,10 @@
     {
       "date": "2026-10-27",
       "change": "Complete separate 10/20/30 percent reserve sensitivity on already-used test conditions: 3456 executions including 1152 exact controls, 24 exact replays, 82 tests. Frozen production executor and default remain unchanged. Track three engineering delivery gaps; text-only progress reporting."
+    },
+    {
+      "date": "2026-10-29",
+      "change": "Publish October 28 portable-package verification and matching backup recording. Freeze current UI work by user request; export actual backend OpenAPI snapshot and audit evidence. Windows/human acceptance and external physical validity remain unverified."
     }
   ],
   "public_need_records": [
@@ -276,8 +280,7 @@
     "comparator_fraction": 0.2
   },
   "technical_remaining": [
-    "v2_portable_package_and_clean_environment",
-    "final_source_ui_recording_version_alignment"
+    "target_windows_or_presentation_computer_runtime_acceptance"
   ],
   "technical_checklist": "TECHNICAL_REMAINING.md",
   "ui_usability_acceptance": {
@@ -290,5 +293,42 @@
     "human_rehearsals_completed": 0,
     "windows_runtime_verified": false,
     "clean_environment_verified": false
+  },
+  "technical_delivery_acceptance": {
+    "verified_on": "2026-10-28",
+    "status": "LOCAL_TECHNICAL_DELIVERY_VERIFIED_TARGET_WINDOWS_ACCEPTANCE_PENDING",
+    "package_unit_tests": 87,
+    "clean_venv_and_offline_install": true,
+    "dependency_check": true,
+    "actual_http_restart_and_replay": true,
+    "video_duration_s": 90,
+    "video_recorded_run_replay_matching": true,
+    "video_ui_sha256": "518ea381dcb98cdaedf052dbdfa6e2d5ae012a36949858c2d50a5c45c8f9ee74",
+    "execution_source_sha256": {
+      "competition/v2/runtime.py": "09c687ebbe7ea26f8d3142100da4f55be2af16fe7939c75b184cc0bf82b11c82",
+      "competition/v2/selectors.py": "6c05d7ce9e6eff2f76d46005ec4db40969a48e6e6a7eadc9d9c5dbf033554be5",
+      "competition/v2/contracts.py": "7f1bd1f30559dfea600b76b3b63a0b8718f9fb931a0e189b902450754e01cf14",
+      "competition/v2/planning_inputs.py": "f9ff12747146f63c779531ed2f96025588b2246aa3f1fa70bae3197194fc0b5b",
+      "competition/v2/scenarios.py": "440f09308be05481ce99092c3a4ed85ce6b5e4fbac4daf45646c9ba78a695d09",
+      "competition/core/curves.py": "29bfdc5ff319f265a5fc55fdd7a3e8e111ad2bf9427c36864f8e61fff8ea6b74",
+      "competition/core/planning.py": "ddd9fc0d7fe93b273518d36154debcb53a4e48ecfefea1dc8ec87fc13f0e9714"
+    },
+    "previous_frozen_experiments_unchanged": true,
+    "real_flights": 0,
+    "windows_wheels_prepared": true,
+    "windows_runtime_verified": false,
+    "windows_ci_status": "not_run_integration_has_no_workflow_write_permission",
+    "human_projection_and_playback_checked": false,
+    "remaining_external_acceptance": [
+      "Run packaged Windows check on target computer",
+      "Check actual browser, projection and PowerPoint/WPS video playback"
+    ],
+    "release_url": "https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028"
+  },
+  "frontend_work_policy": {
+    "effective_on": "2026-10-29",
+    "status": "UI_REDESIGN_DEFERRED_BY_USER",
+    "current_ui": "technical_verification_entry",
+    "backend_handoff": "BACKEND_HANDOFF.md"
   }
 }

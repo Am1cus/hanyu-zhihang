@@ -1,0 +1,12 @@
+{
+  "verified_on": "2026-10-28",
+  "fresh_venv": true,
+  "pip_no_index": true,
+  "runtime_inside_package": true,
+  "health": {
+    "status": "ok",
+    "runtime_version": "competition-v2-runtime-0.1",
+    "source": "LOCAL_2D_SIM",
+    "library_available": true
+  }
+}

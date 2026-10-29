@@ -37,6 +37,17 @@ def build(output, name, wheelhouses=(), media=None):
     shutil.copy2(PROJECT/'启动寒域智航.command', folder/'启动寒域智航.command')
     shutil.copy2(PROJECT/'competition/v2/PORTABLE_README.md', folder/'先读我.md')
     (folder/'启动Windows.bat').write_bytes(b'@echo off\r\ncall "%~dp0competition\\v2\\start_v2.bat" %*\r\n')
+    (folder/'检查Mac.command').write_text('#!/bin/zsh\ncd -- "$(dirname -- "$0")"\n'
+        'if [[ ! -x .competition-venv/bin/python ]]; then\n'
+        '  printf "请先启动程序一次，完成环境安装。\\n"\n'
+        'else\n  .competition-venv/bin/python -m competition.v2.tools.verify_package\nfi\n'
+        'read -r "?按回车关闭窗口…"\n')
+    (folder/'检查Mac.command').chmod(0o755)
+    (folder/'检查Windows.bat').write_bytes(('@echo off\nchcp 65001 >nul\ncd /d "%~dp0"\n'
+        'if not exist ".competition-venv\\Scripts\\python.exe" (\n'
+        '  echo 请先启动程序一次，完成环境安装。\n  pause\n  exit /b 1\n)\n'
+        'set PYTHONUTF8=1\n".competition-venv\\Scripts\\python.exe" -m competition.v2.tools.verify_package\n'
+        'pause\n').replace('\n','\r\n').encode('utf-8'))
     (folder/'PORTABLE_PACKAGE').write_text('Local runtime records belong in runtime/missions-v2.sqlite3.\n')
     (folder/'启动寒域智航.command').chmod(0o755)
     (folder/'competition/v2/start_v2.command').chmod(0o755)

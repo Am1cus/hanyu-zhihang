@@ -28,4 +28,6 @@
 
 在根目录可运行：`.competition-venv/bin/python -m unittest discover -s competition/v2/tests -v`；Windows将Python路径换为`.competition-venv\Scripts\python.exe`。
 
+组员在实际比赛电脑上可双击「检查Mac.command」或「检查Windows.bat」。约一分钟完成文件指纹、依赖、软件检查、服务重启与复演，报告保存在`runtime/checks-日期时间/verification.json`。它仍不能代替实际点击、投影和PowerPoint/WPS播放检查。
+
 固定储备比例是仿真策略；厂家曲线不代表任意无人机电池。真实低温飞行性能未验证，不能把软件结果直接作为实飞安全决策。

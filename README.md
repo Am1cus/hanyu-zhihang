@@ -8,9 +8,11 @@
 
 [快速试用](#快速试用) · [五步操作说明](competition/v2/TRY_IT.md) · [实验结果与证据](competition/v2/evidence/README.md) · [技术余项](competition/v2/TECHNICAL_REMAINING.md)
 
+**10月29日发布（10月28日验证）：** [下载独立离线演示包与90秒备用视频](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028)。已在Apple芯片Mac的全新环境中完成离线安装、87项检查、服务重启与复演；Windows目标电脑验收仍待完成。见[本轮交付记录](competition/v2/DAY28_DELIVERY.md)。当前界面保留作技术验证入口，后续前端重写可使用[后端接口交接](competition/v2/BACKEND_HANDOFF.md)。
+
 ![实际程序的讲解模式：左侧为执行轨迹，右侧解释决策，下方保留任务与事件记录](competition/v2/presentation/assets/workbench.png)
 
-*实际程序截图：合成场景、50倍软件验收播放，图中结果只对应这一轮运行；日常演示默认20倍。*
+*当前交付版的实际程序截图：合成场景、20倍仿真播放，与备用录屏对应同一轮运行。*
 
 ## 可以做什么
 
@@ -27,7 +29,7 @@
 
 ## 快速试用
 
-需要 **Python 3.12**。首次安装依赖需要联网，之后可在本机离线演示。
+需要 **Python 3.12**。下面的源码克隆方式首次安装依赖需要联网；Release独立包带离线依赖，Python需预装。
 
 ```bash
 git clone https://github.com/Am1cus/hanyu-zhihang.git
@@ -83,7 +85,7 @@ zsh competition/v2/start_v2.command
 
 低温模型使用指定电芯的4.2A恒流参考条件和理想4S1P虚拟组，不模拟自热、老化、高倍率或真实飞控。固定储备比例和估计误差范围是仿真策略参数，不是真机安全标准。当前真实飞行验证为0，结果不能直接用于实际无人机安全决策。
 
-目标电脑验证、独立交付包、最终同版备用视频及真人答辩演练仍在推进。学生实际贡献、调研和工具使用按真实记录填写，不把自动测试计作真人试用。
+独立交付包与同版备用视频已提供；Windows目标电脑验证、实际投影播放和真人答辩演练仍待完成。学生实际贡献、调研和工具使用按真实记录填写，不把自动测试计作真人试用。
 
 ## 仓库导航
 

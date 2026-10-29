@@ -1,0 +1,55 @@
+{
+  "reviewed_on": "2026-10-29",
+  "scope": "arithmetic_recalculation_from_published_full_csv_not_new_execution_or_external_validation",
+  "source": "competition/v2/evidence/evaluation-results.csv",
+  "source_sha256": "eacce70d285c80362b5c0c8b8181eedf72827b7c6e7de249721179efd0e6fe4d",
+  "execution_rows": 1152,
+  "overall_bounded_dp_vs_nearest": {
+    "pairs": 144,
+    "wins": 38,
+    "ties": 96,
+    "losses": 10,
+    "mean_score_dp": 50.716440422322776,
+    "mean_score_nearest": 46.119281045751634,
+    "mean_score_difference": 4.597159376571141
+  },
+  "by_kind": {
+    "dynamic_obstacle": {
+      "pairs": 36,
+      "wins": 11,
+      "ties": 23,
+      "losses": 2,
+      "mean_score_dp": 65.49145299145299,
+      "mean_score_nearest": 62.46229260935144,
+      "mean_score_difference": 3.0291603821015576
+    },
+    "gust": {
+      "pairs": 36,
+      "wins": 9,
+      "ties": 26,
+      "losses": 1,
+      "mean_score_dp": 44.230769230769226,
+      "mean_score_nearest": 36.073403720462544,
+      "mean_score_difference": 8.157365510306686
+    },
+    "low_budget": {
+      "pairs": 36,
+      "wins": 8,
+      "ties": 23,
+      "losses": 5,
+      "mean_score_dp": 8.213926596279537,
+      "mean_score_nearest": 9.100050276520864,
+      "mean_score_difference": -0.8861236802413271
+    },
+    "normal": {
+      "pairs": 36,
+      "wins": 10,
+      "ties": 24,
+      "losses": 2,
+      "mean_score_dp": 84.92961287078936,
+      "mean_score_nearest": 76.84137757667169,
+      "mean_score_difference": 8.088235294117647
+    }
+  },
+  "openapi_operations": 9
+}

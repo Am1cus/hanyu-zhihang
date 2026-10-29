@@ -1,0 +1,52 @@
+{
+  "verified_on": "2026-10-28",
+  "identity": "actual_local_UI_recording_automated_operation_not_human_defence",
+  "video": "寒域智航_90秒实际运行录屏.mp4",
+  "duration_s": 90.0,
+  "pixels": [
+    1920,
+    1080
+  ],
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "simulation_speedup": 20,
+  "video_playback_rate": 1,
+  "audio": "none",
+  "editing": "trim waiting before/after actual 90-second operation; pad sides and add identity/chapter labels; no trajectory or result edits",
+  "source_video_sha256": "72d08da2c116bc85ecd71a13a04564d6b8d6a3233cb909a65825940faf1124a0",
+  "trim_start_s": 94.15400004386902,
+  "video_sha256": "393295d31b4a657523e6d17e09857aa15baf82010ca1da75049c988e918af155",
+  "ui_sha256": "518ea381dcb98cdaedf052dbdfa6e2d5ae012a36949858c2d50a5c45c8f9ee74",
+  "execution_source_sha256": {
+    "competition/v2/runtime.py": "09c687ebbe7ea26f8d3142100da4f55be2af16fe7939c75b184cc0bf82b11c82",
+    "competition/v2/selectors.py": "6c05d7ce9e6eff2f76d46005ec4db40969a48e6e6a7eadc9d9c5dbf033554be5",
+    "competition/v2/contracts.py": "7f1bd1f30559dfea600b76b3b63a0b8718f9fb931a0e189b902450754e01cf14",
+    "competition/v2/planning_inputs.py": "f9ff12747146f63c779531ed2f96025588b2246aa3f1fa70bae3197194fc0b5b",
+    "competition/v2/scenarios.py": "440f09308be05481ce99092c3a4ed85ce6b5e4fbac4daf45646c9ba78a695d09",
+    "competition/core/curves.py": "29bfdc5ff319f265a5fc55fdd7a3e8e111ad2bf9427c36864f8e61fff8ea6b74",
+    "competition/core/planning.py": "ddd9fc0d7fe93b273518d36154debcb53a4e48ecfefea1dc8ec87fc13f0e9714"
+  },
+  "archive_sha256": "e7928e30ce7db0c61b462edbceef246f59c952229169b25b68995569c0a174cc",
+  "run_id": "539f865b-c430-4e78-b5f1-46b97f975824",
+  "result_sha256": "f2c174cfa74c5eccfee56ffae5221fbd80d695304d0a0add2a1f2d64a6890fd7",
+  "operation_marks": [
+    {
+      "event": "temperature_compared",
+      "wall_s": 5.134,
+      "warm_wh": "47.70",
+      "cold_wh": "43.78"
+    },
+    {
+      "event": "manual_obstacle",
+      "wall_s": 11.346
+    },
+    {
+      "event": "actual_return",
+      "wall_s": 71.919
+    },
+    {
+      "event": "exported",
+      "wall_s": 72.374
+    }
+  ]
+}

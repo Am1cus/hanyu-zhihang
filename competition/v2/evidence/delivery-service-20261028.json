@@ -1,0 +1,25 @@
+{
+  "verified_on": "2026-10-28",
+  "platform": "darwin",
+  "python": "3.12.14",
+  "source": "LOCAL_2D_SIM",
+  "real_flight": false,
+  "passed": true,
+  "service_started": true,
+  "returned": true,
+  "archive_survived_restart": true,
+  "replay_matching": true,
+  "integral_error_wh": 1.4495071809506044e-12,
+  "result_sha256": "e09d3796e7c56e912ce8f4a0430eb3a2e22c9272c1723568946b7535143f57c6",
+  "database_inside_requested_directory": true,
+  "source_sha256": {
+    "competition/v2/runtime.py": "09c687ebbe7ea26f8d3142100da4f55be2af16fe7939c75b184cc0bf82b11c82",
+    "competition/v2/selectors.py": "6c05d7ce9e6eff2f76d46005ec4db40969a48e6e6a7eadc9d9c5dbf033554be5",
+    "competition/v2/contracts.py": "7f1bd1f30559dfea600b76b3b63a0b8718f9fb931a0e189b902450754e01cf14",
+    "competition/v2/planning_inputs.py": "f9ff12747146f63c779531ed2f96025588b2246aa3f1fa70bae3197194fc0b5b",
+    "competition/v2/scenarios.py": "440f09308be05481ce99092c3a4ed85ce6b5e4fbac4daf45646c9ba78a695d09",
+    "competition/core/curves.py": "29bfdc5ff319f265a5fc55fdd7a3e8e111ad2bf9427c36864f8e61fff8ea6b74",
+    "competition/core/planning.py": "ddd9fc0d7fe93b273518d36154debcb53a4e48ecfefea1dc8ec87fc13f0e9714"
+  },
+  "ui_sha256": "518ea381dcb98cdaedf052dbdfa6e2d5ae012a36949858c2d50a5c45c8f9ee74"
+}
