@@ -20,6 +20,8 @@ from urllib.error import URLError
 from urllib.request import urlopen
 import webbrowser
 
+from competition.v2.version import API_VERSION
+
 PROJECT = Path(__file__).resolve().parents[2]
 LOCK = Path(__file__).with_name('requirements-lock.txt')
 VENV = PROJECT / '.competition-venv'
@@ -77,7 +79,8 @@ def service_health(url):
         with urlopen(url + '/api/v2/health', timeout=1) as response:
             value = json.load(response)
         return (value.get('status') == 'ok' and value.get('source') == 'LOCAL_2D_SIM'
-                and value.get('runtime_version') == 'competition-v2-runtime-0.1')
+                and value.get('runtime_version') == 'competition-v2-runtime-0.1'
+                and value.get('api_version') == API_VERSION)
     except (URLError, OSError, ValueError):
         return False
 

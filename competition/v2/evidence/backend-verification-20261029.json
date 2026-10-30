@@ -1,0 +1,16 @@
+{
+  "verified_on": "2026-10-29",
+  "system": "Darwin",
+  "machine": "arm64",
+  "python": "3.12.14",
+  "package_manifest_present": true,
+  "file_mismatches": [],
+  "checks": {
+    "dependencies": true,
+    "software_tests": true,
+    "service_smoke": true
+  },
+  "execution_skipped_due_to_manifest_error": false,
+  "passed": true,
+  "human_operation_or_projection_test": false
+}

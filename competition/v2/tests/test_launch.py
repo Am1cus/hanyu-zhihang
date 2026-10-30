@@ -8,6 +8,7 @@ import threading
 import unittest
 
 from competition.v2.launch import PROJECT
+from competition.v2.version import API_VERSION
 
 
 class LaunchTests(unittest.TestCase):
@@ -16,11 +17,11 @@ class LaunchTests(unittest.TestCase):
                                '--no-browser', *args], cwd=PROJECT.parent,
                               capture_output=True, text=True, timeout=15)
 
-    def service(self, ours):
+    def service(self, ours, api_version=API_VERSION):
         class Handler(BaseHTTPRequestHandler):
             def do_GET(self):
                 payload = {'status': 'ok', 'source': 'LOCAL_2D_SIM' if ours else 'other_app',
-                           'runtime_version': 'competition-v2-runtime-0.1'}
+                           'runtime_version': 'competition-v2-runtime-0.1', 'api_version':api_version}
                 data = json.dumps(payload).encode()
                 self.send_response(200)
                 self.send_header('Content-Length', str(len(data)))
@@ -67,6 +68,12 @@ class LaunchTests(unittest.TestCase):
         result = self.launch('--port', '99999')
         self.assertEqual(result.returncode, 2)
         self.assertIn('端口需要', result.stderr)
+
+    def test_old_api_service_is_not_silently_reused(self):
+        server = self.service(True, api_version=None)
+        result = self.launch('--port', str(server.server_port))
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('被其他程序占用', result.stderr)
 
 
 if __name__ == '__main__':

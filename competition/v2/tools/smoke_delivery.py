@@ -24,9 +24,9 @@ def main():
     url=f'http://127.0.0.1:{port}'
     database=out/'runtime.sqlite3';process=None
     log=(out/'server.log').open('w',encoding='utf-8')
-    def call(path,data=None):
+    def call(path,data=None,key=None):
         request=Request(url+'/api/v2'+path,data=None if data is None else json.dumps(data).encode(),
-                        headers={'Content-Type':'application/json'})
+                        headers={'Content-Type':'application/json',**({'Idempotency-Key':key} if key else {})})
         with urlopen(request,timeout=10) as response:return json.load(response)
     def wait_for(predicate,timeout=45):
         deadline=time.monotonic()+timeout
@@ -57,27 +57,35 @@ def main():
         return wait_for(terminal)
     try:
         start()
-        created=call('/runs',{'preset':'obstacle','speedup':100.})
+        create_input={'preset':'obstacle','speedup':100.}
+        created=call('/runs',create_input,key='delivery-create')
+        assert call('/runs',create_input,key='delivery-create')['id']==created['id']
         run_id=created['id'];finish(run_id)
         original=call('/runs/'+run_id+'/export')
         assert original['summary']['returned']
         integrated=sum(t['average_voltage_v']*t['current_a']*t['dt_s']/3600 for t in original['telemetry'])
         error=abs(integrated-original['summary']['consumed_wh']);assert error<1e-7
-        (out/'original.json').write_text(json.dumps(original,ensure_ascii=False)+'\n')
+        (out/'original.json').write_text(json.dumps(original,ensure_ascii=False)+'\n',encoding='utf-8')
         stop();start()
         archived=call('/runs/'+run_id);assert archived['runtime_available'] is False
-        replay=call('/runs/'+run_id+'/replay',{});finish(replay['id'])
+        assert call('/runs',create_input,key='delivery-create')['id']==run_id
+        assert len(call('/runs'))==1
+        replay=call('/runs/'+run_id+'/replay',{},key='delivery-replay')
+        assert call('/runs/'+run_id+'/replay',{},key='delivery-replay')['id']==replay['id']
+        finish(replay['id'])
         repeated=call('/runs/'+replay['id']+'/export')
         assert repeated['result_sha256']==original['result_sha256']
         assert repeated['execution_audit']['origin']['source_run_id']==run_id
         report={'verified_on':args.verified_on,'platform':sys.platform,'python':sys.version.split()[0],
             'source':'LOCAL_2D_SIM','real_flight':False,'passed':True,'service_started':True,
             'returned':True,'archive_survived_restart':True,'replay_matching':True,
+            'api_version':call('/health')['api_version'],
+            'create_retry_survived_restart':True,'replay_retry_deduplicated':True,
             'integral_error_wh':error,'result_sha256':original['result_sha256'],
             'database_inside_requested_directory':database.is_file(),
             'source_sha256':original['metadata']['source_sha256'],
             'ui_sha256':hashlib.sha256((PROJECT/'competition/v2/presentation/live.html').read_bytes()).hexdigest()}
-        (out/'smoke.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+        (out/'smoke.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         print(json.dumps(report,ensure_ascii=False))
     finally:stop();log.close()
 

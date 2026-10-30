@@ -1,0 +1,22 @@
+{
+  "closed_on": "2026-10-30",
+  "verified_on": "2026-10-29",
+  "api_version": "competition-v2-api-0.2",
+  "runtime_version": "competition-v2-runtime-0.1",
+  "v2_tests": 102,
+  "legacy_tests": 31,
+  "clean_offline_package_passed": true,
+  "http_restart_replay_and_request_deduplication": true,
+  "request_identity_and_run_atomic_transaction": true,
+  "all_api_success_responses_typed": 9,
+  "corrupt_or_missing_package_manifest_fails_closed": true,
+  "frozen_execution_sources_unchanged": true,
+  "frontend_html_unchanged": true,
+  "windows_runtime_verified": false,
+  "human_projection_checked": false,
+  "video_policy": "October 28 recording remains with its original release; backend-only new release is not re-recorded",
+  "remaining": [
+    "actual_target_computer_acceptance"
+  ],
+  "release_url": "https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030"
+}

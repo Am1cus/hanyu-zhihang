@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "寒域智航 · 看得懂的运行演示",
-    "version": "competition-v2-runtime-0.1"
+    "title": "寒域智航 · 任务决策后端",
+    "version": "competition-v2-api-0.2"
   },
   "paths": {
     "/": {
@@ -15,6 +15,26 @@
             "content": {
               "application/json": {
                 "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           }
@@ -30,7 +50,29 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           }
@@ -56,7 +98,29 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/Preview"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           },
@@ -74,41 +138,70 @@
       }
     },
     "/api/v2/runs": {
-      "get": {
-        "summary": "Listing",
-        "operationId": "listing_api_v2_runs_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          }
-        }
-      },
       "post": {
         "summary": "Create",
         "operationId": "create_api_v2_runs_post",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9._:-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
+          }
+        ],
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateInput"
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/LiveState"
+                }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "description": "Validation Error",
@@ -119,6 +212,46 @@
                 }
               }
             }
+          }
+        }
+      },
+      "get": {
+        "summary": "Listing",
+        "operationId": "listing_api_v2_runs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RunListItem"
+                  },
+                  "title": "Response Listing Api V2 Runs Get"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           }
         }
       }
@@ -143,9 +276,31 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/LiveState"
+                }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "description": "Validation Error",
@@ -190,9 +345,31 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/LiveState"
+                }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "description": "Validation Error",
@@ -237,9 +414,31 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/QueuedEvent"
+                }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "description": "Validation Error",
@@ -274,9 +473,31 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/Archive"
+                }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "description": "Validation Error",
@@ -304,6 +525,25 @@
               "type": "string",
               "title": "Run Id"
             }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9._:-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Idempotency-Key"
+            }
           }
         ],
         "responses": {
@@ -311,9 +551,31 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/LiveState"
+                }
               }
             }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "description": "Validation Error",
@@ -349,6 +611,473 @@
           "action"
         ],
         "title": "ActionInput"
+      },
+      "AppliedEvent": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "scheduled",
+              "manual"
+            ],
+            "title": "Source"
+          },
+          "payload": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ObstacleEvent"
+              },
+              {
+                "$ref": "#/components/schemas/WindEvent"
+              }
+            ],
+            "title": "Payload",
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "obstacle": "#/components/schemas/ObstacleEvent",
+                "wind": "#/components/schemas/WindEvent"
+              }
+            }
+          },
+          "applied": {
+            "type": "boolean",
+            "title": "Applied"
+          },
+          "intersects_occupied_edge": {
+            "type": "boolean",
+            "title": "Intersects Occupied Edge"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_id",
+          "t_s",
+          "source",
+          "payload",
+          "applied",
+          "intersects_occupied_edge"
+        ],
+        "title": "AppliedEvent"
+      },
+      "Archive": {
+        "properties": {
+          "metadata": {
+            "$ref": "#/components/schemas/Metadata"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/RuntimeConfig"
+          },
+          "configuration_sha256": {
+            "type": "string",
+            "title": "Configuration Sha256"
+          },
+          "state": {
+            "$ref": "#/components/schemas/State"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "telemetry": {
+            "items": {
+              "$ref": "#/components/schemas/Telemetry"
+            },
+            "type": "array",
+            "title": "Telemetry"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AppliedEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/components/schemas/Decision"
+            },
+            "type": "array",
+            "title": "Decisions"
+          },
+          "intervals": {
+            "items": {
+              "$ref": "#/components/schemas/EnergyInterval"
+            },
+            "type": "array",
+            "title": "Intervals"
+          },
+          "response_metrics": {
+            "items": {
+              "$ref": "#/components/schemas/EventResponseMetric"
+            },
+            "type": "array",
+            "title": "Response Metrics"
+          },
+          "result_sha256": {
+            "type": "string",
+            "title": "Result Sha256"
+          },
+          "execution_audit": {
+            "$ref": "#/components/schemas/Audit"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "metadata",
+          "configuration",
+          "configuration_sha256",
+          "state",
+          "summary",
+          "telemetry",
+          "events",
+          "decisions",
+          "intervals",
+          "response_metrics",
+          "result_sha256",
+          "execution_audit"
+        ],
+        "title": "Archive"
+      },
+      "Audit": {
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "const": 1,
+            "title": "Schema Version"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "recorded",
+              "unknown"
+            ],
+            "title": "Status"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/AuditOrigin"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/components/schemas/AuditAction"
+            },
+            "type": "array",
+            "title": "Records"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "schema_version",
+          "status",
+          "origin",
+          "records"
+        ],
+        "title": "Audit"
+      },
+      "AuditAction": {
+        "properties": {
+          "action": {
+            "type": "string",
+            "title": "Action"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "seq": {
+            "type": "integer",
+            "title": "Seq"
+          },
+          "recorded_at": {
+            "type": "string",
+            "title": "Recorded At"
+          },
+          "source_run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Run Id"
+          },
+          "event": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/QueuedEvent"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "action",
+          "source",
+          "t_s",
+          "seq",
+          "recorded_at"
+        ],
+        "title": "AuditAction"
+      },
+      "AuditOrigin": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "original",
+              "replay",
+              "unknown"
+            ],
+            "title": "Status"
+          },
+          "source_run_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Run Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "source_run_id"
+        ],
+        "title": "AuditOrigin"
+      },
+      "BudgetAssessment": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "SUFFICIENT",
+              "INSUFFICIENT",
+              "UNAVAILABLE"
+            ],
+            "title": "Status"
+          },
+          "ordered_task_ids": {
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "type": "array",
+            "title": "Ordered Task Ids"
+          },
+          "transit_wh": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transit Wh"
+          },
+          "service_wh": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Service Wh"
+          },
+          "return_wh": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Return Wh"
+          },
+          "reserve_wh": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Reserve Wh"
+          },
+          "assessed_available_wh": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Assessed Available Wh"
+          },
+          "assessed_demand_wh": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Assessed Demand Wh"
+          },
+          "margin_wh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Margin Wh"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "execution_verified": {
+            "type": "boolean",
+            "const": false,
+            "title": "Execution Verified",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "ordered_task_ids",
+          "transit_wh",
+          "service_wh",
+          "return_wh",
+          "reserve_wh",
+          "assessed_available_wh",
+          "assessed_demand_wh",
+          "margin_wh",
+          "reason"
+        ],
+        "title": "BudgetAssessment"
+      },
+      "BudgetPolicy": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "bounded"
+            ],
+            "title": "Mode"
+          },
+          "reserve_wh": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Reserve Wh"
+          },
+          "available_fraction_error": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "minimum": 0.0,
+            "title": "Available Fraction Error"
+          },
+          "cost_fraction_error": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cost Fraction Error"
+          },
+          "parameter_source": {
+            "type": "string",
+            "const": "simulation_policy_not_calibrated_probability",
+            "title": "Parameter Source"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode",
+          "reserve_wh",
+          "available_fraction_error",
+          "cost_fraction_error",
+          "parameter_source"
+        ],
+        "title": "BudgetPolicy"
+      },
+      "Counterfactual": {
+        "properties": {
+          "scope": {
+            "type": "string",
+            "title": "Scope"
+          },
+          "request_sha256": {
+            "type": "string",
+            "title": "Request Sha256"
+          },
+          "record": {
+            "$ref": "#/components/schemas/DecisionRecord"
+          },
+          "planned_paths": {
+            "items": {
+              "items": {
+                "prefixItems": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Planned Paths"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "scope",
+          "request_sha256",
+          "record",
+          "planned_paths"
+        ],
+        "title": "Counterfactual"
       },
       "CreateInput": {
         "properties": {
@@ -411,6 +1140,358 @@
         "type": "object",
         "title": "CreateInput"
       },
+      "Decision": {
+        "properties": {
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "trigger": {
+            "type": "string",
+            "title": "Trigger"
+          },
+          "request": {
+            "$ref": "#/components/schemas/DecisionRequest"
+          },
+          "record": {
+            "$ref": "#/components/schemas/DecisionRecord"
+          },
+          "planned_legs": {
+            "items": {
+              "$ref": "#/components/schemas/LegEstimate"
+            },
+            "type": "array",
+            "title": "Planned Legs"
+          },
+          "plan_changed": {
+            "type": "boolean",
+            "title": "Plan Changed"
+          },
+          "budget_changed": {
+            "type": "boolean",
+            "title": "Budget Changed"
+          },
+          "responding_to": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Responding To"
+          },
+          "same_state_counterfactual": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Counterfactual"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "t_s",
+          "trigger",
+          "request",
+          "record",
+          "planned_legs",
+          "plan_changed",
+          "budget_changed",
+          "responding_to"
+        ],
+        "title": "Decision"
+      },
+      "DecisionRecord": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "competition-v2-contract-0.3",
+            "title": "Contract Version"
+          },
+          "request_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Request Sha256"
+          },
+          "as_of_s": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "As Of S"
+          },
+          "selector_id": {
+            "type": "string",
+            "enum": [
+              "fixed_order",
+              "nearest_feasible",
+              "value_per_cost",
+              "subset_dp"
+            ],
+            "title": "Selector Id"
+          },
+          "budget_mode": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "bounded"
+            ],
+            "title": "Budget Mode"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "CONTINUE",
+              "RETURN",
+              "REFUSED",
+              "STOP"
+            ],
+            "title": "Action"
+          },
+          "reason_code": {
+            "type": "string",
+            "enum": [
+              "PLAN_SELECTED",
+              "NO_FEASIBLE_TASK",
+              "ALL_TASKS_VISITED",
+              "RETURN_UNREACHABLE",
+              "RETURN_BUDGET_INSUFFICIENT",
+              "DATA_UNAVAILABLE"
+            ],
+            "title": "Reason Code"
+          },
+          "ordered_task_ids": {
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "type": "array",
+            "title": "Ordered Task Ids"
+          },
+          "deferred_tasks": {
+            "items": {
+              "$ref": "#/components/schemas/DeferredTask"
+            },
+            "type": "array",
+            "title": "Deferred Tasks"
+          },
+          "budget": {
+            "$ref": "#/components/schemas/BudgetAssessment"
+          },
+          "computation_ms": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Computation Ms"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "request_sha256",
+          "as_of_s",
+          "selector_id",
+          "budget_mode",
+          "action",
+          "reason_code",
+          "ordered_task_ids",
+          "deferred_tasks",
+          "budget",
+          "computation_ms"
+        ],
+        "title": "DecisionRecord",
+        "description": "Output shape; pair with its request before accepting or exporting it."
+      },
+      "DecisionRequest": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "competition-v2-contract-0.3",
+            "title": "Contract Version"
+          },
+          "observation": {
+            "$ref": "#/components/schemas/Observation"
+          },
+          "task_catalog": {
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "minItems": 5,
+            "title": "Task Catalog"
+          },
+          "selector_id": {
+            "type": "string",
+            "enum": [
+              "fixed_order",
+              "nearest_feasible",
+              "value_per_cost",
+              "subset_dp"
+            ],
+            "title": "Selector Id"
+          },
+          "budget": {
+            "$ref": "#/components/schemas/BudgetPolicy"
+          },
+          "model": {
+            "$ref": "#/components/schemas/PlanningModel"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "observation",
+          "task_catalog",
+          "selector_id",
+          "budget",
+          "model"
+        ],
+        "title": "DecisionRequest"
+      },
+      "DeferredTask": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Id"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "BUDGET",
+              "UNREACHABLE",
+              "LOWER_VALUE_PLAN",
+              "DATA_UNAVAILABLE"
+            ],
+            "title": "Reason"
+          },
+          "follow_up_state": {
+            "type": "string",
+            "const": "REQUIRES_OPERATOR_REVIEW",
+            "title": "Follow Up State"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "reason",
+          "follow_up_state"
+        ],
+        "title": "DeferredTask"
+      },
+      "EnergyInterval": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "title": "Kind"
+          },
+          "start_s": {
+            "type": "number",
+            "title": "Start S"
+          },
+          "start_position": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Start Position"
+          },
+          "estimated_wh": {
+            "type": "number",
+            "title": "Estimated Wh"
+          },
+          "lower_wh": {
+            "type": "number",
+            "title": "Lower Wh"
+          },
+          "upper_wh": {
+            "type": "number",
+            "title": "Upper Wh"
+          },
+          "interval_scope": {
+            "type": "string",
+            "title": "Interval Scope"
+          },
+          "end_s": {
+            "type": "number",
+            "title": "End S"
+          },
+          "end_position": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "End Position"
+          },
+          "integrated_wh": {
+            "type": "number",
+            "title": "Integrated Wh"
+          },
+          "partial": {
+            "type": "boolean",
+            "title": "Partial"
+          },
+          "covered": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Covered"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "kind",
+          "start_s",
+          "start_position",
+          "estimated_wh",
+          "lower_wh",
+          "upper_wh",
+          "interval_scope",
+          "end_s",
+          "end_position",
+          "integrated_wh",
+          "partial",
+          "covered"
+        ],
+        "title": "EnergyInterval"
+      },
+      "Error": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "Error"
+      },
       "EventInput": {
         "properties": {
           "kind": {
@@ -430,6 +1511,126 @@
         ],
         "title": "EventInput"
       },
+      "EventResponseMetric": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "event_t_s": {
+            "type": "number",
+            "title": "Event T S"
+          },
+          "decision_t_s": {
+            "type": "number",
+            "title": "Decision T S"
+          },
+          "simulated_delay_s": {
+            "type": "number",
+            "title": "Simulated Delay S"
+          },
+          "decision_compute_ms": {
+            "type": "number",
+            "title": "Decision Compute Ms"
+          },
+          "plan_changed": {
+            "type": "boolean",
+            "title": "Plan Changed"
+          },
+          "budget_changed": {
+            "type": "boolean",
+            "title": "Budget Changed"
+          },
+          "decision_index": {
+            "type": "integer",
+            "title": "Decision Index"
+          },
+          "same_state_counterfactual": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Counterfactual"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_id",
+          "event_t_s",
+          "decision_t_s",
+          "simulated_delay_s",
+          "decision_compute_ms",
+          "plan_changed",
+          "budget_changed",
+          "decision_index"
+        ],
+        "title": "EventResponseMetric"
+      },
+      "GridMap": {
+        "properties": {
+          "width": {
+            "type": "integer",
+            "maximum": 256.0,
+            "minimum": 2.0,
+            "title": "Width"
+          },
+          "height": {
+            "type": "integer",
+            "maximum": 256.0,
+            "minimum": 2.0,
+            "title": "Height"
+          },
+          "cell_size_m": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Cell Size M"
+          },
+          "blocked": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Blocked"
+          },
+          "wind_regions": {
+            "items": {
+              "$ref": "#/components/schemas/WindRegion"
+            },
+            "type": "array",
+            "title": "Wind Regions"
+          },
+          "blocked_cell_meaning": {
+            "type": "string",
+            "const": "fixed_altitude_2d_exclusion_area",
+            "title": "Blocked Cell Meaning"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "width",
+          "height",
+          "cell_size_m",
+          "blocked",
+          "wind_regions",
+          "blocked_cell_meaning"
+        ],
+        "title": "GridMap"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -442,6 +1643,1709 @@
         },
         "type": "object",
         "title": "HTTPValidationError"
+      },
+      "Health": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status"
+          },
+          "runtime_version": {
+            "type": "string",
+            "title": "Runtime Version"
+          },
+          "api_version": {
+            "type": "string",
+            "const": "competition-v2-api-0.2",
+            "title": "Api Version"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          },
+          "library_available": {
+            "type": "boolean",
+            "title": "Library Available"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "runtime_version",
+          "api_version",
+          "source",
+          "library_available"
+        ],
+        "title": "Health"
+      },
+      "JsonValue": {},
+      "LegEstimate": {
+        "properties": {
+          "from_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "From Id"
+          },
+          "to_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "To Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PLANNED",
+              "UNREACHABLE"
+            ],
+            "title": "Status"
+          },
+          "path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Path"
+          },
+          "distance_m": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Distance M"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "energy_wh": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Energy Wh"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "from_id",
+          "to_id",
+          "status",
+          "path",
+          "distance_m",
+          "duration_s",
+          "energy_wh",
+          "reason"
+        ],
+        "title": "LegEstimate"
+      },
+      "LiveState": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "RUNNING",
+              "PAUSED",
+              "COMPLETED_RETURNED",
+              "PARTIAL_RETURNED",
+              "REFUSED",
+              "FAILED",
+              "UNAVAILABLE",
+              "CANCELLED"
+            ],
+            "title": "Status"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "speedup": {
+            "type": "number",
+            "title": "Speedup"
+          },
+          "position": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "grid": {
+            "$ref": "#/components/schemas/GridMap"
+          },
+          "base": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Base"
+          },
+          "tasks": {
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "type": "array",
+            "title": "Tasks"
+          },
+          "completed_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Completed Ids"
+          },
+          "path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Path"
+          },
+          "executed_path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Executed Path"
+          },
+          "current_decision": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Decision"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/components/schemas/Decision"
+            },
+            "type": "array",
+            "title": "Decisions"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AppliedEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "response_metrics": {
+            "items": {
+              "$ref": "#/components/schemas/EventResponseMetric"
+            },
+            "type": "array",
+            "title": "Response Metrics"
+          },
+          "pending_replan": {
+            "type": "boolean",
+            "title": "Pending Replan"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          },
+          "runtime_version": {
+            "type": "string",
+            "title": "Runtime Version"
+          },
+          "scenario_label": {
+            "type": "string",
+            "title": "Scenario Label"
+          },
+          "temperature_c": {
+            "type": "number",
+            "title": "Temperature C"
+          },
+          "initial_soc": {
+            "type": "number",
+            "title": "Initial Soc"
+          },
+          "error_profile": {
+            "type": "string",
+            "title": "Error Profile"
+          },
+          "selector_id": {
+            "type": "string",
+            "enum": [
+              "fixed_order",
+              "nearest_feasible",
+              "value_per_cost",
+              "subset_dp"
+            ],
+            "title": "Selector Id"
+          },
+          "budget_mode": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "bounded"
+            ],
+            "title": "Budget Mode"
+          },
+          "queued_manual_events": {
+            "type": "integer",
+            "title": "Queued Manual Events"
+          },
+          "runtime_available": {
+            "type": "boolean",
+            "title": "Runtime Available"
+          },
+          "execution_audit": {
+            "$ref": "#/components/schemas/Audit"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "stage",
+          "t_s",
+          "speedup",
+          "position",
+          "grid",
+          "base",
+          "tasks",
+          "completed_ids",
+          "path",
+          "executed_path",
+          "current_decision",
+          "decisions",
+          "events",
+          "response_metrics",
+          "pending_replan",
+          "summary",
+          "source",
+          "runtime_version",
+          "scenario_label",
+          "temperature_c",
+          "initial_soc",
+          "error_profile",
+          "selector_id",
+          "budget_mode",
+          "queued_manual_events",
+          "runtime_available",
+          "execution_audit"
+        ],
+        "title": "LiveState"
+      },
+      "Metadata": {
+        "properties": {
+          "runtime_version": {
+            "type": "string",
+            "title": "Runtime Version"
+          },
+          "selector_version": {
+            "type": "string",
+            "title": "Selector Version"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          },
+          "curve_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Curve Sha256"
+          },
+          "curve_source": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "type": "object",
+            "title": "Curve Source"
+          },
+          "source_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Source Sha256"
+          },
+          "reference_conditions": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "type": "object",
+            "title": "Reference Conditions"
+          },
+          "seed_usage": {
+            "type": "string",
+            "title": "Seed Usage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "runtime_version",
+          "selector_version",
+          "source",
+          "curve_sha256",
+          "curve_source",
+          "source_sha256",
+          "reference_conditions",
+          "seed_usage"
+        ],
+        "title": "Metadata"
+      },
+      "Observation": {
+        "properties": {
+          "as_of_s": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "As Of S"
+          },
+          "position": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "base": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Base"
+          },
+          "known_map": {
+            "$ref": "#/components/schemas/GridMap"
+          },
+          "known_map_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Known Map Sha256"
+          },
+          "available_wh_estimate": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Available Wh Estimate"
+          },
+          "temperature_c": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Temperature C"
+          },
+          "completed_task_ids": {
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+            },
+            "type": "array",
+            "title": "Completed Task Ids"
+          },
+          "data_status": {
+            "type": "string",
+            "enum": [
+              "AVAILABLE",
+              "UNAVAILABLE"
+            ],
+            "title": "Data Status"
+          },
+          "unavailable_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unavailable Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "as_of_s",
+          "position",
+          "base",
+          "known_map",
+          "known_map_sha256",
+          "available_wh_estimate",
+          "temperature_c",
+          "completed_task_ids",
+          "data_status",
+          "unavailable_reason"
+        ],
+        "title": "Observation"
+      },
+      "ObstacleEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Id"
+          },
+          "at_s": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "At S"
+          },
+          "type": {
+            "type": "string",
+            "const": "obstacle",
+            "title": "Type"
+          },
+          "cells": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Cells"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "at_s",
+          "type",
+          "cells"
+        ],
+        "title": "ObstacleEvent"
+      },
+      "PlanningModel": {
+        "properties": {
+          "airspeed_ms": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Airspeed Ms"
+          },
+          "estimated_power_w": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Estimated Power W"
+          },
+          "curve_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Curve Sha256"
+          },
+          "estimator": {
+            "type": "string",
+            "const": "constant_power_times_current_observed_travel_time",
+            "title": "Estimator"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "airspeed_ms",
+          "estimated_power_w",
+          "curve_sha256",
+          "estimator",
+          "source"
+        ],
+        "title": "PlanningModel"
+      },
+      "Preview": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "RUNNING",
+              "PAUSED",
+              "COMPLETED_RETURNED",
+              "PARTIAL_RETURNED",
+              "REFUSED",
+              "FAILED",
+              "UNAVAILABLE",
+              "CANCELLED"
+            ],
+            "title": "Status"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "speedup": {
+            "type": "number",
+            "title": "Speedup"
+          },
+          "position": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "grid": {
+            "$ref": "#/components/schemas/GridMap"
+          },
+          "base": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Base"
+          },
+          "tasks": {
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "type": "array",
+            "title": "Tasks"
+          },
+          "completed_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Completed Ids"
+          },
+          "path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Path"
+          },
+          "executed_path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Executed Path"
+          },
+          "current_decision": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Decision"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/components/schemas/Decision"
+            },
+            "type": "array",
+            "title": "Decisions"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AppliedEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "response_metrics": {
+            "items": {
+              "$ref": "#/components/schemas/EventResponseMetric"
+            },
+            "type": "array",
+            "title": "Response Metrics"
+          },
+          "pending_replan": {
+            "type": "boolean",
+            "title": "Pending Replan"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          },
+          "runtime_version": {
+            "type": "string",
+            "title": "Runtime Version"
+          },
+          "scenario_label": {
+            "type": "string",
+            "title": "Scenario Label"
+          },
+          "temperature_c": {
+            "type": "number",
+            "title": "Temperature C"
+          },
+          "initial_soc": {
+            "type": "number",
+            "title": "Initial Soc"
+          },
+          "error_profile": {
+            "type": "string",
+            "title": "Error Profile"
+          },
+          "selector_id": {
+            "type": "string",
+            "enum": [
+              "fixed_order",
+              "nearest_feasible",
+              "value_per_cost",
+              "subset_dp"
+            ],
+            "title": "Selector Id"
+          },
+          "budget_mode": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "bounded"
+            ],
+            "title": "Budget Mode"
+          },
+          "queued_manual_events": {
+            "type": "integer",
+            "title": "Queued Manual Events"
+          },
+          "is_preview": {
+            "type": "boolean",
+            "const": true,
+            "title": "Is Preview"
+          },
+          "runtime_available": {
+            "type": "boolean",
+            "const": false,
+            "title": "Runtime Available"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "stage",
+          "t_s",
+          "speedup",
+          "position",
+          "grid",
+          "base",
+          "tasks",
+          "completed_ids",
+          "path",
+          "executed_path",
+          "current_decision",
+          "decisions",
+          "events",
+          "response_metrics",
+          "pending_replan",
+          "summary",
+          "source",
+          "runtime_version",
+          "scenario_label",
+          "temperature_c",
+          "initial_soc",
+          "error_profile",
+          "selector_id",
+          "budget_mode",
+          "queued_manual_events",
+          "is_preview",
+          "runtime_available"
+        ],
+        "title": "Preview"
+      },
+      "QueuedEvent": {
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "title": "Event Id"
+          },
+          "scheduled_at_s": {
+            "type": "number",
+            "title": "Scheduled At S"
+          },
+          "status": {
+            "type": "string",
+            "const": "QUEUED",
+            "title": "Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "event_id",
+          "scheduled_at_s",
+          "status"
+        ],
+        "title": "QueuedEvent"
+      },
+      "RunListItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/RuntimeConfig"
+          },
+          "runtime_available": {
+            "type": "boolean",
+            "title": "Runtime Available"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "summary",
+          "configuration",
+          "runtime_available"
+        ],
+        "title": "RunListItem"
+      },
+      "RuntimeConfig": {
+        "properties": {
+          "runtime_version": {
+            "type": "string",
+            "const": "competition-v2-runtime-0.1",
+            "title": "Runtime Version",
+            "default": "competition-v2-runtime-0.1"
+          },
+          "scenario": {
+            "$ref": "#/components/schemas/Scenario"
+          },
+          "temperature_c": {
+            "type": "number",
+            "title": "Temperature C",
+            "default": -10.0
+          },
+          "initial_soc": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Initial Soc",
+            "default": 0.55
+          },
+          "selector_id": {
+            "type": "string",
+            "enum": [
+              "fixed_order",
+              "nearest_feasible",
+              "value_per_cost",
+              "subset_dp"
+            ],
+            "title": "Selector Id",
+            "default": "subset_dp"
+          },
+          "budget_mode": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "bounded"
+            ],
+            "title": "Budget Mode",
+            "default": "bounded"
+          },
+          "error_profile": {
+            "type": "string",
+            "enum": [
+              "no_added_bias",
+              "joint_within_declared",
+              "joint_outside_declared"
+            ],
+            "title": "Error Profile",
+            "default": "no_added_bias"
+          },
+          "speedup": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Speedup",
+            "default": 20.0
+          },
+          "seed": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 0
+          },
+          "manual_events": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ObstacleEvent"
+                },
+                {
+                  "$ref": "#/components/schemas/WindEvent"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "obstacle": "#/components/schemas/ObstacleEvent",
+                  "wind": "#/components/schemas/WindEvent"
+                }
+              }
+            },
+            "type": "array",
+            "title": "Manual Events",
+            "default": []
+          },
+          "cancel_after_s": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cancel After S"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "scenario"
+        ],
+        "title": "RuntimeConfig"
+      },
+      "Scenario": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Id"
+          },
+          "version": {
+            "type": "string",
+            "enum": [
+              "v2-development-maps-0.3",
+              "v2-heldout-maps-0.1"
+            ],
+            "title": "Version"
+          },
+          "split": {
+            "type": "string",
+            "enum": [
+              "development",
+              "held_out"
+            ],
+            "title": "Split"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "provenance": {
+            "type": "string",
+            "const": "synthetic_software_map_not_a_real_park",
+            "title": "Provenance"
+          },
+          "need_validation": {
+            "type": "string",
+            "const": "PENDING",
+            "title": "Need Validation"
+          },
+          "grid": {
+            "$ref": "#/components/schemas/GridMap"
+          },
+          "base": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Base"
+          },
+          "tasks": {
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "minItems": 5,
+            "title": "Tasks"
+          },
+          "airspeed_ms": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Airspeed Ms"
+          },
+          "fixed_height_m": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Fixed Height M"
+          },
+          "scheduled_events": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ObstacleEvent"
+                },
+                {
+                  "$ref": "#/components/schemas/WindEvent"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "obstacle": "#/components/schemas/ObstacleEvent",
+                  "wind": "#/components/schemas/WindEvent"
+                }
+              }
+            },
+            "type": "array",
+            "title": "Scheduled Events"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "version",
+          "split",
+          "label",
+          "provenance",
+          "need_validation",
+          "grid",
+          "base",
+          "tasks",
+          "airspeed_ms",
+          "fixed_height_m",
+          "scheduled_events"
+        ],
+        "title": "Scenario"
+      },
+      "State": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "RUNNING",
+              "PAUSED",
+              "COMPLETED_RETURNED",
+              "PARTIAL_RETURNED",
+              "REFUSED",
+              "FAILED",
+              "UNAVAILABLE",
+              "CANCELLED"
+            ],
+            "title": "Status"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "speedup": {
+            "type": "number",
+            "title": "Speedup"
+          },
+          "position": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "grid": {
+            "$ref": "#/components/schemas/GridMap"
+          },
+          "base": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Base"
+          },
+          "tasks": {
+            "items": {
+              "$ref": "#/components/schemas/Task"
+            },
+            "type": "array",
+            "title": "Tasks"
+          },
+          "completed_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Completed Ids"
+          },
+          "path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Path"
+          },
+          "executed_path": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Executed Path"
+          },
+          "current_decision": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Decision"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/components/schemas/Decision"
+            },
+            "type": "array",
+            "title": "Decisions"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/AppliedEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "response_metrics": {
+            "items": {
+              "$ref": "#/components/schemas/EventResponseMetric"
+            },
+            "type": "array",
+            "title": "Response Metrics"
+          },
+          "pending_replan": {
+            "type": "boolean",
+            "title": "Pending Replan"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          },
+          "runtime_version": {
+            "type": "string",
+            "title": "Runtime Version"
+          },
+          "scenario_label": {
+            "type": "string",
+            "title": "Scenario Label"
+          },
+          "temperature_c": {
+            "type": "number",
+            "title": "Temperature C"
+          },
+          "initial_soc": {
+            "type": "number",
+            "title": "Initial Soc"
+          },
+          "error_profile": {
+            "type": "string",
+            "title": "Error Profile"
+          },
+          "selector_id": {
+            "type": "string",
+            "enum": [
+              "fixed_order",
+              "nearest_feasible",
+              "value_per_cost",
+              "subset_dp"
+            ],
+            "title": "Selector Id"
+          },
+          "budget_mode": {
+            "type": "string",
+            "enum": [
+              "nominal",
+              "bounded"
+            ],
+            "title": "Budget Mode"
+          },
+          "queued_manual_events": {
+            "type": "integer",
+            "title": "Queued Manual Events"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "stage",
+          "t_s",
+          "speedup",
+          "position",
+          "grid",
+          "base",
+          "tasks",
+          "completed_ids",
+          "path",
+          "executed_path",
+          "current_decision",
+          "decisions",
+          "events",
+          "response_metrics",
+          "pending_replan",
+          "summary",
+          "source",
+          "runtime_version",
+          "scenario_label",
+          "temperature_c",
+          "initial_soc",
+          "error_profile",
+          "selector_id",
+          "budget_mode",
+          "queued_manual_events"
+        ],
+        "title": "State"
+      },
+      "Summary": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "RUNNING",
+              "PAUSED",
+              "COMPLETED_RETURNED",
+              "PARTIAL_RETURNED",
+              "REFUSED",
+              "FAILED",
+              "UNAVAILABLE",
+              "CANCELLED"
+            ],
+            "title": "Status"
+          },
+          "ended_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ended Reason"
+          },
+          "returned": {
+            "type": "boolean",
+            "title": "Returned"
+          },
+          "completed_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Completed Ids"
+          },
+          "completed_count": {
+            "type": "integer",
+            "title": "Completed Count"
+          },
+          "task_count": {
+            "type": "integer",
+            "title": "Task Count"
+          },
+          "raw_value": {
+            "type": "integer",
+            "title": "Raw Value"
+          },
+          "effective_value": {
+            "type": "integer",
+            "title": "Effective Value"
+          },
+          "initial_wh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Initial Wh"
+          },
+          "consumed_wh": {
+            "type": "number",
+            "title": "Consumed Wh"
+          },
+          "remaining_wh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Remaining Wh"
+          },
+          "reserve_wh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reserve Wh"
+          },
+          "reserve_margin_wh": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reserve Margin Wh"
+          },
+          "consumed_ah": {
+            "type": "number",
+            "title": "Consumed Ah"
+          },
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "distance_m": {
+            "type": "number",
+            "title": "Distance M"
+          },
+          "source": {
+            "type": "string",
+            "const": "LOCAL_2D_SIM",
+            "title": "Source"
+          },
+          "real_flight": {
+            "type": "boolean",
+            "const": false,
+            "title": "Real Flight"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "ended_reason",
+          "returned",
+          "completed_ids",
+          "completed_count",
+          "task_count",
+          "raw_value",
+          "effective_value",
+          "initial_wh",
+          "consumed_wh",
+          "remaining_wh",
+          "reserve_wh",
+          "reserve_margin_wh",
+          "consumed_ah",
+          "t_s",
+          "distance_m",
+          "source",
+          "real_flight"
+        ],
+        "title": "Summary"
+      },
+      "Task": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "position": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "value": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Value"
+          },
+          "dwell_s": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Dwell S"
+          },
+          "value_source": {
+            "type": "string",
+            "const": "synthetic_assumption_pending_need_check",
+            "title": "Value Source"
+          },
+          "service_level": {
+            "type": "string",
+            "const": "optional_supplemental_observation",
+            "title": "Service Level"
+          },
+          "action_semantics": {
+            "type": "string",
+            "const": "simulated_dwell_only",
+            "title": "Action Semantics"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "position",
+          "value",
+          "dwell_s",
+          "value_source",
+          "service_level",
+          "action_semantics"
+        ],
+        "title": "Task"
+      },
+      "Telemetry": {
+        "properties": {
+          "t_s": {
+            "type": "number",
+            "title": "T S"
+          },
+          "dt_s": {
+            "type": "number",
+            "title": "Dt S"
+          },
+          "position": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "position_before": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position Before"
+          },
+          "voltage_start_v": {
+            "type": "number",
+            "title": "Voltage Start V"
+          },
+          "voltage_v": {
+            "type": "number",
+            "title": "Voltage V"
+          },
+          "average_voltage_v": {
+            "type": "number",
+            "title": "Average Voltage V"
+          },
+          "current_a": {
+            "type": "number",
+            "title": "Current A"
+          },
+          "consumed_wh": {
+            "type": "number",
+            "title": "Consumed Wh"
+          },
+          "remaining_wh": {
+            "type": "number",
+            "title": "Remaining Wh"
+          },
+          "consumed_ah": {
+            "type": "number",
+            "title": "Consumed Ah"
+          },
+          "groundspeed_ms": {
+            "type": "number",
+            "title": "Groundspeed Ms"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "known_map_sha256": {
+            "type": "string",
+            "title": "Known Map Sha256"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "t_s",
+          "dt_s",
+          "position",
+          "position_before",
+          "voltage_start_v",
+          "voltage_v",
+          "average_voltage_v",
+          "current_a",
+          "consumed_wh",
+          "remaining_wh",
+          "consumed_ah",
+          "groundspeed_ms",
+          "stage",
+          "known_map_sha256"
+        ],
+        "title": "Telemetry"
       },
       "ValidationError": {
         "properties": {
@@ -482,6 +3386,104 @@
           "type"
         ],
         "title": "ValidationError"
+      },
+      "WindEvent": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Id"
+          },
+          "at_s": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "At S"
+          },
+          "type": {
+            "type": "string",
+            "const": "wind",
+            "title": "Type"
+          },
+          "region_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Region Id"
+          },
+          "vector": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Vector"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "at_s",
+          "type",
+          "region_id",
+          "vector"
+        ],
+        "title": "WindEvent"
+      },
+      "WindRegion": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$",
+            "title": "Id"
+          },
+          "x_min": {
+            "type": "integer",
+            "title": "X Min"
+          },
+          "x_max": {
+            "type": "integer",
+            "title": "X Max"
+          },
+          "y_min": {
+            "type": "integer",
+            "title": "Y Min"
+          },
+          "y_max": {
+            "type": "integer",
+            "title": "Y Max"
+          },
+          "vector": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Vector"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "x_min",
+          "x_max",
+          "y_min",
+          "y_max",
+          "vector"
+        ],
+        "title": "WindRegion"
       }
     }
   }

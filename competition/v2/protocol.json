@@ -157,6 +157,10 @@
     {
       "date": "2026-10-29",
       "change": "Publish October 28 portable-package verification and matching backup recording. Freeze current UI work by user request; export actual backend OpenAPI snapshot and audit evidence. Windows/human acceptance and external physical validity remain unverified."
+    },
+    {
+      "date": "2026-10-30",
+      "change": "Close backend API response schemas, durable idempotent create/replay, fail-closed delivery manifest checks and UTF-8 launcher fixes. 102 v2 and 31 legacy tests passed, new clean offline package HTTP checks passed; frozen executor/UI untouched. Actual Windows/target computer remains pending."
     }
   ],
   "public_need_records": [
@@ -330,5 +334,27 @@
     "status": "UI_REDESIGN_DEFERRED_BY_USER",
     "current_ui": "technical_verification_entry",
     "backend_handoff": "BACKEND_HANDOFF.md"
+  },
+  "backend_engineering_acceptance": {
+    "closed_on": "2026-10-30",
+    "verified_on": "2026-10-29",
+    "api_version": "competition-v2-api-0.2",
+    "runtime_version": "competition-v2-runtime-0.1",
+    "v2_tests": 102,
+    "legacy_tests": 31,
+    "clean_offline_package_passed": true,
+    "http_restart_replay_and_request_deduplication": true,
+    "request_identity_and_run_atomic_transaction": true,
+    "all_api_success_responses_typed": 9,
+    "corrupt_or_missing_package_manifest_fails_closed": true,
+    "frozen_execution_sources_unchanged": true,
+    "frontend_html_unchanged": true,
+    "windows_runtime_verified": false,
+    "human_projection_checked": false,
+    "video_policy": "October 28 recording remains with its original release; backend-only new release is not re-recorded",
+    "remaining": [
+      "actual_target_computer_acceptance"
+    ],
+    "release_url": "https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030"
   }
 }

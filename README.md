@@ -6,6 +6,8 @@
 
 寒域智航把这个过程做成了可以操作、解释和复查的本机软件：**出发前安排，途中按变化调整，回来后核对结果。** 当前重点是4C参赛开发版，使用合成的黑龙江冰雪小镇场景，模拟一架无人机对八个可延期地点进行补充巡看。
 
+**10月30日后台更新：** [下载新版技术包](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030)。补齐响应合同、跨重启请求去重和严格验包；102项v2检查、31项旧版回归及新包离线服务检查通过。当前页面未改。10月28日视频与原版程序仍保留在下方历史发布中。
+
 [快速试用](#快速试用) · [五步操作说明](competition/v2/TRY_IT.md) · [实验结果与证据](competition/v2/evidence/README.md) · [技术余项](competition/v2/TECHNICAL_REMAINING.md)
 
 **10月29日发布（10月28日验证）：** [下载独立离线演示包与90秒备用视频](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028)。已在Apple芯片Mac的全新环境中完成离线安装、87项检查、服务重启与复演；Windows目标电脑验收仍待完成。见[本轮交付记录](competition/v2/DAY28_DELIVERY.md)。当前界面保留作技术验证入口，后续前端重写可使用[后端接口交接](competition/v2/BACKEND_HANDOFF.md)。

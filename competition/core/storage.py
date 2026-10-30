@@ -16,14 +16,20 @@ class RunStore:
         self.connection.execute("CREATE TABLE IF NOT EXISTS runs (id TEXT PRIMARY KEY, status TEXT NOT NULL, snapshot TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)")
         self.connection.execute("CREATE TABLE IF NOT EXISTS event_log (run_id TEXT NOT NULL, seq INTEGER NOT NULL, payload TEXT NOT NULL, PRIMARY KEY(run_id,seq))")
         self.connection.execute("CREATE TABLE IF NOT EXISTS execution_audit (run_id TEXT NOT NULL, seq INTEGER NOT NULL, payload TEXT NOT NULL, PRIMARY KEY(run_id,seq))")
+        self.connection.execute("CREATE TABLE IF NOT EXISTS creation_requests (request_key TEXT PRIMARY KEY, request_sha256 TEXT NOT NULL, run_id TEXT NOT NULL)")
         self.connection.commit()
 
-    def save(self, run, audit_actions=None):
+    def save(self, run, audit_actions=None, creation_request=None):
         # Execution actions belong to API provenance, not the deterministic
         # simulator export or its result_sha256.
         snapshot = run.export()
         encoded = json.dumps(snapshot, ensure_ascii=False, allow_nan=False, separators=(",", ":"))
         with self.lock, self.connection:
+            # Persist request identity and its run in the SAME transaction.
+            # A lost HTTP response can then be retried after process restart.
+            if creation_request is not None:
+                key, request_sha256 = creation_request
+                self.connection.execute("INSERT INTO creation_requests VALUES(?,?,?)", (key, request_sha256, run.id))
             self.connection.execute("INSERT INTO runs(id,status,snapshot) VALUES(?,?,?) ON CONFLICT(id) DO UPDATE SET status=excluded.status,snapshot=excluded.snapshot,updated_at=CURRENT_TIMESTAMP", (run.id, run.status, encoded))
             for i, event in enumerate(snapshot["events"]):
                 payload = json.dumps(event, ensure_ascii=False, allow_nan=False, separators=(",", ":"))
@@ -38,6 +44,10 @@ class RunStore:
                            "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds")}
                 self.connection.execute("INSERT INTO execution_audit VALUES(?,?,?)",
                                         (run.id, seq, json.dumps(payload, ensure_ascii=False, allow_nan=False, separators=(",", ":"))))
+
+    def creation_request(self, key):
+        with self.lock:
+            return self.connection.execute("SELECT request_sha256,run_id FROM creation_requests WHERE request_key=?", (key,)).fetchone()
 
     def execution_audit(self, run_id):
         with self.lock:
