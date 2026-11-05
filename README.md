@@ -6,7 +6,7 @@
 
 寒域智航把这个过程做成了可以操作、解释和复查的本机软件：**出发前安排，途中按变化调整，回来后核对结果。** 当前重点是4C参赛开发版，使用合成的黑龙江冰雪小镇场景，模拟一架无人机对八个可延期地点进行补充巡看。
 
-**10月30日后台更新：** [下载新版技术包](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030)。补齐响应合同、跨重启请求去重和严格验包；102项v2检查、31项旧版回归及新包离线服务检查通过。当前页面未改。10月28日视频与原版程序仍保留在下方历史发布中。
+**当前可下载版本**为 11 月 5 日公开发布的 `v2-backend-20261030`。已有 Apple 芯片 Mac 的离线安装和运行记录，Windows x86-64 已提供离线依赖和启动脚本，实机验收待完成。[下载运行包](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261030/hanyu-zhihang-v2-backend-20261030.zip) · [发布记录与校验文件](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030)
 
 [快速试用](#快速试用) · [五步操作说明](competition/v2/TRY_IT.md) · [实验结果与证据](competition/v2/evidence/README.md) · [技术余项](competition/v2/TECHNICAL_REMAINING.md)
 
@@ -14,7 +14,7 @@
 
 ![实际程序的讲解模式：左侧为执行轨迹，右侧解释决策，下方保留任务与事件记录](competition/v2/presentation/assets/workbench.png)
 
-*当前交付版的实际程序截图：合成场景、20倍仿真播放，与备用录屏对应同一轮运行。*
+*截图取自 10 月 28 日版，与该版备用录屏对应同一轮运行。*
 
 ## 可以做什么
 
@@ -31,7 +31,18 @@
 
 ## 快速试用
 
-需要 **Python 3.12**。下面的源码克隆方式首次安装依赖需要联网；Release独立包带离线依赖，Python需预装。
+### 下载运行包
+
+1. [下载运行 ZIP](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261030/hanyu-zhihang-v2-backend-20261030.zip)，完整解压到新目录。
+2. 预装 **Python 3.12**。Mac 在终端用 `python3.12 --version` 确认。Windows 安装时勾选 Python Launcher，用 `py -3.12 --version` 确认。包内依赖覆盖 Apple 芯片 Mac 和 Windows x86-64。
+3. 在解压目录双击 Mac 的 `启动寒域智航.command` 或 Windows 的 `启动Windows.bat`。首次启动会从包内安装依赖。如果网页没有自动打开，手动访问 [本机演示页面](http://127.0.0.1:8094/)。
+4. 保持启动窗口开着。在默认的「前方受阻 · 任务调整」情景中点「开始巡看」，观察预设禁入区出现后的调整。任务结束后点「导出完整记录」，也可以用「按原配置复演」从头重跑。
+
+停止服务时在启动窗口按 `Ctrl+C`。离线包的运行记录保存在解压目录的 `runtime/missions-v2.sqlite3`。换电脑时用原 ZIP 重新解压并安装依赖。[验包、历史记录与排错说明](competition/v2/PORTABLE_README.md)
+
+### 从源码运行
+
+源码方式也需要 Python 3.12，首次安装项目依赖需要联网。
 
 ```bash
 git clone https://github.com/Am1cus/hanyu-zhihang.git
