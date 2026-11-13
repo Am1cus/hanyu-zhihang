@@ -284,7 +284,6 @@
     "comparator_fraction": 0.2
   },
   "technical_remaining": [
-    "publication_and_package_acceptance_recorded_separately",
     "external_acceptance_paused_by_user"
   ],
   "technical_checklist": "TECHNICAL_REMAINING.md",
@@ -462,9 +461,13 @@
   },
   "current_release": {
     "tag": "v2-backend-20261113",
-    "source_commit": "PACKAGE_MANIFEST.json:git_head_at_build",
-    "mac_acceptance": "release attachment: backend-verification-20261113.json",
+    "source_commit": "3b77dc50c06324b001eac24a72eb18d9c7df2c5d",
+    "mac_acceptance": "evidence/backend-verification-20261113.json",
     "candidate_in_default_package": false,
-    "windows_verified": false
+    "windows_verified": false,
+    "zip_sha256": "6faa9dd918e64b09a9ef63a664c55f5da5cbeca17cbb441c8c38604464e037f1",
+    "mac_verified_on": "2026-11-13",
+    "clean_offline_install_passed": true,
+    "package_v2_tests": 113
   }
 }

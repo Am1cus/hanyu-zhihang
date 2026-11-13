@@ -57,3 +57,7 @@
 统计误用检查覆盖11/11：总体与事件/偏差分组同时保留；不从合成均值推断真实个体；地图抽样受人为生成范围限制；不按共同成功或返回筛选；条件比例不是现实发生率；原极端反例仅作开发；失败、拒绝和全部基线均保留；不只报告胜出条件；执行前本地锁定但没有外部预注册时间戳；模型内比较不能外推真实飞行因果；观测严格先于候选决策，真实效果仍待验证。未做显著性检验，重复条件不当作独立实飞样本。
 
 Material Passport：academic-research-suite / experiment-agent；run + validate；2026-11-13；VERIFIED限上述执行与复演范围；`technical-next-v1`。真实飞行记录为0。
+
+## 本轮交付
+
+运行包`v2-backend-20261113`对应程序提交`3b77dc50c06324b001eac24a72eb18d9c7df2c5d`，在中文路径新解压、全新Python 3.12环境中从包内依赖离线安装，113项v2检查和实际HTTP重启复演通过。[包验收报告](evidence/backend-verification-20261113.json)。ZIP SHA-256为`6faa9dd918e64b09a9ef63a664c55f5da5cbeca17cbb441c8c38604464e037f1`。
