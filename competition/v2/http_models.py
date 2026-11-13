@@ -20,7 +20,7 @@ class Response(BaseModel):
 class Health(Response):
     status: Literal['ok']
     runtime_version: str
-    api_version: Literal['competition-v2-api-0.2']
+    api_version: Literal['competition-v2-api-0.3']
     source: Literal['LOCAL_2D_SIM']
     library_available: bool
 
@@ -153,6 +153,15 @@ class RunListItem(Response):
     summary: Summary
     configuration: RuntimeConfig
     runtime_available: bool
+
+
+class HistoryPage(Response):
+    items: list[RunListItem]
+    next_cursor: str | None
+
+
+class HistoryInputError(Response):
+    detail: str | list[dict[str, JsonValue]]
 
 
 class QueuedEvent(Response):

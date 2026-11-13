@@ -2,6 +2,8 @@
 
 当前实现进度（2026-10-23）：四种任务选择器、参考仿真与动态调整已接通；10/22已完成1,152项固定条件软件比较，见[DAY22.md](DAY22.md)。下文保留10月9日设计及其后历史修订；其中“待实现”“执行为0”等均为当时状态，不替代当前交付记录。访谈仍暂缓，真实飞行验证为0。
 
+2026-11-11 补充了[实际调用路径](BACKEND_HANDOFF.md#从网页跟到导出)、[冻结案例读法](#用一份冻结档案读计算)和[技术来源与贡献](#技术来源与贡献记录)。
+
 ## Material Passport
 
 - Origin Skill: academic-research-suite / experiment-agent
@@ -143,4 +145,70 @@ S 为基地；普通点 A/B 各 1 分，重要点 C/D 各 5 分，E 为 3 分。
 - Vansteenwegen 等，2011，*The orienteering problem: a survey*。[作者机构记录](https://biblio.ugent.be/publication/1111434)，DOI 10.1016/j.ejor.2010.03.045。
 - Held 与 Karp，1962，*A Dynamic Programming Approach to Sequencing Problems*。[原始出版页面](https://epubs.siam.org/doi/10.1137/0110015)。
 
-现有 P42A 来源和参考工况延续 v1；正式方案要明确模型使用与统计边界。学生实际负责需求、规格核对、案例复算、失败归因与代码理解，助手参与代码和材料的事实按当届规则如实记录。
+现有 P42A 来源和参考工况延续 v1。需求、规格核对、案例复算、失败归因与代码理解属于当时的学生分工计划。已有交付与工具辅助见下方记录。
+
+## 用一份冻结档案读计算
+
+用 10 月 22 日正式批次的 C0104 串起电量、航段和任务选择。输入为开放五点地图、−10℃、初始剩余 Ah 比例 55%、计入估算误差、无额外注入偏差。出发时的输入和结果在原档 `runs/C0104.json.gz` 的 `decisions[0]`，完成 C 后的重算在 `decisions[2]`。原档从工作区 `output/4C/v2/evaluation-20261022/` 进入。[完整案例](CASE_EVIDENCE_20261111.md)
+
+### Ah 与 Wh
+
+Ah 表示电荷量，仿真在一小段时间内消耗的 Ah 为 `电流 × 秒数 / 3600`。Wh 表示能量，还要乘上该段的平均电压。C0104 的首个 0.5 秒遥测段，电流为 4.2 A，四串组平均电压约 14.206 V，得到约 0.000583 Ah 和 0.008287 Wh。用 `telemetry` 的电压、电流和时间可复算全程耗能。[遥测记录 RuntimeRun._record](runtime.py)
+
+在 −10℃，参考曲线满容量约 3.938 Ah。55% 剩余对应约 2.166 Ah，从曲线上已放出的 1.772 Ah 积分到截止点，得到初始剩余能量 28.407 Wh。曲线电压随已放出的 Ah 变化，初始剩余 Wh 由该段积分得到。[CellCurve.energy_between 与 CurveLibrary.curve](../core/curves.py)
+
+### 固定储备与有向返程
+
+23℃ 参考满电能量为 60.317 Wh，默认储备取其中的 20%，约 12.063 Wh。C0104 的 −10℃ 初始可用电量变化，储备仍用 23℃ 的分母。规划器在本例把 28.407 Wh 乘 0.9，用 25.567 Wh 作为预算判断的可用量。[scenarios.initial_request](scenarios.py) · [planning_inputs.assess_order](planning_inputs.py)
+
+基地到 C 和 C 回基地都是 1,040 米，按当时的风场分别估算 216.000 和 202.667 秒。估算器以 70.56 W 乘航行时间，分别得到 4.234 和 3.972 Wh。风在行进方向上的投影会改变地速，所以航段表分别查 `(BASE, C)` 与 `(C, BASE)`。这里的 70.56 W 来自四串、每节 4.2 V 与 4.2 A 的估算设定，执行耗能使用参考曲线积分。[core.planning.ground_speed 与 plan](../core/planning.py) · [planning_inputs.build_leg_table](planning_inputs.py)
+
+### 子集动态规划如何选择任务
+
+`_subset_order()` 用「已选任务的位掩码、最后一个任务」表示状态。若两条路径选了同一批任务且停在同一点，后续使用同一张有向航段表，代码保留估算前缀耗能较小的一条，再向剩余任务扩展。候选顺序要加上停留、最后一点返程和储备才能判断可行。可行候选先比任务总权重，同权重再比路线估算耗能，最后按任务 ID 顺序处理平局。[selectors._subset_order](selectors.py)
+
+在 C0104 出发快照，`A → C → E → B` 的任务权重为 14。航行、停留和返程估算分别为 9.198、0.784、1.568 Wh。三项相加后乘 1.1，再加 12.063 Wh 储备，需求约 24.769 Wh，余量约 0.798 Wh。若在这一顺序中加入 D，需求约 27.140 Wh，超过 25.567 Wh 可用预算。独立枚举检查了 326 种有序子集，其中 50 种可行，得到相同的最优顺序。完成 C 后的快照只剩三个任务，D、E、B 的预算余量变为约 0.026 Wh，运行器随后将 D 纳入安排。两次求解都针对各自时刻的已知状态。[独立枚举 reference.brute_force_reference](reference.py) · [案例原始字段](CASE_EVIDENCE_20261111.md#正常巡看在途中重新取舍)
+
+复查时从 LSTM 工作区进入冻结源码目录，用已有 Python 3.12 环境读取原档的两个决策请求。下列命令只重算静态决策和预算，直接在终端打印结果。
+
+```bash
+cd output/4C/v2/evaluation-20261022/source-snapshot
+PYTHONDONTWRITEBYTECODE=1 ../../../../../learn/.competition-venv/bin/python - <<'PY'
+import gzip
+import json
+from competition.v2.contracts import DecisionRequest
+from competition.v2.planning_inputs import build_leg_table
+from competition.v2.reference import brute_force_reference
+from competition.v2.selectors import decide
+
+with gzip.open("../runs/C0104.json.gz", "rt", encoding="utf-8") as file:
+    archive = json.load(file)
+for index in (0, 2):
+    item = archive["decisions"][index]
+    request = DecisionRequest.model_validate(item["request"])
+    result = decide(request)
+    reference = brute_force_reference(request, build_leg_table(request))
+    assert list(result.ordered_task_ids) == reference["best_order"]
+    assert list(result.ordered_task_ids) == item["record"]["ordered_task_ids"]
+    print(index, list(result.ordered_task_ids), round(result.budget.margin_wh, 3))
+PY
+```
+
+## 技术来源与贡献记录
+
+核对日期为 2026-11-11。版本数字来自仓库锁定文件及本机环境的包元数据。
+
+| 项目 | 来源及本项目用法 |
+|---|---|
+| 低温放电曲线 | Molicel INR-21700-P42A 数据表 v1.7 的放电温度特性图，采用 23℃ 充电、4.2 A 恒流放电、2.5 V 截止的参考工况。程序读取项目提取的 −20、0、23℃ 节点，节点间插值。理想 4S1P、电芯与环境同温属于仿真假设。[厂家数据表](https://www.molicel.com/wp-content/uploads/INR21700P42A_1.7_Product-Data-Sheet-of-INR-21700-P42A-80092.pdf) · [曲线数据](../data/p42a_reference.json) · [参数来源表](data/parameter_sources.json) |
+| 航段搜索 | Hart、Nilsson、Raphael 1968 年论文是 A* 的经典来源。项目在四邻域网格上计算有向边代价，将当前风场、障碍与参考功率纳入搜索。[IEEE 原始出版记录](https://ieeexplore.ieee.org/abstract/document/4082128/authors) · [实现](../core/planning.py) |
+| 任务组合 | Held 与 Karp 1962 年论文提供排序问题的经典动态规划背景。本项目以可选任务权重、能量和返程储备构造当前快照的子集选择。小规模独立枚举用于核对可行性、任务价值和估算代价。[SIAM 原始出版记录](https://epubs.siam.org/doi/abs/10.1137/0110015) · [选择器核对](DAY13.md) |
+| Web 服务 | FastAPI 0.142.2 提供路由与接口模式，Pydantic 2.13.5 校验请求和响应，Starlette 1.7.0 提供底层 ASGI 应用能力，Uvicorn 0.54.0 启动本机服务。[FastAPI 文档](https://fastapi.tiangolo.com/?featured_on=pythonbytes) · [Pydantic 文档](https://pydantic.dev/docs/) · [Starlette 文档](https://starlette.dev/) · [Uvicorn 文档](https://uvicorn.dev/) |
+| 存档与检查 | SQLite 由 Python 标准库 `sqlite3` 接入。本地接口测试使用 FastAPI TestClient 和锁定的 HTTPX 0.28.1，实际 HTTP 验收运行 Uvicorn 服务。完整版本及间接依赖见锁定文件，制图依赖另列。[存储实现](../core/storage.py) · [FastAPI 测试文档](https://fastapi.tiangolo.com/tutorial/testing/) · [依赖锁](requirements-lock.txt) · [制图依赖](requirements-report.txt) |
+
+项目实现的工作集中在把任务选择、参考能量、动态调整和可复查执行放进同一套本机仿真。地图、权重、风场、储备比例和误差范围按项目参数表登记，报告按声明的合成条件解释结果。[验证范围](EVIDENCE_REVIEW_20261029.md)
+
+| 贡献 | 可核实记录 |
+|---|---|
+| 用户与团队 | 用户确认了应用背景、本机仿真范围和本阶段任务优先级。2026-10-04 有组员提交的早期 Windows 操作截图和四份 JSON，已核对附件及结果内容。操作记录归属当时的版本。学生代码理解、独立讲解和其他个人贡献等有对应记录后登记。[组员交付摘要](../STUDENT_TASKS.md#本次已核验的组员交付) |
+| AI 辅助 | Codex 参与公开资料整理、代码实现与修复、软件测试、档案校验和技术文档。当前有后端缺陷复现与修复记录、三组案例复算和本次源码说明。运行时的任务选择由本地代码和参考参数计算。[后端审查](BACKEND_REVIEW_20261105.md) · [案例复查](CASE_EVIDENCE_20261111.md) |

@@ -6,11 +6,11 @@
 
 寒域智航把这个过程做成了可以操作、解释和复查的本机软件：**出发前安排，途中按变化调整，回来后核对结果。** 当前重点是4C参赛开发版，使用合成的黑龙江冰雪小镇场景，模拟一架无人机对八个可延期地点进行补充巡看。
 
-**当前可下载版本**为 11 月 5 日公开发布的 `v2-backend-20261030`。已有 Apple 芯片 Mac 的离线安装和运行记录，Windows x86-64 已提供离线依赖和启动脚本，实机验收待完成。[下载运行包](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261030/hanyu-zhihang-v2-backend-20261030.zip) · [发布记录与校验文件](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030)
+**当前可下载版本**为 11 月 13 日版 `v2-backend-20261113`。已有 Apple 芯片 Mac 的离线安装和运行记录，Windows x86-64 已提供离线依赖和启动脚本，实机验收待完成。[下载运行包](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261113/hanyu-zhihang-v2-backend-20261113.zip) · [发布记录与校验文件](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261113)
 
-[快速试用](#快速试用) · [五步操作说明](competition/v2/TRY_IT.md) · [实验结果与证据](competition/v2/evidence/README.md) · [技术余项](competition/v2/TECHNICAL_REMAINING.md)
+[快速试用](#快速试用) · [五步操作说明](competition/v2/TRY_IT.md) · [实验结果与证据](competition/v2/evidence/README.md) · [当前状态与电脑端待办](competition/v2/TECHNICAL_REMAINING.md)
 
-**10月29日发布（10月28日验证）：** [下载独立离线演示包与90秒备用视频](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028)。已在Apple芯片Mac的全新环境中完成离线安装、87项检查、服务重启与复演；Windows目标电脑验收仍待完成。见[本轮交付记录](competition/v2/DAY28_DELIVERY.md)。当前界面保留作技术验证入口，后续前端重写可使用[后端接口交接](competition/v2/BACKEND_HANDOFF.md)。
+90 秒实际软件录屏与 10 月 28 日验证的程序一起保存在[历史发布页](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028)。
 
 ![实际程序的讲解模式：左侧为执行轨迹，右侧解释决策，下方保留任务与事件记录](competition/v2/presentation/assets/workbench.png)
 
@@ -33,7 +33,7 @@
 
 ### 下载运行包
 
-1. [下载运行 ZIP](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261030/hanyu-zhihang-v2-backend-20261030.zip)，完整解压到新目录。
+1. [下载运行 ZIP](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261113/hanyu-zhihang-v2-backend-20261113.zip)，完整解压到新目录。
 2. 预装 **Python 3.12**。Mac 在终端用 `python3.12 --version` 确认。Windows 安装时勾选 Python Launcher，用 `py -3.12 --version` 确认。包内依赖覆盖 Apple 芯片 Mac 和 Windows x86-64。
 3. 在解压目录双击 Mac 的 `启动寒域智航.command` 或 Windows 的 `启动Windows.bat`。首次启动会从包内安装依赖。如果网页没有自动打开，手动访问 [本机演示页面](http://127.0.0.1:8094/)。
 4. 保持启动窗口开着。在默认的「前方受阻 · 任务调整」情景中点「开始巡看」，观察预设禁入区出现后的调整。任务结束后点「导出完整记录」，也可以用「按原配置复演」从头重跑。
@@ -71,14 +71,12 @@ zsh competition/v2/start_v2.command
 
 ## 已完成的验证
 
-以下是截至2026年10月27日的**软件验证**，均保留失败与不占优结果：
-
 | 检查 | 结果与范围 |
 |---|---|
-| 软件检查 | 87项通过，覆盖算法、预算、执行、接口、复演与启动入口 |
+| 发布包检查 | 本轮源码通过113项v2、31项旧版回归、7项研究检查及HTTP重启复演；运行包验收报告随发布附件提供 |
 | 固定条件比较 | 4张合成地图、3个温度、4类情境、3种估计偏差、4种方法、2种预算规则，共1,152项执行；抽取24项复演一致 |
 | 储备比例补充比较 | 10% / 20% / 30%，共3,456项；其中1,152项是原20%设置的复核，不能计作新增独立样本 |
-| 浏览器操作 | 正常、强风、障碍三轮完整演示，以及刷新、断连、超时、导出和服务重启检查 |
+| 浏览器操作 | 10 月 27 日完成正常、强风、障碍三轮演示，以及刷新、断连、超时、导出和服务重启检查 |
 
 统筹安排并非每次都胜出：在计入估计误差的144组同条件比较中，相对就近安排为**38组更好、96组持平、10组更差**；低预算分组仍有弱项。具体指标、全部逐项统计和解释边界见[公开证据索引](competition/v2/evidence/README.md)。
 
@@ -98,13 +96,14 @@ zsh competition/v2/start_v2.command
 
 低温模型使用指定电芯的4.2A恒流参考条件和理想4S1P虚拟组，不模拟自热、老化、高倍率或真实飞控。固定储备比例和估计误差范围是仿真策略参数，不是真机安全标准。当前真实飞行验证为0，结果不能直接用于实际无人机安全决策。
 
-独立交付包与同版备用视频已提供；Windows目标电脑验证、实际投影播放和真人答辩演练仍待完成。学生实际贡献、调研和工具使用按真实记录填写，不把自动测试计作真人试用。
+11月13日完成终态释放、完整历史分页、故障恢复及新场景验证。低预算候选完成1944条独立条件执行，保持研究版本，未替换默认算法。[本轮技术结果](competition/v2/TECHNICAL_NEXT_20261113.md)。Windows 与比赛电脑验收、访谈和正式答辩准备暂缓。[当前状态与电脑端待办](competition/v2/TECHNICAL_REMAINING.md)
 
 ## 仓库导航
 
 ```text
 competition/v2/       当前4C开发版：决策、运行、界面、测试及证据摘要
 competition/core/    复用的参考曲线、路径规划与存储
+competition/research_v2/  独立预算候选及冻结实验工具，不进入默认运行包
 competition/data/    带来源的电芯参考参数
 competition/web/     v1的Vue界面，保留历史
 Phase1/ … Phase5/    数据、LSTM、AirSim与离线规划研究过程

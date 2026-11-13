@@ -1,5 +1,11 @@
 # 公开证据与结果说明
 
+11月13日新增：[本轮技术结果](../TECHNICAL_NEXT_20261113.md)、[工程与研究摘要](technical-next-20261113.json)、[候选确认报告](candidate-confirmation-20261113.json)、[全部1944条统计](candidate-confirmation-20261113.csv)。候选通过预定继续验证门槛，默认算法未替换。包内文件不能包含其自身事后验收，Mac新包报告另作为发布附件提供。
+
+11 月 11 日从正式批次复查三组配对，共六份原始档案。逐案说明记录了正常任务取舍、动态禁入区调整和低预算储备不足的决策、遥测与得分。[三组典型仿真记录](../CASE_EVIDENCE_20261111.md)
+
+11 月 5 日复核公开后台包。Apple 芯片 Mac 上通过文件校验、依赖检查、102 项 v2 检查和 HTTP 重启查档、复演及去重。完整软件日志保存在团队本地 `output/4C/v2/technical-20261105/Mac验收/`。[验包报告](backend-verification-20261105.json) · [HTTP 报告](backend-service-20261105.json) · [当前状态](../TECHNICAL_REMAINING.md)
+
 10/30后台工程收尾：[状态](backend-closure-20261030.json)、[独立包检查](backend-verification-20261029.json)、[HTTP重启/复演/去重](backend-service-20261029.json)。102项v2及31项旧版回归通过，Windows实机仍未验证。
 
 本目录发布已有软件实验的机器报告和**全部逐项统计**，不是精选成功案例。没有真实飞行数据。发布日为2026年10月28日；各报告保留原验证日期。

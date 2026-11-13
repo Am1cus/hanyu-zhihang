@@ -1,0 +1,677 @@
+{
+  "verified_on": "2026-11-13",
+  "api_version": "competition-v2-api-0.3",
+  "long_running": {
+    "passed": true,
+    "cycles": 200,
+    "history_records": 1000,
+    "pages": 10,
+    "history_exactly_once": true,
+    "terminal_resident_after_commit": 0,
+    "groups": [
+      {
+        "cycles": 50,
+        "resident_runs": 0,
+        "traced_live_bytes": 1010786,
+        "traced_peak_bytes": 1946085,
+        "process_maxrss_platform_units": 53526528,
+        "cycle_ms_median": 310.0078540010145,
+        "cycle_ms_p95": 401.3702080119401
+      },
+      {
+        "cycles": 100,
+        "resident_runs": 0,
+        "traced_live_bytes": 1053450,
+        "traced_peak_bytes": 1978358,
+        "process_maxrss_platform_units": 53592064,
+        "cycle_ms_median": 306.8235209939303,
+        "cycle_ms_p95": 342.8746669960674
+      },
+      {
+        "cycles": 150,
+        "resident_runs": 0,
+        "traced_live_bytes": 1094254,
+        "traced_peak_bytes": 2004253,
+        "process_maxrss_platform_units": 53657600,
+        "cycle_ms_median": 306.66587498853914,
+        "cycle_ms_p95": 330.73379201232456
+      },
+      {
+        "cycles": 200,
+        "resident_runs": 0,
+        "traced_live_bytes": 1104799,
+        "traced_peak_bytes": 2015127,
+        "process_maxrss_platform_units": 53755904,
+        "cycle_ms_median": 306.0836249933345,
+        "cycle_ms_p95": 332.8603749978356
+      }
+    ],
+    "history_ms_median": 45.54531199391931,
+    "history_ms_max": 87.85066602285951,
+    "integrity_check": "ok",
+    "scope": "single-process local test; paused and unsaved runs are retained",
+    "rss_note": "ru_maxrss is a process high-water mark, not evidence of leaked live objects"
+  },
+  "recovery": {
+    "passed": true,
+    "checks": {
+      "committed_checkpoint_survives_sigkill": true,
+      "lost_response_retry_after_restart_exactly_once": true,
+      "persistent_failure_terminal_retry_and_eviction": true,
+      "interleaved_actions_and_duplicate_requests": true,
+      "database_integrity_and_restart": true
+    },
+    "crash_saved_t_s": 1.0,
+    "scope": "owned local subprocess and isolated SQLite only; latest committed checkpoint, no resume after restart"
+  },
+  "correctness": {
+    "passed": true,
+    "maps": 32,
+    "task_counts": {
+      "5": 16,
+      "8": 16
+    },
+    "static_decisions": 64,
+    "directed_path_checks": 4768,
+    "budget_boundary_checks": 192,
+    "dynamic_executions": 192,
+    "statuses": {
+      "COMPLETED_RETURNED": 10,
+      "PARTIAL_RETURNED": 103,
+      "FAILED": 33,
+      "REFUSED": 46
+    }
+  },
+  "candidate_confirmation": {
+    "phase": "confirmation",
+    "execution_complete": true,
+    "executions": 1944,
+    "conditions": 648,
+    "elapsed_s": 485.4764937089931,
+    "by_policy": {
+      "subset_dp": {
+        "n": 648,
+        "worker_errors": 0,
+        "reserve_shortfall_returned": 121,
+        "not_returned": 67,
+        "refused": 54,
+        "departed_not_returned": 13,
+        "mean_effective_score": 44.702397779739826,
+        "mean_completed_count": 3.4228395061728394,
+        "mean_consumed_wh_valid_runs": 7.932250876925155,
+        "decision_ms_median": 6.252604012843221,
+        "decision_ms_p95": 26.80245798546821,
+        "statuses": {
+          "PARTIAL_RETURNED": 447,
+          "COMPLETED_RETURNED": 134,
+          "FAILED": 13,
+          "REFUSED": 54
+        }
+      },
+      "adaptive_subset_dp": {
+        "n": 648,
+        "worker_errors": 0,
+        "reserve_shortfall_returned": 114,
+        "not_returned": 59,
+        "refused": 54,
+        "departed_not_returned": 5,
+        "mean_effective_score": 46.33073862247696,
+        "mean_completed_count": 3.4058641975308643,
+        "mean_consumed_wh_valid_runs": 7.872821612325747,
+        "decision_ms_median": 6.323915993561968,
+        "decision_ms_p95": 27.01545800664462,
+        "statuses": {
+          "PARTIAL_RETURNED": 460,
+          "COMPLETED_RETURNED": 129,
+          "FAILED": 5,
+          "REFUSED": 54
+        }
+      },
+      "value_per_cost": {
+        "n": 648,
+        "worker_errors": 0,
+        "reserve_shortfall_returned": 106,
+        "not_returned": 62,
+        "refused": 54,
+        "departed_not_returned": 8,
+        "mean_effective_score": 44.703674940746374,
+        "mean_completed_count": 3.251543209876543,
+        "mean_consumed_wh_valid_runs": 8.014132791953866,
+        "decision_ms_median": 5.967666977085173,
+        "decision_ms_p95": 17.662416998064145,
+        "statuses": {
+          "PARTIAL_RETURNED": 500,
+          "COMPLETED_RETURNED": 86,
+          "FAILED": 8,
+          "REFUSED": 54
+        }
+      }
+    },
+    "by_kind": {
+      "normal": {
+        "subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 37,
+          "not_returned": 21,
+          "refused": 18,
+          "departed_not_returned": 3,
+          "mean_effective_score": 49.25464365737844,
+          "mean_completed_count": 3.6296296296296298,
+          "mean_consumed_wh_valid_runs": 7.945622697381065,
+          "decision_ms_median": 4.186874997685663,
+          "decision_ms_p95": 21.488667000085115,
+          "statuses": {
+            "PARTIAL_RETURNED": 134,
+            "COMPLETED_RETURNED": 61,
+            "FAILED": 3,
+            "REFUSED": 18
+          }
+        },
+        "adaptive_subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 36,
+          "not_returned": 19,
+          "refused": 18,
+          "departed_not_returned": 1,
+          "mean_effective_score": 50.26821599039521,
+          "mean_completed_count": 3.6064814814814814,
+          "mean_consumed_wh_valid_runs": 7.9216907920356885,
+          "decision_ms_median": 4.1762499895412475,
+          "decision_ms_p95": 21.127540996531025,
+          "statuses": {
+            "PARTIAL_RETURNED": 138,
+            "COMPLETED_RETURNED": 59,
+            "REFUSED": 18,
+            "FAILED": 1
+          }
+        },
+        "value_per_cost": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 34,
+          "not_returned": 20,
+          "refused": 18,
+          "departed_not_returned": 2,
+          "mean_effective_score": 47.68708719646112,
+          "mean_completed_count": 3.4074074074074074,
+          "mean_consumed_wh_valid_runs": 8.09530569034248,
+          "decision_ms_median": 4.2790214938577265,
+          "decision_ms_p95": 12.791833985829726,
+          "statuses": {
+            "PARTIAL_RETURNED": 155,
+            "COMPLETED_RETURNED": 41,
+            "FAILED": 2,
+            "REFUSED": 18
+          }
+        }
+      },
+      "obstacle": {
+        "subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 37,
+          "not_returned": 20,
+          "refused": 18,
+          "departed_not_returned": 2,
+          "mean_effective_score": 49.33070185843663,
+          "mean_completed_count": 3.6527777777777777,
+          "mean_consumed_wh_valid_runs": 7.943452374312035,
+          "decision_ms_median": 4.9079585005529225,
+          "decision_ms_p95": 24.346374993911013,
+          "statuses": {
+            "PARTIAL_RETURNED": 134,
+            "COMPLETED_RETURNED": 62,
+            "REFUSED": 18,
+            "FAILED": 2
+          }
+        },
+        "adaptive_subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 35,
+          "not_returned": 19,
+          "refused": 18,
+          "departed_not_returned": 1,
+          "mean_effective_score": 50.377710405445185,
+          "mean_completed_count": 3.638888888888889,
+          "mean_consumed_wh_valid_runs": 7.921899148716752,
+          "decision_ms_median": 4.901500011328608,
+          "decision_ms_p95": 24.58183400449343,
+          "statuses": {
+            "PARTIAL_RETURNED": 137,
+            "COMPLETED_RETURNED": 60,
+            "FAILED": 1,
+            "REFUSED": 18
+          }
+        },
+        "value_per_cost": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 34,
+          "not_returned": 20,
+          "refused": 18,
+          "departed_not_returned": 2,
+          "mean_effective_score": 47.654018413392336,
+          "mean_completed_count": 3.4074074074074074,
+          "mean_consumed_wh_valid_runs": 8.093760095147523,
+          "decision_ms_median": 4.946042026858777,
+          "decision_ms_p95": 14.526541985105723,
+          "statuses": {
+            "PARTIAL_RETURNED": 155,
+            "COMPLETED_RETURNED": 41,
+            "FAILED": 2,
+            "REFUSED": 18
+          }
+        }
+      },
+      "wind_then_obstacle": {
+        "subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 47,
+          "not_returned": 26,
+          "refused": 18,
+          "departed_not_returned": 8,
+          "mean_effective_score": 35.521847823404414,
+          "mean_completed_count": 2.986111111111111,
+          "mean_consumed_wh_valid_runs": 7.907677559082367,
+          "decision_ms_median": 9.587332999217324,
+          "decision_ms_p95": 32.02658300870098,
+          "statuses": {
+            "PARTIAL_RETURNED": 179,
+            "FAILED": 8,
+            "COMPLETED_RETURNED": 11,
+            "REFUSED": 18
+          }
+        },
+        "adaptive_subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 43,
+          "not_returned": 21,
+          "refused": 18,
+          "departed_not_returned": 3,
+          "mean_effective_score": 38.34628947159047,
+          "mean_completed_count": 2.9722222222222223,
+          "mean_consumed_wh_valid_runs": 7.7748748962248015,
+          "decision_ms_median": 9.594500006642193,
+          "decision_ms_p95": 29.74879098474048,
+          "statuses": {
+            "PARTIAL_RETURNED": 185,
+            "FAILED": 3,
+            "COMPLETED_RETURNED": 10,
+            "REFUSED": 18
+          }
+        },
+        "value_per_cost": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 38,
+          "not_returned": 22,
+          "refused": 18,
+          "departed_not_returned": 4,
+          "mean_effective_score": 38.76991921238567,
+          "mean_completed_count": 2.939814814814815,
+          "mean_consumed_wh_valid_runs": 7.853332590371594,
+          "decision_ms_median": 8.331416989676654,
+          "decision_ms_p95": 24.62195898988284,
+          "statuses": {
+            "PARTIAL_RETURNED": 190,
+            "FAILED": 4,
+            "COMPLETED_RETURNED": 4,
+            "REFUSED": 18
+          }
+        }
+      }
+    },
+    "by_profile": {
+      "no_added_bias": {
+        "subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 0,
+          "not_returned": 40,
+          "refused": 39,
+          "departed_not_returned": 1,
+          "mean_effective_score": 42.500851019942864,
+          "mean_completed_count": 2.615740740740741,
+          "mean_consumed_wh_valid_runs": 5.759898896937553,
+          "decision_ms_median": 6.673333991784602,
+          "decision_ms_p95": 26.73120898543857,
+          "statuses": {
+            "PARTIAL_RETURNED": 164,
+            "FAILED": 1,
+            "REFUSED": 39,
+            "COMPLETED_RETURNED": 12
+          }
+        },
+        "adaptive_subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 0,
+          "not_returned": 40,
+          "refused": 39,
+          "departed_not_returned": 1,
+          "mean_effective_score": 42.500851019942864,
+          "mean_completed_count": 2.615740740740741,
+          "mean_consumed_wh_valid_runs": 5.759898896937553,
+          "decision_ms_median": 6.7625830124598,
+          "decision_ms_p95": 26.761957997223362,
+          "statuses": {
+            "PARTIAL_RETURNED": 164,
+            "FAILED": 1,
+            "REFUSED": 39,
+            "COMPLETED_RETURNED": 12
+          }
+        },
+        "value_per_cost": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 0,
+          "not_returned": 39,
+          "refused": 39,
+          "departed_not_returned": 0,
+          "mean_effective_score": 42.12421341033312,
+          "mean_completed_count": 2.5416666666666665,
+          "mean_consumed_wh_valid_runs": 5.823161431873318,
+          "decision_ms_median": 6.202332995599136,
+          "decision_ms_p95": 17.512958002043888,
+          "statuses": {
+            "PARTIAL_RETURNED": 171,
+            "REFUSED": 39,
+            "COMPLETED_RETURNED": 6
+          }
+        }
+      },
+      "joint_within_declared": {
+        "subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 0,
+          "not_returned": 16,
+          "refused": 15,
+          "departed_not_returned": 1,
+          "mean_effective_score": 56.020872227442574,
+          "mean_completed_count": 3.361111111111111,
+          "mean_consumed_wh_valid_runs": 7.7676139726710085,
+          "decision_ms_median": 6.271374993957579,
+          "decision_ms_p95": 26.687042001867667,
+          "statuses": {
+            "PARTIAL_RETURNED": 158,
+            "COMPLETED_RETURNED": 42,
+            "FAILED": 1,
+            "REFUSED": 15
+          }
+        },
+        "adaptive_subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 0,
+          "not_returned": 16,
+          "refused": 15,
+          "departed_not_returned": 1,
+          "mean_effective_score": 56.020872227442574,
+          "mean_completed_count": 3.361111111111111,
+          "mean_consumed_wh_valid_runs": 7.7676139726710085,
+          "decision_ms_median": 6.368125003064051,
+          "decision_ms_p95": 27.151124988449737,
+          "statuses": {
+            "PARTIAL_RETURNED": 158,
+            "COMPLETED_RETURNED": 42,
+            "FAILED": 1,
+            "REFUSED": 15
+          }
+        },
+        "value_per_cost": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 0,
+          "not_returned": 16,
+          "refused": 15,
+          "departed_not_returned": 1,
+          "mean_effective_score": 54.019038340718765,
+          "mean_completed_count": 3.2037037037037037,
+          "mean_consumed_wh_valid_runs": 7.878858767944303,
+          "decision_ms_median": 5.965103991911747,
+          "decision_ms_p95": 17.79891600017436,
+          "statuses": {
+            "PARTIAL_RETURNED": 168,
+            "COMPLETED_RETURNED": 32,
+            "FAILED": 1,
+            "REFUSED": 15
+          }
+        }
+      },
+      "joint_outside_declared": {
+        "subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 121,
+          "not_returned": 11,
+          "refused": 0,
+          "departed_not_returned": 11,
+          "mean_effective_score": 35.58547009183404,
+          "mean_completed_count": 4.291666666666667,
+          "mean_consumed_wh_valid_runs": 10.269239761166906,
+          "decision_ms_median": 5.663624993758276,
+          "decision_ms_p95": 27.026583993574604,
+          "statuses": {
+            "PARTIAL_RETURNED": 125,
+            "COMPLETED_RETURNED": 80,
+            "FAILED": 11
+          }
+        },
+        "adaptive_subset_dp": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 114,
+          "not_returned": 3,
+          "refused": 0,
+          "departed_not_returned": 3,
+          "mean_effective_score": 40.47049262004543,
+          "mean_completed_count": 4.2407407407407405,
+          "mean_consumed_wh_valid_runs": 10.09095196736868,
+          "decision_ms_median": 5.706500000087544,
+          "decision_ms_p95": 26.9327090063598,
+          "statuses": {
+            "PARTIAL_RETURNED": 138,
+            "COMPLETED_RETURNED": 75,
+            "FAILED": 3
+          }
+        },
+        "value_per_cost": {
+          "n": 216,
+          "worker_errors": 0,
+          "reserve_shortfall_returned": 106,
+          "not_returned": 7,
+          "refused": 0,
+          "departed_not_returned": 7,
+          "mean_effective_score": 37.967773071187246,
+          "mean_completed_count": 4.0092592592592595,
+          "mean_consumed_wh_valid_runs": 10.340378176043977,
+          "decision_ms_median": 5.749167001340538,
+          "decision_ms_p95": 17.674958013230935,
+          "statuses": {
+            "PARTIAL_RETURNED": 161,
+            "COMPLETED_RETURNED": 48,
+            "FAILED": 7
+          }
+        }
+      }
+    },
+    "candidate_vs_original_pairs": {
+      "equal": 629,
+      "better": 17,
+      "worse": 2
+    },
+    "gate": {
+      "complete_valid_executions": true,
+      "reserve_shortfall_not_increased": true,
+      "not_returned_not_increased": true,
+      "at_least_one_reliability_count_reduced": true,
+      "overall_score_not_decreased": true,
+      "normal_score_not_decreased": true
+    },
+    "worth_further_validation": true,
+    "default_algorithm_changed": false,
+    "scope": "descriptive synthetic confirmation; not real flight validation",
+    "freeze_sha256": "56a9caec9e5b4c54ee29ee19707a422d47750d4bd9022b8326f6f119f0acc317"
+  },
+  "research_verification": {
+    "passed": true,
+    "archives_checked": 1944,
+    "source_frozen_unchanged": true,
+    "replays": [
+      {
+        "case_id": "R0001",
+        "policy": "subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0002",
+        "policy": "adaptive_subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0003",
+        "policy": "value_per_cost",
+        "matching": true
+      },
+      {
+        "case_id": "R0160",
+        "policy": "subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0161",
+        "policy": "adaptive_subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0162",
+        "policy": "value_per_cost",
+        "matching": true
+      },
+      {
+        "case_id": "R0325",
+        "policy": "subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0326",
+        "policy": "adaptive_subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0327",
+        "policy": "value_per_cost",
+        "matching": true
+      },
+      {
+        "case_id": "R0646",
+        "policy": "subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0647",
+        "policy": "adaptive_subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R0648",
+        "policy": "value_per_cost",
+        "matching": true
+      },
+      {
+        "case_id": "R1297",
+        "policy": "subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R1298",
+        "policy": "adaptive_subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R1299",
+        "policy": "value_per_cost",
+        "matching": true
+      },
+      {
+        "case_id": "R1942",
+        "policy": "subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R1943",
+        "policy": "adaptive_subset_dp",
+        "matching": true
+      },
+      {
+        "case_id": "R1944",
+        "policy": "value_per_cost",
+        "matching": true
+      }
+    ],
+    "production_execution_unchanged": true,
+    "ui_unchanged": true
+  },
+  "software_tests": {
+    "v2": 113,
+    "legacy": 31,
+    "research": 7
+  },
+  "http_smoke": {
+    "verified_on": "2026-11-13",
+    "platform": "darwin",
+    "python": "3.12.14",
+    "source": "LOCAL_2D_SIM",
+    "real_flight": false,
+    "passed": true,
+    "service_started": true,
+    "returned": true,
+    "archive_survived_restart": true,
+    "replay_matching": true,
+    "api_version": "competition-v2-api-0.3",
+    "create_retry_survived_restart": true,
+    "replay_retry_deduplicated": true,
+    "integral_error_wh": 1.4495071809506044e-12,
+    "result_sha256": "e09d3796e7c56e912ce8f4a0430eb3a2e22c9272c1723568946b7535143f57c6",
+    "database_inside_requested_directory": true,
+    "source_sha256": {
+      "competition/v2/runtime.py": "09c687ebbe7ea26f8d3142100da4f55be2af16fe7939c75b184cc0bf82b11c82",
+      "competition/v2/selectors.py": "6c05d7ce9e6eff2f76d46005ec4db40969a48e6e6a7eadc9d9c5dbf033554be5",
+      "competition/v2/contracts.py": "7f1bd1f30559dfea600b76b3b63a0b8718f9fb931a0e189b902450754e01cf14",
+      "competition/v2/planning_inputs.py": "f9ff12747146f63c779531ed2f96025588b2246aa3f1fa70bae3197194fc0b5b",
+      "competition/v2/scenarios.py": "440f09308be05481ce99092c3a4ed85ce6b5e4fbac4daf45646c9ba78a695d09",
+      "competition/core/curves.py": "29bfdc5ff319f265a5fc55fdd7a3e8e111ad2bf9427c36864f8e61fff8ea6b74",
+      "competition/core/planning.py": "ddd9fc0d7fe93b273518d36154debcb53a4e48ecfefea1dc8ec87fc13f0e9714"
+    },
+    "ui_sha256": "518ea381dcb98cdaedf052dbdfa6e2d5ae012a36949858c2d50a5c45c8f9ee74"
+  },
+  "production_execution_sha256": {
+    "competition/v2/runtime.py": "09c687ebbe7ea26f8d3142100da4f55be2af16fe7939c75b184cc0bf82b11c82",
+    "competition/v2/selectors.py": "6c05d7ce9e6eff2f76d46005ec4db40969a48e6e6a7eadc9d9c5dbf033554be5",
+    "competition/v2/contracts.py": "7f1bd1f30559dfea600b76b3b63a0b8718f9fb931a0e189b902450754e01cf14",
+    "competition/v2/planning_inputs.py": "f9ff12747146f63c779531ed2f96025588b2246aa3f1fa70bae3197194fc0b5b",
+    "competition/v2/scenarios.py": "440f09308be05481ce99092c3a4ed85ce6b5e4fbac4daf45646c9ba78a695d09",
+    "competition/core/curves.py": "29bfdc5ff319f265a5fc55fdd7a3e8e111ad2bf9427c36864f8e61fff8ea6b74",
+    "competition/core/planning.py": "ddd9fc0d7fe93b273518d36154debcb53a4e48ecfefea1dc8ec87fc13f0e9714"
+  },
+  "raw_evidence_root": "workspace:output/4C/v2/technical-next-20261113",
+  "candidate_in_default_runtime": false,
+  "windows_verified": false,
+  "real_flights": 0,
+  "source_acceptance": "VERIFIED",
+  "package_acceptance": "See separately generated release verification attachment",
+  "isolated_snapshot_verification": {
+    "isolated_source_snapshot_replays": [
+      "R0001",
+      "R0002",
+      "R0003"
+    ],
+    "passed": true
+  }
+}

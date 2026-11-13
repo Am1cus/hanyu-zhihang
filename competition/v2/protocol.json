@@ -2,7 +2,7 @@
   "schema_version": 1,
   "version": "competition-v2-design-0.3",
   "design_date": "2026-10-09",
-  "status": "LOCAL_TECHNICAL_DELIVERY_VERIFIED_TARGET_COMPUTER_AND_HUMAN_ACCEPTANCE_PENDING",
+  "status": "COMPUTER_TECHNICAL_PLAN_COMPLETE_CANDIDATE_SEPARATE",
   "human_need_validation": "PAUSED_BY_USER_UNVERIFIED",
   "externally_timestamped_preregistration": false,
   "task_source": "LOCAL_2D_SIM",
@@ -284,9 +284,24 @@
     "comparator_fraction": 0.2
   },
   "technical_remaining": [
-    "target_windows_or_presentation_computer_runtime_acceptance"
+    "publication_and_package_acceptance_recorded_separately",
+    "external_acceptance_paused_by_user"
   ],
   "technical_checklist": "TECHNICAL_REMAINING.md",
+  "current_work_scope": {
+    "effective_on": "2026-11-13",
+    "workspace": "existing_mac",
+    "status_documentation_aligned": true,
+    "historical_plan": "PLAN.md",
+    "deferred": [
+      "windows_simulation",
+      "target_windows_or_presentation_computer_runtime_acceptance",
+      "interviews_and_human_tryouts",
+      "hardware_and_real_flight_validation",
+      "projection_formal_defence_and_same_version_recording",
+      "frontend_redesign"
+    ]
+  },
   "ui_usability_acceptance": {
     "verified_on": "2026-10-27",
     "status": "MAC_LOCAL_BROWSER_CHECKS_PASSED",
@@ -356,5 +371,100 @@
       "actual_target_computer_acceptance"
     ],
     "release_url": "https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261030"
+  },
+  "backend_review": {
+    "verified_on": "2026-11-05",
+    "scope": "local_source_input_persistence_retry_restart_export",
+    "record": "BACKEND_REVIEW_20261105.md",
+    "v2_tests": 108,
+    "legacy_tests": 31,
+    "targeted_tests": 20,
+    "actual_http_restart_replay_passed": true,
+    "release_status": "included_in_v2-backend-20261113"
+  },
+  "representative_case_review": {
+    "reviewed_on": "2026-11-11",
+    "scope": "read_only_frozen_archive_checks",
+    "record": "CASE_EVIDENCE_20261111.md",
+    "local_check": "workspace:output/4C/v2/case-review-20261111/check.json",
+    "case_pairs": [
+      [
+        "C0102",
+        "C0104"
+      ],
+      [
+        "C0366",
+        "C0368"
+      ],
+      [
+        "C0046",
+        "C0048"
+      ]
+    ],
+    "new_executions": 0
+  },
+  "technical_and_source_documentation": {
+    "reviewed_on": "2026-11-11",
+    "implementation_walkthrough": "BACKEND_HANDOFF.md",
+    "calculation_and_sources": "DESIGN.md",
+    "frozen_case_id": "C0104",
+    "decision_indices_checked": [
+      0,
+      2
+    ],
+    "static_enumeration_matches": true
+  },
+  "local_archive_index": {
+    "indexed_on": "2026-11-05",
+    "document": "workspace:本地技术档案索引_20261105.md",
+    "manifest": "workspace:output/4C/v2/archive-index-20261105/index.json",
+    "checker": "tools/check_local_archive.py",
+    "scope": "formal_and_reserve_archives_release_and_local_backend_review",
+    "raw_archives": 4608,
+    "sample_archives": 9,
+    "source_recovery": "git_base_plus_patch_and_new_files"
+  },
+  "technical_next": {
+    "verified_on": "2026-11-13",
+    "api_version": "competition-v2-api-0.3",
+    "record": "TECHNICAL_NEXT_20261113.md",
+    "evidence": "evidence/technical-next-20261113.json",
+    "v2_tests": 113,
+    "legacy_tests": 31,
+    "research_tests": 7,
+    "history_records_checked": 1000,
+    "lifecycle_cycles": 200,
+    "development_maps": 32,
+    "confirmation_executions": 1944,
+    "candidate_vs_original": {
+      "better": 17,
+      "equal": 629,
+      "worse": 2
+    },
+    "candidate_gate_passed": true,
+    "candidate_in_default_application": false,
+    "production_execution_sources_unchanged": true,
+    "package_release": "v2-backend-20261113",
+    "package_verification": "separate release attachment",
+    "windows_verified": false
+  },
+  "historical_release_recheck_20261105": {
+    "tag": "v2-backend-20261030",
+    "program_commit": "f251b72fb7eed12caf42514f15db9f5959ce6029",
+    "published_at": "2026-11-05T01:13:25Z",
+    "verified_on": "2026-11-05",
+    "platform": "Darwin arm64",
+    "v2_tests": 102,
+    "package_verification": "evidence/backend-verification-20261105.json",
+    "http_verification": "evidence/backend-service-20261105.json",
+    "same_version_video_available": false,
+    "historical_video_release": "v2-demo-20261028"
+  },
+  "current_release": {
+    "tag": "v2-backend-20261113",
+    "source_commit": "PACKAGE_MANIFEST.json:git_head_at_build",
+    "mac_acceptance": "release attachment: backend-verification-20261113.json",
+    "candidate_in_default_package": false,
+    "windows_verified": false
   }
 }
