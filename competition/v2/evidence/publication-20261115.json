@@ -1,0 +1,36 @@
+{
+  "published": true,
+  "download_verified_on": "2026-11-15",
+  "release_url": "https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261113",
+  "published_at": "2026-11-13T12:40:44Z",
+  "source_commit": "3b77dc50c06324b001eac24a72eb18d9c7df2c5d",
+  "main_commit": "d8c2640d5b3d0caf8aa710e6e0ee16b2f56c7d98",
+  "latest_release": true,
+  "download_note": "Public unauthenticated download; interrupted ZIP resumed after checking the received prefix, then full SHA-256 verified",
+  "assets": [
+    {
+      "name": "backend-verification-20261113.json",
+      "size": 2334,
+      "sha256": "01089ddccf76e57631d7c382bc4cdd50afb854f53ecb1879b03de31bd05be23f",
+      "public_download_matches": true
+    },
+    {
+      "name": "hanyu-zhihang-v2-backend-20261113.zip",
+      "size": 6420893,
+      "sha256": "6faa9dd918e64b09a9ef63a664c55f5da5cbeca17cbb441c8c38604464e037f1",
+      "public_download_matches": true
+    },
+    {
+      "name": "PACKAGE_MANIFEST.json",
+      "size": 29346,
+      "sha256": "6196379fcd94dc836851b913fad6a8339eafa40910e2f31228e779baec9d5a9d",
+      "public_download_matches": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 293,
+      "sha256": "d923df271aed8c30f448ae240a9b46c33476fcdb799fdc08c2eeb92db487a277",
+      "public_download_matches": true
+    }
+  ]
+}
