@@ -27,3 +27,7 @@ demo/data/
 !platform/**/src/**/*.png
 !platform/**/public/**/*.png
 !competition/v2/presentation/assets/*.png
+
+# Local short-term predictor environment and machine-specific test logs.
+.lstm-venv/
+competition/endurance/evidence/*-regression.log

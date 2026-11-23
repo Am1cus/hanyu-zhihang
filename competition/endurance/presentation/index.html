@@ -1,0 +1,113 @@
+<div class="pagehead">
+  <h1>续航与路线</h1>
+  <div class="page-tools">
+    <a class="text-action" id="return-current" href="/simulation" hidden>回到当前巡看</a>
+    <label class="picker">
+      示例输入
+      <span class="select-wrap">
+        <select id="sample">
+          <option value="" hidden>自定义</option>
+          <option value="normal">普通风</option>
+          <option value="gust">强风</option>
+          <option value="low">低电量</option>
+        </select>
+      </span>
+    </label>
+  </div>
+</div>
+
+<section class="surface hero" aria-label="计算与往返判断">
+  <form class="inputs" id="conditions-form">
+    <h2 class="smalltitle">飞行条件</h2>
+    <div class="fields">
+      <label class="field">气温
+        <span class="inputbox"><input id="temperature" type="number" min="-40" max="40" step="any" value="-20" required><span class="unit">℃</span></span>
+      </label>
+      <label class="field">当前电量
+        <span class="inputbox"><input id="battery" type="number" min="0" max="100" step="any" value="80" required><span class="unit">%</span></span>
+      </label>
+      <label class="field">风速
+        <span class="inputbox"><input id="wind" type="number" min="0" max="20" step="any" value="5" required><span class="unit">m/s</span></span>
+      </label>
+    </div>
+    <div class="actions">
+      <button class="action" type="submit">计算续航</button>
+      <span class="minor" id="condition-summary">储备 20% · 2 m/s · 约 1.8 Ah</span>
+    </div>
+    <details class="known" id="advanced">
+      <summary>更多条件</summary>
+      <div class="fields advanced-fields">
+        <label class="field">平飞地速
+          <span class="inputbox"><input id="speed" type="number" min="0" max="10" step="any" value="2" required><span class="unit">m/s</span></span>
+        </label>
+        <label class="field">储备电量
+          <span class="inputbox"><input id="reserve" type="number" min="0" max="80" step="any" value="20" required><span class="unit">%</span></span>
+        </label>
+        <label class="field">标称容量
+          <span class="inputbox"><input id="capacity" type="number" min="0" max="100" step="any" placeholder="1.8"><span class="unit">Ah</span></span>
+        </label>
+      </div>
+      <p class="minor">容量留空时，使用 AirSim 参考电池（约 1.8 Ah）。</p>
+    </details>
+    <p id="edit-state" class="hint" role="status" hidden></p>
+  </form>
+  <div class="answer">
+    <div aria-live="polite" aria-atomic="true">
+      <h2 id="usable-title">保留 20% 后预计可飞</h2>
+      <div class="duration" id="usable">—</div>
+      <p class="secondary" id="to-zero">正在计算续航</p>
+      <p class="conditions" id="used-conditions"></p>
+      <p class="context-note" id="outside" hidden></p>
+    </div>
+    <button class="ghost retry-button" type="button" id="retry-prediction" hidden>重试续航</button>
+  </div>
+  <div class="outcome" id="outcome">
+    <span id="symbol" class="sign" aria-hidden="true">↔</span>
+    <div aria-live="polite" aria-atomic="true">
+      <h3 id="verdict">正在计算往返路线</h3>
+      <p id="arrival"></p>
+    </div>
+    <button class="ghost retry-button" type="button" id="retry-route" hidden>重试路线</button>
+  </div>
+</section>
+
+<details class="routecard surface" open>
+  <summary>示例往返路线</summary>
+  <div class="routebody">
+    <p class="minor" id="route-message" role="status">正在核算去程和返程…</p>
+    <div id="route-data" hidden>
+      <div class="sectionrow">
+        <p class="minor">按示例地图各段风速累计耗电</p>
+        <div class="switch" role="group" aria-label="地图上的路线">
+          <button type="button" data-route="energy" aria-pressed="true">省电路线</button>
+          <button type="button" data-route="distance" aria-pressed="false">最短路线</button>
+        </div>
+      </div>
+      <p class="notice" id="return-limit" role="status" hidden></p>
+      <div class="routegrid">
+        <figure>
+          <canvas id="route-map" class="map" role="img" aria-label="基地、目标点和所选往返路线" aria-describedby="route-caption"></canvas>
+          <figcaption id="route-caption" class="mapcap"></figcaption>
+        </figure>
+        <div>
+          <table class="compare">
+            <thead><tr><th scope="col">往返指标</th><th scope="col">省电路线</th><th scope="col">最短路线</th></tr></thead>
+            <tbody id="compare"></tbody>
+          </table>
+          <p class="takeaway" id="difference"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<details class="secondarycard surface" id="model-notes">
+  <summary>计算依据</summary>
+  <div class="expl">
+    <p>续航按所填风速持续不变估计，路线按合成地图的分段风场累计。模型采用 AirSim 参考机型，规划用时涵盖往返平飞。</p>
+    <p id="model-values"></p>
+    <ul id="model-assumptions" hidden></ul>
+    <p id="model-evidence"></p>
+    <button class="ghost" type="button" id="retry-metadata" hidden>重试读取模型依据</button>
+  </div>
+</details>

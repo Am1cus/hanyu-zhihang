@@ -1,5 +1,7 @@
 # 寒域智航 v2：任务取舍与返程决策
 
+2026-11-17 新增[直接续航预测与优化 A*](../endurance/README.md)，当前源码服务接口为0.4。启动后可打开 `/endurance` 输入温度、电量和风速。下述11月13日公开包与历史实验仍保留原版本。
+
 [当前状态与电脑端待办](TECHNICAL_REMAINING.md)统一记录运行包、验收和工作范围。[快速试用](../../README.md#快速试用)提供下载和启动步骤，[公开证据索引](evidence/README.md)汇总实验和检查报告。
 
 本轮交付版本为 `v2-backend-20261113`，接口0.3新增完整历史分页和终态释放；Mac验收报告随发布附件提供。90 秒录屏对应 10 月 28 日验证的历史版本。[当前运行包](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261113) · [历史版录屏](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028)
@@ -22,7 +24,7 @@
 
 Mac可双击 [start_v2.command](start_v2.command)，或根目录「启动寒域智航.command」；会检查依赖并打开 <http://127.0.0.1:8094/>。命令行入口：在`learn`目录执行 `.competition-venv/bin/python competition/v2/launch.py`。首次安装需要联网，之后可离线演示；当前操作说明见[TRY_IT.md](TRY_IT.md)。Windows入口[start_v2.bat](start_v2.bat)已编写，实机核验待完成。10/20历史说明保留在[DAY20.md](DAY20.md)。
 
-页面按“先安排、途中调整、回来复查”组织，可切换投影用的讲解模式。运行档案使用v2独立数据库。网页上的移动位置来自后端执行状态。
+冰川蓝工作台首页为「续航与路线」。从顶部进入「巡看仿真」查看起飞预览和后端执行轨迹，或进入「运行记录」查看、导出和复演旧运行。运行档案使用 v2 独立数据库。[操作说明](TRY_IT.md)
 
 开发验收：
 

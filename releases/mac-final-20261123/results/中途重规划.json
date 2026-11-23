@@ -1,0 +1,43 @@
+{
+  "model_version": "endurance-hybrid-1.0",
+  "planner_version": "directed-astar-context-1.1",
+  "action": "return_to_base",
+  "reason": "goal_reserve_shortfall",
+  "legs": [
+    {
+      "status": "planned",
+      "path": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "distance_m": 20.0,
+      "duration_s": 10.0,
+      "estimated_energy_wh": 0.5499150688227544,
+      "cost": 0.5499150688227544,
+      "expanded_nodes": 3,
+      "objective": "energy",
+      "cost_source": "endurance-hybrid-1.0",
+      "planner_version": "directed-astar-context-1.1",
+      "cache_hit": false,
+      "build_time_ms": 0.07608404848724604,
+      "query_time_ms": 0.005582929588854313,
+      "uncached_expanded_nodes": 3,
+      "estimated_consumption_ah": 0.04954189809214004
+    }
+  ],
+  "available_capacity_ah": 0.34560010750865894,
+  "reserve_capacity_ah": 0.23040007167243928,
+  "estimated_consumption_ah": 0.04954189809214004,
+  "remaining_battery_percent": 25.69948935063059,
+  "feasible_with_reserve": true
+}

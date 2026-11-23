@@ -1,0 +1,35 @@
+<div id="mission-detail" hidden>
+  <div class="simgrid" id="mission-map">
+    <figure class="surface panel">
+      <h2 id="map-title">巡看地图</h2>
+      <canvas id="mission-canvas" class="map simmap" role="img" aria-label="巡看地图与轨迹" aria-describedby="mission-caption"></canvas>
+      <figcaption class="mapcap" id="mission-caption"></figcaption>
+    </figure>
+    <section class="surface panel mission-readout" aria-labelledby="decision-title">
+      <div aria-live="polite" aria-atomic="true">
+        <p class="minor" id="decision-label">下一步</p>
+        <h2 id="decision-title"></h2>
+        <p class="minor decision-description" id="decision-text"></p>
+      </div>
+      <dl class="stats">
+        <div><dt>已完成巡看</dt><dd id="completed"></dd></div>
+        <div><dt>仿真剩余能量</dt><dd id="remaining"></dd></div>
+        <div><dt>仿真时长</dt><dd id="sim-time"></dd></div>
+      </dl>
+      <details class="known" id="budget-info">
+        <summary>储备与最近决策</summary>
+        <dl class="budget-values" id="budget-values"></dl>
+        <p class="minor" id="plan-order"></p>
+      </details>
+    </section>
+  </div>
+  <details class="secondarycard surface" id="task-info">
+    <summary>巡看任务清单</summary>
+    <ul class="task-list" id="task-list"></ul>
+  </details>
+  <details class="secondarycard surface" id="timeline-info">
+    <summary>变化与决策记录</summary>
+    <ol class="timeline" id="timeline"></ol>
+    <p class="minor" id="run-identifier"></p>
+  </details>
+</div>

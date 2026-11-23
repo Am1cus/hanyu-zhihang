@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "model_version": "endurance-hybrid-1.0",
+  "profile": {
+    "name": "AirSim 参考机型 · 约 1.8 Ah 电池",
+    "nominal_voltage_v": 11.1,
+    "default_ground_speed_ms": 2.0,
+    "default_reserve_percent": 20.0,
+    "max_airspeed_ms": 15.0,
+    "voltage_and_airspeed_source": "route-conversion and tracking assumptions, not learned specifications"
+  },
+  "capacity_model": {
+    "reference_temperature_c": 25.0,
+    "capacity_at_reference_ah": 1.8000010369741337,
+    "slope_ah_per_c": 0.014400015080265269,
+    "temperature_above_reference": "hold_capacity_constant",
+    "fit_target": "per-flight median(current_capacity_ah / SOC_fraction)"
+  },
+  "current_model": {
+    "features": [
+      "1",
+      "wind_speed_ms",
+      "ground_speed_ms_squared"
+    ],
+    "coefficients": {
+      "intercept_a": 16.99856513728149,
+      "wind_a_per_ms": 0.3576110837213209,
+      "speed_a_per_ms2": 0.20912954397223116
+    },
+    "fit_method": "nonnegative_least_squares_equal_flight_weight"
+  },
+  "observed_ranges": {
+    "temperature_c": [
+      -35.0,
+      -10.0
+    ],
+    "wind_speed_ms": [
+      0.0,
+      10.0
+    ],
+    "ground_speed_ms": [
+      0.0,
+      2.927306658004931
+    ],
+    "battery_percent": [
+      69.24199999999999,
+      99.7643
+    ]
+  },
+  "training": {
+    "source": "Phase4/processed/airsim_capacity_dataset.csv",
+    "source_sha256": "e5586d4a4c7b723baa84051935345d4c46099cf9011a68142c8a453f23a8cd1e",
+    "total_rows": 1702,
+    "total_flights": 35,
+    "training_flights": [
+      "flight_002",
+      "flight_004",
+      "flight_005",
+      "flight_007",
+      "flight_008",
+      "flight_010",
+      "flight_011",
+      "flight_013",
+      "flight_014",
+      "flight_016",
+      "flight_017",
+      "flight_019",
+      "flight_020",
+      "flight_022",
+      "flight_023",
+      "flight_025",
+      "flight_026",
+      "flight_028",
+      "flight_029",
+      "flight_031",
+      "flight_032",
+      "flight_034",
+      "flight_035"
+    ],
+    "holdout_flights": [
+      "flight_003",
+      "flight_006",
+      "flight_009",
+      "flight_012",
+      "flight_015",
+      "flight_018",
+      "flight_021",
+      "flight_024",
+      "flight_027",
+      "flight_030",
+      "flight_033",
+      "flight_036"
+    ],
+    "split": "lexically last flight per temperature/wind stratum held out; no post-holdout refit",
+    "holdout_current_flight_mean_metrics": {
+      "mae_a": 0.17489244453695255,
+      "mape_percent": 0.9164045265190518,
+      "rmse_a": 0.21099354017645608
+    }
+  },
+  "interpretation": {
+    "time_target": "capacity_Ah * SOC_fraction / predicted_current_A * 60 minutes",
+    "observed_exhaustion_labels": false,
+    "real_aircraft_data": false,
+    "scope": "constant-condition endurance extrapolation from short AirSim segments",
+    "capacity_reference_at_25c_is_extrapolated": true,
+    "training_speed": "source speed_ms includes vertical velocity; at serving, level-flight speed is used",
+    "no_soc_load_fit": "data span high SOC only; current held independent of SOC"
+  }
+}

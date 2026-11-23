@@ -1,0 +1,450 @@
+{
+  "model_version": "endurance-hybrid-1.0",
+  "planner_version": "directed-astar-context-1.1",
+  "prediction": {
+    "model_version": "endurance-hybrid-1.0",
+    "profile_name": "AirSim 参考机型 · 约 1.8 Ah 电池",
+    "remaining_minutes": 2.9053970046992466,
+    "usable_minutes": 2.2597532258771915,
+    "estimated_current_a": 21.411194150383622,
+    "estimated_power_w": 237.6642550692582,
+    "full_capacity_ah": 1.1520003583621965,
+    "available_capacity_ah": 1.0368003225259768,
+    "usable_capacity_ah": 0.8064002508535375,
+    "nominal_voltage_v": 11.1,
+    "inputs": {
+      "temperature_c": -20.0,
+      "battery_percent": 90.0,
+      "wind_speed_ms": 10.0,
+      "ground_speed_ms": 2.0,
+      "reserve_percent": 20.0,
+      "nominal_capacity_ah": 1.8000010369741337
+    },
+    "extrapolated_fields": [],
+    "assumptions": [
+      "按输入条件和指定平飞速度持续飞行，未计入起降与载荷变化。",
+      "电量按当前温度下可用容量的百分比解释；温度按电池与环境平衡处理。",
+      "分钟数由仿真数据拟合的耗电率推算；Wh 使用 11.1 V 标称电压换算。"
+    ],
+    "evidence_type": "airsim_fitted_load_and_capacity_extrapolation"
+  },
+  "grid": {
+    "width": 16,
+    "height": 12,
+    "cell_size_m": 10.0,
+    "blocked": [
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        10,
+        9
+      ],
+      [
+        11,
+        9
+      ]
+    ],
+    "wind_regions": [
+      {
+        "x_min": 0.0,
+        "x_max": 15.0,
+        "y_min": 0.0,
+        "y_max": 11.0,
+        "vector": [
+          10.0,
+          0.0
+        ]
+      },
+      {
+        "x_min": 0.0,
+        "x_max": 15.0,
+        "y_min": 4.5,
+        "y_max": 5.5,
+        "vector": [
+          0.0,
+          0.0
+        ]
+      }
+    ]
+  },
+  "start": [
+    1,
+    6
+  ],
+  "goal": [
+    14,
+    6
+  ],
+  "energy_route": {
+    "status": "planned",
+    "outbound": {
+      "status": "planned",
+      "path": [
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          14,
+          6
+        ]
+      ],
+      "distance_m": 150.0,
+      "duration_s": 75.0,
+      "estimated_energy_wh": 4.1243630161706575,
+      "cost": 4.1243630161706575,
+      "expanded_nodes": 28,
+      "objective": "energy",
+      "cost_source": "endurance-hybrid-1.0",
+      "planner_version": "directed-astar-context-1.1",
+      "cache_hit": false,
+      "build_time_ms": 0.48691697884351015,
+      "query_time_ms": 0.0439999857917428,
+      "uncached_expanded_nodes": 28,
+      "estimated_consumption_ah": 0.37156423569105024
+    },
+    "inbound": {
+      "status": "planned",
+      "path": [
+        [
+          14,
+          6
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          11,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ]
+      ],
+      "distance_m": 150.0,
+      "duration_s": 75.0,
+      "estimated_energy_wh": 4.1243630161706575,
+      "cost": 4.1243630161706575,
+      "expanded_nodes": 25,
+      "objective": "energy",
+      "cost_source": "endurance-hybrid-1.0",
+      "planner_version": "directed-astar-context-1.1",
+      "cache_hit": false,
+      "build_time_ms": 0.48691697884351015,
+      "query_time_ms": 0.03062502946704626,
+      "uncached_expanded_nodes": 25,
+      "estimated_consumption_ah": 0.37156423569105024
+    },
+    "distance_m": 300.0,
+    "duration_s": 150.0,
+    "estimated_energy_wh": 8.248726032341315,
+    "estimated_consumption_ah": 0.7431284713821005,
+    "remaining_battery_percent": 25.492340259458842,
+    "feasible_with_reserve": true,
+    "capacity_deficit_ah": 0.0,
+    "expanded_nodes": 53
+  },
+  "distance_route": {
+    "status": "planned",
+    "outbound": {
+      "status": "planned",
+      "path": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          6
+        ]
+      ],
+      "distance_m": 130.0,
+      "duration_s": 65.0,
+      "estimated_energy_wh": 4.291160160972718,
+      "cost": 130.0,
+      "expanded_nodes": 14,
+      "objective": "distance",
+      "cost_source": "endurance-hybrid-1.0",
+      "planner_version": "directed-astar-context-1.1",
+      "cache_hit": false,
+      "build_time_ms": 0.48691697884351015,
+      "query_time_ms": 0.02174999099224806,
+      "uncached_expanded_nodes": 14,
+      "estimated_consumption_ah": 0.3865910054930377
+    },
+    "inbound": {
+      "status": "planned",
+      "path": [
+        [
+          14,
+          6
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          1,
+          6
+        ]
+      ],
+      "distance_m": 130.0,
+      "duration_s": 65.0,
+      "estimated_energy_wh": 4.291160160972718,
+      "cost": 130.0,
+      "expanded_nodes": 14,
+      "objective": "distance",
+      "cost_source": "endurance-hybrid-1.0",
+      "planner_version": "directed-astar-context-1.1",
+      "cache_hit": false,
+      "build_time_ms": 0.48691697884351015,
+      "query_time_ms": 0.019749975763261318,
+      "uncached_expanded_nodes": 14,
+      "estimated_consumption_ah": 0.3865910054930377
+    },
+    "distance_m": 260.0,
+    "duration_s": 130.0,
+    "estimated_energy_wh": 8.582320321945437,
+    "estimated_consumption_ah": 0.7731820109860754,
+    "remaining_battery_percent": 22.883526869270128,
+    "feasible_with_reserve": true,
+    "capacity_deficit_ah": 0.0,
+    "expanded_nodes": 28
+  },
+  "return_limit": {
+    "status": "goal_with_reserve",
+    "last_feasible": {
+      "position": [
+        14,
+        6
+      ],
+      "distance_m": 150.0,
+      "duration_s": 75.0,
+      "remaining_battery_percent": 25.492340259458842
+    },
+    "first_limited": null,
+    "reason": null
+  },
+  "saving_percent": 3.886994158806959,
+  "build_time_ms": 0.48691697884351015,
+  "edge_model_calls": 8,
+  "route_assumptions": {
+    "max_airspeed_ms": 15,
+    "wind_direction_convention": "degrees counterclockwise from +x; vector points downwind",
+    "current_model_direction": "wind magnitude and ground speed; no fitted heading effect",
+    "round_trip": true,
+    "takeoff_landing_included": false
+  }
+}

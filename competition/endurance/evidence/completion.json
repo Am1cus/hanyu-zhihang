@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-17",
+  "status": "implemented",
+  "model_version": "endurance-hybrid-1.0",
+  "api_version": "competition-v2-api-0.4",
+  "planner_version": "directed-astar-context-1.0",
+  "python": "3.12.14",
+  "url": "http://127.0.0.1:8094/endurance",
+  "checks": {
+    "endurance_tests": 21,
+    "v2_tests": 113,
+    "passed": true,
+    "actual_http_examples": 6,
+    "browser_cases": [
+      "default",
+      "strong_wind_with_sheltered_route",
+      "low_battery"
+    ],
+    "mobile_viewport_px": 375,
+    "mobile_document_width_px": 375,
+    "legacy_execution_sources_unchanged": true,
+    "portable_copy_import_and_prediction": true
+  },
+  "initial_issues_fixed": [
+    "OpenAPI operation expectation updated from 10 to 13 and metadata response schema added",
+    "strong-tailwind ground-speed lower bound included"
+  ],
+  "source_and_result_sha256": {
+    "competition/endurance/__init__.py": "48d8c53b71c6e7d6fb3b4dfd084683a4ebb0117833e86dfac17c362a62cabcd4",
+    "competition/endurance/__main__.py": "70a34c4dd088c9912da7686b1bb1be69239bdb69413ca2b4576b628357563c67",
+    "competition/endurance/api.py": "8a9315f31bbb6c18a1966faba8eecfc25dc70422b23ee6890108e697f2465479",
+    "competition/endurance/artifacts/endurance-v1.json": "2d61c878ae3325e4ed80fd09a6e58d0e06fa64720b0f0045e1aff52b3dcec361",
+    "competition/endurance/benchmark_paths.py": "2c8fc8712d5e51f69d37cb48dfd668f6fdc9ddcb4f246e94ce52e7738b8899c0",
+    "competition/endurance/contracts.py": "66a8cbd8f29caec5a3172f65ed0b5fa05eeed12a141570de53129b5b6d2b42a0",
+    "competition/endurance/evidence/astar-benchmark.json": "bb140619593869728664bfc2d8868c469fcc6b0b2d2899422fb7845161570a78",
+    "competition/endurance/evidence/http-examples.json": "41cbc0344cf59ba7830218c9c8b6fdfc979f6a50b707f3cfadc6092e167acb84",
+    "competition/endurance/evidence/training-report.json": "780f97bf1d94f2ddb10e5a5e23271d7d7812160875531e7ea5ff5cb9ab6dd935",
+    "competition/endurance/model.py": "b4d256b935058f94414db52bddb21639b9b3893dd49f6258d9d7cb0e4997bdd7",
+    "competition/endurance/pathfinding.py": "02e3e19d39a0f657922acc0b8cbb8bd2e5ebe0c3e9a56f665d4535ea9bf9d3a8",
+    "competition/endurance/presentation/index.html": "809c46d8742804bbe3bed50c44be75da1282f8ea0808d90e2ccd130b0576b622",
+    "competition/endurance/routes.py": "89a566f4d7a5062bcb318de528a8e5fb88a0fbd8f4d5f442bdcc931c9d778459",
+    "competition/endurance/tests/test_model_and_api.py": "8161f50cd898e470139d0b585e3f739261548cd231f6268fe9c53a1e09df253b",
+    "competition/endurance/tests/test_pathfinding.py": "9a17964cb8a5e95e81349ebf67a8adbac2cac19a96f271fca946edea2260bbae",
+    "competition/endurance/train.py": "ed4013e0478d619b4b197969868ead80f92bfa6a2a8f994980128991b48cbe0a"
+  },
+  "scope": "AirSim fitted load/capacity, constant-condition endurance extrapolation, local app; no observed exhaustion-time accuracy claim"
+}

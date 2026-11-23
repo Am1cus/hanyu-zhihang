@@ -1,0 +1,27 @@
+{
+  "model_version": "endurance-hybrid-1.0",
+  "profile_name": "AirSim 参考机型 · 约 1.8 Ah 电池",
+  "remaining_minutes": 2.8178987040356094,
+  "usable_minutes": 2.113424028026707,
+  "estimated_current_a": 19.62313873177702,
+  "estimated_power_w": 217.8168399227249,
+  "full_capacity_ah": 1.1520003583621965,
+  "available_capacity_ah": 0.9216002866897571,
+  "usable_capacity_ah": 0.6912002150173179,
+  "nominal_voltage_v": 11.1,
+  "inputs": {
+    "temperature_c": -20.0,
+    "battery_percent": 80.0,
+    "wind_speed_ms": 5.0,
+    "ground_speed_ms": 2.0,
+    "reserve_percent": 20.0,
+    "nominal_capacity_ah": 1.8000010369741337
+  },
+  "extrapolated_fields": [],
+  "assumptions": [
+    "按输入条件和指定平飞速度持续飞行，未计入起降与载荷变化。",
+    "电量按当前温度下可用容量的百分比解释；温度按电池与环境平衡处理。",
+    "分钟数由仿真数据拟合的耗电率推算；Wh 使用 11.1 V 标称电压换算。"
+  ],
+  "evidence_type": "airsim_fitted_load_and_capacity_extrapolation"
+}

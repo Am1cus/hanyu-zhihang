@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef4f9">
+  <title>$title · 寒域智航</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/workbench-assets/workbench.css">
+  <script type="module" src="/workbench-assets/$section.js"></script>
+</head>
+<body>
+  <a href="#content" class="skip">跳到内容</a>
+  <header class="top">
+    <div class="topin">
+      <a class="brand" href="/" aria-label="寒域智航首页">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round" fill="none" focusable="false">
+            <rect x="8" y="9" width="8" height="6" rx="2"/>
+            <path d="m8 9-3-3m11 3 3-3M8 15l-3 3m11-3 3 3M2 5h6m8 0h6M2 19h6m8 0h6M12 9V5"/>
+          </svg>
+        </span>
+        寒域智航
+      </a>
+      <nav aria-label="主导航">
+        <a href="/endurance"$endurance_current>续航与路线</a>
+        <a href="/simulation"$simulation_current>巡看仿真</a>
+        <a href="/history"$history_current>运行记录</a>
+      </nav>
+    </div>
+  </header>
+  <noscript><p class="notice bad no-script">请启用 JavaScript 以连接本机服务。</p></noscript>
+  <main id="content" tabindex="-1">
+$content
+  </main>
+</body>
+</html>

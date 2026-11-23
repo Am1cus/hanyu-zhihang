@@ -1,14 +1,14 @@
 # v2 当前状态与后续任务
 
-更新于 2026-11-13。两轮电脑端技术工作已完成；独立算法候选保持研究版本。[本轮结果](TECHNICAL_NEXT_20261113.md)。历史日期计划见 [PLAN.md](PLAN.md)，对外使用入口见[仓库首页](../../README.md#快速试用)。
+更新于 2026-11-19。当前源码使用冰川蓝工作台，首页提供直接续航预测和省电 A*，巡看与运行记录各有入口。独立预算候选为研究版本。下表的公开运行包对应 11 月 13 日交付。[试用说明](TRY_IT.md) · [11 月 13 日实验结果](TECHNICAL_NEXT_20261113.md)
 
 ## 当前版本
 
 | 项目 | 版本与入口 |
 |---|---|
 | 运行包 | `v2-backend-20261113`，程序提交`3b77dc5`，Mac新解压离线验收通过，[验收报告](evidence/backend-verification-20261113.json)。[发布页与校验文件](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261113) |
-| 接口与执行器 | `competition-v2-api-0.3` 和 `competition-v2-runtime-0.1`。[后端接口交接](BACKEND_HANDOFF.md) |
-| 本地源码修订 | 两轮后端修复纳入本轮交付；新增终态释放、完整历史分页和异常恢复检查。[修复记录](BACKEND_REVIEW_20261105.md) |
+| 当前源码接口与执行器 | `competition-v2-api-0.4` 和 `competition-v2-runtime-0.1`；历史11月13日包接口为0.3。[后端接口交接](BACKEND_HANDOFF.md) |
+| 本地源码修订 | `endurance-hybrid-1.0` 直接续航模型和 `directed-astar-context-1.0` 提供预测与往返路线。续航、巡看、历史三页接入现有接口。[前端重构计划](../../docs/前端重构计划_20261118.md) · [续航说明](../endurance/README.md) |
 | 试用 | Apple 芯片 Mac 已通过验收，Windows x86-64 的离线依赖和脚本已备齐，实机验收暂缓。[五步试用](TRY_IT.md) · [离线包说明](PORTABLE_README.md) |
 | 历史录屏 | 90 秒实际软件录屏对应 10 月 28 日验证的 `v2-demo-20261028`。当前后台包暂无同版录屏，制作暂缓。[历史发布与录屏](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028) |
 

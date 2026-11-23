@@ -1,36 +1,39 @@
 # 后端接口交接：前端重写时保留什么
 
-核对日期：2026-11-13。HTTP服务为`competition-v2-api-0.3`，运行器仍为`competition-v2-runtime-0.1`，默认地址`http://127.0.0.1:8094`。当前页面只作技术验证入口；本次没有修改页面布局、默认算法、地图、能量参数或评分规则。
+核对日期为 2026-11-19。HTTP 服务接口为 `competition-v2-api-0.4`，运行器为 `competition-v2-runtime-0.1`。冰川蓝工作台由续航首页、`/simulation` 巡看仿真和 `/history` 运行记录组成。底层计算通过现有接口提供。[续航功能说明](../endurance/README.md)
 
 11 月 5 日源码审查补充了保存失败的事务回退、恢复运行时的单任务切换和后台检查点重试。11 月 13 日增加已保存终态释放和历史分页。[前一轮审查记录](BACKEND_REVIEW_20261105.md) · [当前版本与验证范围](TECHNICAL_REMAINING.md)
 
 ## 从网页跟到导出
 
-以下路径按 2026-11-11 的本地 v2 源码核对。读程序时可以从页面的「开始巡看」一路跟到导出的 JSON。
+可以从巡看页的「开始巡看」跟到后端执行，再到运行记录的完整 JSON。
 
 | 操作 | 文件和函数 | 数据怎样流动 |
 |---|---|---|
 | 启动服务 | [launch.py](launch.py) 的 `main()` → [api.py](api.py) 的 `create_app()` | Uvicorn 启动本机 FastAPI 服务。应用启动时打开 SQLite，并创建推进仿真的后台任务 |
-| 选择情景、创建运行 | [live.html](presentation/live.html) 的 `settings()`、`preview()`、`start()`、`api()` → [api.py](api.py) 的 `preview()`、`create()` | 页面送出情景、方法、温度、初始剩余 Ah 比例、预算方式和倍速。后端用 `CreateInput` 校验，调用 `preset_config()` 组装配置。预览只返回初始方案，正式创建保存运行并返回 ID |
+| 选择情景、创建运行 | [simulation.js](presentation/assets/simulation.js) 的 `settings()`、`preview()` 与提交事件 → [api.py](api.py) 的 `preview()`、`create()` | 页面发送情景、方法、气温、起始电量比例、预算方式和倍速。后端用 `CreateInput` 校验并调用 `preset_config()`。预览返回起飞前方案，正式创建保存运行并返回 ID |
 | 计算下一步 | [runtime.py](runtime.py) 的 `RuntimeRun.__init__()`、`current_request()`、`_choose()` → [selectors.py](selectors.py) 的 `decide()` → [planning_inputs.py](planning_inputs.py) 的 `build_leg_table()`、`assess_order()` | `initial_request()` 提供参考曲线和预算，运行器传入当时已知地图、位置、电量和完成点。规划器计算有向航段、剩余顺序、返程和储备，返回动作与理由。[初始输入](scenarios.py) |
-| 执行、更新页面 | [api.py](api.py) 的 `lifespan()` 内 `tick()` → [runtime.py](runtime.py) 的 `advance()` → [live.html](presentation/live.html) 的 `poll()`、`render()` | 后台按经过时间与倍速推进。运行器更新位置、耗能及遥测，停留结束才记任务完成，实际到基地才记返回。页面读取后端状态和轨迹后刷新 |
+| 执行、更新页面 | [api.py](api.py) 的 `lifespan()` 内 `tick()` → [runtime.py](runtime.py) 的 `advance()` → [simulation.js](presentation/assets/simulation.js) 的 `syncRun()` 与 [mission-view.js](presentation/assets/mission-view.js) 的 `updateMission()` | 后台按经过时间和倍速推进。停留完成才计任务完成，仿真位置到基地才记返回。页面显示后端的状态和轨迹 |
 | 应用事件、重新规划 | [runtime.py](runtime.py) 的 `inject()`、`_apply_due()`、`_choose()` | 预设事件和手动事件由运行器排队，事件到时更新已知地图。符合重算条件时，`_choose()` 将更新后的当前观测传给规划器，并记录同状态比较供复查 |
 | 保存、查看历史 | [api.py](api.py) 的 `persist()`、`saved_state()` → [storage.py](../core/storage.py) 的 `RunStore.save_batch()`、`get()` | 本地修订版在事务里保存快照、操作审计与可选请求编号。后台也保存运行检查点。重启后历史从 SQLite 读取，仍在内存的运行以 `runtime_available` 标识 |
 | 导出、复演 | [api.py](api.py) 的 `export()`、`archive()`、`replay()` → [runtime.py](runtime.py) 的 `export()` | 导出可读取内存快照或归档，并附上操作审计。页面将响应存成 JSON。复演先校验运行器版本、执行源码、曲线和配置指纹，再按原配置从头创建一次运行 |
 
 读导出文件时，先看 `configuration` 确认输入，再看 `decisions` 与 `events` 对齐计划和事件，最后用 `telemetry` 和 `summary` 复查执行。配置指纹对应配置内容，结果指纹覆盖摘要、遥测、事件、能耗区间和剔除决策耗时的决策记录。操作审计、运行 ID 和文件排版另有用途，核对文件原始字节时用整份文件的 SHA-256。[仿真计算读法](DESIGN.md#用一份冻结档案读计算)
 
-## 先验证后端，再换页面
+## 前端和接口的关系
 
-启动器启动本机FastAPI服务，算法与SQLite记录均在后端。前端可以替换为Vue或其他实现，不需要迁移任务选择器、能量计算或运行数据库。原入口继续保留，直到新前端走完同样的创建、事件、返回、导出与复演流程。
+启动器运行本机 FastAPI 服务。三个页面共用页面框架和静态资源，预测、巡看推进与记录保存均由接口提供。页面和脚本分开存放，便携包包含配套的 CSS、JavaScript 和图片。[页面框架](workbench.py)
 
-实际FastAPI生成的请求与响应合同见[http-v2.openapi.json](contracts/http-v2.openapi.json)；运行时也可访问`/openapi.json`和`/docs`。9个API操作均声明响应模型，运行时检查数据形状；状态、预算、决策、遥测、事件与审计字段有明确类型。来源说明中的扩展元数据使用JSON对象。可选字段未出现时不会补写null；能量未知值和被中断航段的覆盖判定仍保留null。完整导出指纹与运行器原始档案一致。
+实际FastAPI生成的请求与响应合同见[http-v2.openapi.json](contracts/http-v2.openapi.json)；运行时也可访问`/openapi.json`和`/docs`。13个API操作均声明响应模型，运行时检查数据形状；状态、预算、决策、遥测、事件与审计字段有明确类型。来源说明中的扩展元数据使用JSON对象。可选字段未出现时不会补写null；能量未知值和被中断航段的覆盖判定仍保留null。完整导出指纹与运行器原始档案一致。
 
-## 9个HTTP操作
+## 13个HTTP操作
 
 | 方法和路径 | 输入 | 关键行为 |
 |---|---|---|
 | GET `/api/v2/health` | 无 | 来源、运行器版本、曲线是否可用 |
+| GET `/api/v2/endurance/model` | 无 | 续航模型版本、参数、训练范围 |
+| POST `/api/v2/endurance/predict` | PredictionInput | 温度、电量、风速直接计算剩余及预留后的分钟数 |
+| POST `/api/v2/endurance/route` | RouteInput | 采用同一耗电模型规划省电往返路线，与最短路线对照 |
 | POST `/api/v2/preview` | CreateInput | 只计算初始状态，不创建持久运行；`is_preview=true` |
 | POST `/api/v2/runs` | CreateInput | 创建真实后端运行；此前RUNNING运行会暂停并保存 |
 | GET `/api/v2/runs` | 无 | 历史列表；`runtime_available`区分仍在内存中的运行 |
@@ -76,7 +79,7 @@ CreateInput示例：
 
 旧`GET /api/v2/runs`仍返回最近50条的数组。完整查询使用`GET /api/v2/history?limit=50`，响应`{"items":[...],"next_cursor":"..."}`；下一页原样传回`cursor`，`next_cursor=null`表示结束。参数无效返回422，其中`detail`可能是字段校验列表或游标错误文字。
 
-游标记录首屏的最大内部行号及最后一条记录的位置，翻页期间新建的记录不进入这一轮列表。顺序为创建时间、内部行号倒序。分页固定的是记录范围，运行中的摘要仍可更新；它不是整个数据库的冻结快照。列表仅从SQLite提取摘要和配置，不解码遥测。旧网页暂未增加翻页控件。
+游标记录首屏的最大内部行号和最后一条记录的位置。列表按创建时间、内部行号倒序，翻页固定记录范围，运行中的摘要仍可更新。列表只提取摘要和配置。运行记录页从首批 50 条开始，点击「显示更早记录」继续读取游标。[前端分页](presentation/assets/history.js)
 
 创建时立即拒绝、取消以及后台完成的运行，均在事务或检查点保存成功后释放内存。待重试的终态保留到提交成功；运行中与暂停中的记录仍保留，以支持继续运行。内存并非对任意数量暂停任务或持续磁盘故障都有固定上限。
 

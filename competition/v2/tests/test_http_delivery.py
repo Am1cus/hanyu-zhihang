@@ -28,7 +28,7 @@ class HttpDeliveryTests(unittest.TestCase):
         schema=create_app(self.path,tick_enabled=False).openapi()
         operations=[operation for path,item in schema['paths'].items() if path.startswith('/api/')
                     for method,operation in item.items() if method in {'get','post'}]
-        self.assertEqual(len(operations),10)
+        self.assertEqual(len(operations),14)
         for operation in operations:
             self.assertTrue(operation['responses']['200']['content']['application/json']['schema'])
 

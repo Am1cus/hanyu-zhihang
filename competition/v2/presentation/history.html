@@ -1,0 +1,39 @@
+<div class="pagehead">
+  <div><h1>运行记录</h1><p class="minor page-note">巡看仿真的运行与归档</p></div>
+  <a class="text-action" id="new-simulation" href="/simulation?new=1">准备巡看</a>
+</div>
+
+<section class="surface panel" id="record" tabindex="-1" aria-labelledby="record-title" hidden>
+  <div class="sectionrow">
+    <div><h2 id="record-title">巡看详情</h2><p class="minor" id="record-conditions"></p></div>
+    <button class="ghost" type="button" id="close-record">返回记录列表</button>
+  </div>
+  <p class="notice" id="record-message" role="status" hidden></p>
+  <div class="actions" id="record-actions" hidden>
+    <button class="action" type="button" id="export">导出完整记录</button>
+    <button class="ghost" type="button" id="replay">从头复演</button>
+    <button class="ghost" type="button" id="resume" hidden>继续巡看</button>
+    <a class="text-action" id="view-live" href="/simulation" hidden>打开运行中的巡看</a>
+  </div>
+  <p class="minor action-note" id="replay-note" hidden>从头复演会按原配置创建新记录。复演或继续会暂停另一条正在执行的巡看。</p>
+  <button class="ghost" type="button" id="retry-record" hidden>重试读取详情</button>
+</section>
+
+<!-- mission-detail -->
+
+<section class="surface panel history-list" id="history-list" aria-labelledby="history-title">
+  <div class="sectionrow">
+    <div><h2 id="history-title">巡看记录</h2><p class="minor">按创建顺序从新到旧</p></div>
+    <button class="ghost" type="button" id="refresh-history">刷新记录</button>
+  </div>
+  <p class="notice" id="history-message" role="status" hidden></p>
+  <div id="records"></div>
+  <div class="empty" id="empty" hidden>
+    <p>还没有巡看记录。</p>
+    <a class="action" href="/simulation?new=1">开始第一次巡看</a>
+  </div>
+  <div class="history-more">
+    <p class="minor" id="history-count" hidden></p>
+    <button class="ghost" type="button" id="more-history" hidden>显示更早记录</button>
+  </div>
+</section>

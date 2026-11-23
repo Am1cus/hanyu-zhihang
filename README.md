@@ -4,22 +4,23 @@
 
 天冷、电量有限，一架无人机应该先查看哪些地方？途中遇到强风或临时禁入区，怎样调整任务，并把返程电量一起算进去？
 
-寒域智航把这个过程做成了可以操作、解释和复查的本机软件：**出发前安排，途中按变化调整，回来后核对结果。** 当前重点是4C参赛开发版，使用合成的黑龙江冰雪小镇场景，模拟一架无人机对八个可延期地点进行补充巡看。
+寒域智航把这个过程做成了可以操作、解释和复查的本机软件：**出发前安排，途中按变化调整，回来后核对结果。** 当前电脑端终版用于4C参赛，使用合成的黑龙江冰雪小镇场景，模拟一架无人机对八个可延期地点进行补充巡看。
 
-**当前可下载版本**为 11 月 13 日版 `v2-backend-20261113`。已有 Apple 芯片 Mac 的离线安装和运行记录，Windows x86-64 已提供离线依赖和启动脚本，实机验收待完成。[下载运行包](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261113/hanyu-zhihang-v2-backend-20261113.zip) · [发布记录与校验文件](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-backend-20261113)
+**当前版本为 2026-11-23 Mac 电脑端终版。** 冰川蓝工作台提供续航预测、能耗 A* 1.1、巡看仿真和历史记录。独立的 LSTM 入口预测未来 10 秒耗电量。
+
+[下载 Mac 终版 ZIP](https://github.com/Am1cus/hanyu-zhihang/releases/download/mac-final-20261123/hanyu-zhihang-mac-final-20261123.zip) · [发布页及校验文件](https://github.com/Am1cus/hanyu-zhihang/releases/tag/mac-final-20261123) · [终版运行结果](releases/mac-final-20261123/README.md) · [仓库导航](#仓库导航)
 
 [快速试用](#快速试用) · [五步操作说明](competition/v2/TRY_IT.md) · [实验结果与证据](competition/v2/evidence/README.md) · [当前状态与电脑端待办](competition/v2/TECHNICAL_REMAINING.md)
 
 90 秒实际软件录屏与 10 月 28 日验证的程序一起保存在[历史发布页](https://github.com/Am1cus/hanyu-zhihang/releases/tag/v2-demo-20261028)。
 
-![实际程序的讲解模式：左侧为执行轨迹，右侧解释决策，下方保留任务与事件记录](competition/v2/presentation/assets/workbench.png)
-
-*截图取自 10 月 28 日版，与该版备用录屏对应同一轮运行。*
+[查看终版启动与操作说明](competition/v2/MAC_FINAL.md)
 
 ## 可以做什么
 
 | 操作 | 能看到什么 |
 |---|---|
+| 输入温度、电量、风速 | 预计剩余分钟数、预留电量后的时间、省电往返路线和电量预算 |
 | 改变温度和初始电量 | 同一任务的可用能量、返程预算和安排如何变化 |
 | 比较四种任务安排方法 | 按清单走、先去近处、先挑划算的、把整趟一起算 |
 | 开始仿真，加入障碍或改变风场 | 从实际执行位置重新核算，显示路线、任务和调整原因 |
@@ -33,10 +34,10 @@
 
 ### 下载运行包
 
-1. [下载运行 ZIP](https://github.com/Am1cus/hanyu-zhihang/releases/download/v2-backend-20261113/hanyu-zhihang-v2-backend-20261113.zip)，完整解压到新目录。
-2. 预装 **Python 3.12**。Mac 在终端用 `python3.12 --version` 确认。Windows 安装时勾选 Python Launcher，用 `py -3.12 --version` 确认。包内依赖覆盖 Apple 芯片 Mac 和 Windows x86-64。
-3. 在解压目录双击 Mac 的 `启动寒域智航.command` 或 Windows 的 `启动Windows.bat`。首次启动会从包内安装依赖。如果网页没有自动打开，手动访问 [本机演示页面](http://127.0.0.1:8094/)。
-4. 保持启动窗口开着。在默认的「前方受阻 · 任务调整」情景中点「开始巡看」，观察预设禁入区出现后的调整。任务结束后点「导出完整记录」，也可以用「按原配置复演」从头重跑。
+1. [下载 Mac 终版](https://github.com/Am1cus/hanyu-zhihang/releases/download/mac-final-20261123/hanyu-zhihang-mac-final-20261123.zip)，完整解压到新目录。
+2. 使用 Apple 芯片 Mac、macOS 14 及以上，预装 Python 3.12。包内附有网页和 LSTM 的离线依赖。
+3. 双击「启动寒域智航.command」打开工作台，或双击「短时耗电预测.command」运行 LSTM 示例。
+4. 在工作台顶部进入「巡看仿真」，选择「前方受阻 · 任务调整」并开始巡看。任务结束后可在「运行记录」查看、导出或从头复演。
 
 停止服务时在启动窗口按 `Ctrl+C`。离线包的运行记录保存在解压目录的 `runtime/missions-v2.sqlite3`。换电脑时用原 ZIP 重新解压并安装依赖。[验包、历史记录与排错说明](competition/v2/PORTABLE_README.md)
 
@@ -59,7 +60,7 @@ zsh competition/v2/start_v2.command
 
 启动器会建立项目专用环境、检查固定版本依赖，然后打开 **http://127.0.0.1:8094/**。保持启动窗口开着，退出时按`Control+C`。服务重启后历史记录可查看和从头复演，不支持从上次位置接着飞。
 
-第一次只需保持默认情景，点击“开始巡看”，观察前方受阻后的调整，返回后点“导出完整记录”。详细操作见[试用说明](competition/v2/TRY_IT.md)。
+首页提供普通风、强风和低电量三个示例。要观察前方受阻后的任务调整，进入「巡看仿真」，在默认情景下点「开始巡看」。运行结束后打开「运行记录」，可导出完整 JSON 或从头复演。[试用说明](competition/v2/TRY_IT.md)
 
 ## 方法与实现
 
@@ -73,7 +74,7 @@ zsh competition/v2/start_v2.command
 
 | 检查 | 结果与范围 |
 |---|---|
-| 发布包检查 | 本轮源码通过113项v2、31项旧版回归、7项研究检查及HTTP重启复演；运行包验收报告随发布附件提供 |
+| Mac 终版 | 包内文件指纹、依赖、软件回归和 HTTP 重启复演通过。[验包记录](releases/mac-final-20261123/results/Mac验包.json) |
 | 固定条件比较 | 4张合成地图、3个温度、4类情境、3种估计偏差、4种方法、2种预算规则，共1,152项执行；抽取24项复演一致 |
 | 储备比例补充比较 | 10% / 20% / 30%，共3,456项；其中1,152项是原20%设置的复核，不能计作新增独立样本 |
 | 浏览器操作 | 10 月 27 日完成正常、强风、障碍三轮演示，以及刷新、断连、超时、导出和服务重启检查 |
@@ -101,7 +102,9 @@ zsh competition/v2/start_v2.command
 ## 仓库导航
 
 ```text
-competition/v2/       当前4C开发版：决策、运行、界面、测试及证据摘要
+releases/             各版交付索引、校验值和公开运行结果
+competition/v2/       4C工作台：决策、运行、界面、测试及证据摘要
+competition/endurance/  直接续航模型、优化A*、预测页面、训练代码与结果
 competition/core/    复用的参考曲线、路径规划与存储
 competition/research_v2/  独立预算候选及冻结实验工具，不进入默认运行包
 competition/data/    带来源的电芯参考参数

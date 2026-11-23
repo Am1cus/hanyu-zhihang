@@ -8,14 +8,14 @@ import subprocess
 import zipfile
 
 PROJECT = Path(__file__).resolve().parents[3]
-SUFFIXES = {'.py', '.md', '.json', '.html', '.txt', '.csv', '.png', '.command', '.bat'}
+SUFFIXES = {'.py', '.md', '.json', '.html', '.css', '.js', '.txt', '.csv', '.png', '.jpg', '.command', '.bat'}
 
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def build(output, name, wheelhouses=(), media=None):
+def build(output, name, wheelhouses=(), media=None, lstm_wheelhouse=None):
     if Path(name).name != name or name in {'.', '..'}:
         raise ValueError('Package name must be a single directory name')
     folder = output / name
@@ -23,10 +23,18 @@ def build(output, name, wheelhouses=(), media=None):
     if folder.exists() or archive.exists():
         raise ValueError('Output exists; choose a new delivery directory')
     folder.mkdir(parents=True)
-    sources = [PROJECT/'competition/__init__.py', PROJECT/'competition/data/p42a_reference.json']
-    for subdir in ('competition/core', 'competition/v2'):
+    sources = [PROJECT/'competition/__init__.py', PROJECT/'competition/data/p42a_reference.json',
+               PROJECT/'docs/续航预测与A星优化实施计划_20261116.md',
+               PROJECT/'docs/前端重构计划_20261118.md', PROJECT/'docs/前端重构线框稿_20261118.html']
+    for subdir in ('competition/core', 'competition/v2', 'competition/endurance'):
         sources += [p for p in (PROJECT/subdir).rglob('*') if p.is_file()
                     and p.suffix in SUFFIXES and '__pycache__' not in p.parts]
+    if lstm_wheelhouse:
+        release = PROJECT/'Phase4/releases/energy_residual_lstm_v3_rc1'
+        sources += [p for p in release.iterdir() if p.suffix in {'.pt', '.py', '.json', '.md'}]
+        sources.append(PROJECT/'短时耗电预测.command')
+        shutil.copytree(lstm_wheelhouse, folder/'lstm-wheelhouse',
+                        ignore=lambda _, names: [n for n in names if not n.endswith('.whl')])
     source_hashes = {}
     for source in sorted(set(sources)):
         relative = source.relative_to(PROJECT)
@@ -35,7 +43,8 @@ def build(output, name, wheelhouses=(), media=None):
         shutil.copy2(source, target)
         source_hashes[str(relative)] = digest(source)
     shutil.copy2(PROJECT/'启动寒域智航.command', folder/'启动寒域智航.command')
-    shutil.copy2(PROJECT/'competition/v2/PORTABLE_README.md', folder/'先读我.md')
+    readme = 'MAC_FINAL.md' if lstm_wheelhouse else 'PORTABLE_README.md'
+    shutil.copy2(PROJECT/'competition/v2'/readme, folder/'先读我.md')
     (folder/'启动Windows.bat').write_bytes(b'@echo off\r\ncall "%~dp0competition\\v2\\start_v2.bat" %*\r\n')
     (folder/'检查Mac.command').write_text('#!/bin/zsh\ncd -- "$(dirname -- "$0")"\nhyzh_check_result=1\n'
         'if [[ ! -x .competition-venv/bin/python ]]; then\n'
@@ -67,7 +76,7 @@ def build(output, name, wheelhouses=(), media=None):
         commit = subprocess.check_output(['git','rev-parse','HEAD'],cwd=PROJECT,text=True).strip()
     except (OSError, subprocess.CalledProcessError):
         commit = None
-    manifest = {'delivery_version': name, 'scope': 'local_2d_reference_simulation',
+    manifest = {'delivery_version': name, 'scope': 'local_2d_simulation_and_endurance_estimation',
                 'python': '3.12', 'offline_wheels_for': ['macOS_arm64','Windows_amd64'] if wheelhouses else [],
                 'git_head_at_build': commit, 'identity_rule': 'file hashes identify delivered bytes; git head alone may precede working edits',
                 'source_sha256': source_hashes,
@@ -86,8 +95,9 @@ def main():
     parser.add_argument('--name',default='寒域智航-v2-20261028')
     parser.add_argument('--wheelhouse',action='append',default=[],type=Path)
     parser.add_argument('--media',type=Path)
+    parser.add_argument('--lstm-wheelhouse',type=Path,help='Include frozen short-term predictor and Mac inference wheels')
     args=parser.parse_args()
-    print(json.dumps(build(args.output.resolve(),args.name,args.wheelhouse,args.media),ensure_ascii=False,indent=2))
+    print(json.dumps(build(args.output.resolve(),args.name,args.wheelhouse,args.media,args.lstm_wheelhouse),ensure_ascii=False,indent=2))
 
 
 if __name__=='__main__': main()

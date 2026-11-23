@@ -1,0 +1,210 @@
+{
+  "model_version": "endurance-hybrid-1.0",
+  "source_sha256": "e5586d4a4c7b723baa84051935345d4c46099cf9011a68142c8a453f23a8cd1e",
+  "training_rows": 1126,
+  "holdout_rows": 576,
+  "training_current_point_metrics": {
+    "mae_a": 0.6272008474916183,
+    "mape_percent": 3.189401170319635,
+    "rmse_a": 1.0239446733195658
+  },
+  "holdout_current_point_metrics": {
+    "mae_a": 0.6728033815535266,
+    "mape_percent": 3.4626154194474137,
+    "rmse_a": 1.0978485367206297
+  },
+  "holdout_current_flight_mean_metrics": {
+    "mae_a": 0.17489244453695255,
+    "mape_percent": 0.9164045265190518,
+    "rmse_a": 0.21099354017645608
+  },
+  "baseline_constant_current_a": 19.33474554522482,
+  "baseline_holdout_flight_mean_metrics": {
+    "mae_a": 1.3691771908831905,
+    "mape_percent": 7.178778747843695,
+    "rmse_a": 1.6148784593572387
+  },
+  "flights": [
+    {
+      "flight_id": "flight_003",
+      "temperature_c": -10.0,
+      "wind_speed_ms": 0.0,
+      "rows": 50,
+      "actual_mean_current_a": 17.464192244444444,
+      "predicted_mean_current_a": 17.43747169469189,
+      "observed_full_capacity_ah": 1.2960034724118747,
+      "predicted_full_capacity_ah": 1.2960005091648492,
+      "point_metrics": {
+        "mae_a": 0.8303436295839954,
+        "mape_percent": 4.949144998511437,
+        "rmse_a": 1.1869527909915716
+      }
+    },
+    {
+      "flight_id": "flight_006",
+      "temperature_c": -10.0,
+      "wind_speed_ms": 5.0,
+      "rows": 50,
+      "actual_mean_current_a": 19.079365955555556,
+      "predicted_mean_current_a": 19.227278093527914,
+      "observed_full_capacity_ah": 1.295997281917719,
+      "predicted_full_capacity_ah": 1.2960005091648492,
+      "point_metrics": {
+        "mae_a": 0.49222097711773666,
+        "mape_percent": 2.5758351647157354,
+        "rmse_a": 0.859111766499457
+      }
+    },
+    {
+      "flight_id": "flight_009",
+      "temperature_c": -10.0,
+      "wind_speed_ms": 10.0,
+      "rows": 50,
+      "actual_mean_current_a": 21.074660733333335,
+      "predicted_mean_current_a": 21.017191228611633,
+      "observed_full_capacity_ah": 1.2960007307214192,
+      "predicted_full_capacity_ah": 1.2960005091648492,
+      "point_metrics": {
+        "mae_a": 0.6844903510521994,
+        "mape_percent": 3.1341824906914892,
+        "rmse_a": 0.9092402713095715
+      }
+    },
+    {
+      "flight_id": "flight_012",
+      "temperature_c": -25.0,
+      "wind_speed_ms": 0.0,
+      "rows": 50,
+      "actual_mean_current_a": 17.202847199999997,
+      "predicted_mean_current_a": 17.442647764709886,
+      "observed_full_capacity_ah": 1.0799997733493205,
+      "predicted_full_capacity_ah": 1.0800002829608704,
+      "point_metrics": {
+        "mae_a": 0.6818835933515149,
+        "mape_percent": 4.171103355359485,
+        "rmse_a": 1.2389881028898697
+      }
+    },
+    {
+      "flight_id": "flight_015",
+      "temperature_c": -25.0,
+      "wind_speed_ms": 5.0,
+      "rows": 50,
+      "actual_mean_current_a": 19.16661108888889,
+      "predicted_mean_current_a": 19.233664651267137,
+      "observed_full_capacity_ah": 1.0799999913296543,
+      "predicted_full_capacity_ah": 1.0800002829608704,
+      "point_metrics": {
+        "mae_a": 0.5265536674155428,
+        "mape_percent": 2.651758726571811,
+        "rmse_a": 0.8223874182971171
+      }
+    },
+    {
+      "flight_id": "flight_018",
+      "temperature_c": -25.0,
+      "wind_speed_ms": 10.0,
+      "rows": 50,
+      "actual_mean_current_a": 21.424075511111113,
+      "predicted_mean_current_a": 21.027269961359934,
+      "observed_full_capacity_ah": 1.0800010053026263,
+      "predicted_full_capacity_ah": 1.0800002829608704,
+      "point_metrics": {
+        "mae_a": 0.9410658827453393,
+        "mape_percent": 4.079128414777956,
+        "rmse_a": 1.4001720222717062
+      }
+    },
+    {
+      "flight_id": "flight_021",
+      "temperature_c": -30.0,
+      "wind_speed_ms": 0.0,
+      "rows": 50,
+      "actual_mean_current_a": 17.58164748888889,
+      "predicted_mean_current_a": 17.453204718894998,
+      "observed_full_capacity_ah": 1.008000952154378,
+      "predicted_full_capacity_ah": 1.0080002075595438,
+      "point_metrics": {
+        "mae_a": 0.5066388426666495,
+        "mape_percent": 2.7777504271708313,
+        "rmse_a": 0.8071327833417888
+      }
+    },
+    {
+      "flight_id": "flight_024",
+      "temperature_c": -30.0,
+      "wind_speed_ms": 5.0,
+      "rows": 50,
+      "actual_mean_current_a": 19.547199977777776,
+      "predicted_mean_current_a": 19.242415499257504,
+      "observed_full_capacity_ah": 1.0080011804142464,
+      "predicted_full_capacity_ah": 1.0080002075595438,
+      "point_metrics": {
+        "mae_a": 0.7328548192046537,
+        "mape_percent": 3.476486015895028,
+        "rmse_a": 1.2121680764796792
+      }
+    },
+    {
+      "flight_id": "flight_027",
+      "temperature_c": -30.0,
+      "wind_speed_ms": 10.0,
+      "rows": 26,
+      "actual_mean_current_a": 21.38485051282051,
+      "predicted_mean_current_a": 21.44775314008456,
+      "observed_full_capacity_ah": 1.0080044529900463,
+      "predicted_full_capacity_ah": 1.0080002075595438,
+      "point_metrics": {
+        "mae_a": 0.4970339308460534,
+        "mape_percent": 2.2831176204905734,
+        "rmse_a": 0.6553456124656087
+      }
+    },
+    {
+      "flight_id": "flight_030",
+      "temperature_c": -35.0,
+      "wind_speed_ms": 0.0,
+      "rows": 50,
+      "actual_mean_current_a": 17.102998422222225,
+      "predicted_mean_current_a": 17.46017880262471,
+      "observed_full_capacity_ah": 0.9360004856531077,
+      "predicted_full_capacity_ah": 0.9360001321582176,
+      "point_metrics": {
+        "mae_a": 0.6933765667853866,
+        "mape_percent": 4.43968635074599,
+        "rmse_a": 1.3779024389276666
+      }
+    },
+    {
+      "flight_id": "flight_033",
+      "temperature_c": -35.0,
+      "wind_speed_ms": 5.0,
+      "rows": 50,
+      "actual_mean_current_a": 19.402908377777777,
+      "predicted_mean_current_a": 19.249840702095913,
+      "observed_full_capacity_ah": 0.93600184898762,
+      "predicted_full_capacity_ah": 0.9360001321582176,
+      "point_metrics": {
+        "mae_a": 0.5637696854577068,
+        "mape_percent": 2.721635430388683,
+        "rmse_a": 0.9380799229564781
+      }
+    },
+    {
+      "flight_id": "flight_036",
+      "temperature_c": -35.0,
+      "wind_speed_ms": 10.0,
+      "rows": 50,
+      "actual_mean_current_a": 21.194093577777775,
+      "predicted_mean_current_a": 21.03752404448284,
+      "observed_full_capacity_ah": 0.9359989152381645,
+      "predicted_full_capacity_ah": 0.9360001321582176,
+      "point_metrics": {
+        "mae_a": 0.8390392960759531,
+        "mape_percent": 3.725397094550662,
+        "rmse_a": 1.2713898667263162
+      }
+    }
+  ],
+  "not_measured": "Full-flight remaining-time error; these logs do not contain exhaustion endpoints."
+}

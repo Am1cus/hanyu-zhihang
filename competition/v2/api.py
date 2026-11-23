@@ -15,22 +15,24 @@ from typing import Annotated, Literal
 from fastapi import FastAPI, Header, HTTPException, Query
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import ConfigDict, BaseModel, Field
 
 from competition.core.curves import CurveLibrary
 from competition.core.storage import RunStore
+from competition.endurance.api import create_router as endurance_router
 from .contracts import Selector, BudgetMode, fingerprint
 from .runtime import RuntimeRun, RuntimeConfig, RUNTIME_VERSION, TERMINAL, preset_config, execution_source_hashes
 from .http_models import (API_VERSION, Archive, Error, Health, LiveState, Preview,
                           QueuedEvent, RunListItem, HistoryPage, HistoryInputError)
+from .workbench import PRESENTATION, render_workbench
 
 RequestKey = Annotated[str | None, Header(alias='Idempotency-Key', min_length=1,
                                         max_length=128, pattern=r'^[A-Za-z0-9._:-]+$')]
 
 ROOT=Path(__file__).resolve().parents[3]
 DEFAULT_DB=ROOT/'output/4C/v2/runtime/missions-v2.sqlite3'
-PAGE=Path(__file__).parent/'presentation/live.html'
 LOG=logging.getLogger(__name__)
 
 
@@ -120,6 +122,8 @@ def create_app(db_path=None,tick_enabled=True):
 
     app=FastAPI(title='寒域智航 · 任务决策后端',version=API_VERSION,lifespan=lifespan,
                 responses={404: {'model': Error}, 409: {'model': Error}, 503: {'model': Error}})
+    app.include_router(endurance_router())
+    app.mount('/workbench-assets', StaticFiles(directory=PRESENTATION/'assets'), name='workbench-assets')
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(_request,exc):
@@ -177,8 +181,15 @@ def create_app(db_path=None,tick_enabled=True):
             raise HTTPException(409,'同一个请求编号已用于不同操作或参数，请使用新的 Idempotency-Key')
         return saved_state(prior[1])
 
-    @app.get('/')
-    def page(): return FileResponse(PAGE)
+    @app.get('/', response_class=HTMLResponse)
+    @app.get('/endurance', include_in_schema=False)
+    def page(): return render_workbench('endurance')
+
+    @app.get('/simulation', include_in_schema=False)
+    def simulation_page(): return render_workbench('simulation')
+
+    @app.get('/history', include_in_schema=False)
+    def history_page(): return render_workbench('history')
 
     @app.get('/api/v2/health',response_model=Health)
     def health(): return {'status':'ok','runtime_version':RUNTIME_VERSION,'api_version':API_VERSION,

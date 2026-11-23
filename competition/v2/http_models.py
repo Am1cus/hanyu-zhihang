@@ -20,7 +20,7 @@ class Response(BaseModel):
 class Health(Response):
     status: Literal['ok']
     runtime_version: str
-    api_version: Literal['competition-v2-api-0.3']
+    api_version: Literal['competition-v2-api-0.4']
     source: Literal['LOCAL_2D_SIM']
     library_available: bool
 

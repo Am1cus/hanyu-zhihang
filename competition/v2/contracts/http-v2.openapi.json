@@ -2,19 +2,24 @@
   "openapi": "3.1.0",
   "info": {
     "title": "寒域智航 · 任务决策后端",
-    "version": "competition-v2-api-0.3"
+    "version": "competition-v2-api-0.4"
   },
   "paths": {
-    "/": {
+    "/api/v2/endurance/model": {
       "get": {
-        "summary": "Page",
-        "operationId": "page__get",
+        "tags": [
+          "续航预测"
+        ],
+        "summary": "Metadata",
+        "operationId": "metadata_api_v2_endurance_model_get",
         "responses": {
           "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ModelMetadata"
+                }
               }
             }
           },
@@ -42,6 +47,267 @@
             "description": "Service Unavailable",
             "content": {
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/endurance/predict": {
+      "post": {
+        "tags": [
+          "续航预测"
+        ],
+        "summary": "Predict",
+        "operationId": "predict_api_v2_endurance_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PredictionInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PredictionResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/endurance/route": {
+      "post": {
+        "tags": [
+          "续航预测"
+        ],
+        "summary": "Route",
+        "operationId": "route_api_v2_endurance_route_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RouteInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RouteResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/endurance/replan": {
+      "post": {
+        "tags": [
+          "续航预测"
+        ],
+        "summary": "Replan",
+        "operationId": "replan_api_v2_endurance_replan_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplanInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplanResult"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Page",
+        "operationId": "page__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "text/html": {
                 "schema": {
                   "$ref": "#/components/schemas/Error"
                 }
@@ -1798,7 +2064,7 @@
           },
           "wind_regions": {
             "items": {
-              "$ref": "#/components/schemas/WindRegion"
+              "$ref": "#/components/schemas/WindRegion-Output"
             },
             "type": "array",
             "title": "Wind Regions"
@@ -1847,7 +2113,7 @@
           },
           "api_version": {
             "type": "string",
-            "const": "competition-v2-api-0.3",
+            "const": "competition-v2-api-0.4",
             "title": "Api Version"
           },
           "source": {
@@ -2332,6 +2598,60 @@
         ],
         "title": "Metadata"
       },
+      "ModelMetadata": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "profile": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Profile"
+          },
+          "capacity_model": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Capacity Model"
+          },
+          "current_model": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Current Model"
+          },
+          "observed_ranges": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Observed Ranges"
+          },
+          "training": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Training"
+          },
+          "interpretation": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Interpretation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "profile",
+          "capacity_model",
+          "current_model",
+          "observed_ranges",
+          "training",
+          "interpretation"
+        ],
+        "title": "ModelMetadata"
+      },
       "Observation": {
         "properties": {
           "as_of_s": {
@@ -2488,6 +2808,39 @@
         ],
         "title": "ObstacleEvent"
       },
+      "OutboundWaypoint": {
+        "properties": {
+          "position": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "distance_m": {
+            "type": "number",
+            "title": "Distance M"
+          },
+          "duration_s": {
+            "type": "number",
+            "title": "Duration S"
+          }
+        },
+        "type": "object",
+        "required": [
+          "position",
+          "distance_m",
+          "duration_s"
+        ],
+        "title": "OutboundWaypoint"
+      },
       "PlanningModel": {
         "properties": {
           "airspeed_ms": {
@@ -2533,6 +2886,144 @@
           "source"
         ],
         "title": "PlanningModel"
+      },
+      "PredictionInput": {
+        "properties": {
+          "temperature_c": {
+            "type": "number",
+            "maximum": 40.0,
+            "minimum": -40.0,
+            "title": "Temperature C",
+            "default": -20
+          },
+          "battery_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Battery Percent",
+            "default": 80
+          },
+          "wind_speed_ms": {
+            "type": "number",
+            "maximum": 20.0,
+            "minimum": 0.0,
+            "title": "Wind Speed Ms",
+            "default": 5
+          },
+          "ground_speed_ms": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Ground Speed Ms",
+            "default": 2
+          },
+          "reserve_percent": {
+            "type": "number",
+            "maximum": 80.0,
+            "minimum": 0.0,
+            "title": "Reserve Percent",
+            "default": 20
+          },
+          "nominal_capacity_ah": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nominal Capacity Ah"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "PredictionInput"
+      },
+      "PredictionResult": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "profile_name": {
+            "type": "string",
+            "title": "Profile Name"
+          },
+          "remaining_minutes": {
+            "type": "number",
+            "title": "Remaining Minutes"
+          },
+          "usable_minutes": {
+            "type": "number",
+            "title": "Usable Minutes"
+          },
+          "estimated_current_a": {
+            "type": "number",
+            "title": "Estimated Current A"
+          },
+          "estimated_power_w": {
+            "type": "number",
+            "title": "Estimated Power W"
+          },
+          "full_capacity_ah": {
+            "type": "number",
+            "title": "Full Capacity Ah"
+          },
+          "available_capacity_ah": {
+            "type": "number",
+            "title": "Available Capacity Ah"
+          },
+          "usable_capacity_ah": {
+            "type": "number",
+            "title": "Usable Capacity Ah"
+          },
+          "nominal_voltage_v": {
+            "type": "number",
+            "title": "Nominal Voltage V"
+          },
+          "inputs": {
+            "$ref": "#/components/schemas/PredictionInput"
+          },
+          "extrapolated_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Extrapolated Fields"
+          },
+          "assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Assumptions"
+          },
+          "evidence_type": {
+            "type": "string",
+            "title": "Evidence Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "profile_name",
+          "remaining_minutes",
+          "usable_minutes",
+          "estimated_current_a",
+          "estimated_power_w",
+          "full_capacity_ah",
+          "available_capacity_ah",
+          "usable_capacity_ah",
+          "nominal_voltage_v",
+          "inputs",
+          "extrapolated_fields",
+          "assumptions",
+          "evidence_type"
+        ],
+        "title": "PredictionResult"
       },
       "Preview": {
         "properties": {
@@ -2800,6 +3291,609 @@
           "status"
         ],
         "title": "QueuedEvent"
+      },
+      "ReplanInput": {
+        "properties": {
+          "temperature_c": {
+            "type": "number",
+            "maximum": 40.0,
+            "minimum": -40.0,
+            "title": "Temperature C",
+            "default": -20
+          },
+          "battery_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Battery Percent",
+            "default": 80
+          },
+          "wind_speed_ms": {
+            "type": "number",
+            "maximum": 20.0,
+            "minimum": 0.0,
+            "title": "Wind Speed Ms",
+            "default": 5
+          },
+          "ground_speed_ms": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.25,
+            "title": "Ground Speed Ms",
+            "default": 2
+          },
+          "reserve_percent": {
+            "type": "number",
+            "maximum": 80.0,
+            "minimum": 0.0,
+            "title": "Reserve Percent",
+            "default": 20
+          },
+          "nominal_capacity_ah": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nominal Capacity Ah"
+          },
+          "max_airspeed_ms": {
+            "type": "number",
+            "maximum": 30.0,
+            "minimum": 0.25,
+            "title": "Max Airspeed Ms",
+            "default": 15
+          },
+          "wind_direction_deg": {
+            "type": "number",
+            "exclusiveMaximum": 360.0,
+            "minimum": 0.0,
+            "title": "Wind Direction Deg",
+            "default": 0
+          },
+          "grid": {
+            "$ref": "#/components/schemas/RouteGrid"
+          },
+          "current": {
+            "prefixItems": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "integer",
+                "minimum": 0.0
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Current"
+          },
+          "base": {
+            "prefixItems": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "integer",
+                "minimum": 0.0
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Base"
+          },
+          "goal": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer",
+                    "minimum": 0.0
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 0.0
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Goal"
+          },
+          "alternates": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer",
+                  "minimum": 0.0
+                },
+                {
+                  "type": "integer",
+                  "minimum": 0.0
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "maxItems": 16,
+            "title": "Alternates"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "grid",
+          "current",
+          "base"
+        ],
+        "title": "ReplanInput"
+      },
+      "ReplanResult": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "planner_version": {
+            "type": "string",
+            "title": "Planner Version"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "continue_to_goal",
+              "return_to_base",
+              "divert",
+              "no_feasible_landing"
+            ],
+            "title": "Action"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "return_requested",
+              "goal_unreachable",
+              "goal_return_unreachable",
+              "goal_reserve_shortfall",
+              "goal_with_reserve"
+            ],
+            "title": "Reason"
+          },
+          "legs": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Legs"
+          },
+          "available_capacity_ah": {
+            "type": "number",
+            "title": "Available Capacity Ah"
+          },
+          "reserve_capacity_ah": {
+            "type": "number",
+            "title": "Reserve Capacity Ah"
+          },
+          "estimated_consumption_ah": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Estimated Consumption Ah"
+          },
+          "remaining_battery_percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Remaining Battery Percent"
+          },
+          "feasible_with_reserve": {
+            "type": "boolean",
+            "title": "Feasible With Reserve"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "planner_version",
+          "action",
+          "reason",
+          "legs",
+          "available_capacity_ah",
+          "reserve_capacity_ah",
+          "feasible_with_reserve"
+        ],
+        "title": "ReplanResult"
+      },
+      "ReturnLimit": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "goal_with_reserve",
+              "turn_back",
+              "start_below_reserve",
+              "outbound_unreachable"
+            ],
+            "title": "Status"
+          },
+          "last_feasible": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReturnableWaypoint"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "first_limited": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OutboundWaypoint"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "reserve_shortfall",
+                  "return_unreachable"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "ReturnLimit",
+        "description": "Reserve limit along the energy-minimizing outbound route."
+      },
+      "ReturnableWaypoint": {
+        "properties": {
+          "position": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Position"
+          },
+          "distance_m": {
+            "type": "number",
+            "title": "Distance M"
+          },
+          "duration_s": {
+            "type": "number",
+            "title": "Duration S"
+          },
+          "remaining_battery_percent": {
+            "type": "number",
+            "title": "Remaining Battery Percent"
+          }
+        },
+        "type": "object",
+        "required": [
+          "position",
+          "distance_m",
+          "duration_s",
+          "remaining_battery_percent"
+        ],
+        "title": "ReturnableWaypoint"
+      },
+      "RouteGrid": {
+        "properties": {
+          "width": {
+            "type": "integer",
+            "maximum": 128.0,
+            "minimum": 2.0,
+            "title": "Width"
+          },
+          "height": {
+            "type": "integer",
+            "maximum": 128.0,
+            "minimum": 2.0,
+            "title": "Height"
+          },
+          "cell_size_m": {
+            "type": "number",
+            "maximum": 1000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Cell Size M",
+            "default": 10
+          },
+          "blocked": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "integer",
+                  "minimum": 0.0
+                },
+                {
+                  "type": "integer",
+                  "minimum": 0.0
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "maxItems": 16384,
+            "title": "Blocked"
+          },
+          "wind_regions": {
+            "items": {
+              "$ref": "#/components/schemas/WindRegion-Input"
+            },
+            "type": "array",
+            "maxItems": 64,
+            "title": "Wind Regions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "width",
+          "height"
+        ],
+        "title": "RouteGrid"
+      },
+      "RouteInput": {
+        "properties": {
+          "temperature_c": {
+            "type": "number",
+            "maximum": 40.0,
+            "minimum": -40.0,
+            "title": "Temperature C",
+            "default": -20
+          },
+          "battery_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Battery Percent",
+            "default": 80
+          },
+          "wind_speed_ms": {
+            "type": "number",
+            "maximum": 20.0,
+            "minimum": 0.0,
+            "title": "Wind Speed Ms",
+            "default": 5
+          },
+          "ground_speed_ms": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.25,
+            "title": "Ground Speed Ms",
+            "default": 2
+          },
+          "reserve_percent": {
+            "type": "number",
+            "maximum": 80.0,
+            "minimum": 0.0,
+            "title": "Reserve Percent",
+            "default": 20
+          },
+          "nominal_capacity_ah": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nominal Capacity Ah"
+          },
+          "max_airspeed_ms": {
+            "type": "number",
+            "maximum": 30.0,
+            "minimum": 0.25,
+            "title": "Max Airspeed Ms",
+            "default": 15
+          },
+          "wind_direction_deg": {
+            "type": "number",
+            "exclusiveMaximum": 360.0,
+            "minimum": 0.0,
+            "title": "Wind Direction Deg",
+            "default": 0
+          },
+          "grid": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RouteGrid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "start": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer",
+                    "minimum": 0.0
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 0.0
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start"
+          },
+          "goal": {
+            "anyOf": [
+              {
+                "prefixItems": [
+                  {
+                    "type": "integer",
+                    "minimum": 0.0
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 0.0
+                  }
+                ],
+                "type": "array",
+                "maxItems": 2,
+                "minItems": 2
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Goal"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "RouteInput"
+      },
+      "RouteResult": {
+        "properties": {
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "planner_version": {
+            "type": "string",
+            "title": "Planner Version"
+          },
+          "prediction": {
+            "$ref": "#/components/schemas/PredictionResult"
+          },
+          "grid": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Grid"
+          },
+          "start": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Start"
+          },
+          "goal": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Goal"
+          },
+          "energy_route": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Energy Route"
+          },
+          "distance_route": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Distance Route"
+          },
+          "return_limit": {
+            "$ref": "#/components/schemas/ReturnLimit"
+          },
+          "saving_percent": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Saving Percent"
+          },
+          "build_time_ms": {
+            "type": "number",
+            "title": "Build Time Ms"
+          },
+          "edge_model_calls": {
+            "type": "integer",
+            "title": "Edge Model Calls"
+          },
+          "route_assumptions": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Route Assumptions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "planner_version",
+          "prediction",
+          "grid",
+          "start",
+          "goal",
+          "energy_route",
+          "distance_route",
+          "return_limit",
+          "saving_percent",
+          "build_time_ms",
+          "edge_model_calls",
+          "route_assumptions"
+        ],
+        "title": "RouteResult"
       },
       "RunListItem": {
         "properties": {
@@ -3681,7 +4775,51 @@
         ],
         "title": "WindEvent"
       },
-      "WindRegion": {
+      "WindRegion-Input": {
+        "properties": {
+          "x_min": {
+            "type": "number",
+            "title": "X Min"
+          },
+          "x_max": {
+            "type": "number",
+            "title": "X Max"
+          },
+          "y_min": {
+            "type": "number",
+            "title": "Y Min"
+          },
+          "y_max": {
+            "type": "number",
+            "title": "Y Max"
+          },
+          "vector": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Vector"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "x_min",
+          "x_max",
+          "y_min",
+          "y_max",
+          "vector"
+        ],
+        "title": "WindRegion"
+      },
+      "WindRegion-Output": {
         "properties": {
           "id": {
             "type": "string",
